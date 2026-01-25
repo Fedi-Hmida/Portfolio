@@ -1,0 +1,9 @@
+{
+  "short_name": "Contact",
+  "name": "Contact Fedi Hmida",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#070640",
+  "background_color": "#070640"
+}
