@@ -18,9 +18,9 @@ const About = () => {
       <AboutHero />
 
       {/* Main Bio Section */}
-      <section className="py-20 relative z-10">
+      <section className="py-10 md:py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
             {/* Left Column - Image */}
             <div className="lg:col-span-5 relative">
               <motion.div

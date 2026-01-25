@@ -18,7 +18,7 @@ const ProjectCard = ({ project }) => {
       className="group relative bg-[#0c0b44] border border-[#464646] rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
     >
       {/* Image Container */}
-      <div className="relative h-64 overflow-hidden p-6 flex items-center justify-center">
+      <div className="relative h-48 md:h-64 overflow-hidden p-6 flex items-center justify-center">
         <motion.div
           className="w-full h-full flex items-center justify-center"
           animate={{

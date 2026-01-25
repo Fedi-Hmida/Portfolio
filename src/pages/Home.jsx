@@ -355,7 +355,7 @@ const Home = () => {
       {/* --- HERO SECTION --- */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -376,7 +376,7 @@ const Home = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4, duration: 0.5, type: "spring" }}
-                className="text-5xl md:text-7xl font-bold leading-tight"
+                className="text-3xl md:text-7xl font-bold leading-tight"
               >
                 <span className="inline-block hover:text-blue-300 transition-colors duration-300 cursor-default">
                   Fedi
@@ -487,7 +487,7 @@ const Home = () => {
       </section>
 
       {/* --- TABS SECTION (About Me) --- */}
-      <section className="py-20 relative z-10">
+      <section className="py-10 md:py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: -20 }}

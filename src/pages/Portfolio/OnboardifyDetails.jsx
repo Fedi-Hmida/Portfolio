@@ -161,7 +161,7 @@ const OnboardifyDetails = () => {
                 <img
                   src={onboardifyLogo}
                   alt="Onboardify Logo"
-                  className="w-[300px] md:w-[400px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                  className="w-full max-w-[300px] md:w-[400px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </motion.div>

@@ -78,7 +78,7 @@ const ContactForm = () => {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className="glass-card p-8 rounded-2xl shadow-2xl relative overflow-hidden"
+      className="glass-card p-6 md:p-8 rounded-2xl shadow-2xl relative overflow-hidden"
     >
       <ToastContainer />
 

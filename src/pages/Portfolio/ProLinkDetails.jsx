@@ -1,10 +1,5 @@
 import { motion } from "framer-motion";
-import {
-    FaComments,
-    FaStar,
-    FaTasks,
-    FaUserPlus
-} from "react-icons/fa";
+import { FaComments, FaStar, FaTasks, FaUserPlus } from "react-icons/fa";
 import { SiDart, SiFirebase, SiFlutter } from "react-icons/si";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
@@ -108,7 +103,7 @@ const ProLinkDetails = () => {
                 <img
                   src={proLinkLogo}
                   alt="Pro-Link Logo"
-                  className="w-[300px] md:w-[400px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                  className="w-full max-w-[300px] md:w-[400px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </motion.div>

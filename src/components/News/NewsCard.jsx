@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FaCalendar, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const NewsCard = ({ date, author, image, title, description, link }) => {
+const NewsCard = ({ date, author, image, title, description, link, index }) => {
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -18,10 +18,11 @@ const NewsCard = ({ date, author, image, title, description, link }) => {
       }}
       className="bg-deep-indigo rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_20px_rgba(254,62,87,0.3)] transition-all duration-300 border border-white/5 group h-full flex flex-col"
     >
-      <div className="relative overflow-hidden h-72 bg-[#0b0d26]">
+      <div className="relative overflow-hidden h-56 md:h-72 bg-[#0b0d26]">
         <img
           src={image}
           alt={title}
+          loading={index < 2 ? "eager" : "lazy"}
           className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-indigo/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

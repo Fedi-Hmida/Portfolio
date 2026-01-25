@@ -85,7 +85,7 @@ const Portfolio = () => {
         </div>
 
         {/* Filter Bar */}
-        <div className="flex flex-wrapjustify-center gap-4 mb-16 justify-center">
+        <div className="flex flex-wrap justify-center gap-4 mb-16">
           {categories.map((cat) => (
             <button
               key={cat.id}

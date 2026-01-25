@@ -11,7 +11,6 @@ import {
     FaMobileAlt,
     FaPlay,
     FaPython,
-    FaTwitter,
 } from "react-icons/fa";
 import {
     SiDart,
@@ -118,7 +117,7 @@ const SmartClaimDetails = () => {
                 <img
                   src={smartClaimImg}
                   alt="SmartClaim Project"
-                  className="w-[400px] h-auto object-contain rounded-xl shadow-lg"
+                  className="w-full max-w-[400px] h-auto object-contain rounded-xl shadow-lg"
                 />
               </div>
             </motion.div>
@@ -189,9 +188,6 @@ const SmartClaimDetails = () => {
                   <div className="flex gap-4">
                     <button className="w-10 h-10 rounded-full bg-[#0b0d26] flex items-center justify-center text-white hover:bg-[#fe3e57] transition-colors duration-300">
                       <FaFacebookF />
-                    </button>
-                    <button className="w-10 h-10 rounded-full bg-[#0b0d26] flex items-center justify-center text-white hover:bg-[#fe3e57] transition-colors duration-300">
-                      <FaTwitter />
                     </button>
                     <a
                       href="https://github.com/Fedi-Hmida"
