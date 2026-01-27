@@ -13,18 +13,21 @@ import {
     FaTree,
 } from "react-icons/fa";
 import {
-    SiAndroidstudio, SiFlutter,
+    SiAndroidstudio,
+    SiFirebase,
+    SiFlutter,
     SiMongodb,
     SiNestjs,
     SiNextdotjs,
     SiNodedotjs,
     SiOpencv,
-    SiPandas, SiPytorch,
+    SiPandas,
+    SiPytorch,
     SiReact,
     SiScikitlearn,
     SiSymfony,
     SiTailwindcss,
-    SiTensorflow
+    SiTensorflow,
 } from "react-icons/si";
 import SectionTitle from "../SectionTitle"; // Reusing from Resume
 import ServiceCard from "./ServiceCard";
@@ -34,11 +37,12 @@ const ServicesSection = () => {
     {
       title: "Cross-Platform Mobile Apps",
       description:
-        "Flutter-powered mobile applications with native performance. Specializing in IoT integration, real-time data processing, and modern UI/UX design patterns.",
+        "Flutter-powered mobile applications with native performance. Leveraging Node.js and Firebase for robust backend solutions, alongside real-time data processing and modern UI/UX design patterns.",
       icon: FaMobileAlt,
       stack: [
         { name: "Flutter", icon: SiFlutter, color: "#02569B" },
         { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+        { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
         { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
         { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
         { name: "Android Studio", icon: SiAndroidstudio, color: "#3DDC84" },
@@ -58,6 +62,7 @@ const ServicesSection = () => {
         { name: "YOLOv8 Model", icon: FaEye, color: "#00FF00" },
         { name: "RAG Systems", icon: FaBrain, color: "#FF00FF" },
         { name: "CNN Model", icon: FaNetworkWired, color: "#990099" },
+        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
       ],
     },
     {
@@ -72,6 +77,7 @@ const ServicesSection = () => {
         { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
         { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
         { name: "Symfony", icon: SiSymfony, color: "#000000" },
+        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
       ],
     },
     {

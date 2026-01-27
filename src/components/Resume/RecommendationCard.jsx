@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, Linkedin } from "lucide-react";
+import { Download, Linkedin, Eye } from "lucide-react";
 
 const RecommendationCard = ({ name, role, linkedinUrl, pdfLink }) => {
   return (
@@ -21,14 +21,25 @@ const RecommendationCard = ({ name, role, linkedinUrl, pdfLink }) => {
       <h3 className="text-lg font-bold text-white mb-1">{name}</h3>
       <p className="text-primary-pink text-sm mb-6">{role}</p>
 
-      <a
-        href={pdfLink}
-        download
-        className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white border-b border-primary-pink pb-1 hover:border-white transition-all"
-      >
-        <Download size={16} />
-        Download Letter
-      </a>
+      <div className="flex flex-wrap gap-4">
+        <a
+          href={pdfLink}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white border-b border-primary-pink pb-1 hover:border-white transition-all"
+        >
+          <Eye size={16} />
+          View Letter
+        </a>
+        <a
+          href={pdfLink}
+          download
+          className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white border-b border-primary-pink pb-1 hover:border-white transition-all"
+        >
+          <Download size={16} />
+          Download
+        </a>
+      </div>
     </motion.div>
   );
 };

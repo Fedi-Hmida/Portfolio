@@ -218,21 +218,21 @@ const Home = () => {
   const services = [
     {
       title: "Cross-Platform Mobile Apps",
-      desc: "Flutter-powered mobile applications with native performance. Specializing in IoT integration, real-time data processing, and modern UI/UX design patterns.",
+      desc: "Flutter-powered mobile applications with native performance. Leveraging Node.js and Firebase for robust backend solutions, alongside real-time data processing and modern UI/UX design patterns.",
       icon: FaMobileAlt,
-      tags: ["Flutter", "IoT", "Real-time", "UI/UX"],
+      tags: ["Flutter", "Node.js", "Firebase", "Real-time"],
     },
     {
       title: "AI & Computer Vision",
       desc: "YOLO-powered computer vision solutions for damage detection, object recognition, and intelligent automation. Experience with real-world AI implementation in insurance applications.",
       icon: FaRobot,
-      tags: ["YOLO", "OpenCV", "TensorFlow", "Automation"],
+      tags: ["YOLO", "OpenCV", "TensorFlow", "Automation", "MongoDB"],
     },
     {
       title: "Full-Stack Web Development",
       desc: "End-to-end web solutions using React and Next.js for the frontend, coupled with Node.js and NestJS for robust backend architectures. Includes experience with Symfony and JavaFX for enterprise systems.",
       icon: FaCode,
-      tags: ["React", "Next.js", "Node.js", "NestJS"],
+      tags: ["React", "Next.js", "Node.js", "NestJS", "MongoDB"],
     },
     {
       title: "Data Science & ML Solutions",

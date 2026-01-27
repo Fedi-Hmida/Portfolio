@@ -63,17 +63,23 @@ const About = () => {
                 </p>
                 <p>
                   My technical expertise spans{" "}
-                  <strong>cross-platform mobile development (Flutter)</strong>,
-                  Computer vision technology (advanced YOLO), AI/ML frameworks
-                  (TensorFlow, PyTorch, OpenCV), and full-stack solutions. I
-                  focus on creating solutions that bridge business needs and
-                  intelligent automation.
+                  <strong>cross-platform mobile development (Flutter)</strong>,{" "}
+                  <strong>Computer vision technology (advanced YOLO)</strong>,{" "}
+                  <strong>
+                    AI/ML frameworks (TensorFlow, PyTorch, OpenCV)
+                  </strong>
+                  , and <strong>full-stack solutions</strong> (
+                  <strong>NextJS</strong>, <strong>NestJS</strong>,{" "}
+                  <strong>Symfony</strong>). I focus on creating solutions that
+                  bridge business needs and{" "}
+                  <strong>intelligent automation</strong>.
                 </p>
                 <p>
                   What drives me is the intersection of intelligent systems and
-                  human-centered design. I believe discipline shapes success,
-                  and in engineering, that means combining technical precision
-                  with purposeful innovation.
+                  human-centered design. I believe{" "}
+                  <strong>discipline shapes success</strong>, and in
+                  engineering, that means combining technical precision with
+                  purposeful innovation.
                 </p>
               </div>
 

@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import {
+    Brain,
     Code,
     Cpu,
     Database,
+    Layers,
     Server,
     Smartphone,
     Terminal,
@@ -15,6 +17,8 @@ const icons = {
   frontend: Code,
   database: Database,
   devops: Terminal,
+  ml: Brain,
+  fullstack: Layers,
 };
 
 const SkillCard = ({ title, skills, type, index }) => {
@@ -38,12 +42,32 @@ const SkillCard = ({ title, skills, type, index }) => {
         </h3>
       </div>
       <ul className="space-y-2">
-        {skills.map((skill, i) => (
-          <li key={i} className="flex items-center gap-2 text-gray-300 text-sm">
-            <span className="w-1.5 h-1.5 bg-primary-pink rounded-full"></span>
-            {skill}
-          </li>
-        ))}
+        {skills.map((skill, i) => {
+          // Parse "Name (Description)" -> Name: bold, Description: normal
+          const match =
+            typeof skill === "string" ? skill.match(/(.*?)\s*\((.*?)\)/) : null;
+
+          return (
+            <li
+              key={i}
+              className="flex items-start gap-2 text-gray-300 text-sm"
+            >
+              <span className="w-1.5 h-1.5 bg-primary-pink rounded-full flex-shrink-0 mt-1.5"></span>
+              {match ? (
+                <span>
+                  <strong className="text-white font-semibold">
+                    {match[1]}
+                  </strong>
+                  <span className="text-gray-400 opacity-90 ml-1.5 block sm:inline sm:ml-1">
+                    - {match[2]}
+                  </span>
+                </span>
+              ) : (
+                <strong className="text-white font-semibold">{skill}</strong>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </motion.div>
   );

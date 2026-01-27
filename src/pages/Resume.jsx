@@ -17,43 +17,51 @@ const Resume = () => {
       type: "mobile",
       skills: [
         "Flutter",
-        "BLoC",
+        "Bloc/Cubit (State Management)",
+        "Provider (State Management)",
         "Android Studio",
-        "UI/UX",
+        "Figma (UI/UX Design)",
         "REST API Integration",
       ],
     },
     {
-      title: "AI & Machine Learning",
+      title: "Artificial Intelligence",
       type: "ai",
       skills: [
-        "Computer Vision (YOLOv8)",
-        "TensorFlow & PyTorch",
-        "OpenCV",
-        "KNN / Regression",
-        "Random Forest",
+        "LangChain (Framework to build AI Agents)",
+        "RAG Systems (Retrieval-Augmented Generation)",
+        "YOLO (Computer Vision Model)",
+        "CNN (Computer Vision Model)",
+        "PyTorch",
+        "TensorFlow",
       ],
     },
     {
-      title: "Backend Development",
-      type: "backend",
-      skills: ["FastAPI", "Symfony", "NestJS", "RESTful API Design"],
-    },
-    {
-      title: "Frontend Development",
-      type: "frontend",
+      title: "Data Science & ML",
+      type: "ml",
       skills: [
-        "Next.js",
-        "React.js",
-        "Tailwind CSS",
-        "Twig",
-        "Responsive Design",
+        "Pandas",
+        "Scikit-learn",
+        "Random Forest Model",
+        "XGBoost Model",
+        "MLP Model",
+        "Logistic Reg Model",
+        "ML Pipelines",
+        "Docker",
       ],
     },
     {
-      title: "DevOps & Tools",
-      type: "devops",
-      skills: ["Docker", "Git & GitHub", "ML Pipelines"],
+      title: "Full Stack Development",
+      type: "fullstack",
+      skills: [
+        "React.js / Next.js",
+        "Tailwind CSS",
+        "Node.js / NestJS",
+        "Spring Boot",
+        "Symfony",
+        "RESTful API Design",
+        "Docker",
+      ],
     },
     {
       title: "Databases",
@@ -185,14 +193,14 @@ const Resume = () => {
                 <div className="grid grid-cols-1 gap-6">
                   <RecommendationCard
                     name="Houssem Eddine FADHLI"
-                    role="Mobile Dev Supervisor"
-                    linkedinUrl="#"
+                    role="Senior Flutter Developer at ADDINN Group"
+                    linkedinUrl="https://www.linkedin.com/in/houssemeddinefadhli81/"
                     pdfLink="/assets/cv/Recommendation_FediHmida.pdf"
                   />
                   <RecommendationCard
                     name="Nivine ATTOUE"
-                    role="Data Science Supervisor"
-                    linkedinUrl="#"
+                    role="Data Science Doctor in Paris"
+                    linkedinUrl="https://www.linkedin.com/in/nivine-attoue-809659161/"
                     pdfLink="/assets/cv/Fedi_Hmida_Letter%20of%20Recommendation.pdf"
                   />
                 </div>
