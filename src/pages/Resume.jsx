@@ -195,13 +195,13 @@ const Resume = () => {
                     name="Houssem Eddine FADHLI"
                     role="Senior Flutter Developer at ADDINN Group"
                     linkedinUrl="https://www.linkedin.com/in/houssemeddinefadhli81/"
-                    pdfLink="/assets/cv/Recommendation_FediHmida.pdf"
+                    pdfLink="/assets/cv/Fedi_Hmida_Letter%20of%20Recommendation.pdf"
                   />
                   <RecommendationCard
                     name="Nivine ATTOUE"
                     role="Data Science Doctor in Paris"
                     linkedinUrl="https://www.linkedin.com/in/nivine-attoue-809659161/"
-                    pdfLink="/assets/cv/Fedi_Hmida_Letter%20of%20Recommendation.pdf"
+                    pdfLink="/assets/cv/Recommendation_FediHmida.pdf"
                   />
                 </div>
               </section>
