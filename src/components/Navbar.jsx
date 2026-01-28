@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/images/flogo.png";
@@ -35,7 +35,13 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 cursor-pointer">
             <Link to="/">
-              <img src={logo} className="w-16 h-16 object-contain" alt="Logo" />
+              <img
+                src={logo}
+                className="w-16 h-16 object-contain"
+                width="64"
+                height="64"
+                alt="Logo"
+              />
             </Link>
           </div>
 
@@ -82,7 +88,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import {
     FaBolt,
     FaBrain,
@@ -38,7 +38,6 @@ import Footer from "../components/Footer";
 
 import Navbar from "../components/Navbar";
 import NewsCard from "../components/News/NewsCard";
-import ParticlesBackground from "../components/ParticlesBackground";
 import ProjectCard from "../components/Portfolio/ProjectCard"; // Make sure to export this if not already
 
 // Asset Imports
@@ -54,6 +53,10 @@ import smartClaimImg from "../assets/images/Portfolio/New Logo SmartClaim2.png";
 import awsImg from "../assets/images/AI_AWS.jpg";
 import tsypImg from "../assets/images/new12/tsyp1.jpg";
 import iesImg from "../assets/images/new13/ies.jpg";
+
+const ParticlesBackground = lazy(
+  () => import("../components/ParticlesBackground"),
+);
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -349,7 +352,11 @@ const Home = () => {
 
   return (
     <div className="relative min-h-screen bg-deep-indigo text-white font-sans overflow-x-hidden">
-      <ParticlesBackground />
+      <Suspense
+        fallback={<div className="absolute inset-0 bg-deep-indigo -z-10" />}
+      >
+        <ParticlesBackground />
+      </Suspense>
       <Navbar />
 
       {/* --- HERO SECTION --- */}
@@ -449,7 +456,7 @@ const Home = () => {
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
               className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
             >
               {/* Background Glow Pulse */}
@@ -476,8 +483,12 @@ const Home = () => {
                 }}
               >
                 <img
+                  width="500"
+                  height="500"
                   src={heroImg}
                   alt="Fedi Hmida"
+                  fetchPriority="high"
+                  loading="eager"
                   className="w-full max-w-[500px] object-contain drop-shadow-2xl z-10 hover:scale-105 transition-transform duration-500"
                 />
               </motion.div>

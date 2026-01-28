@@ -8,10 +8,10 @@ import {
 } from "react-router-dom";
 import AnimatedPage from "./components/AnimatedPage";
 import ScrollToTop from "./components/ScrollToTop";
+import Home from "./pages/Home";
 
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Home = lazy(() => import("./pages/Home"));
 const NewsAWS = lazy(() => import("./pages/News/NewsAWS"));
 const NewsDataScience = lazy(() => import("./pages/News/NewsDataScience"));
 const NewsEnergyUtopia = lazy(() => import("./pages/News/NewsEnergyUtopia"));
@@ -24,6 +24,7 @@ const NewsInternshipStart = lazy(
   () => import("./pages/News/NewsInternshipStart"),
 );
 const NewsList = lazy(() => import("./pages/News/NewsList"));
+const NewsSmartClaim = lazy(() => import("./pages/News/NewsSmartClaim"));
 const NewsOnboardify = lazy(() => import("./pages/News/NewsOnboardify"));
 const NewsRecognition = lazy(() => import("./pages/News/NewsRecognition"));
 const NewsTSYP = lazy(() => import("./pages/News/NewsTSYP"));
@@ -39,6 +40,7 @@ const SolarFlowDetails = lazy(
   () => import("./pages/Portfolio/SolarFlowDetails"),
 );
 const Resume = lazy(() => import("./pages/Resume"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -143,6 +145,14 @@ const AppRoutes = () => {
             }
           />
           <Route
+            path="/news/1"
+            element={
+              <AnimatedPage>
+                <NewsSmartClaim />
+              </AnimatedPage>
+            }
+          />
+          <Route
             path="/news/7"
             element={
               <AnimatedPage>
@@ -219,6 +229,14 @@ const AppRoutes = () => {
             element={
               <AnimatedPage>
                 <Contact />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <AnimatedPage>
+                <NotFound />
               </AnimatedPage>
             }
           />
