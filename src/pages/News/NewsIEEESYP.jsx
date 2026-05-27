@@ -7,6 +7,7 @@ import {
     FaUsers,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ExpandableImage from "../../components/ExpandableImage";
 import flogo from "../../assets/images/flogo.png";
 import ieeeImg from "../../assets/images/news6/me 2.jpg";
 import Footer from "../../components/Footer";
@@ -68,7 +69,13 @@ const NewsIEEESYP = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div
@@ -91,18 +98,20 @@ const NewsIEEESYP = () => {
                   Congress Experience
                 </span>
                 <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#81d4fa]">
-                  IEEE IES SYP Congress 🌍
+                  IEEE IES SYP Congress
                 </h1>
                 <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
                   Proud to represent IEEE Esprit SB at the IEEE IES SYP Congress
-                  — an incredible experience of networking and learning.
+                  - an incredible experience of networking and learning.
                 </p>
               </motion.div>
 
               <div className="mt-8 rounded-xl overflow-hidden shadow-lg border border-[rgba(79,195,247,0.2)]">
-                <img
+                <ExpandableImage
                   src={ieeeImg}
                   alt="IEEE IES SYP Congress"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                 />
               </div>
@@ -175,7 +184,7 @@ const NewsIEEESYP = () => {
 
               <p className="text-[#e3f2fd]/80 leading-relaxed mb-4">
                 Last week, I had the privilege of participating in the IEEE IES
-                SYP CONGRESS — an incredible experience that greatly contributed
+                SYP CONGRESS - an incredible experience that greatly contributed
                 to my networking, learning, and personal growth.
               </p>
 
@@ -187,7 +196,7 @@ const NewsIEEESYP = () => {
 
               <p className="text-[#e3f2fd]/80 leading-relaxed">
                 I am especially proud to share that our IEEE ESPRIT Student
-                Branch concluded this journey with an Award for Best Poster 🏆,
+                Branch concluded this journey with an Award for Best Poster,
                 competing against student branches from all over the world. A
                 huge thank you to the organizers, fellow participants, and
                 everyone who made this event an unforgettable experience!

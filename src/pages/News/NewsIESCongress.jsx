@@ -7,6 +7,7 @@ import {
     FaUserTie,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ExpandableImage from "../../components/ExpandableImage";
 import flogo from "../../assets/images/flogo.png";
 import iesImg from "../../assets/images/new13/ies.jpg";
 import Footer from "../../components/Footer";
@@ -68,7 +69,13 @@ const NewsIESCongress = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div
@@ -94,8 +101,8 @@ const NewsIESCongress = () => {
                   IEEE IES SYP Congress
                 </h1>
                 <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
-                  🌍 Receiving this certificate is not just about participation,
-                  it’s a reminder of the incredible experiences and connections
+                  Receiving this certificate is not just about participation,
+                  it's a reminder of the incredible experiences and connections
                   that happened along the way.
                 </p>
               </motion.div>
@@ -135,22 +142,24 @@ const NewsIESCongress = () => {
                 creating such a well-structured and impactful event.
               </p>
               <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">
-                I’m also grateful for all the <strong>amazing people</strong> I
+                I'm also grateful for all the <strong>amazing people</strong> I
                 had the chance to meet along the way. These connections are what
                 make experiences like this truly valuable.
               </p>
 
               <div className="my-8 rounded-xl overflow-hidden border border-white/10 shadow-lg">
-                <img
+                <ExpandableImage
                   src={iesImg}
                   alt="IEEE IES SYP Congress"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-cover"
                 />
               </div>
 
               <p className="text-[#e3f2fd] font-semibold text-lg leading-relaxed">
                 Moments like these remind me why global networking and
-                collaboration matter. Looking forward to what comes next. 🚀
+                collaboration matter. Looking forward to what comes next.
               </p>
             </motion.div>
           </div>
@@ -163,9 +172,11 @@ const NewsIESCongress = () => {
               className="p-4 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.6)] backdrop-blur-[16px] shadow-lg"
             >
               <div className="relative overflow-hidden rounded-[20px] group bg-white flex items-center justify-center">
-                <img
+                <ExpandableImage
                   src={iesImg}
                   alt="IES Congress Participation"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain transform transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e]/90 to-transparent flex items-end p-6 pointer-events-none">

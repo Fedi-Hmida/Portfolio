@@ -3,6 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/images/flogo.png";
+import { navLinks } from "../data/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,17 +18,9 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const links = [
-    { name: "Home", href: "/", external: false },
-    { name: "About", href: "/about", external: false },
-    { name: "Portfolio", href: "/portfolio", external: false },
-    { name: "Resume", href: "/resume", external: false },
-    { name: "News", href: "/news", external: false },
-    { name: "Contact", href: "/contact", external: false },
-  ];
-
   return (
     <nav
+      aria-label="Main navigation"
       className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-deep-indigo/90 backdrop-blur-sm shadow-lg" : "bg-transparent"}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +33,8 @@ const Navbar = () => {
                 className="w-16 h-16 object-contain"
                 width="64"
                 height="64"
-                alt="Logo"
+                alt="Fedi Hmida portfolio home"
+                decoding="async"
               />
             </Link>
           </div>
@@ -48,29 +42,19 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <div className="hidden md:flex items-baseline space-x-8">
-              {links.map((link) =>
-                link.external ? (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="text-gray-300 hover:text-primary-pink text-sm font-medium transition-colors duration-300"
-                  >
-                    {link.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    className={`text-sm font-medium transition-colors duration-300 ${
-                      location.pathname === link.href
-                        ? "text-primary-pink"
-                        : "text-gray-300 hover:text-primary-pink"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                ),
-              )}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  className={`text-sm font-medium transition-colors duration-300 ${
+                    location.pathname === link.to
+                      ? "text-primary-pink"
+                      : "text-gray-300 hover:text-primary-pink"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
             </div>
 
             <Link
@@ -86,9 +70,16 @@ const Navbar = () => {
           <div className="-mr-2 flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-pink/60"
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
             >
-              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              {isOpen ? (
+                <FaTimes size={24} aria-hidden="true" />
+              ) : (
+                <FaBars size={24} aria-hidden="true" />
+              )}
             </button>
           </div>
         </div>
@@ -98,37 +89,27 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-darker-indigo/95 backdrop-blur-md"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {links.map((link) =>
-                link.external ? (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-primary-pink hover:bg-white/5"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    className={`block px-3 py-2 rounded-md text-base font-medium hover:bg-white/5 ${
-                      location.pathname === link.href
-                        ? "text-primary-pink"
-                        : "text-white hover:text-primary-pink"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                ),
-              )}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  className={`block px-3 py-2 rounded-md text-base font-medium hover:bg-white/5 ${
+                    location.pathname === link.to
+                      ? "text-primary-pink"
+                      : "text-white hover:text-primary-pink"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
             </div>
           </motion.div>
         )}

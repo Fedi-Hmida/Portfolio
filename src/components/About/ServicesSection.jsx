@@ -53,7 +53,7 @@ const ServicesSection = () => {
     {
       title: "AI & Computer Vision",
       description:
-        "YOLO-powered computer vision solutions for damage detection, object recognition, and intelligent automation. Experience with real-world AI implementation in insurance applications.",
+        "YOLO-powered computer vision solutions for damage detection, object recognition, and intelligent automation. Experience with real-world AI implementation in insurance applications and agentic workflows.",
       icon: FaRobot,
       stack: [
         { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
@@ -63,12 +63,13 @@ const ServicesSection = () => {
         { name: "RAG Systems", icon: FaBrain, color: "#FF00FF" },
         { name: "CNN Model", icon: FaNetworkWired, color: "#990099" },
         { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+        { name: "LangGraph", icon: FaBrain, color: "#FF00FF" },
       ],
     },
     {
       title: "Full-Stack Web Development",
       description:
-        "End-to-end web solutions using React and Next.js for the frontend, coupled with Node.js and NestJS for robust backend architectures. Includes experience with Symfony and JavaFX for enterprise systems.",
+        "End-to-end web solutions using React and Next.js for the frontend, coupled with Node.js and NestJS for robust backend architectures. Includes experience with FastAPI, Three.js 3D dashboards, and enterprise systems.",
       icon: FaCode,
       stack: [
         { name: "React", icon: SiReact, color: "#61DAFB" },
@@ -78,12 +79,14 @@ const ServicesSection = () => {
         { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
         { name: "Symfony", icon: SiSymfony, color: "#000000" },
         { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+        { name: "FastAPI", icon: FaServer, color: "#009485" },
+        { name: "Three.js", icon: FaCode, color: "#ffffff" },
       ],
     },
     {
       title: "Data Science & ML Solutions",
       description:
-        "Machine learning implementations with KNN, Linear Regression, Decision Trees, and K-Means clustering. Data-driven insights for business intelligence and predictive analytics.",
+        "Machine learning implementations with KNN, Linear Regression, Decision Trees, and K-Means clustering. Expertise in Explainable AI (SHAP), model evaluation (CRISP-DM/TDSP), and predictive analytics.",
       icon: FaChartLine,
       stack: [
         { name: "Pandas", icon: SiPandas, color: "#150458" },
@@ -92,6 +95,7 @@ const ServicesSection = () => {
         { name: "XGBoost Model", icon: FaRocket, color: "#00Bfff" },
         { name: "MLP Model", icon: FaNetworkWired, color: "#FF4500" },
         { name: "Logistic Reg Model", icon: FaChartLine, color: "#4B0082" },
+        { name: "SHAP (Explainable AI)", icon: FaEye, color: "#4B0082" },
       ],
     },
   ];

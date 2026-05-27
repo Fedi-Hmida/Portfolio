@@ -12,9 +12,10 @@ const RecommendationCard = ({ name, role, linkedinUrl, pdfLink }) => {
           href={linkedinUrl}
           target="_blank"
           rel="noreferrer"
+          aria-label={`Open ${name} LinkedIn profile`}
           className="text-linkedin-blue hover:text-white transition-colors"
         >
-          <Linkedin size={24} />
+          <Linkedin size={24} aria-hidden="true" />
         </a>
       </div>
 
@@ -28,7 +29,7 @@ const RecommendationCard = ({ name, role, linkedinUrl, pdfLink }) => {
           rel="noreferrer"
           className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white border-b border-primary-pink pb-1 hover:border-white transition-all"
         >
-          <Eye size={16} />
+          <Eye size={16} aria-hidden="true" />
           View Letter
         </a>
         <a
@@ -36,7 +37,7 @@ const RecommendationCard = ({ name, role, linkedinUrl, pdfLink }) => {
           download
           className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white border-b border-primary-pink pb-1 hover:border-white transition-all"
         >
-          <Download size={16} />
+          <Download size={16} aria-hidden="true" />
           Download
         </a>
       </div>

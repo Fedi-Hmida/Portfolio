@@ -1,9 +1,20 @@
 {
-  "short_name": "Contact",
-  "name": "Contact Fedi Hmida",
-  "icons": [],
-  "start_url": ".",
+  "short_name": "Fedi Hmida",
+  "name": "Fedi Hmida - Flutter & AI Portfolio",
+  "description": "Portfolio of Fedi Hmida, focused on Flutter apps, AI, computer vision, and full-stack engineering.",
+  "id": "/",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
+  "categories": ["portfolio", "productivity"],
   "theme_color": "#070640",
   "background_color": "#070640"
 }

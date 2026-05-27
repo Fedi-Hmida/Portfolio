@@ -6,8 +6,6 @@ import {
     FaBrain,
     FaDatabase,
     FaEye,
-    FaFacebookF,
-    FaGithub,
     FaMobileAlt,
     FaPlay,
     FaPython,
@@ -66,37 +64,94 @@ const SmartClaimDetails = () => {
     },
   };
 
+  const caseStudyMetrics = [
+    { label: "Precision", value: "92.9%", detail: "YOLOv8 damage detection" },
+    { label: "Timeline", value: "2 months", detail: "Internship project" },
+    { label: "Stack", value: "Flutter", detail: "Mobile app with FastAPI backend" },
+  ];
+
+  const responsibilities = [
+    "Developed the SmartClaim Flutter mobile application for claim reporting.",
+    "Integrated YOLOv8 for real-time vehicle damage detection.",
+    "Built the FastAPI backend and containerized the solution with Docker.",
+    "Connected the mobile workflow with AI inference and claim data handling.",
+  ];
+
+  const architectureSteps = [
+    {
+      title: "Mobile capture",
+      text: "Flutter guides the user through claim reporting and vehicle damage photo capture.",
+    },
+    {
+      title: "Backend inference",
+      text: "FastAPI receives claim data and routes images through the computer vision pipeline.",
+    },
+    {
+      title: "Computer vision",
+      text: "YOLOv8, OpenCV, and PyTorch support damage detection and image processing.",
+    },
+    {
+      title: "Claim support data",
+      text: "OCR and MongoDB support document/data handling already shown in the project.",
+    },
+  ];
+
+  const tradeoffs = [
+    "Balancing mobile usability with the extra steps needed for accurate image capture.",
+    "Keeping AI inference understandable to non-technical users inside the claim flow.",
+    "Connecting Flutter, FastAPI, Docker, and computer vision parts into one usable product demo.",
+  ];
+
   return (
     <div className="relative min-h-screen bg-[#070640]">
       <ParticlesBackground />
       <Navbar />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative h-[50vh] flex items-center justify-center bg-[#0b0d26] overflow-hidden">
+      <section className="relative flex min-h-[560px] items-center justify-center overflow-hidden bg-[#0b0d26] pt-32 pb-16">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0b0d26]/80 to-[#070640] z-0"></div>
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-gray-400 text-sm md:text-base mb-4 uppercase tracking-widest font-medium">
+            <div className="mb-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-medium uppercase tracking-widest text-gray-400 md:text-sm">
               <Link to="/" className="hover:text-[#fe3e57] transition-colors">
                 Home
               </Link>
-              <span className="mx-2">/</span>
+              <span>/</span>
               <Link
                 to="/portfolio"
                 className="hover:text-[#fe3e57] transition-colors"
               >
                 Project
               </Link>
-              <span className="mx-2">/</span>
+              <span>/</span>
               <span className="text-[#fe3e57]">SmartClaim</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-2">
-              SmartClaim Project
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-2 leading-tight">
+              SmartClaim Case Study
             </h1>
+            <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-gray-300">
+              AI-powered insurance claim assistant built with Flutter, YOLOv8,
+              FastAPI, Docker, and a computer vision pipeline reaching 92.9%
+              damage detection precision.
+            </p>
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <a
+                href="#smartclaim-demo"
+                className="inline-flex items-center justify-center rounded-full bg-[#fe3e57] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#fe3e57]/20 transition-all hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[#fe3e57]/70"
+              >
+                Watch demos
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3 text-sm font-bold text-white transition-all hover:-translate-y-1 hover:border-[#fe3e57] focus:outline-none focus:ring-2 focus:ring-[#fe3e57]/70"
+              >
+                Discuss this work
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -117,6 +172,8 @@ const SmartClaimDetails = () => {
                 <img
                   src={smartClaimImg}
                   alt="SmartClaim Project"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full max-w-[400px] h-auto object-contain rounded-xl shadow-lg"
                 />
               </div>
@@ -136,6 +193,14 @@ const SmartClaimDetails = () => {
                 <ul className="space-y-6">
                   <li className="flex flex-col">
                     <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
+                      My Role
+                    </span>
+                    <span className="text-white font-medium text-lg">
+                      Data & Mobile Developer Intern
+                    </span>
+                  </li>
+                  <li className="flex flex-col">
+                    <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
                       Project Name
                     </span>
                     <span className="text-white font-medium text-lg">
@@ -147,7 +212,7 @@ const SmartClaimDetails = () => {
                       Category
                     </span>
                     <span className="text-white font-medium text-lg">
-                      Mobile App · Computer Vision
+                      Mobile App - Computer Vision
                     </span>
                   </li>
                   <li className="flex flex-col">
@@ -156,7 +221,7 @@ const SmartClaimDetails = () => {
                     </span>
                     <div className="text-white font-medium text-sm space-y-1">
                       <p className="flex items-center gap-2">
-                        <SiFlutter className="text-[#fe3e57]" /> Flutter ·{" "}
+                        <SiFlutter className="text-[#fe3e57]" /> Flutter -{" "}
                         <SiDart className="text-[#fe3e57]" /> Dart
                       </p>
                       <p className="flex items-center gap-2">
@@ -166,10 +231,18 @@ const SmartClaimDetails = () => {
                         <FaBrain className="text-[#fe3e57]" /> YOLO (v8s)
                       </p>
                       <p className="flex items-center gap-2">
-                        <SiOpencv className="text-[#fe3e57]" /> OpenCV ·{" "}
+                        <SiOpencv className="text-[#fe3e57]" /> OpenCV -{" "}
                         <SiPytorch className="text-[#fe3e57]" /> PyTorch
                       </p>
                     </div>
+                  </li>
+                  <li className="flex flex-col">
+                    <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
+                      Main Result
+                    </span>
+                    <span className="text-white font-medium text-lg">
+                      92.9% detection precision
+                    </span>
                   </li>
                   <li className="flex flex-col">
                     <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
@@ -182,20 +255,22 @@ const SmartClaimDetails = () => {
                 </ul>
 
                 <div className="mt-8 pt-6 border-t border-white/10">
-                  <span className="text-gray-400 text-sm uppercase tracking-wider block mb-4">
-                    Share
+                  <span className="mb-4 block text-sm uppercase tracking-wider text-gray-400">
+                    Evaluate
                   </span>
-                  <div className="flex gap-4">
-                    <button className="w-10 h-10 rounded-full bg-[#0b0d26] flex items-center justify-center text-white hover:bg-[#fe3e57] transition-colors duration-300">
-                      <FaFacebookF />
-                    </button>
-                    <a
-                      href="https://github.com/Fedi-Hmida"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="w-10 h-10 rounded-full bg-[#0b0d26] flex items-center justify-center text-white hover:bg-[#fe3e57] transition-colors duration-300"
+                  <div className="flex flex-col gap-3">
+                    <Link
+                      to="/contact"
+                      className="rounded-full bg-[#fe3e57] px-5 py-3 text-center text-sm font-bold text-white transition-all hover:bg-[#ff6b81] focus:outline-none focus:ring-2 focus:ring-[#fe3e57]/70"
                     >
-                      <FaGithub />
+                      Contact me
+                    </Link>
+                    <a
+                      href="/assets/cv/Cv_Ang.pdf"
+                      download
+                      className="rounded-full border border-white/15 px-5 py-3 text-center text-sm font-bold text-white transition-all hover:border-[#fe3e57] hover:text-[#fe3e57] focus:outline-none focus:ring-2 focus:ring-[#fe3e57]/70"
+                    >
+                      Download CV
                     </a>
                   </div>
                 </div>
@@ -203,7 +278,7 @@ const SmartClaimDetails = () => {
             </motion.div>
           </motion.div>
 
-          {/* Detailed Description */}
+          {/* Detailed Case Study */}
           <motion.div
             className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12"
             initial="hidden"
@@ -216,21 +291,38 @@ const SmartClaimDetails = () => {
                 variants={fadeInUp}
                 className="text-3xl font-bold text-white mb-6"
               >
-                Project Overview
+                Project Summary
               </motion.h3>
               <motion.p
                 variants={fadeInUp}
                 className="text-[#d0d0d0] leading-relaxed text-lg mb-8"
               >
-                Smart Claim is an AI-powered mobile application designed to
-                streamline the car insurance claims process. It allows users to
-                take photos of vehicle damage, which are then analyzed using
-                Computer Vision (YOLO & OCR) to estimate repair costs
-                automatically. By leveraging cutting-edge machine learning
-                models, the application significantly reduces the time required
-                for claim processing, providing a seamless experience for both
-                insurance companies and policyholders.
+                SmartClaim is an AI-powered mobile application designed to make
+                car insurance claim reporting faster and more structured. The
+                user captures vehicle damage from the Flutter app, then the
+                backend supports computer vision analysis with YOLOv8, OpenCV,
+                PyTorch, OCR, and claim data handling.
               </motion.p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+                {caseStudyMetrics.map((metric) => (
+                  <motion.div
+                    key={metric.label}
+                    variants={fadeInUp}
+                    className="rounded-xl border border-white/10 bg-white/5 p-5"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                      {metric.label}
+                    </p>
+                    <p className="mt-2 text-3xl font-bold text-white">
+                      {metric.value}
+                    </p>
+                    <p className="mt-2 text-sm text-gray-300">
+                      {metric.detail}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <motion.div
@@ -243,9 +335,8 @@ const SmartClaimDetails = () => {
                   <p className="text-[#d0d0d0]">
                     Traditional car insurance claims are slow, manual, and
                     error-prone. Users often face long wait times for adjusters
-                    to inspect vehicles, leading to frustration and delayed
-                    payouts. Insurance companies struggle with high operational
-                    costs and inconsistent damage assessments.
+                    to inspect vehicles, while teams need more consistent
+                    damage information before a claim can move forward.
                   </p>
                 </motion.div>
                 <motion.div
@@ -256,14 +347,64 @@ const SmartClaimDetails = () => {
                     The Solution
                   </h4>
                   <p className="text-[#d0d0d0]">
-                    We developed an automated solution where users simply snap
-                    photos of the damage. Our AI engine instantly analyzes the
-                    images to detect damage types and severity, extracts
-                    relevant data from documents using OCR, and generates an
-                    accurate repair cost estimate in real-time.
+                    SmartClaim creates a guided mobile claim flow and connects
+                    it with AI-assisted damage detection. The project turns
+                    images and claim information into a clearer digital process
+                    for review.
                   </p>
                 </motion.div>
               </div>
+
+              <motion.div variants={fadeInUp} className="mb-12">
+                <h3 className="text-2xl font-bold text-white mb-5">My Role</h3>
+                <div className="grid grid-cols-1 gap-3">
+                  {responsibilities.map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-gray-200"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeInUp} className="mb-12">
+                <h3 className="text-2xl font-bold text-white mb-5">
+                  Architecture / Technical Approach
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {architectureSteps.map((step, index) => (
+                    <div
+                      key={step.title}
+                      className="rounded-xl border border-white/10 bg-[#0b0d26] p-6"
+                    >
+                      <span className="text-sm font-bold text-[#fe3e57]">
+                        0{index + 1}
+                      </span>
+                      <h4 className="mt-3 text-lg font-bold text-white">
+                        {step.title}
+                      </h4>
+                      <p className="mt-2 text-sm leading-6 text-gray-300">
+                        {step.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeInUp} className="mb-12">
+                <h3 className="text-2xl font-bold text-white mb-5">
+                  AI Model and Computer Vision Pipeline
+                </h3>
+                <p className="text-[#d0d0d0] leading-relaxed">
+                  The project uses YOLOv8 for vehicle damage detection, with
+                  OpenCV and PyTorch supporting the image-processing and model
+                  workflow. The portfolio and resume confirm a 92.9% precision
+                  result for real-time damage detection. OCR is also part of the
+                  project flow for extracting relevant document data.
+                </p>
+              </motion.div>
 
               <motion.div variants={fadeInUp}>
                 <h3 className="text-2xl font-bold text-white mb-6">
@@ -302,12 +443,46 @@ const SmartClaimDetails = () => {
                 </div>
               </motion.div>
             </div>
+
+            <aside className="lg:col-span-4 space-y-6">
+              <motion.div
+                variants={fadeInUp}
+                className="rounded-2xl border border-white/10 bg-white/5 p-6"
+              >
+                <h3 className="text-xl font-bold text-white mb-4">
+                  Challenges and Tradeoffs
+                </h3>
+                <ul className="space-y-3 text-sm leading-6 text-gray-300">
+                  {tradeoffs.map((item) => (
+                    <li key={item} className="border-l-2 border-[#fe3e57] pl-4">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              <motion.div
+                variants={fadeInUp}
+                className="rounded-2xl border border-white/10 bg-[#0b0d26] p-6"
+              >
+                <h3 className="text-xl font-bold text-white mb-4">
+                  What I Learned
+                </h3>
+                <p className="text-sm leading-6 text-gray-300">
+                  SmartClaim strengthened my ability to connect mobile product
+                  UX, backend APIs, Docker-based delivery, and computer vision
+                  inference into one coherent demo. It also clarified how much
+                  recruiter-facing engineering work depends on explaining the
+                  problem, role, architecture, and result clearly.
+                </p>
+              </motion.div>
+            </aside>
           </motion.div>
 
           {/* Video Section */}
-          <div className="mt-20">
+          <div id="smartclaim-demo" className="mt-20 scroll-mt-28">
             <h3 className="text-3xl font-bold text-white mb-10 text-center">
-              Key Features in Action
+              Demo Videos
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Video 1 */}
@@ -322,12 +497,13 @@ const SmartClaimDetails = () => {
                   Mobile App Workflow (User)
                 </h4>
                 <div
-                  className="relative rounded-xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer aspect-video"
-                  onClick={() => handlePlay("demo", demoVideoRef)}
+                  className="relative rounded-xl overflow-hidden shadow-lg border border-white/10 group aspect-video"
                 >
                   <video
                     ref={demoVideoRef}
                     src={demoVideo}
+                    poster={smartClaimImg}
+                    preload="metadata"
                     className="w-full h-full object-cover"
                     onEnded={() => setPlayingVideo(null)}
                     onPause={() =>
@@ -337,11 +513,19 @@ const SmartClaimDetails = () => {
                     playsInline
                   />
                   {playingVideo !== "demo" && (
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 group-hover:bg-black/20">
-                      <div className="w-16 h-16 bg-[#fe3e57] rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                        <FaPlay className="text-white text-xl ml-1" />
-                      </div>
-                    </div>
+                    <button
+                      type="button"
+                      aria-label="Play SmartClaim mobile app workflow demo"
+                      onClick={() => handlePlay("demo", demoVideoRef)}
+                      className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 hover:bg-black/20 focus:outline-none focus:ring-2 focus:ring-[#fe3e57]/70 focus:ring-inset"
+                    >
+                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#fe3e57] shadow-lg transition-transform duration-300 group-hover:scale-110">
+                        <FaPlay
+                          className="ml-1 text-xl text-white"
+                          aria-hidden="true"
+                        />
+                      </span>
+                    </button>
                   )}
                 </div>
               </motion.div>
@@ -359,12 +543,13 @@ const SmartClaimDetails = () => {
                   Damage Detection (AI)
                 </h4>
                 <div
-                  className="relative rounded-xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer aspect-video"
-                  onClick={() => handlePlay("data", dataVideoRef)}
+                  className="relative rounded-xl overflow-hidden shadow-lg border border-white/10 group aspect-video"
                 >
                   <video
                     ref={dataVideoRef}
                     src={dataVideo}
+                    poster={smartClaimImg}
+                    preload="metadata"
                     className="w-full h-full object-cover"
                     onEnded={() => setPlayingVideo(null)}
                     onPause={() =>
@@ -374,11 +559,19 @@ const SmartClaimDetails = () => {
                     playsInline
                   />
                   {playingVideo !== "data" && (
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 group-hover:bg-black/20">
-                      <div className="w-16 h-16 bg-[#fe3e57] rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                        <FaPlay className="text-white text-xl ml-1" />
-                      </div>
-                    </div>
+                    <button
+                      type="button"
+                      aria-label="Play SmartClaim damage detection AI demo"
+                      onClick={() => handlePlay("data", dataVideoRef)}
+                      className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 hover:bg-black/20 focus:outline-none focus:ring-2 focus:ring-[#fe3e57]/70 focus:ring-inset"
+                    >
+                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#fe3e57] shadow-lg transition-transform duration-300 group-hover:scale-110">
+                        <FaPlay
+                          className="ml-1 text-xl text-white"
+                          aria-hidden="true"
+                        />
+                      </span>
+                    </button>
                   )}
                 </div>
               </motion.div>
@@ -387,7 +580,7 @@ const SmartClaimDetails = () => {
 
           {/* Navigation */}
           <motion.div
-            className="mt-24 pt-10 border-t border-white/10 flex flex-col md:flex-row justification-between items-center gap-6"
+            className="mt-24 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

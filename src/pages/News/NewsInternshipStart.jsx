@@ -8,6 +8,7 @@ import {
     FaUsers,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ExpandableImage from "../../components/ExpandableImage";
 import addinnImg from "../../assets/images/addinn/ADDINN.png";
 import flogo from "../../assets/images/flogo.png";
 import Footer from "../../components/Footer";
@@ -69,7 +70,13 @@ const NewsInternshipStart = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div
@@ -95,15 +102,17 @@ const NewsInternshipStart = () => {
                   ADDINN Internship
                 </h1>
                 <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
-                  I’m excited to share that I’ve started a 2-month internship at
-                  ADDINN Group as a Software Engineering student 🚀
+                  I'm excited to share that I've started a 2-month internship at
+                  ADDINN Group as a Software Engineering student
                 </p>
               </motion.div>
 
               <div className="mt-8 rounded-xl overflow-hidden shadow-lg border border-[rgba(79,195,247,0.2)]">
-                <img
+                <ExpandableImage
                   src={addinnImg}
                   alt="ADDINN Internship"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                 />
               </div>
@@ -175,15 +184,15 @@ const NewsInternshipStart = () => {
               </h2>
 
               <p className="text-[#e3f2fd]/80 leading-relaxed mb-4">
-                I’m eager to deepen my knowledge in the Data field 📊 and
-                strengthen my Flutter development skills 👨‍💻 by working on real
+                I'm eager to deepen my knowledge in the Data field and
+                strengthen my Flutter development skills by working on real
                 projects and learning from experienced professionals.
               </p>
 
               <p className="text-[#e3f2fd]/80 leading-relaxed mb-4">
                 Grateful for this opportunity to learn, grow, and contribute
                 alongside an inspiring team. Looking forward to making the most
-                out of this experience. 🙌
+                out of this experience.
               </p>
             </motion.div>
           </div>

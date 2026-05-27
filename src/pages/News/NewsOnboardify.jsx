@@ -69,7 +69,13 @@ const NewsOnboardify = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div

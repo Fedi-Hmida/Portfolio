@@ -53,6 +53,9 @@ const AboutHero = () => {
           key={index}
           src={shape.src}
           alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className={`absolute ${shape.className} opacity-60 hidden md:block`}
           animate={{
             y: [0, -20, 0],

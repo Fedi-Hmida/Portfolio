@@ -1,68 +1,14 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import proLinkImg from "../../assets/images/FlutterFlow.png";
-import smartClaimImg from "../../assets/images/Portfolio/New Logo SmartClaim.png";
-import onboardifyImg from "../../assets/images/logo3.png";
-import solarFlowImg from "../../assets/images/logo_1555.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import ProjectCard from "../../components/Portfolio/ProjectCard";
 import SectionTitle from "../../components/SectionTitle";
+import { projectCategories, projects } from "../../data/projects";
 
 const Portfolio = () => {
   const [filter, setFilter] = useState("all");
-
-  const projects = [
-    {
-      id: 1,
-      title: "SmartClaim",
-      category: ["ia", "mobile"],
-      tech: ["Flutter", "AI", "YOLO"],
-      description:
-        "Cross-platform Flutter app for intelligent insurance claim management with real-time AI car damage detection.",
-      image: smartClaimImg,
-      link: "/portfolio/smart-claim",
-    },
-    {
-      id: 2,
-      title: "SolarFlow App",
-      category: ["mobile"],
-      tech: ["Flutter", "IoT", "Energy"],
-      description:
-        "Comprehensive Flutter mobile application for real-time solar energy management and consumption monitoring.",
-      image: solarFlowImg,
-      link: "/portfolio/solar-flow",
-    },
-    {
-      id: 3,
-      title: "Onboardify",
-      category: ["web"],
-      tech: ["JavaFX", "Symfony", "HR Tech"],
-      description:
-        "Gamified onboarding platform built with JavaFX & Symfony to enhance employee engagement and retention.",
-      image: onboardifyImg,
-      link: "/portfolio/onboardify",
-    },
-    {
-      id: 4,
-      title: "Pro-Link",
-      category: ["mobile"],
-      tech: ["Flutter", "Networking"],
-      description:
-        "Professional networking mobile application built with Flutter to connect professionals and facilitate collaboration.",
-      image: proLinkImg,
-
-      link: "/portfolio/pro-link",
-    },
-  ];
-
-  const categories = [
-    { id: "all", label: "All Projects" },
-    { id: "ia", label: "IA" },
-    { id: "mobile", label: "Mobile Apps" },
-    { id: "web", label: "Web Apps" },
-  ];
 
   const filteredProjects =
     filter === "all"
@@ -79,14 +25,15 @@ const Portfolio = () => {
         <div className="text-center mb-16 px-4">
           <SectionTitle title="My Projects" />
           <p className="text-gray-300 max-w-2xl mx-auto mt-4">
-            Explore a collection of my recent work, showcasing expertise in
-            mobile development, AI integration, and full-stack web solutions.
+            Recruiter-focused case studies showing my role, technical approach,
+            and the proof behind each project, from Flutter mobile apps to AI
+            and full-stack systems.
           </p>
         </div>
 
         {/* Filter Bar */}
         <div className="flex flex-wrap justify-center gap-4 mb-16">
-          {categories.map((cat) => (
+          {projectCategories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setFilter(cat.id)}

@@ -10,15 +10,29 @@ const ContactHero = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-            Contact{" "}
+            Let's Work{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-pink to-secondary-pink">
-              Me
+              Together
             </span>
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-pink to-secondary-pink mx-auto rounded-full"></div>
-          <p className="mt-4 text-xl text-gray-300">
-            I'd love to hear from you.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-300 md:text-xl">
+            Open to junior Flutter/mobile roles, AI engineering internships,
+            and product-focused collaborations where mobile apps, computer
+            vision, and backend APIs meet.
           </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            {["Recruiter inquiries", "Internships", "Flutter projects", "AI products"].map(
+              (item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-gray-200"
+                >
+                  {item}
+                </span>
+              ),
+            )}
+          </div>
         </motion.div>
       </div>
     </section>

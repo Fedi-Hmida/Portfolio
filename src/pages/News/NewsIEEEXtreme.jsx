@@ -5,6 +5,7 @@ import {
     FaUsers
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ExpandableImage from "../../components/ExpandableImage";
 import certifImg from "../../assets/images/certif.png";
 import flogo from "../../assets/images/flogo.png";
 import Footer from "../../components/Footer";
@@ -55,7 +56,13 @@ const NewsIEEEXtreme = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div
@@ -131,9 +138,11 @@ const NewsIEEEXtreme = () => {
 
               {/* Image */}
               <div className="rounded-[24px] overflow-hidden border border-[rgba(79,195,247,0.2)] shadow-lg">
-                <img
+                <ExpandableImage
                   src={certifImg}
                   alt="IEEEXtreme Certificate"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                 />
                 <div className="p-4 bg-[rgba(26,35,126,0.8)] backdrop-blur-md">

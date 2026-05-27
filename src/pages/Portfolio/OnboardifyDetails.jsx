@@ -110,37 +110,94 @@ const OnboardifyDetails = () => {
     },
   ];
 
+  const caseStudyMetrics = [
+    { label: "Platform", value: "Hybrid", detail: "JavaFX desktop + Symfony web" },
+    { label: "Domain", value: "HR Tech", detail: "Employee onboarding workflow" },
+    { label: "Duration", value: "4 months", detail: "Project timeline" },
+  ];
+
+  const responsibilities = [
+    "Contributed to the JavaFX and Symfony onboarding platform experience.",
+    "Implemented workflows for resources, project assignment, quizzes, reports, and well-being programs.",
+    "Supported HR visibility through structured onboarding features.",
+    "Prepared demo flows showing key employee and HR interactions.",
+  ];
+
+  const approachSteps = [
+    {
+      title: "Desktop experience",
+      text: "JavaFX supports secure internal onboarding workflows and employee-facing actions.",
+    },
+    {
+      title: "Web platform",
+      text: "Symfony, PHP, MySQL, HTML, CSS, and JavaScript support the web-side platform.",
+    },
+    {
+      title: "Training flow",
+      text: "Resources, quizzes, and assigned projects guide employees through onboarding.",
+    },
+    {
+      title: "Feedback loop",
+      text: "Posts, reclamations, and well-being programs support communication and follow-up.",
+    },
+  ];
+
+  const tradeoffs = [
+    "Coordinating a hybrid desktop and web product experience.",
+    "Keeping onboarding structured while still making it engaging for new hires.",
+    "Balancing HR visibility with employee-facing simplicity.",
+  ];
+
   return (
     <div className="relative min-h-screen bg-[#070640]">
       <ParticlesBackground />
       <Navbar />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative h-[40vh] flex items-center justify-center bg-[#0b0d26] overflow-hidden">
+      <section className="relative flex min-h-[560px] items-center justify-center overflow-hidden bg-[#0b0d26] pt-32 pb-16">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0b0d26]/80 to-[#070640] z-0"></div>
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-gray-400 text-sm md:text-base mb-4 uppercase tracking-widest font-medium">
+            <div className="mb-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-medium uppercase tracking-widest text-gray-400 md:text-sm">
               <Link to="/" className="hover:text-[#5199e6] transition-colors">
                 Home
               </Link>
-              <span className="mx-2">/</span>
+              <span>/</span>
               <Link
                 to="/portfolio"
                 className="hover:text-[#5199e6] transition-colors"
               >
                 Project
               </Link>
-              <span className="mx-2">/</span>
+              <span>/</span>
               <span className="text-[#5199e6]">Onboardify</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-2">
-              Onboardify Project
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-2 leading-tight">
+              Onboardify Case Study
             </h1>
+            <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-gray-300">
+              Hybrid JavaFX and Symfony HR platform for structured, engaging
+              employee onboarding with resources, quizzes, reporting, and
+              well-being support.
+            </p>
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <a
+                href="#onboardify-demo"
+                className="inline-flex items-center justify-center rounded-full bg-[#5199e6] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#5199e6]/20 transition-all hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[#5199e6]/70"
+              >
+                Watch demos
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3 text-sm font-bold text-white transition-all hover:-translate-y-1 hover:border-[#5199e6] focus:outline-none focus:ring-2 focus:ring-[#5199e6]/70"
+              >
+                Discuss this work
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -161,6 +218,8 @@ const OnboardifyDetails = () => {
                 <img
                   src={onboardifyLogo}
                   alt="Onboardify Logo"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full max-w-[300px] md:w-[400px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -180,6 +239,14 @@ const OnboardifyDetails = () => {
                 <ul className="space-y-6">
                   <li className="flex flex-col">
                     <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
+                      My Role
+                    </span>
+                    <span className="text-white font-medium text-lg">
+                      Full-stack contributor
+                    </span>
+                  </li>
+                  <li className="flex flex-col">
+                    <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
                       Project Name
                     </span>
                     <span className="text-white font-medium text-lg">
@@ -191,7 +258,7 @@ const OnboardifyDetails = () => {
                       Category
                     </span>
                     <span className="text-white font-medium text-lg">
-                      JavaFX & Symfony · HR Tech
+                      JavaFX & Symfony - HR Tech
                     </span>
                   </li>
                   <li className="flex flex-col">
@@ -200,21 +267,29 @@ const OnboardifyDetails = () => {
                     </span>
                     <div className="text-white font-medium text-sm space-y-1">
                       <p className="flex items-center gap-2">
-                        <SiSymfony className="text-[#5199e6]" /> Symfony ·{" "}
+                        <SiSymfony className="text-[#5199e6]" /> Symfony -{" "}
                         <SiPhp className="text-[#5199e6]" /> PHP
                       </p>
                       <p className="flex items-center gap-2">
                         <SiMysql className="text-[#5199e6]" /> MySQL
                       </p>
                       <p className="flex items-center gap-2">
-                        <SiHtml5 className="text-[#5199e6]" /> HTML ·{" "}
-                        <SiCss3 className="text-[#5199e6]" /> CSS ·{" "}
+                        <SiHtml5 className="text-[#5199e6]" /> HTML -{" "}
+                        <SiCss3 className="text-[#5199e6]" /> CSS -{" "}
                         <SiJavascript className="text-[#5199e6]" /> JS
                       </p>
                       <p className="flex items-center gap-2">
                         <FaJava className="text-[#5199e6]" /> JavaFX
                       </p>
                     </div>
+                  </li>
+                  <li className="flex flex-col">
+                    <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
+                      Main Focus
+                    </span>
+                    <span className="text-white font-medium text-lg">
+                      Gamified onboarding flow
+                    </span>
                   </li>
                   <li className="flex flex-col">
                     <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
@@ -238,20 +313,20 @@ const OnboardifyDetails = () => {
             </motion.div>
           </motion.div>
 
-          {/* Project Overview */}
+          {/* Case Study */}
           <motion.div
-            className="mt-20"
+            className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
           >
-            <div className="max-w-4xl mx-auto">
+            <div className="lg:col-span-8">
               <motion.h3
                 variants={fadeInUp}
                 className="text-3xl font-bold text-white mb-6 border-l-4 border-[#5199e6] pl-4"
               >
-                Project Overview
+                Project Summary
               </motion.h3>
               <motion.div
                 variants={fadeInUp}
@@ -264,9 +339,49 @@ const OnboardifyDetails = () => {
                   structured, engaging, and interactive onboarding experience.
                   The platform aims to enhance new hire integration through
                   resource management, interactive modules, and employee
-                  well-being support — while ensuring real-time visibility for
+                  well-being support - while ensuring real-time visibility for
                   HR and managers.
                 </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-10">
+                  {caseStudyMetrics.map((metric) => (
+                    <div
+                      key={metric.label}
+                      className="rounded-xl border border-white/10 bg-white/5 p-5"
+                    >
+                      <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                        {metric.label}
+                      </p>
+                      <p className="mt-2 text-2xl font-bold text-white">
+                        {metric.value}
+                      </p>
+                      <p className="mt-2 text-sm text-gray-300">
+                        {metric.detail}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                  <div className="bg-[#0b0d26] p-6 rounded-lg border-l-4 border-[#5199e6]">
+                    <h4 className="text-white font-semibold mb-2">
+                      The Problem
+                    </h4>
+                    <p className="text-sm">
+                      New employee onboarding can become scattered across
+                      documents, training, projects, feedback, and HR tracking.
+                    </p>
+                  </div>
+                  <div className="bg-[#0b0d26] p-6 rounded-lg border-l-4 border-blue-300">
+                    <h4 className="text-white font-semibold mb-2">
+                      The Solution
+                    </h4>
+                    <p className="text-sm">
+                      Onboardify centralizes onboarding resources, quizzes,
+                      assignments, posts, reclamations, and well-being support.
+                    </p>
+                  </div>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
                   <div className="bg-[#0b0d26] p-6 rounded-lg border border-white/5 hover:border-[#5199e6]/30 transition-colors">
@@ -312,17 +427,87 @@ const OnboardifyDetails = () => {
                 </div>
 
                 <p className="font-mono text-sm text-[#5199e6] mt-4">
-                  Tech Stack: JavaFX · Symfony · PHP · MySQL · HTML/CSS ·
+                  Tech Stack: JavaFX - Symfony - PHP - MySQL - HTML/CSS -
                   JavaScript
                 </p>
               </motion.div>
+
+              <motion.div variants={fadeInUp} className="mt-12">
+                <h3 className="text-2xl font-bold text-white mb-5">My Role</h3>
+                <div className="grid grid-cols-1 gap-3">
+                  {responsibilities.map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-gray-200"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeInUp} className="mt-12">
+                <h3 className="text-2xl font-bold text-white mb-5">
+                  Architecture / Technical Approach
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {approachSteps.map((step, index) => (
+                    <div
+                      key={step.title}
+                      className="rounded-xl border border-white/10 bg-[#0b0d26] p-6"
+                    >
+                      <span className="text-sm font-bold text-[#5199e6]">
+                        0{index + 1}
+                      </span>
+                      <h4 className="mt-3 text-lg font-bold text-white">
+                        {step.title}
+                      </h4>
+                      <p className="mt-2 text-sm leading-6 text-gray-300">
+                        {step.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
+
+            <aside className="lg:col-span-4 space-y-6">
+              <motion.div
+                variants={fadeInUp}
+                className="rounded-2xl border border-white/10 bg-white/5 p-6"
+              >
+                <h3 className="text-xl font-bold text-white mb-4">
+                  Challenges and Tradeoffs
+                </h3>
+                <ul className="space-y-3 text-sm leading-6 text-gray-300">
+                  {tradeoffs.map((item) => (
+                    <li key={item} className="border-l-2 border-[#5199e6] pl-4">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              <motion.div
+                variants={fadeInUp}
+                className="rounded-2xl border border-white/10 bg-[#0b0d26] p-6"
+              >
+                <h3 className="text-xl font-bold text-white mb-4">
+                  What I Learned
+                </h3>
+                <p className="text-sm leading-6 text-gray-300">
+                  Onboardify strengthened my experience with hybrid application
+                  thinking, HR workflow modeling, and building features that
+                  connect training, communication, and progress tracking.
+                </p>
+              </motion.div>
+            </aside>
           </motion.div>
 
           {/* Key Features / Videos */}
-          <div className="mt-24">
+          <div id="onboardify-demo" className="mt-24 scroll-mt-28">
             <h3 className="text-3xl font-bold text-white mb-12 text-center">
-              Key Features in Action
+              Demo Videos
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {features.map((feature, index) => (
@@ -343,25 +528,35 @@ const OnboardifyDetails = () => {
                   </div>
 
                   <div
-                    className="relative rounded-xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer w-full aspect-video mb-4"
-                    onClick={() => handlePlay(feature.id)}
+                    className="relative rounded-xl overflow-hidden shadow-lg border border-white/10 group w-full aspect-video mb-4"
                   >
                     <video
                       ref={(el) => (videoRefs.current[feature.id] = el)}
                       src={feature.video}
+                      poster={onboardifyLogo}
+                      preload="metadata"
                       className="w-full h-full object-cover"
                       onEnded={() => setPlayingVideo(null)}
                       onPause={() =>
                         playingVideo === feature.id && setPlayingVideo(null)
                       }
+                      controls={playingVideo === feature.id}
                       playsInline
                     />
                     {playingVideo !== feature.id && (
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 group-hover:bg-black/20">
-                        <div className="w-16 h-16 bg-[#5199e6] rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                          <FaPlay className="text-white text-xl ml-1" />
-                        </div>
-                      </div>
+                      <button
+                        type="button"
+                        aria-label={`Play Onboardify ${feature.title} demo`}
+                        onClick={() => handlePlay(feature.id)}
+                        className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 hover:bg-black/20 focus:outline-none focus:ring-2 focus:ring-[#5199e6]/70 focus:ring-inset"
+                      >
+                        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#5199e6] shadow-lg transition-transform duration-300 group-hover:scale-110">
+                          <FaPlay
+                            className="ml-1 text-xl text-white"
+                            aria-hidden="true"
+                          />
+                        </span>
+                      </button>
                     )}
                   </div>
 
@@ -373,7 +568,7 @@ const OnboardifyDetails = () => {
 
           {/* Navigation */}
           <motion.div
-            className="mt-24 pt-10 border-t border-white/10 flex flex-col md:flex-row justification-between items-center gap-6"
+            className="mt-24 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

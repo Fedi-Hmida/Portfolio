@@ -7,6 +7,7 @@ import {
     FaUserTie,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ExpandableImage from "../../components/ExpandableImage";
 import flogo from "../../assets/images/flogo.png";
 import tsyp1 from "../../assets/images/new12/tsyp1.jpg";
 import tsyp2 from "../../assets/images/new12/tsyp2.jpg";
@@ -69,7 +70,13 @@ const NewsEnergyUtopia = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div
@@ -95,7 +102,7 @@ const NewsEnergyUtopia = () => {
                   1st Place at Energy Utopia Challenge
                 </h1>
                 <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
-                  🏆 Proud Achievement: Our team had the honor of winning 1st
+                  Proud Achievement: Our team had the honor of winning 1st
                   Place at the Energy Utopia Challenge: AI for a Smarter,
                   Greener Future.
                 </p>
@@ -113,7 +120,7 @@ const NewsEnergyUtopia = () => {
               <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">
                 Proudly representing the{" "}
                 <strong>IEEE ESPRIT Student Branch</strong>, this achievement
-                reflects our team’s commitment to innovation, sustainability,
+                reflects our team's commitment to innovation, sustainability,
                 and the impactful use of AI in energy systems.
               </p>
               <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">
@@ -121,16 +128,18 @@ const NewsEnergyUtopia = () => {
                 environment provided by IEEE PES Tunisia Section, IEEE Young
                 Professionals Tunisia, and SPECTRA, during the{" "}
                 <strong>
-                  IEEE Tunisian Student and Young Professional TSYP Congress –
+                  IEEE Tunisian Student and Young Professional TSYP Congress -
                   December 2025
                 </strong>
                 .
               </p>
 
               <div className="my-8 rounded-xl overflow-hidden border border-white/10 shadow-lg">
-                <img
+                <ExpandableImage
                   src={tsyp2}
                   alt="Team at TSYP Congress"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-cover"
                 />
                 <p className="p-3 bg-black/20 text-sm text-center text-gray-300">
@@ -139,7 +148,7 @@ const NewsEnergyUtopia = () => {
               </div>
 
               <p className="text-[#e3f2fd] font-semibold text-lg leading-relaxed">
-                Onward to more innovation and impact! 🚀
+                Onward to more innovation and impact!
               </p>
             </motion.div>
           </div>
@@ -152,9 +161,11 @@ const NewsEnergyUtopia = () => {
               className="p-4 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.6)] backdrop-blur-[16px] shadow-lg"
             >
               <div className="relative overflow-hidden rounded-[20px] group bg-white flex items-center justify-center">
-                <img
+                <ExpandableImage
                   src={tsyp1}
                   alt="TSYP Award"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain transform transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e]/90 to-transparent flex items-end p-6 pointer-events-none">

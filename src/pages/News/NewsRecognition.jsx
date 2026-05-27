@@ -8,6 +8,7 @@ import {
     FaUserTie,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ExpandableImage from "../../components/ExpandableImage";
 import flogo from "../../assets/images/flogo.png";
 import houImg from "../../assets/images/new8/Hou.png";
 import Footer from "../../components/Footer";
@@ -69,7 +70,13 @@ const NewsRecognition = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div
@@ -102,9 +109,11 @@ const NewsRecognition = () => {
               </motion.div>
 
               <div className="mt-8 rounded-xl overflow-hidden shadow-lg border border-[rgba(79,195,247,0.2)]">
-                <img
+                <ExpandableImage
                   src={houImg}
                   alt="Recommendation Letter"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                 />
               </div>

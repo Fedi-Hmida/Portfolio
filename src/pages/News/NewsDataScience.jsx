@@ -8,6 +8,7 @@ import {
     FaUserTie,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ExpandableImage from "../../components/ExpandableImage";
 import flogo from "../../assets/images/flogo.png";
 import nivineImg from "../../assets/images/new9/nivine.png";
 import Footer from "../../components/Footer";
@@ -69,7 +70,13 @@ const NewsDataScience = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div
@@ -101,9 +108,11 @@ const NewsDataScience = () => {
               </motion.div>
 
               <div className="mt-8 rounded-xl overflow-hidden shadow-lg border border-[rgba(79,195,247,0.2)]">
-                <img
+                <ExpandableImage
                   src={nivineImg}
                   alt="Recommendation Letter"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                 />
               </div>

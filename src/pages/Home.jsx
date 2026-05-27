@@ -1,37 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { lazy, Suspense, useEffect, useState } from "react";
-import {
-    FaBolt,
-    FaBrain,
-    FaChartLine,
-    FaCode,
-    FaColumns,
-    FaComments,
-    FaFacebookF,
-    FaGithub,
-    FaLayerGroup,
-    FaLightbulb,
-    FaLinkedinIn,
-    FaMobileAlt,
-    FaRobot,
-    FaSitemap,
-    FaSyncAlt,
-    FaTasks,
-    FaUsers,
-} from "react-icons/fa";
-import {
-    SiDocker,
-    SiFastapi,
-    SiFlutter,
-    SiGit,
-    SiNestjs,
-    SiNextdotjs,
-    SiNodedotjs,
-    SiOpencv,
-    SiPytorch,
-    SiReact,
-    SiTensorflow,
-} from "react-icons/si";
+import { lazy, Suspense, useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/social-icons.css";
 import Footer from "../components/Footer";
@@ -39,20 +7,19 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import NewsCard from "../components/News/NewsCard";
 import ProjectCard from "../components/Portfolio/ProjectCard"; // Make sure to export this if not already
+import SocialIconLink from "../components/SocialIconLink";
+import { latestNewsPreview } from "../data/news";
+import { getProjectCards } from "../data/projects";
+import {
+  hardSkills,
+  methodologies,
+  services,
+  softSkills,
+} from "../data/skills";
+import { socialLinks } from "../data/socialLinks";
 
 // Asset Imports
 import heroImg from "../assets/images/slider/Fedi2.0.png";
-
-// Portfolio Preview Assets
-import proLinkImg from "../assets/images/FlutterFlow2.png";
-import onboardifyImg from "../assets/images/logo31.png";
-import solarFlowImg from "../assets/images/logo_15553.png";
-import smartClaimImg from "../assets/images/Portfolio/New Logo SmartClaim2.png";
-
-// News Preview Assets
-import awsImg from "../assets/images/AI_AWS.jpg";
-import tsypImg from "../assets/images/new12/tsyp1.jpg";
-import iesImg from "../assets/images/new13/ies.jpg";
 
 const ParticlesBackground = lazy(
   () => import("../components/ParticlesBackground"),
@@ -68,287 +35,18 @@ const containerVariants = {
   },
 };
 
-const roles = [
-  "Junior Flutter Developer",
-  "Data Science & AI Engineering Student",
-];
-
 const Home = () => {
   const [activeTab, setActiveTab] = useState("services"); // Default tab changed from "soft skills" to "hard skills"
 
-  const [roleIndex, setRoleIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // --- Data for Tabs ---
-  const softSkills = [
-    {
-      title: "Communication",
-      desc: "Effective verbal and written communication skills",
-      icon: FaComments,
-      color: "text-[#fe3e57]",
-      hex: "#fe3e57",
-    },
-    {
-      title: "Project Management",
-      desc: "Organized and efficient project handling",
-      icon: FaTasks,
-      color: "text-[#54faae]",
-      hex: "#54faae",
-    },
-    {
-      title: "Team Collaboration",
-      desc: "Strong team player with collaborative mindset",
-      icon: FaUsers,
-      color: "text-[#ff8c2f]",
-      hex: "#ff8c2f",
-    },
-    {
-      title: "Analytical",
-      desc: "Data-driven decision making",
-      icon: FaChartLine,
-      color: "text-[#f1f965]",
-      hex: "#f1f965",
-    },
-    {
-      title: "Organization",
-      desc: "Structured and methodical approach",
-      icon: FaSitemap,
-      color: "text-[#ff0173]",
-      hex: "#ff0173",
-    },
-    {
-      title: "Creativity",
-      desc: "Innovative thinking and solutions",
-      icon: FaLightbulb,
-      color: "text-[#39c4ff]",
-      hex: "#39c4ff",
-    },
-  ];
-
-  const hardSkills = [
-    {
-      title: "Flutter",
-      icon: SiFlutter,
-      desc: "Cross-platform mobile development",
-      color: "text-[#39c4ff]",
-      hex: "#02569B",
-    },
-    {
-      title: "YOLO",
-      icon: FaBrain,
-      desc: "v5/v8/v11 explored; v8s selected",
-      color: "text-[#fe3e57]",
-      hex: "#00FFFF",
-    },
-    {
-      title: "TensorFlow",
-      icon: SiTensorflow,
-      desc: "Deep learning model development",
-      color: "text-[#ff8c2f]",
-      hex: "#FF6F00",
-    },
-    {
-      title: "React",
-      icon: SiReact,
-      desc: "Frontend library for UI",
-      color: "text-[#61DAFB]",
-      hex: "#61DAFB",
-    },
-    {
-      title: "Next.js",
-      icon: SiNextdotjs,
-      desc: "React framework for production",
-      color: "text-[#ffffff]",
-      hex: "#FFFFFF",
-    },
-    {
-      title: "Node.js",
-      icon: SiNodedotjs,
-      desc: "JavaScript runtime",
-      color: "text-[#339933]",
-      hex: "#339933",
-    },
-    {
-      title: "NestJS",
-      icon: SiNestjs,
-      desc: "Efficient Node.js framework",
-      color: "text-[#E0234E]",
-      hex: "#E0234E",
-    },
-    {
-      title: "Git",
-      icon: SiGit,
-      desc: "Version control and collaboration",
-      color: "text-[#f1f965]",
-      hex: "#F05032",
-    },
-    {
-      title: "PyTorch",
-      icon: SiPytorch,
-      desc: "Model training and experimentation",
-      color: "text-[#ff0173]",
-      hex: "#EE4C2C",
-    },
-    {
-      title: "OpenCV",
-      icon: SiOpencv,
-      desc: "Computer vision preprocessing",
-      color: "text-[#00C4FF]",
-      hex: "#5C3EE8",
-    },
-    {
-      title: "FastAPI",
-      icon: SiFastapi,
-      desc: "REST APIs for model inference",
-      color: "text-[#009485]",
-      hex: "#009688",
-    },
-    {
-      title: "Docker",
-      icon: SiDocker,
-      desc: "Containerized deployment",
-      color: "text-[#2496ED]",
-      hex: "#2496ED",
-    },
-  ];
-
-  const services = [
-    {
-      title: "Cross-Platform Mobile Apps",
-      desc: "Flutter-powered mobile applications with native performance. Leveraging Node.js and Firebase for robust backend solutions, alongside real-time data processing and modern UI/UX design patterns.",
-      icon: FaMobileAlt,
-      tags: ["Flutter", "Node.js", "Firebase", "Real-time"],
-    },
-    {
-      title: "AI & Computer Vision",
-      desc: "YOLO-powered computer vision solutions for damage detection, object recognition, and intelligent automation. Experience with real-world AI implementation in insurance applications.",
-      icon: FaRobot,
-      tags: ["YOLO", "OpenCV", "TensorFlow", "Automation", "MongoDB"],
-    },
-    {
-      title: "Full-Stack Web Development",
-      desc: "End-to-end web solutions using React and Next.js for the frontend, coupled with Node.js and NestJS for robust backend architectures. Includes experience with Symfony and JavaFX for enterprise systems.",
-      icon: FaCode,
-      tags: ["React", "Next.js", "Node.js", "NestJS", "MongoDB"],
-    },
-    {
-      title: "Data Science & ML Solutions",
-      desc: "Machine learning implementations with KNN, Linear Regression, Decision Trees, and K-Means clustering. Data-driven insights for business intelligence and predictive analytics.",
-      icon: FaChartLine,
-      tags: [
-        "Machine Learning",
-        "Python",
-        "Predictive Analytics",
-        "Data Mining",
-      ],
-    },
-  ];
-
-  const methodologies = [
-    {
-      title: "Scrum",
-      desc: "Iterative frameworks for managing complex knowledge work.",
-      icon: FaSyncAlt,
-      color: "text-[#39c4ff]",
-    },
-    {
-      title: "Kanban",
-      desc: "Visual workflow management method to define, manage, and improve services.",
-      icon: FaColumns,
-      color: "text-[#fe3e57]",
-    },
-    {
-      title: "Scrumban",
-      desc: "Hybrid Agile management methodology describing combinations of Scrum and Kanban.",
-      icon: FaLayerGroup,
-      color: "text-[#54faae]",
-    },
-    {
-      title: "Agile",
-      desc: "Iterative approach to project management and software development.",
-      icon: FaBolt,
-      color: "text-[#f1f965]",
-    },
-  ];
-
-  // --- Data for Previews ---
-  const portfolioPreview = [
-    {
-      id: 1,
-      title: "SmartClaim",
-      category: ["ia", "mobile"],
-      tech: ["Flutter", "AI"],
-      description: "AI-powered insurance claim assistant.",
-      image: smartClaimImg,
-      link: "/portfolio/smart-claim",
-    },
-    {
-      id: 2,
-      title: "Onboardify",
-      category: ["web"],
-      tech: ["JavaFX", "Symfony"],
-      description: "Gamified HR onboarding solution.",
-      image: onboardifyImg,
-      link: "/portfolio/onboardify",
-    },
-    {
-      id: 3,
-      title: "SolarFlow",
-      category: ["mobile"],
-      tech: ["Flutter", "IoT"],
-      description: "Smart energy management system.",
-      image: solarFlowImg,
-      link: "/portfolio/solar-flow",
-    },
-    {
-      id: 4,
-      title: "Pro-Link",
-      category: ["mobile"],
-      tech: ["Flutter", "Networking"],
-      description: "Professional networking platform.",
-      image: proLinkImg,
-      link: "/portfolio/pro-link",
-      scale: 1.4,
-    },
-  ];
-
-  const newsPreview = [
-    {
-      id: 13,
-      title: "IEEE IES SYP Congress",
-      date: "10-01-2026",
-      author: "Fedi Hmida",
-      image: iesImg,
-      description:
-        "Receiving this certificate is not just about participation, it’s a reminder of the incredible experiences...",
-      link: "/news/13",
-    },
-    {
-      id: 12,
-      title: "1st Place at Energy Utopia Challenge",
-      date: "26-12-2025",
-      author: "Fedi Hmida",
-      image: tsypImg,
-      description:
-        "Winning 1st Place at the Energy Utopia Challenge: AI for a Smarter, Greener Future...",
-      link: "/news/12",
-    },
-    {
-      id: 11,
-      title: "AI Model Deployment on AWS",
-      date: "30-11-2025",
-      author: "Fedi Hmida",
-      image: awsImg,
-      description: "Earned the AI Model Deployment on AWS certification...",
-      link: "/news/11",
-    },
-  ];
+  const portfolioPreview = getProjectCards("home");
+  const newsPreview = latestNewsPreview;
+  const projectsPerPage = 2;
+  const [workPage, setWorkPage] = useState(1);
+  const totalWorkPages = Math.ceil(portfolioPreview.length / projectsPerPage);
+  const paginatedProjects = portfolioPreview.slice(
+    (workPage - 1) * projectsPerPage,
+    workPage * projectsPerPage,
+  );
 
   return (
     <div className="relative min-h-screen bg-deep-indigo text-white font-sans overflow-x-hidden">
@@ -370,42 +68,78 @@ const Home = () => {
               transition={{ duration: 0.8, staggerChildren: 0.2 }}
               className="space-y-6 z-10 order-2 lg:order-1"
             >
-              <motion.h2
+              <motion.p
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="text-2xl md:text-3xl font-light text-gray-300"
+                className="inline-flex w-fit rounded-full border border-primary-pink/30 bg-primary-pink/10 px-4 py-2 text-sm font-semibold uppercase tracking-wider text-primary-pink"
               >
-                Hello, I am
-              </motion.h2>
+                Fedi Hmida - Flutter & AI Engineering
+              </motion.p>
 
               <motion.h1
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4, duration: 0.5, type: "spring" }}
-                className="text-3xl md:text-7xl font-bold leading-tight"
+                className="max-w-3xl text-4xl font-bold leading-tight md:text-6xl"
               >
-                <span className="inline-block hover:text-blue-300 transition-colors duration-300 cursor-default">
-                  Fedi
-                </span>{" "}
-                <span className="text-primary-pink inline-block hover:scale-110 transition-transform duration-300 cursor-default shadow-pink-glow">
-                  Hmida
-                </span>
+                Flutter & AI Engineer building intelligent mobile products
               </motion.h1>
 
-              <div className="text-[30px] sm:text-[22px] text-white font-semibold mt-[40px] mb-[50px] sm:mt-[20px] leading-[1.4] min-h-[90px] overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={roleIndex}
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -20, opacity: 0 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.55, duration: 0.5 }}
+                className="max-w-2xl text-base leading-8 text-gray-300 md:text-lg"
+              >
+                Data Science & AI Engineering student focused on Flutter,
+                computer vision, and practical backend systems. Built
+                SmartClaim with Flutter, YOLOv8, FastAPI, Docker, and 92.9%
+                damage detection precision.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.65, duration: 0.5 }}
+                className="flex flex-wrap gap-3"
+              >
+                {["Flutter", "YOLOv8", "FastAPI", "Docker"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-gray-200"
                   >
-                    {roles[roleIndex]}
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+                    {tech}
+                  </span>
+                ))}
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.75, duration: 0.5 }}
+                className="flex flex-col gap-3 pt-2 sm:flex-row"
+              >
+                <Link
+                  to="/portfolio/smart-claim"
+                  className="inline-flex items-center justify-center rounded-full bg-primary-pink px-7 py-3 text-sm font-bold text-white shadow-lg shadow-primary-pink/20 transition-all hover:-translate-y-1 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
+                >
+                  View SmartClaim
+                </Link>
+                <a
+                  href="/assets/cv/Cv_Ang.pdf"
+                  download
+                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3 text-sm font-bold text-white transition-all hover:-translate-y-1 hover:border-primary-pink hover:text-primary-pink focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
+                >
+                  Download CV
+                </a>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-7 py-3 text-sm font-bold text-gray-200 transition-all hover:-translate-y-1 hover:border-white/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
+                >
+                  Contact Me
+                </Link>
+              </motion.div>
 
               {/* Social Icons */}
               <motion.div
@@ -414,41 +148,16 @@ const Home = () => {
                 transition={{ delay: 0.6, duration: 0.5 }}
                 className="flex gap-4 pt-4"
               >
-                {[
-                  {
-                    icon: FaFacebookF,
-                    link: "https://www.facebook.com/fadi.hmidahmida",
-                    className: "hero-social facebook",
-                    color: "#ea4c89",
-                  },
-                  {
-                    icon: FaLinkedinIn,
-                    link: "https://www.linkedin.com/in/fedi-hmida/",
-                    className: "hero-social linkedin",
-                    color: "#4176fa",
-                  },
-                  {
-                    icon: FaGithub,
-                    link: "https://github.com/Fedi-Hmida",
-                    className: "hero-social github",
-                    color: "#ffffff",
-                  },
-                ].map((social, index) => (
-                  <motion.a
-                    key={index}
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    whileTap={{ scale: 0.9 }}
-                    href={social.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={social.className}
-                  >
-                    {/* The icon color is now handled by CSS or inherited, 
-                       but React Icons often default to 'currentColor' 
-                       which will pick up the CSS 'color' property. */}
-                    <social.icon />
-                  </motion.a>
-                ))}
+                {socialLinks.map((social) => {
+                  return (
+                    <SocialIconLink
+                      key={social.name}
+                      social={social}
+                      className={social.heroClassName}
+                      animated
+                    />
+                  );
+                })}
               </motion.div>
             </motion.div>
 
@@ -489,6 +198,7 @@ const Home = () => {
                   alt="Fedi Hmida"
                   fetchPriority="high"
                   loading="eager"
+                  decoding="async"
                   className="w-full max-w-[500px] object-contain drop-shadow-2xl z-10 hover:scale-105 transition-transform duration-500"
                 />
               </motion.div>
@@ -816,23 +526,59 @@ const Home = () => {
             </Link>
           </div>
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.2,
-                },
-              },
-            }}
-          >
-            {portfolioPreview.map((project, idx) => (
-              <ProjectCard key={project.id} project={project} index={idx} />
-            ))}
-          </motion.div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={workPage}
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -18 }}
+              transition={{ duration: 0.28, ease: "easeOut" }}
+            >
+              {paginatedProjects.map((project, idx) => (
+                <ProjectCard key={project.id} project={project} index={idx} />
+              ))}
+            </motion.div>
+          </AnimatePresence>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => setWorkPage((page) => Math.max(page - 1, 1))}
+              disabled={workPage === 1}
+              className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-bold text-white transition hover:border-primary-pink hover:text-primary-pink disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-white/15 disabled:hover:text-white"
+            >
+              Previous
+            </button>
+
+            {Array.from({ length: totalWorkPages }).map((_, index) => {
+              const page = index + 1;
+              return (
+                <button
+                  key={page}
+                  type="button"
+                  onClick={() => setWorkPage(page)}
+                  aria-label={`Go to work page ${page}`}
+                  aria-current={workPage === page ? "page" : undefined}
+                  className={`h-10 w-10 rounded-full border text-sm font-black transition ${
+                    workPage === page
+                      ? "border-primary-pink bg-primary-pink text-white shadow-lg shadow-primary-pink/20"
+                      : "border-white/15 bg-white/5 text-gray-300 hover:border-primary-pink hover:text-white"
+                  }`}
+                >
+                  {page}
+                </button>
+              );
+            })}
+
+            <button
+              type="button"
+              onClick={() => setWorkPage((page) => Math.min(page + 1, totalWorkPages))}
+              disabled={workPage === totalWorkPages}
+              className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-bold text-white transition hover:border-primary-pink hover:text-primary-pink disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-white/15 disabled:hover:text-white"
+            >
+              Next
+            </button>
+          </div>
 
           <div className="mt-8 text-center md:hidden">
             <Link

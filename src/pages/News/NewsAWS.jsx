@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FaArrowLeft, FaAward, FaLinkedin, FaUserTie } from "react-icons/fa";
 import { SiAmazonaws } from "react-icons/si";
 import { Link } from "react-router-dom";
+import ExpandableImage from "../../components/ExpandableImage";
 import awsImg from "../../assets/images/AI_AWS.jpg";
 import flogo from "../../assets/images/flogo.png";
 import Footer from "../../components/Footer";
@@ -63,7 +64,13 @@ const NewsAWS = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div
@@ -89,7 +96,7 @@ const NewsAWS = () => {
                   AI Model Deployment on AWS
                 </h1>
                 <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
-                  I’m pleased to share that I’ve earned the AI Model Deployment
+                  I'm pleased to share that I've earned the AI Model Deployment
                   on AWS certification.
                 </p>
               </motion.div>
@@ -134,9 +141,11 @@ const NewsAWS = () => {
               className="p-4 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.6)] backdrop-blur-[16px] shadow-lg"
             >
               <div className="relative overflow-hidden rounded-[20px] aspect-[4/3] group bg-white flex items-center justify-center">
-                <img
+                <ExpandableImage
                   src={awsImg}
                   alt="AWS Certification"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain p-4 transform transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e]/90 to-transparent flex items-end p-6 pointer-events-none">

@@ -32,6 +32,8 @@ const About = () => {
                 <img
                   src={fediImg}
                   alt="Fedi Hmida"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto shadow-lg filter saturate-120 hover:saturate-100 transition-all duration-300"
                 />
               </motion.div>
@@ -94,6 +96,8 @@ const About = () => {
                       "Cross-Platform Mobile Development (Flutter)",
                       "AI & Computer Vision Integration (YOLO)",
                       "Data Science & Machine Learning",
+                      "Agentic AI & LLM Workflows (LangGraph, Human-in-the-loop)",
+                      "Explainable AI (SHAP) & ML Pipelines (CRISP-DM)",
                     ].map((item, i) => (
                       <li
                         key={i}
@@ -106,9 +110,11 @@ const About = () => {
                   </ul>
                   <ul className="space-y-3">
                     {[
-                      "Full-Stack Web Development (Symfony/Next.js)",
+                      "Full-Stack Web Development (Next.js, FastAPI, Symfony)",
                       "IoT & Energy Management Systems",
                       "Agile Development & Team Collaboration",
+                      "3D Digital Twin Dashboards (Three.js)",
+                      "Database Architecture & REST APIs (MongoDB, FastAPI)",
                     ].map((item, i) => (
                       <li
                         key={i}
@@ -162,8 +168,8 @@ const About = () => {
                           }}
                           className="text-xs text-primary-pink flex items-center gap-2 overflow-hidden"
                         >
-                          <FaDownload className="animate-bounce" /> Click to
-                          download certification
+                          <FaDownload className="animate-bounce" aria-hidden="true" />{" "}
+                          Click to download certification
                         </motion.div>
                       </div>
                     </motion.a>
@@ -189,18 +195,18 @@ const About = () => {
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
-                  href="/assets/cv/CV.pdf"
+                  href="/assets/cv/Cv_Ang.pdf"
                   download
                   className="px-8 py-3 rounded-full border border-primary-pink text-white font-semibold hover:bg-primary-pink hover:shadow-glow transition-all duration-300 flex items-center justify-center gap-2 group shine-effect"
                 >
-                  <FaDownload className="group-hover:animate-bounce" /> Download
-                  CV
+                  <FaDownload className="group-hover:animate-bounce" aria-hidden="true" />{" "}
+                  Download CV
                 </a>
                 <Link
                   to="/portfolio"
                   className="px-8 py-3 rounded-full bg-gradient-to-r from-primary-pink to-secondary-pink text-white font-semibold shadow-lg hover:shadow-primary-pink/50 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <FaBriefcase /> View Portfolio
+                  <FaBriefcase aria-hidden="true" /> View Portfolio
                 </Link>
               </div>
             </motion.div>

@@ -9,67 +9,19 @@ import ExperienceCard from "../components/Resume/ExperienceCard";
 import RecommendationCard from "../components/Resume/RecommendationCard";
 import SkillCard from "../components/Resume/SkillCard";
 import SectionTitle from "../components/SectionTitle";
+import {
+  education,
+  experiences,
+  recommendations,
+  technicalSkills,
+} from "../data/resume";
+
+const renderBullet = (parts) =>
+  parts.map((part, index) =>
+    part.strong ? <strong key={index}>{part.text}</strong> : part.text,
+  );
 
 const Resume = () => {
-  const technicalSkills = [
-    {
-      title: "Mobile Development",
-      type: "mobile",
-      skills: [
-        "Flutter",
-        "Bloc/Cubit (State Management)",
-        "Provider (State Management)",
-        "Android Studio",
-        "Figma (UI/UX Design)",
-        "REST API Integration",
-      ],
-    },
-    {
-      title: "Artificial Intelligence",
-      type: "ai",
-      skills: [
-        "LangChain (Framework to build AI Agents)",
-        "RAG Systems (Retrieval-Augmented Generation)",
-        "YOLO (Computer Vision Model)",
-        "CNN (Computer Vision Model)",
-        "PyTorch",
-        "TensorFlow",
-      ],
-    },
-    {
-      title: "Data Science & ML",
-      type: "ml",
-      skills: [
-        "Pandas",
-        "Scikit-learn",
-        "Random Forest Model",
-        "XGBoost Model",
-        "MLP Model",
-        "Logistic Reg Model",
-        "ML Pipelines",
-        "Docker",
-      ],
-    },
-    {
-      title: "Full Stack Development",
-      type: "fullstack",
-      skills: [
-        "React.js / Next.js",
-        "Tailwind CSS",
-        "Node.js / NestJS",
-        "Spring Boot",
-        "Symfony",
-        "RESTful API Design",
-        "Docker",
-      ],
-    },
-    {
-      title: "Databases",
-      type: "database",
-      skills: ["MongoDB", "MySQL / PHPMyAdmin", "PostgreSQL"],
-    },
-  ];
-
   return (
     <div className="relative min-h-screen">
       <ParticlesBackground />
@@ -94,7 +46,7 @@ const Resume = () => {
             className="flex justify-center"
           >
             <a
-              href="/assets/cv/CV.pdf"
+              href="/assets/cv/Cv_Ang.pdf"
               download
               className="group relative px-8 py-4 bg-gradient-to-r from-primary-pink to-secondary-pink rounded-full text-white font-bold text-lg shadow-lg hover:shadow-primary-pink/50 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3 overflow-hidden"
             >
@@ -118,43 +70,20 @@ const Resume = () => {
             <section>
               <SectionTitle title="Professional Experience" />
               <div className="md:w-3/4 mx-auto space-y-8">
-                <ExperienceCard
-                  role="Data & Mobile Developer Intern"
-                  company="Addinn Group"
-                  duration="Summer 2025 • 2 months"
-                >
-                  <ul className="list-disc space-y-2 text-sm">
-                    <li>
-                      Developed <strong>SmartClaim</strong>, a Flutter
-                      application for intelligent car crash claim reporting.
-                    </li>
-                    <li>
-                      Integrated <strong>YOLOv8</strong> for real-time car
-                      damage detection with <strong>92.9% precision</strong>.
-                    </li>
-                    <li>
-                      Built a robust backend using <strong>FastAPI</strong> and
-                      containerized the solution with <strong>Docker</strong>.
-                    </li>
-                  </ul>
-                </ExperienceCard>
-
-                <ExperienceCard
-                  role="Msign – Final Year Project Internship"
-                  company="Msign"
-                  duration="Feb 2024 - Jun 2024"
-                >
-                  <ul className="list-disc space-y-2 text-sm">
-                    <li>
-                      Designed and implemented an{" "}
-                      <strong>Energy Monitoring System</strong>.
-                    </li>
-                    <li>
-                      Created <strong>SolarFlow</strong>, a cross-platform
-                      mobile app using Flutter for real-time energy analytics.
-                    </li>
-                  </ul>
-                </ExperienceCard>
+                {experiences.map((experience) => (
+                  <ExperienceCard
+                    key={`${experience.company}-${experience.role}`}
+                    role={experience.role}
+                    company={experience.company}
+                    duration={experience.duration}
+                  >
+                    <ul className="list-disc space-y-2 text-sm">
+                      {experience.bullets.map((bullet, index) => (
+                        <li key={index}>{renderBullet(bullet)}</li>
+                      ))}
+                    </ul>
+                  </ExperienceCard>
+                ))}
               </div>
             </section>
 
@@ -174,16 +103,9 @@ const Resume = () => {
               <section>
                 <SectionTitle title="Education" />
                 <div className="space-y-6">
-                  <EducationCard
-                    degree="Data Science & AI Engineering Student"
-                    institution="ESPRIT High School of Engineering"
-                    year="Currently Enrolled"
-                  />
-                  <EducationCard
-                    degree="Bachelor's Degree in Computer Engineering"
-                    institution="Higher Institute of Computer Science of Mahdia"
-                    year="2024"
-                  />
+                  {education.map((item) => (
+                    <EducationCard key={item.degree} {...item} />
+                  ))}
                 </div>
               </section>
 
@@ -191,18 +113,12 @@ const Resume = () => {
               <section>
                 <SectionTitle title="Recommendation Letters" />
                 <div className="grid grid-cols-1 gap-6">
-                  <RecommendationCard
-                    name="Houssem Eddine FADHLI"
-                    role="Senior Flutter Developer at ADDINN Group"
-                    linkedinUrl="https://www.linkedin.com/in/houssemeddinefadhli81/"
-                    pdfLink="/assets/cv/Fedi_Hmida_Letter%20of%20Recommendation.pdf"
-                  />
-                  <RecommendationCard
-                    name="Nivine ATTOUE"
-                    role="Data Science Doctor in Paris"
-                    linkedinUrl="https://www.linkedin.com/in/nivine-attoue-809659161/"
-                    pdfLink="/assets/cv/Recommendation_FediHmida.pdf"
-                  />
+                  {recommendations.map((recommendation) => (
+                    <RecommendationCard
+                      key={recommendation.name}
+                      {...recommendation}
+                    />
+                  ))}
                 </div>
               </section>
             </div>

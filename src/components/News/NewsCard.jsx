@@ -23,6 +23,7 @@ const NewsCard = ({ date, author, image, title, description, link, index }) => {
           src={image}
           alt={title}
           loading={index < 2 ? "eager" : "lazy"}
+          decoding="async"
           className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-indigo/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -31,11 +32,11 @@ const NewsCard = ({ date, author, image, title, description, link, index }) => {
       <div className="p-6 flex flex-col flex-grow">
         <div className="flex items-center gap-4 text-sm mb-4">
           <div className="flex items-center gap-2 text-[#3c7dd9]">
-            <FaUser />
+            <FaUser aria-hidden="true" />
             <span>{author}</span>
           </div>
           <div className="flex items-center gap-2 text-[#c7c6c6]">
-            <FaCalendar />
+            <FaCalendar aria-hidden="true" />
             <span>{date}</span>
           </div>
         </div>
@@ -53,8 +54,11 @@ const NewsCard = ({ date, author, image, title, description, link, index }) => {
           className="inline-flex items-center text-white font-semibold hover:text-primary-pink transition-colors group/link"
         >
           Read More
-          <span className="ml-2 transform group-hover/link:translate-x-1 transition-transform">
-            →
+          <span
+            className="ml-2 transform group-hover/link:translate-x-1 transition-transform"
+            aria-hidden="true"
+          >
+            -&gt;
           </span>
         </Link>
       </div>

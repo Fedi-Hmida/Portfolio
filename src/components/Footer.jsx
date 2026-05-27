@@ -1,23 +1,11 @@
-import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/flogo.png";
+import { footerLinks } from "../data/navigation";
+import { socialLinks } from "../data/socialLinks";
+import SocialIconLink from "./SocialIconLink";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    { icon: <FaFacebookF />, href: "https://www.facebook.com/fadi.hmidahmida" },
-    { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/fedi-hmida/" },
-    { icon: <FaGithub />, href: "https://github.com/Fedi-Hmida" },
-  ];
-
-  const footerLinks = [
-    { name: "Home", to: "/" },
-    { name: "About", to: "/about" },
-    { name: "Portfolio", to: "/portfolio" },
-    { name: "Resume", to: "/resume" },
-    { name: "Contact", to: "/contact" },
-  ];
 
   return (
     <footer className="bg-footer-bg pt-16 pb-8 border-t border-white/5">
@@ -29,7 +17,9 @@ const Footer = () => {
               <img
                 className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 src={logo}
-                alt="Logo"
+                alt="Fedi Hmida portfolio home"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
           </div>
@@ -49,17 +39,15 @@ const Footer = () => {
 
           {/* Column 3: Social Icons */}
           <div className="flex justify-center md:justify-end gap-4">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                className="w-10 h-10 rounded-full bg-darker-indigo flex items-center justify-center text-white hover:bg-primary-pink hover:scale-110 transition-all duration-300 shadow-lg shadow-primary-pink/20"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {social.icon}
-              </a>
-            ))}
+            {socialLinks.map((social) => {
+              return (
+                <SocialIconLink
+                  key={social.name}
+                  social={social}
+                  className="w-10 h-10 rounded-full bg-darker-indigo flex items-center justify-center text-white hover:bg-primary-pink hover:scale-110 transition-all duration-300 shadow-lg shadow-primary-pink/20"
+                />
+              );
+            })}
           </div>
         </div>
 

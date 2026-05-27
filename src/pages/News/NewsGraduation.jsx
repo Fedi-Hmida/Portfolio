@@ -7,6 +7,7 @@ import {
     FaUserTie,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ExpandableImage from "../../components/ExpandableImage";
 import flogo from "../../assets/images/flogo.png";
 import graduationImg from "../../assets/images/pf1.png"; // pf1.png
 import graduationMomentsImg from "../../assets/images/pf2.png"; // pf2.png
@@ -58,7 +59,13 @@ const NewsGraduation = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div
@@ -132,9 +139,11 @@ const NewsGraduation = () => {
               {/* Images Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="rounded-[24px] overflow-hidden border border-[rgba(79,195,247,0.2)] shadow-lg h-80 relative group">
-                  <img
+                  <ExpandableImage
                     src={graduationImg}
                     alt="Graduation Celebration"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e] via-transparent to-transparent opacity-60"></div>
@@ -143,9 +152,11 @@ const NewsGraduation = () => {
                   </div>
                 </div>
                 <div className="rounded-[24px] overflow-hidden border border-[rgba(79,195,247,0.2)] shadow-lg h-80 relative group">
-                  <img
+                  <ExpandableImage
                     src={graduationMomentsImg}
                     alt="Graduation Moment"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e] via-transparent to-transparent opacity-60"></div>

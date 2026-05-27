@@ -6,6 +6,7 @@ import {
     FaUserTie,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ExpandableImage from "../../components/ExpandableImage";
 import flogo from "../../assets/images/flogo.png";
 import tesaImg from "../../assets/images/new10/tesa.jpg";
 import Footer from "../../components/Footer";
@@ -67,7 +68,13 @@ const NewsSmartClaim = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div
@@ -90,7 +97,7 @@ const NewsSmartClaim = () => {
                   Project Launch
                 </span>
                 <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#fe3e57]">
-                  SmartClaim – Digital Claims Assistant Platform
+                  SmartClaim - Digital Claims Assistant Platform
                 </h1>
                 <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
                   Thrilled to reveal the highlight of my Engineering internship
@@ -116,9 +123,11 @@ const NewsSmartClaim = () => {
               </p>
 
               <figure className="my-8 rounded-xl overflow-hidden shadow-2xl border border-[rgba(79,195,247,0.3)]">
-                <img
+                <ExpandableImage
                   src={tesaImg}
                   alt="SmartClaim App Interface"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                 />
                 <figcaption className="text-center text-sm py-2 bg-black/40 text-[#81d4fa]">
@@ -127,7 +136,7 @@ const NewsSmartClaim = () => {
               </figure>
 
               <h3 className="text-2xl font-bold text-white mt-8 mb-4">
-                🚀 Key Features
+                Key Features
               </h3>
               <ul className="list-disc pl-6 space-y-2">
                 <li>

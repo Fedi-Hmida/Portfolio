@@ -6,13 +6,25 @@ import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const emailConfig = {
+  serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+  templateId: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+  publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+};
+
+const ErrorMessage = ({ id, children }) => (
+  <p id={id} className="mt-2 text-sm text-red-400">
+    {children}
+  </p>
+);
+
 const ContactForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-    watch,
     reset,
+    watch,
+    formState: { errors },
   } = useForm();
   const [isSending, setIsSending] = useState(false);
   const messageValue = watch("message", "");
@@ -20,185 +32,250 @@ const ContactForm = () => {
   const onSubmit = async (data) => {
     setIsSending(true);
 
-    const serviceID = "service_bl8wnom";
-    const templateID = "template_zcdr7lh";
-    const publicKey = "92zpmRJm5L2jY4o0k";
+    if (
+      !emailConfig.serviceId ||
+      !emailConfig.templateId ||
+      !emailConfig.publicKey
+    ) {
+      toast.error(
+        "Contact form is not configured yet. Please use email or LinkedIn.",
+      );
+      setIsSending(false);
+      return;
+    }
 
     const templateParams = {
       from_name: `${data.firstName} ${data.lastName}`,
-      to_name: "Fedi Hmida",
-      message: data.message,
-      reply_to: data.email,
+      from_email: data.email,
+      to_name: "Fedi HMIDA",
       subject: data.subject,
+      message: data.message,
     };
 
     try {
-      console.log("Sending email with params:", templateParams); // Debug log
-      const response = await emailjs.send(
-        serviceID,
-        templateID,
+      await emailjs.send(
+        emailConfig.serviceId,
+        emailConfig.templateId,
         templateParams,
-        publicKey,
+        emailConfig.publicKey,
       );
-      console.log("SUCCESS!", response.status, response.text);
-      toast.success("Message sent successfully!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      toast.success("Message sent successfully! I'll get back to you soon.");
       reset();
-    } catch (error) {
-      console.error("FAILED...", error);
-      toast.error(
-        `Failed to send message: ${error.text || error.message || "Unknown error"}`,
-        {
-          position: "top-right",
-          autoClose: 5000,
-          theme: "dark",
-        },
-      );
+    } catch {
+      toast.error("Failed to send message. Please try again later.");
     } finally {
       setIsSending(false);
     }
   };
 
   const inputClasses = (error) => `
-    w-full pl-10 pr-4 py-3 rounded-lg outline-none text-white placeholder-gray-400
-    glass-input
+    w-full pl-10 pr-4 py-3 rounded-lg text-white placeholder-gray-500
+    glass-input focus:outline-none focus:ring-2 focus:ring-primary-pink/40
     ${error ? "border-red-500 animate-shake" : "focus:border-primary-pink"}
   `;
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      className="glass-card p-6 md:p-8 rounded-2xl shadow-2xl relative overflow-hidden"
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="glass-card rounded-2xl p-8 relative overflow-hidden"
     >
-      <ToastContainer />
-
-      <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-primary-pink rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-      <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-pink/5 to-transparent" />
 
       <div className="relative z-10 mb-8">
-        <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-pink to-secondary-pink">
-          Let’s Connect
+        <h2 className="text-3xl font-bold bg-gradient-to-r from-primary-pink to-pink-300 bg-clip-text text-transparent">
+          Let's Connect
         </h2>
-        <p className="text-gray-300 mt-2">
-          Have a project in mind? We'd love to hear from you.
+        <p className="text-gray-400 mt-2">
+          Send a role, internship, project brief, or technical question.
         </p>
       </div>
 
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="space-y-6 relative z-10"
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className="relative z-10 space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* First Name */}
-          <div className="relative">
-            <User
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-              size={18}
-            />
-            <input
-              type="text"
-              placeholder="First Name"
-              {...register("firstName", { required: true })}
-              className={inputClasses(errors.firstName)}
-            />
+          <div>
+            <label htmlFor="firstName" className="sr-only">
+              First name
+            </label>
+            <div className="relative">
+              <User
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-primary-pink"
+                size={20}
+                aria-hidden="true"
+              />
+              <input
+                id="firstName"
+                type="text"
+                placeholder="First Name"
+                {...register("firstName", { required: "First name is required" })}
+                className={inputClasses(errors.firstName)}
+                aria-invalid={errors.firstName ? "true" : "false"}
+                aria-describedby={
+                  errors.firstName ? "firstName-error" : undefined
+                }
+              />
+            </div>
+            {errors.firstName && (
+              <ErrorMessage id="firstName-error">
+                {errors.firstName.message}
+              </ErrorMessage>
+            )}
           </div>
 
-          {/* Last Name */}
-          <div className="relative">
-            <User
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-              size={18}
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              {...register("lastName", { required: true })}
-              className={inputClasses(errors.lastName)}
-            />
+          <div>
+            <label htmlFor="lastName" className="sr-only">
+              Last name
+            </label>
+            <div className="relative">
+              <User
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-primary-pink"
+                size={20}
+                aria-hidden="true"
+              />
+              <input
+                id="lastName"
+                type="text"
+                placeholder="Last Name"
+                {...register("lastName", { required: "Last name is required" })}
+                className={inputClasses(errors.lastName)}
+                aria-invalid={errors.lastName ? "true" : "false"}
+                aria-describedby={errors.lastName ? "lastName-error" : undefined}
+              />
+            </div>
+            {errors.lastName && (
+              <ErrorMessage id="lastName-error">
+                {errors.lastName.message}
+              </ErrorMessage>
+            )}
           </div>
         </div>
 
-        {/* Email */}
-        <div className="relative">
-          <Mail
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-            size={18}
-          />
-          <input
-            type="email"
-            placeholder="Email Address"
-            {...register("email", {
-              required: true,
-              pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-            })}
-            className={inputClasses(errors.email)}
-          />
+        <div>
+          <label htmlFor="email" className="sr-only">
+            Email address
+          </label>
+          <div className="relative">
+            <Mail
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-primary-pink"
+              size={20}
+              aria-hidden="true"
+            />
+            <input
+              id="email"
+              type="email"
+              placeholder="Email Address"
+              {...register("email", {
+                required: "Email address is required",
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Please enter a valid email address",
+                },
+              })}
+              className={inputClasses(errors.email)}
+              aria-invalid={errors.email ? "true" : "false"}
+              aria-describedby={errors.email ? "email-error" : undefined}
+            />
+          </div>
+          {errors.email && (
+            <ErrorMessage id="email-error">{errors.email.message}</ErrorMessage>
+          )}
         </div>
 
-        {/* Subject */}
-        <div className="relative">
-          <Type
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-            size={18}
-          />
-          <input
-            type="text"
-            placeholder="Subject"
-            {...register("subject", { required: true })}
-            className={inputClasses(errors.subject)}
-          />
+        <div>
+          <label htmlFor="subject" className="sr-only">
+            Subject
+          </label>
+          <div className="relative">
+            <Type
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-primary-pink"
+              size={20}
+              aria-hidden="true"
+            />
+            <input
+              id="subject"
+              type="text"
+              placeholder="Subject"
+              {...register("subject", { required: "Subject is required" })}
+              className={inputClasses(errors.subject)}
+              aria-invalid={errors.subject ? "true" : "false"}
+              aria-describedby={errors.subject ? "subject-error" : undefined}
+            />
+          </div>
+          {errors.subject && (
+            <ErrorMessage id="subject-error">
+              {errors.subject.message}
+            </ErrorMessage>
+          )}
         </div>
 
-        {/* Message */}
-        <div className="relative">
-          <MessageSquare
-            className="absolute left-3 top-4 text-gray-400"
-            size={18}
-          />
-          <textarea
-            rows="5"
-            placeholder="Your Message..."
-            maxLength="500"
-            {...register("message", { required: true })}
-            className={`${inputClasses(errors.message)} pt-3`}
-            style={{ resize: "none" }}
-          ></textarea>
-          <div className="absolute right-2 bottom-2 text-xs text-gray-400">
+        <div>
+          <label htmlFor="message" className="sr-only">
+            Message
+          </label>
+          <div className="relative">
+            <MessageSquare
+              className="absolute left-3 top-4 text-primary-pink"
+              size={20}
+              aria-hidden="true"
+            />
+            <textarea
+              id="message"
+              placeholder="Your Message"
+              {...register("message", {
+                required: "Message is required",
+                maxLength: {
+                  value: 500,
+                  message: "Message must be 500 characters or fewer",
+                },
+              })}
+              rows="6"
+              maxLength="500"
+              className={`${inputClasses(errors.message)} resize-none`}
+              aria-invalid={errors.message ? "true" : "false"}
+              aria-describedby={
+                errors.message ? "message-error" : "message-count"
+              }
+            />
+          </div>
+          <div
+            id="message-count"
+            className="mt-2 text-right text-sm text-gray-400"
+            aria-live="polite"
+          >
             {messageValue.length}/500
           </div>
+          {errors.message && (
+            <ErrorMessage id="message-error">
+              {errors.message.message}
+            </ErrorMessage>
+          )}
         </div>
 
-        <button
+        <motion.button
           type="submit"
           disabled={isSending}
-          className="w-full py-4 rounded-lg bg-gradient-to-r from-primary-pink to-secondary-pink text-white font-bold text-lg shadow-lg hover:shadow-primary-pink/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="w-full bg-primary-pink text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all disabled:opacity-70 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-primary-pink/50 focus:ring-offset-2 focus:ring-offset-black"
         >
           {isSending ? (
-            <span className="flex items-center gap-2">
-              <span className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></span>
+            <>
+              <div
+                className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"
+                aria-hidden="true"
+              />
               Sending...
-            </span>
+            </>
           ) : (
             <>
-              Send Message{" "}
-              <Send
-                size={20}
-                className="group-hover:translate-x-1 transition-transform"
-              />
+              <Send size={20} aria-hidden="true" />
+              Send Message
             </>
           )}
-        </button>
+        </motion.button>
       </form>
+      <ToastContainer />
     </motion.div>
   );
 };

@@ -8,6 +8,7 @@ import {
     FaUsers,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ExpandableImage from "../../components/ExpandableImage";
 import addinnImg from "../../assets/images/addinn/ADDINN.png";
 import flogo from "../../assets/images/flogo.png";
 import Footer from "../../components/Footer";
@@ -69,7 +70,13 @@ const NewsInternship = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div
@@ -92,18 +99,20 @@ const NewsInternship = () => {
                   Career Update
                 </span>
                 <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#81d4fa]">
-                  End of My Internship – ADDINN Group
+                  End of My Internship - ADDINN Group
                 </h1>
                 <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
                   I'm excited to share that I have successfully completed my
-                  2-month internship at ADDINN Group! 🚀
+                  2-month internship at ADDINN Group!
                 </p>
               </motion.div>
 
               <div className="mt-8 rounded-xl overflow-hidden shadow-lg border border-[rgba(79,195,247,0.2)]">
-                <img
+                <ExpandableImage
                   src={addinnImg}
                   alt="ADDINN Internship"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                 />
               </div>

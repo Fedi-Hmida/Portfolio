@@ -1,12 +1,14 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const AnimatedPage = ({ children }) => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.3 }}
+      exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -20 }}
+      transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
       className="w-full"
     >
       {children}

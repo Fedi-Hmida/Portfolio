@@ -24,6 +24,10 @@ const NewsInternshipStart = lazy(
   () => import("./pages/News/NewsInternshipStart"),
 );
 const NewsList = lazy(() => import("./pages/News/NewsList"));
+const NewsNvidiaAnomalyDetection = lazy(() => import("./pages/News/NewsNvidiaAnomalyDetection"));
+const NewsIASTAM = lazy(() => import("./pages/News/NewsIASTAM"));
+const NewsMaraTechHackathon = lazy(() => import("./pages/News/NewsMaraTechHackathon"));
+const NewsNvidiaDLI = lazy(() => import("./pages/News/NewsNvidiaDLI"));
 const NewsSmartClaim = lazy(() => import("./pages/News/NewsSmartClaim"));
 const NewsOnboardify = lazy(() => import("./pages/News/NewsOnboardify"));
 const NewsRecognition = lazy(() => import("./pages/News/NewsRecognition"));
@@ -35,6 +39,12 @@ const Portfolio = lazy(() => import("./pages/Portfolio/Portfolio"));
 const ProLinkDetails = lazy(() => import("./pages/Portfolio/ProLinkDetails"));
 const SmartClaimDetails = lazy(
   () => import("./pages/Portfolio/SmartClaimDetails"),
+);
+const SahitnaSafeDetails = lazy(
+  () => import("./pages/Portfolio/SahitnaSafeDetails"),
+);
+const FirmaaDetails = lazy(
+  () => import("./pages/Portfolio/FirmaaDetails"),
 );
 const SolarFlowDetails = lazy(
   () => import("./pages/Portfolio/SolarFlowDetails"),
@@ -81,6 +91,22 @@ const AppRoutes = () => {
             }
           />
           <Route
+            path="/portfolio/firmaa"
+            element={
+              <AnimatedPage>
+                <FirmaaDetails />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/portfolio/sahitna-safe"
+            element={
+              <AnimatedPage>
+                <SahitnaSafeDetails />
+              </AnimatedPage>
+            }
+          />
+          <Route
             path="/portfolio/solar-flow"
             element={
               <AnimatedPage>
@@ -117,6 +143,38 @@ const AppRoutes = () => {
             element={
               <AnimatedPage>
                 <NewsList />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/17"
+            element={
+              <AnimatedPage>
+                <NewsNvidiaAnomalyDetection />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/16"
+            element={
+              <AnimatedPage>
+                <NewsIASTAM />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/15"
+            element={
+              <AnimatedPage>
+                <NewsMaraTechHackathon />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/14"
+            element={
+              <AnimatedPage>
+                <NewsNvidiaDLI />
               </AnimatedPage>
             }
           />

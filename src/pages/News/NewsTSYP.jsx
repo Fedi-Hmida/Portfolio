@@ -7,6 +7,7 @@ import {
     FaUsers,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ExpandableImage from "../../components/ExpandableImage";
 import fediImg from "../../assets/images/Fedi.jpg";
 import flogo from "../../assets/images/flogo.png";
 import tsImg from "../../assets/images/ts.png";
@@ -58,7 +59,13 @@ const NewsTSYP = () => {
               <FaArrowLeft /> Back to News
             </Link>
           </div>
-          <img src={flogo} alt="Logo" className="h-8 w-auto opacity-80" />
+          <img
+            src={flogo}
+            alt="Fedi Hmida logo"
+            loading="lazy"
+            decoding="async"
+            className="h-8 w-auto opacity-80"
+          />
         </motion.div>
 
         <motion.div
@@ -132,16 +139,20 @@ const NewsTSYP = () => {
               {/* Images Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="rounded-[24px] overflow-hidden border border-[rgba(79,195,247,0.2)] shadow-lg h-64 md:h-80">
-                  <img
+                  <ExpandableImage
                     src={tsImg}
                     alt="IEEE TSYP Banner"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="rounded-[24px] overflow-hidden border border-[rgba(79,195,247,0.2)] shadow-lg h-64 md:h-80">
-                  <img
+                  <ExpandableImage
                     src={fediImg}
                     alt="Fedi at TSYP"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </div>
