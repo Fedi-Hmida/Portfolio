@@ -2,6 +2,7 @@ node_modules/
 
 # Generated build and coverage output
 build/
+build-validation/
 dist/
 coverage/
 
@@ -19,6 +20,7 @@ coverage/
 
 # Local audit/report documents
 public/assets/docs/*.md
+Doc/reports/*.md
 
 
 # Logs and diagnostics
