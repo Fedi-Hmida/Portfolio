@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
   <title id="title">Fedi Hmida portfolio icon</title>
   <rect width="128" height="128" rx="28" fill="#070640"/>
-  <circle cx="96" cy="32" r="22" fill="#fe3e57" opacity="0.9"/>
   <path d="M28 92V32h45v13H44v12h25v13H44v22H28Z" fill="#ffffff"/>
   <path d="M77 92V32h16v23h16V32h16v60h-16V69H93v23H77Z" fill="#ffffff"/>
 </svg>
