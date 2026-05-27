@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import {
     Brain,
+    Bot,
     Code,
     Cpu,
     Database,
+    Eye,
     Layers,
     Server,
     Smartphone,
@@ -19,6 +21,8 @@ const icons = {
   devops: Terminal,
   ml: Brain,
   fullstack: Layers,
+  agentic_ai: Bot,
+  vision: Eye,
 };
 
 const SkillCard = ({ title, skills, type, index }) => {
