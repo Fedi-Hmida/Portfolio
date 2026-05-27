@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FaBriefcase, FaDownload } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ReactTyped } from "react-typed";
-import fediImg from "../assets/images/slider/Fedi2.0.png";
+import fediImg from "../assets/images/slider/me.png";
 import AboutHero from "../components/About/AboutHero";
 import ServicesSection from "../components/About/ServicesSection";
 import Footer from "../components/Footer";

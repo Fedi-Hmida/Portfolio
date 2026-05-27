@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import { FaCheck, FaCopy, FaDownload, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../assets/css/social-icons.css";
 import Footer from "../components/Footer";
@@ -19,7 +20,7 @@ import {
 import { socialLinks } from "../data/socialLinks";
 
 // Asset Imports
-import heroImg from "../assets/images/slider/Fedi2.0.png";
+import heroImg from "../assets/images/slider/me.png";
 
 const ParticlesBackground = lazy(
   () => import("../components/ParticlesBackground"),
@@ -35,18 +36,122 @@ const containerVariants = {
   },
 };
 
+const CV_PATH = "/assets/cv/Cv_Ang.pdf";
+const CV_PREVIEW_PATH = `${CV_PATH}#toolbar=1&navpanes=0&scrollbar=1&view=Fit`;
+const MODAL_FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
+const HERO_NAME = "Fedi Hmida";
+const HERO_PRIMARY_ROLE = "Software Engineering Student";
+const HERO_SPECIALIZATION = "Data Science & AI Engineering";
+const heroNameLetters = Array.from(HERO_NAME);
+
 const Home = () => {
   const [activeTab, setActiveTab] = useState("services"); // Default tab changed from "soft skills" to "hard skills"
+  const [isCvModalOpen, setIsCvModalOpen] = useState(false);
+  const [cvCopyStatus, setCvCopyStatus] = useState("idle");
+  const modalRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const previousFocusRef = useRef(null);
 
   const portfolioPreview = getProjectCards("home");
   const newsPreview = latestNewsPreview;
   const projectsPerPage = 2;
+  const hardSkillsPerPage = 8;
   const [workPage, setWorkPage] = useState(1);
+  const [hardSkillsPage, setHardSkillsPage] = useState(1);
   const totalWorkPages = Math.ceil(portfolioPreview.length / projectsPerPage);
+  const totalHardSkillPages = Math.ceil(hardSkills.length / hardSkillsPerPage);
   const paginatedProjects = portfolioPreview.slice(
     (workPage - 1) * projectsPerPage,
     workPage * projectsPerPage,
   );
+  const paginatedHardSkills = hardSkills.slice(
+    (hardSkillsPage - 1) * hardSkillsPerPage,
+    hardSkillsPage * hardSkillsPerPage,
+  );
+
+  const openCvModal = () => {
+    previousFocusRef.current = document.activeElement;
+    setCvCopyStatus("idle");
+    setIsCvModalOpen(true);
+  };
+
+  const copyCvLink = async () => {
+    const cvUrl = new URL(CV_PATH, window.location.origin).href;
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(cvUrl);
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = cvUrl;
+        textArea.setAttribute("readonly", "");
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.select();
+        const copied = document.execCommand("copy");
+        document.body.removeChild(textArea);
+
+        if (!copied) {
+          throw new Error("Clipboard fallback failed");
+        }
+      }
+
+      setCvCopyStatus("copied");
+      window.setTimeout(() => setCvCopyStatus("idle"), 1800);
+    } catch {
+      setCvCopyStatus("failed");
+    }
+  };
+
+  useEffect(() => {
+    if (!isCvModalOpen) {
+      return undefined;
+    }
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.setTimeout(() => closeButtonRef.current?.focus(), 0);
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsCvModalOpen(false);
+        return;
+      }
+
+      if (event.key !== "Tab" || !modalRef.current) {
+        return;
+      }
+
+      const focusableElements = Array.from(
+        modalRef.current.querySelectorAll(MODAL_FOCUSABLE_SELECTOR),
+      ).filter((element) => !element.hasAttribute("disabled"));
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (!firstElement || !lastElement) {
+        event.preventDefault();
+        return;
+      }
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = originalOverflow;
+      previousFocusRef.current?.focus?.();
+    };
+  }, [isCvModalOpen]);
 
   return (
     <div className="relative min-h-screen bg-deep-indigo text-white font-sans overflow-x-hidden">
@@ -57,87 +162,213 @@ const Home = () => {
       </Suspense>
       <Navbar />
 
+      <AnimatePresence>
+        {isCvModalOpen && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#030225]/80 px-3 py-4 backdrop-blur-md sm:px-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            role="presentation"
+            onMouseDown={(event) => {
+              if (event.target === event.currentTarget) {
+                setIsCvModalOpen(false);
+              }
+            }}
+          >
+            <motion.div
+              ref={modalRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="cv-preview-title"
+              aria-describedby="cv-preview-description"
+              className="glass-card flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl shadow-2xl shadow-primary-pink/20"
+              initial={{ opacity: 0, y: 28, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 22, scale: 0.97 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="flex items-start justify-between gap-4 border-b border-white/10 bg-darker-indigo/80 p-4 sm:items-center sm:px-5">
+                <div>
+                  <h2
+                    id="cv-preview-title"
+                    className="text-xl font-bold text-white sm:text-2xl"
+                  >
+                    CV Preview
+                  </h2>
+                  <p
+                    id="cv-preview-description"
+                    className="mt-1 text-sm text-gray-300"
+                  >
+                    Review the PDF, copy the share link, or download a copy.
+                  </p>
+                </div>
+
+                <button
+                  ref={closeButtonRef}
+                  type="button"
+                  aria-label="Close CV preview"
+                  onClick={() => setIsCvModalOpen(false)}
+                  className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-primary-pink/50 bg-white/5 text-white shadow-lg shadow-primary-pink/10 transition-all hover:border-primary-pink hover:bg-primary-pink/20 focus:outline-none focus:ring-2 focus:ring-primary-pink/70"
+                >
+                  <FaTimes aria-hidden="true" />
+                </button>
+              </div>
+
+              <div className="min-h-0 flex-1 bg-[#05043a]/80 p-3 sm:p-4">
+                <div className="h-[64vh] min-h-[360px] overflow-hidden rounded-xl border border-white/10 bg-[#f8f8f8] shadow-inner shadow-black/20">
+                  <iframe
+                    title="Fedi Hmida CV PDF preview"
+                    src={CV_PREVIEW_PATH}
+                    className="h-full w-full"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-4 border-t border-white/10 bg-darker-indigo/80 p-4 lg:flex-row lg:items-center lg:justify-between lg:px-5">
+                <a
+                  href={CV_PATH}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm font-semibold text-primary-pink transition-colors hover:text-secondary-pink"
+                >
+                  Open PDF in browser
+                </a>
+
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
+                  <button
+                    type="button"
+                    onClick={copyCvLink}
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:border-primary-pink hover:text-primary-pink focus:outline-none focus:ring-2 focus:ring-primary-pink/70"
+                  >
+                    {cvCopyStatus === "copied" ? (
+                      <FaCheck aria-hidden="true" />
+                    ) : (
+                      <FaCopy aria-hidden="true" />
+                    )}
+                    {cvCopyStatus === "copied"
+                      ? "Copied"
+                      : cvCopyStatus === "failed"
+                        ? "Copy failed"
+                        : "Copy CV link"}
+                  </button>
+                  <a
+                    href={CV_PATH}
+                    download
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-pink px-5 py-3 text-sm font-bold text-white shadow-lg shadow-primary-pink/20 transition-all hover:-translate-y-0.5 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-primary-pink/70"
+                  >
+                    <FaDownload aria-hidden="true" />
+                    Download CV
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => setIsCvModalOpen(false)}
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-bold text-gray-200 transition-all hover:-translate-y-0.5 hover:border-white/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-pink/70"
+                  >
+                    <FaTimes aria-hidden="true" />
+                    Close
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* --- HERO SECTION --- */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20">
+      <section className="relative flex items-center justify-center px-4 pb-10 pt-28 sm:px-6 sm:pb-12 lg:min-h-[620px] lg:px-8 lg:pb-8 lg:pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="grid grid-cols-1 items-center gap-8 md:gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(380px,1fr)] lg:gap-14 xl:gap-20">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, staggerChildren: 0.2 }}
-              className="space-y-6 z-10 order-2 lg:order-1"
+              className="z-10 order-2 mx-auto flex w-full max-w-xl flex-col items-center text-center lg:order-1 lg:mx-0 lg:items-start lg:text-left"
             >
-              <motion.p
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="inline-flex w-fit rounded-full border border-primary-pink/30 bg-primary-pink/10 px-4 py-2 text-sm font-semibold uppercase tracking-wider text-primary-pink"
-              >
-                Fedi Hmida - Flutter & AI Engineering
-              </motion.p>
-
               <motion.h1
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4, duration: 0.5, type: "spring" }}
-                className="max-w-3xl text-4xl font-bold leading-tight md:text-6xl"
+                aria-label={HERO_NAME}
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.045,
+                      delayChildren: 0.16,
+                    },
+                  },
+                }}
+                className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl"
               >
-                Flutter & AI Engineer building intelligent mobile products
+                {heroNameLetters.map((letter, index) => (
+                  <motion.span
+                    key={`${letter}-${index}`}
+                    aria-hidden="true"
+                    className="inline-block"
+                    variants={{
+                      hidden: { opacity: 0, y: 24, rotateX: -35 },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        rotateX: 0,
+                        transition: {
+                          duration: 0.55,
+                          ease: [0.22, 1, 0.36, 1],
+                        },
+                      },
+                    }}
+                  >
+                    {letter === " " ? "\u00A0" : letter}
+                  </motion.span>
+                ))}
               </motion.h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.55, duration: 0.5 }}
-                className="max-w-2xl text-base leading-8 text-gray-300 md:text-lg"
-              >
-                Data Science & AI Engineering student focused on Flutter,
-                computer vision, and practical backend systems. Built
-                SmartClaim with Flutter, YOLOv8, FastAPI, Docker, and 92.9%
-                damage detection precision.
-              </motion.p>
-
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.65, duration: 0.5 }}
-                className="flex flex-wrap gap-3"
+                initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ delay: 0.72, duration: 0.55, ease: "easeOut" }}
+                className="relative mt-3 flex flex-col items-center gap-1 text-center lg:items-start lg:text-left"
               >
-                {["Flutter", "YOLOv8", "FastAPI", "Docker"].map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-gray-200"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                <span className="text-base font-semibold text-primary-pink sm:text-lg md:text-xl">
+                  {HERO_PRIMARY_ROLE}
+                </span>
+                <span className="text-sm font-medium text-sky-300/90 sm:text-base md:text-lg">
+                  {HERO_SPECIALIZATION}
+                </span>
+                <motion.span
+                  aria-hidden="true"
+                  className="absolute -bottom-2 left-0 h-[2px] w-full origin-left rounded-full bg-primary-pink/70"
+                  initial={{ scaleX: 0, opacity: 0 }}
+                  animate={{ scaleX: 1, opacity: 1 }}
+                  transition={{ delay: 0.98, duration: 0.5, ease: "easeOut" }}
+                />
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.75, duration: 0.5 }}
-                className="flex flex-col gap-3 pt-2 sm:flex-row"
+                transition={{ delay: 0.65, duration: 0.5 }}
+                className="mt-8 flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center lg:justify-start"
               >
                 <Link
-                  to="/portfolio/smart-claim"
-                  className="inline-flex items-center justify-center rounded-full bg-primary-pink px-7 py-3 text-sm font-bold text-white shadow-lg shadow-primary-pink/20 transition-all hover:-translate-y-1 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
+                  to="/portfolio"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-primary-pink px-7 py-3 text-sm font-bold text-white shadow-lg shadow-primary-pink/20 transition-all hover:-translate-y-1 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
                 >
-                  View SmartClaim
+                  View Projects
                 </Link>
-                <a
-                  href="/assets/cv/Cv_Ang.pdf"
-                  download
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3 text-sm font-bold text-white transition-all hover:-translate-y-1 hover:border-primary-pink hover:text-primary-pink focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
+                <button
+                  type="button"
+                  onClick={openCvModal}
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3 text-sm font-bold text-white transition-all hover:-translate-y-1 hover:border-primary-pink hover:text-primary-pink focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
                 >
-                  Download CV
-                </a>
+                  View CV
+                </button>
                 <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-7 py-3 text-sm font-bold text-gray-200 transition-all hover:-translate-y-1 hover:border-white/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
+                  to="/about"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 px-7 py-3 text-sm font-bold text-gray-200 transition-all hover:-translate-y-1 hover:border-white/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
                 >
-                  Contact Me
+                  About Me
                 </Link>
               </motion.div>
 
@@ -145,8 +376,8 @@ const Home = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-                className="flex gap-4 pt-4"
+                transition={{ delay: 0.76, duration: 0.5 }}
+                className="mt-7 flex flex-wrap justify-center gap-4 lg:justify-start"
               >
                 {socialLinks.map((social) => {
                   return (
@@ -166,7 +397,7 @@ const Home = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
+              className="relative order-1 flex items-end justify-center lg:order-2 lg:items-center lg:justify-end"
             >
               {/* Background Glow Pulse */}
               <motion.div
@@ -179,29 +410,32 @@ const Home = () => {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary-pink/30 rounded-full blur-[100px] -z-10"
+                className="absolute left-1/2 top-1/2 -z-10 h-[270px] w-[270px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-pink/25 blur-[95px] sm:h-[340px] sm:w-[340px] md:h-[420px] md:w-[420px] lg:h-[520px] lg:w-[520px]"
               />
 
               {/* Floating Image Animation */}
-              <motion.div
-                animate={{ y: [0, -20, 0] }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <img
-                  width="500"
-                  height="500"
-                  src={heroImg}
-                  alt="Fedi Hmida"
-                  fetchPriority="high"
-                  loading="eager"
-                  decoding="async"
-                  className="w-full max-w-[500px] object-contain drop-shadow-2xl z-10 hover:scale-105 transition-transform duration-500"
-                />
-              </motion.div>
+              <div className="relative flex w-full justify-center lg:-mt-20 lg:justify-end xl:-mt-16">
+                <motion.div
+                  animate={{ y: [0, -20, 0] }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="relative flex w-full justify-center lg:justify-end"
+                >
+                  <img
+                    width="620"
+                    height="620"
+                    src={heroImg}
+                    alt="Fedi Hmida"
+                    fetchPriority="high"
+                    loading="eager"
+                    decoding="async"
+                    className="z-10 w-[min(72vw,285px)] object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-[1.03] sm:w-[330px] md:w-[400px] lg:w-[500px] xl:w-[560px]"
+                  />
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -327,59 +561,117 @@ const Home = () => {
 
               {activeTab === "hard skills" && (
                 <motion.div
-                  key="hard-skills"
+                  key={`hard-skills-${hardSkillsPage}`}
                   layout
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
-                  variants={containerVariants}
+                  className="space-y-8"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                 >
-                  {hardSkills.map((skill, idx) => (
-                    <motion.div
-                      key={idx}
-                      className="relative group h-full flex flex-col items-center justify-center p-4 transition-all duration-300"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {/* Glow Overlay (only visible on hover for effect behind icon) */}
-                      <div
-                        className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-20 blur-3xl transition-opacity duration-500 -z-10"
-                        style={{ backgroundColor: skill.hex }}
-                      />
-
-                      {/* Icon Container (Transparent background but keeping shape) */}
-                      <div className="mb-4 relative z-10 transition-transform duration-500 group-hover:rotate-6">
-                        <motion.div
-                          animate={{ y: [0, -6, 0] }}
-                          transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            delay: idx * 0.1,
-                          }}
-                        >
-                          <skill.icon
-                            size={45}
-                            style={{
-                              color: skill.hex,
-                              filter: `drop-shadow(0 0 10px ${skill.hex})`,
-                            }}
-                          />
-                        </motion.div>
-                      </div>
-
-                      <h3
-                        className="text-lg font-bold mb-2 text-center transition-colors duration-300 group-hover:text-white"
-                        style={{ color: "white" }}
+                  <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                    initial="hidden"
+                    animate="visible"
+                    variants={containerVariants}
+                  >
+                    {paginatedHardSkills.map((skill, idx) => (
+                      <motion.div
+                        key={skill.title}
+                        className="relative group h-full flex flex-col items-center justify-center p-4 transition-all duration-300"
+                        whileHover={{ scale: 1.05 }}
                       >
-                        {skill.title}
-                      </h3>
+                        {/* Glow Overlay (only visible on hover for effect behind icon) */}
+                        <div
+                          className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-20 blur-3xl transition-opacity duration-500 -z-10"
+                          style={{ backgroundColor: skill.hex }}
+                        />
 
-                      <p className="text-gray-400 text-center text-xs leading-relaxed group-hover:text-gray-200 transition-colors max-w-[90%]">
-                        {skill.desc}
-                      </p>
-                    </motion.div>
-                  ))}
+                        {/* Icon Container (Transparent background but keeping shape) */}
+                        <div className="mb-4 relative z-10 transition-transform duration-500 group-hover:rotate-6">
+                          <motion.div
+                            animate={{ y: [0, -6, 0] }}
+                            transition={{
+                              duration: 3,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                              delay: idx * 0.1,
+                            }}
+                          >
+                            <skill.icon
+                              size={45}
+                              style={{
+                                color: skill.hex,
+                                filter: `drop-shadow(0 0 10px ${skill.hex})`,
+                              }}
+                            />
+                          </motion.div>
+                        </div>
+
+                        <h3
+                          className="text-lg font-bold mb-2 text-center transition-colors duration-300 group-hover:text-white"
+                          style={{ color: "white" }}
+                        >
+                          {skill.title}
+                        </h3>
+
+                        <p className="text-gray-400 text-center text-xs leading-relaxed group-hover:text-gray-200 transition-colors max-w-[90%]">
+                          {skill.desc}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+
+                  {totalHardSkillPages > 1 && (
+                    <div className="flex flex-wrap items-center justify-center gap-3">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setHardSkillsPage((page) => Math.max(page - 1, 1))
+                        }
+                        disabled={hardSkillsPage === 1}
+                        className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-bold text-white transition hover:border-primary-pink hover:text-primary-pink disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-white/15 disabled:hover:text-white"
+                      >
+                        Previous
+                      </button>
+
+                      {Array.from({ length: totalHardSkillPages }).map(
+                        (_, index) => {
+                          const page = index + 1;
+                          return (
+                            <button
+                              key={page}
+                              type="button"
+                              onClick={() => setHardSkillsPage(page)}
+                              aria-label={`Go to hard skills page ${page}`}
+                              aria-current={
+                                hardSkillsPage === page ? "page" : undefined
+                              }
+                              className={`h-10 w-10 rounded-full border text-sm font-black transition ${
+                                hardSkillsPage === page
+                                  ? "border-primary-pink bg-primary-pink text-white shadow-lg shadow-primary-pink/20"
+                                  : "border-white/15 bg-white/5 text-gray-300 hover:border-primary-pink hover:text-white"
+                              }`}
+                            >
+                              {page}
+                            </button>
+                          );
+                        },
+                      )}
+
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setHardSkillsPage((page) =>
+                            Math.min(page + 1, totalHardSkillPages),
+                          )
+                        }
+                        disabled={hardSkillsPage === totalHardSkillPages}
+                        className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-bold text-white transition hover:border-primary-pink hover:text-primary-pink disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-white/15 disabled:hover:text-white"
+                      >
+                        Next
+                      </button>
+                    </div>
+                  )}
                 </motion.div>
               )}
 
@@ -389,7 +681,7 @@ const Home = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                  className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"
                 >
                   {services.map((service, idx) => (
                     <motion.div
@@ -425,10 +717,6 @@ const Home = () => {
 
                       <div className="h-1 w-12 bg-white/10 rounded-full mb-4 group-hover:w-24 group-hover:bg-primary-pink/50 transition-all duration-500" />
 
-                      <p className="text-gray-400 text-sm leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-300 line-clamp-3">
-                        {service.desc}
-                      </p>
-
                       {/* Tags / Keywords */}
                       <div className="flex flex-wrap justify-center gap-2 mt-auto">
                         {service.tags &&
@@ -458,36 +746,54 @@ const Home = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                  className="grid grid-cols-1 gap-6 md:grid-cols-2"
                 >
                   {methodologies.map((method, idx) => (
                     <motion.div
-                      key={idx}
-                      className="relative pl-6 border-l-4 border-white/10 hover:border-l-[6px] transition-all duration-300 group"
-                      style={{
-                        borderColor:
-                          idx === 0
-                            ? "#39c4ff"
-                            : idx === 1
-                              ? "#fe3e57"
-                              : idx === 2
-                                ? "#54faae"
-                                : "#f1f965",
-                      }}
-                      whileHover={{ x: 10 }}
+                      key={method.title}
+                      className="group relative flex min-h-[230px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary-pink/50 hover:bg-white/10"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.1, duration: 0.5 }}
                     >
-                      <div className="absolute -left-[22px] top-0 bg-[#070640] p-1 rounded-full border-2 border-inherit">
-                        <method.icon
-                          className={`${method.color} animate-spin-slow`}
-                          size={24}
-                        />
+                      <div
+                        className="absolute inset-0 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-20"
+                        style={{ backgroundColor: method.hex }}
+                      />
+
+                      <div className="relative mb-5">
+                        <div className="absolute inset-0 rounded-full border-2 border-dashed border-white/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                        <motion.div
+                          className="relative z-10 rounded-full border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-all duration-300 group-hover:border-primary-pink/50 group-hover:bg-primary-pink/10"
+                          whileHover={{ scale: 1.08, rotate: 5 }}
+                        >
+                          <method.icon
+                            size={32}
+                            className={`${method.color} transition-all duration-300 group-hover:brightness-125`}
+                          />
+                        </motion.div>
                       </div>
-                      <h3
-                        className={`text-2xl font-bold mb-2 ${method.color} group-hover:brightness-125 transition-all`}
-                      >
+
+                      <h3 className="mb-5 text-2xl font-bold text-white transition-colors duration-300 group-hover:text-primary-pink">
                         {method.title}
                       </h3>
-                      <p className="text-gray-300 text-lg">{method.desc}</p>
+
+                      <div className="relative z-10 flex flex-wrap justify-center gap-2">
+                        {method.tags.map((tag, tagIndex) => (
+                          <motion.span
+                            key={tag}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{
+                              delay: 0.25 + tagIndex * 0.08 + idx * 0.1,
+                              duration: 0.3,
+                            }}
+                            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition-colors duration-300 hover:border-primary-pink hover:bg-primary-pink"
+                          >
+                            {tag}
+                          </motion.span>
+                        ))}
+                      </div>
                     </motion.div>
                   ))}
                 </motion.div>

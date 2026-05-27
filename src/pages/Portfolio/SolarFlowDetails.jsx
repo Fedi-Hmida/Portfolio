@@ -1,13 +1,17 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import {
-    FaArrowLeft,
-    FaArrowRight,
-    FaBolt,
-    FaDatabase,
-    FaMobileAlt,
-    FaPlay,
-    FaWifi,
+  FaArrowLeft,
+  FaArrowRight,
+  FaBolt,
+  FaDatabase,
+  FaLeaf,
+  FaMobileAlt,
+  FaPlay,
+  FaProjectDiagram,
+  FaServer,
+  FaSolarPanel,
+  FaWifi,
 } from "react-icons/fa";
 import { SiDart, SiFirebase, SiFlutter } from "react-icons/si";
 import { Link } from "react-router-dom";
@@ -15,629 +19,604 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ParticlesBackground from "../../components/ParticlesBackground";
 
-// Assets
 import solarLogo from "../../assets/images/logo_1555.png";
 import maintenanceVideo from "../../assets/videos/Maintennace2.0.mp4";
 import adminVideo from "../../assets/videos/admin2.0.mp4";
 import userVideo from "../../assets/videos/user2.0.mp4";
 
+const metricCards = [
+  { label: "Platform", value: "Flutter", detail: "Cross-platform mobile app" },
+  { label: "Domain", value: "IoT", detail: "Solar energy monitoring" },
+  { label: "Duration", value: "3 months", detail: "Project timeline" },
+  { label: "Focus", value: "Realtime", detail: "Energy analytics and device control" },
+];
+
+const roleCards = [
+  {
+    title: "Mobile Product Build",
+    area: "Flutter + Dart",
+    text: "Created the SolarFlow Flutter app for real-time solar energy analytics.",
+  },
+  {
+    title: "Role-Based UX",
+    area: "User + Maintenance + Admin",
+    text: "Designed mobile screens for user, maintenance, and admin workflows.",
+  },
+  {
+    title: "Connected Data Flow",
+    area: "Firebase + IoT",
+    text: "Connected the app experience with Firebase and IoT-focused data handling.",
+  },
+  {
+    title: "Demo Storytelling",
+    area: "Product walkthroughs",
+    text: "Built demo flows showing monitoring, maintenance, and administration features.",
+  },
+];
+
+const platformFlow = [
+  {
+    title: "Mobile Dashboard",
+    label: "Flutter",
+    text: "Flutter provides the main interface for tracking solar energy production and consumption.",
+  },
+  {
+    title: "Connected Systems",
+    label: "IoT",
+    text: "IoT-focused flows support monitoring and remote control of connected devices.",
+  },
+  {
+    title: "Realtime Data",
+    label: "Firebase",
+    text: "Firebase supports app data handling for the mobile experience.",
+  },
+  {
+    title: "Role-Based Features",
+    label: "3 demos",
+    text: "Separate user, maintenance, and admin demos show how different users interact with the system.",
+  },
+];
+
+const featureGroups = [
+  {
+    icon: <FaBolt />,
+    title: "Energy Visibility",
+    items: ["Real-time monitoring", "Production tracking", "Consumption tracking"],
+  },
+  {
+    icon: <FaWifi />,
+    title: "Connected Control",
+    items: ["IoT control", "Remote device control", "Connected system flows"],
+  },
+  {
+    icon: <FaMobileAlt />,
+    title: "Mobile Experience",
+    items: ["Responsive Flutter UI", "iOS and Android support", "Small-screen dashboard clarity"],
+  },
+  {
+    icon: <FaDatabase />,
+    title: "Energy Optimization",
+    items: ["Renewable usage optimization", "Energy analytics", "Firebase-backed app data"],
+  },
+];
+
+const roleWorkflows = [
+  {
+    title: "User Flow",
+    text: "A mobile walkthrough focused on tracking solar production, consumption, and everyday energy visibility.",
+  },
+  {
+    title: "Maintenance Flow",
+    text: "A maintenance-focused demo showing how operational activity can be separated from the end-user view.",
+  },
+  {
+    title: "Admin Flow",
+    text: "An admin demo that supports broader monitoring and administration activity inside the same mobile product.",
+  },
+];
+
+const tradeoffCards = [
+  {
+    title: "Multiple Roles",
+    text: "Designing one mobile experience that can serve user, maintenance, and admin needs.",
+  },
+  {
+    title: "Dashboard Clarity",
+    text: "Keeping energy data understandable inside a small mobile dashboard.",
+  },
+  {
+    title: "IoT Simplicity",
+    text: "Balancing IoT control features with a simple user-facing interface.",
+  },
+];
+
+const learningCards = [
+  {
+    title: "Mobile Dashboard Design",
+    area: "Flutter",
+    text: "SolarFlow strengthened my understanding of mobile dashboards built around fast scanning and clear metrics.",
+  },
+  {
+    title: "IoT-Oriented App Flows",
+    area: "Connected systems",
+    text: "The project helped me organize monitoring and remote-control flows for a solar energy context.",
+  },
+  {
+    title: "Role-Based Product Thinking",
+    area: "User roles",
+    text: "It showed how one app can support user, maintenance, and admin needs without making the UI feel fragmented.",
+  },
+  {
+    title: "Energy Data Communication",
+    area: "Analytics",
+    text: "It improved how I present production, consumption, and renewable usage optimization inside a compact interface.",
+  },
+];
+
+const stack = ["Flutter", "Dart", "Firebase", "IoT Protocols"];
+
+const projectInfo = [
+  ["My Role", "Flutter Developer"],
+  ["Project Name", "SolarFlow App"],
+  ["Category", "Mobile App Development"],
+  ["Main Focus", "Real-time energy analytics"],
+  ["Duration", "3 Months"],
+];
+
+const demoVideos = [
+  {
+    key: "user",
+    title: "Users Features",
+    label: "Play SolarFlow user features demo",
+    src: userVideo,
+  },
+  {
+    key: "maintenance",
+    title: "Maintenance Features",
+    label: "Play SolarFlow maintenance features demo",
+    src: maintenanceVideo,
+  },
+  {
+    key: "admin",
+    title: "Admin Features",
+    label: "Play SolarFlow admin features demo",
+    src: adminVideo,
+  },
+];
+
 const SolarFlowDetails = () => {
   const [playingVideo, setPlayingVideo] = useState(null);
-
-  // Refs for videos
   const userVideoRef = useRef(null);
   const maintenanceVideoRef = useRef(null);
   const adminVideoRef = useRef(null);
+  const videoRefs = {
+    user: userVideoRef,
+    maintenance: maintenanceVideoRef,
+    admin: adminVideoRef,
+  };
 
-  const handlePlay = (videoName, videoRef) => {
-    if (videoRef.current) {
-      if (playingVideo === videoName) {
-        videoRef.current.pause();
-        setPlayingVideo(null);
-      } else {
-        // Pause others
-        if (playingVideo === "user" && userVideoRef.current)
-          userVideoRef.current.pause();
-        if (playingVideo === "maintenance" && maintenanceVideoRef.current)
-          maintenanceVideoRef.current.pause();
-        if (playingVideo === "admin" && adminVideoRef.current)
-          adminVideoRef.current.pause();
+  const handlePlay = (videoName) => {
+    const selectedVideo = videoRefs[videoName].current;
 
-        videoRef.current.play();
-        setPlayingVideo(videoName);
-      }
+    if (!selectedVideo) {
+      return;
     }
+
+    if (playingVideo === videoName) {
+      selectedVideo.pause();
+      setPlayingVideo(null);
+      return;
+    }
+
+    Object.entries(videoRefs).forEach(([key, ref]) => {
+      if (key !== videoName) {
+        ref.current?.pause();
+      }
+    });
+
+    selectedVideo.play();
+    setPlayingVideo(videoName);
   };
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const caseStudyMetrics = [
-    { label: "Platform", value: "Flutter", detail: "Cross-platform mobile app" },
-    { label: "Domain", value: "IoT", detail: "Solar energy monitoring" },
-    { label: "Duration", value: "3 months", detail: "Project timeline" },
-  ];
-
-  const responsibilities = [
-    "Created the SolarFlow Flutter app for real-time energy analytics.",
-    "Designed mobile screens for user, maintenance, and admin workflows.",
-    "Connected the app experience with Firebase and IoT-focused data handling.",
-    "Built demo flows showing monitoring, maintenance, and administration features.",
-  ];
-
-  const approachSteps = [
-    {
-      title: "Mobile dashboard",
-      text: "Flutter provides the main interface for tracking solar energy production and consumption.",
-    },
-    {
-      title: "Connected systems",
-      text: "IoT-focused flows support monitoring and remote control of connected devices.",
-    },
-    {
-      title: "Realtime data",
-      text: "Firebase supports app data handling for the mobile experience.",
-    },
-    {
-      title: "Role-based features",
-      text: "Separate user, maintenance, and admin demos show how different users interact with the system.",
-    },
-  ];
-
-  const tradeoffs = [
-    "Designing one mobile experience that can serve user, maintenance, and admin needs.",
-    "Keeping energy data understandable inside a small mobile dashboard.",
-    "Balancing IoT control features with a simple user-facing interface.",
-  ];
 
   return (
-    <div className="relative min-h-screen bg-[#070640]">
+    <div className="relative min-h-screen overflow-hidden bg-[#070640] text-white">
       <ParticlesBackground />
       <Navbar />
 
-      {/* --- HERO SECTION --- */}
-      <section className="relative flex min-h-[560px] items-center justify-center overflow-hidden bg-[#0b0d26] pt-32 pb-16">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0b0d26]/80 to-[#070640] z-0"></div>
-        <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="mb-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-medium uppercase tracking-widest text-gray-400 md:text-sm">
-              <Link to="/" className="hover:text-[#4CAF50] transition-colors">
-                Home
-              </Link>
-              <span>/</span>
-              <Link
-                to="/portfolio"
-                className="hover:text-[#4CAF50] transition-colors"
-              >
-                Project
-              </Link>
-              <span>/</span>
-              <span className="text-[#4CAF50]">SolarFlow</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-2 leading-tight">
-              SolarFlow Case Study
-            </h1>
-            <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-gray-300">
-              Flutter mobile app for solar energy monitoring, IoT control, and
-              role-based user, maintenance, and admin workflows.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <a
-                href="#solarflow-demo"
-                className="inline-flex items-center justify-center rounded-full bg-[#4CAF50] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#4CAF50]/20 transition-all hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[#4CAF50]/70"
-              >
-                Watch demos
-              </a>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3 text-sm font-bold text-white transition-all hover:-translate-y-1 hover:border-[#4CAF50] focus:outline-none focus:ring-2 focus:ring-[#4CAF50]/70"
-              >
-                Discuss this work
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <main className="relative z-10">
+        <section className="px-6 pb-16 pt-32 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-gray-300">
+                <Link to="/" className="transition hover:text-[#DDEFEA]">Home</Link>
+                <span>/</span>
+                <Link to="/portfolio" className="transition hover:text-[#DDEFEA]">Portfolio</Link>
+                <span>/</span>
+                <span className="text-[#DDEFEA]">SolarFlow</span>
+              </div>
 
-      {/* --- MAIN CONTENT --- */}
-      <section className="py-20 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-3 gap-12"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {/* Left Column: Project Logo/Image */}
-            <motion.div className="lg:col-span-2" variants={fadeInUp}>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group flex justify-center bg-[#0c0b44]/50 p-12 h-full items-center">
-                <img
-                  src={solarLogo}
-                  alt="SolarFlow Logo"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full max-w-[300px] md:w-[400px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-                />
+              <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+                <div>
+                  <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#DDEFEA]/30 bg-[#DDEFEA]/10 px-4 py-2 text-sm font-semibold text-[#F3FFFB]">
+                    <FaSolarPanel aria-hidden="true" />
+                    Mobile + IoT energy platform
+                  </div>
+                  <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">
+                    SolarFlow
+                    <span className="block text-[#DDEFEA]">Solar Energy Monitoring App</span>
+                  </h1>
+                  <p className="mb-7 max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">
+                    Flutter mobile app for solar energy monitoring, IoT control, and role-based user, maintenance, and admin workflows.
+                  </p>
+                  <p className="mb-8 max-w-3xl text-base leading-8 text-gray-300">
+                    SolarFlow is a cross-platform mobile application developed using Flutter to monitor and manage solar-powered devices in real time. It allows users to track energy production, control connected systems, and optimize renewable energy usage while keeping the experience seamless across iOS and Android.
+                  </p>
+
+                  <div className="mb-8 flex flex-wrap gap-3">
+                    {["Flutter", "Dart", "Firebase", "IoT Protocols", "3 Months"].map((item) => (
+                      <span key={item} className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-gray-200">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-4">
+                    <a href="#solarflow-demo" className="inline-flex items-center gap-2 rounded-full bg-[#DDEFEA] px-6 py-3 font-semibold text-[#002040] shadow-lg shadow-[#DDEFEA]/25 transition hover:bg-[#F3FFFB]">
+                      <FaPlay aria-hidden="true" />
+                      Watch demos
+                    </a>
+                    <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 font-semibold text-white transition hover:border-[#DDEFEA]/60 hover:bg-[#DDEFEA]/10">
+                      <FaArrowLeft aria-hidden="true" />
+                      Back to Portfolio
+                    </Link>
+                  </div>
+                </div>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.7, delay: 0.1 }}
+                  className="rounded-3xl border border-white/15 bg-white/10 p-10 shadow-2xl shadow-black/30 backdrop-blur-xl"
+                >
+                  <img
+                    src={solarLogo}
+                    alt="SolarFlow Logo"
+                    className="mx-auto w-full max-w-[360px] rounded-2xl object-contain drop-shadow-2xl"
+                    loading="eager"
+                    decoding="async"
+                  />
+                </motion.div>
               </div>
             </motion.div>
+          </div>
+        </section>
 
-            {/* Right Column: Project Info */}
-            <motion.div
-              className="lg:col-span-1"
-              variants={fadeInUp}
-              whileHover={{ y: -5, transition: { duration: 0.3 } }}
+        <section className="px-6 py-10 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {metricCards.map((metric) => (
+                <motion.div
+                  key={metric.label}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45 }}
+                  className="rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl"
+                >
+                  <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-400">{metric.label}</p>
+                  <p className="mb-3 text-4xl font-black text-[#DDEFEA]">{metric.value}</p>
+                  <p className="text-sm leading-relaxed text-gray-300">{metric.detail}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
+              <div className="space-y-10">
+                <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
+                  <div className="mb-5 flex items-center gap-3 text-[#DDEFEA]">
+                    <FaLeaf className="text-2xl" aria-hidden="true" />
+                    <h2 className="text-2xl font-black">Project Summary</h2>
+                  </div>
+                  <p className="leading-relaxed text-gray-200">
+                    The app was built as part of an internship project focused on IoT integration, real-time data handling, and energy efficiency. The core challenge was making solar production, consumption, maintenance, and administration activity clear inside one mobile-first product.
+                  </p>
+                </section>
+
+                <section className="grid gap-5 md:grid-cols-2">
+                  <div className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl">
+                    <h2 className="mb-4 text-2xl font-black text-white">The Problem</h2>
+                    <p className="leading-relaxed text-gray-300">
+                      Solar energy systems need clear mobile visibility for production, consumption, maintenance, and administration activity.
+                    </p>
+                  </div>
+                  <div className="rounded-3xl border border-[#DDEFEA]/30 bg-[#DDEFEA]/10 p-7 backdrop-blur-xl">
+                    <h2 className="mb-4 text-2xl font-black text-white">The Solution</h2>
+                    <p className="leading-relaxed text-gray-100">
+                      SolarFlow brings monitoring, IoT control, and role-based workflows into one Flutter mobile experience.
+                    </p>
+                  </div>
+                </section>
+
+                <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
+                  <div className="mb-5 flex items-center gap-3 text-[#DDEFEA]">
+                    <FaProjectDiagram className="text-2xl" aria-hidden="true" />
+                    <h2 className="text-2xl font-black">My Role</h2>
+                  </div>
+                  <p className="mb-5 leading-relaxed text-gray-200">
+                    As Flutter Developer, I focused on the mobile product experience, data-connected dashboards, and demo flows for the three core user roles.
+                  </p>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {roleCards.map((role) => (
+                      <div key={role.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5 transition-colors hover:border-[#DDEFEA]/40">
+                        <p className="mb-3 text-xs font-bold uppercase tracking-wide text-[#F3FFFB]">{role.area}</p>
+                        <h3 className="mb-2 text-lg font-black text-white">{role.title}</h3>
+                        <p className="text-sm leading-relaxed text-gray-300">{role.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
+                  <div className="mb-5 flex items-center gap-3 text-[#DDEFEA]">
+                    <FaBolt className="text-2xl" aria-hidden="true" />
+                    <h2 className="text-2xl font-black">Key Features</h2>
+                  </div>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {featureGroups.map((feature) => (
+                      <div key={feature.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5 transition-colors hover:border-[#DDEFEA]/40">
+                        <div className="mb-4 text-3xl text-[#DDEFEA]">{feature.icon}</div>
+                        <h3 className="mb-2 font-bold text-white">{feature.title}</h3>
+                        <div className="space-y-2">
+                          {feature.items.map((item) => (
+                            <p key={item} className="flex gap-2 text-sm leading-relaxed text-gray-300">
+                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#DDEFEA]" />
+                              <span>{item}</span>
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
+                  <div className="mb-5 flex items-center gap-3 text-[#DDEFEA]">
+                    <FaServer className="text-2xl" aria-hidden="true" />
+                    <h2 className="text-2xl font-black">Architecture / Technical Approach</h2>
+                  </div>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {platformFlow.map((step, index) => (
+                      <div key={step.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5">
+                        <div className="mb-4 flex items-center justify-between gap-3">
+                          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#DDEFEA] text-sm font-black text-[#002040]">
+                            {index + 1}
+                          </span>
+                          <span className="rounded-full border border-[#DDEFEA]/30 bg-[#DDEFEA]/10 px-3 py-1 text-xs font-semibold text-[#F3FFFB]">
+                            {step.label}
+                          </span>
+                        </div>
+                        <h3 className="font-bold text-white">{step.title}</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-gray-300">{step.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="mt-5 rounded-2xl border border-[#DDEFEA]/25 bg-[#DDEFEA]/10 p-4 font-mono text-sm text-[#F3FFFB]">
+                    Tech Stack: Flutter - Dart - Firebase - IoT Protocols
+                  </p>
+                </section>
+
+                <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
+                  <div className="mb-5 flex items-center gap-3 text-[#DDEFEA]">
+                    <FaMobileAlt className="text-2xl" aria-hidden="true" />
+                    <h2 className="text-2xl font-black">Role-Based Workflows</h2>
+                  </div>
+                  <p className="mb-5 leading-relaxed text-gray-200">
+                    SolarFlow is organized around three demo paths so recruiters can quickly understand who uses the app and why.
+                  </p>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    {roleWorkflows.map((flow) => (
+                      <div key={flow.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5">
+                        <h3 className="mb-2 font-bold text-white">{flow.title}</h3>
+                        <p className="text-sm leading-relaxed text-gray-300">{flow.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
+                  <div className="mb-5 flex items-center gap-3 text-[#DDEFEA]">
+                    <FaDatabase className="text-2xl" aria-hidden="true" />
+                    <h2 className="text-2xl font-black">Challenges and Tradeoffs</h2>
+                  </div>
+                  <div className="grid gap-3 md:grid-cols-3">
+                    {tradeoffCards.map((item) => (
+                      <div key={item.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5">
+                        <h3 className="mb-2 font-bold text-white">{item.title}</h3>
+                        <p className="text-sm leading-relaxed text-gray-300">{item.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
+                  <div className="mb-5 flex items-center gap-3 text-[#DDEFEA]">
+                    <FaMobileAlt className="text-2xl" aria-hidden="true" />
+                    <h2 className="text-2xl font-black">What I Learned</h2>
+                  </div>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {learningCards.map((item) => (
+                      <div key={item.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5">
+                        <p className="mb-2 text-xs font-bold uppercase tracking-wide text-[#F3FFFB]">{item.area}</p>
+                        <h3 className="mb-2 font-bold text-white">{item.title}</h3>
+                        <p className="text-sm leading-relaxed text-gray-300">{item.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              </div>
+
+              <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
+                <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
+                  <h2 className="mb-5 text-xl font-black">Project Details</h2>
+                  <div className="space-y-4 text-sm">
+                    {projectInfo.map(([label, value]) => (
+                      <div key={label}>
+                        <p className="text-gray-400">{label}</p>
+                        <p className="font-semibold text-white">{value}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
+                  <h2 className="mb-4 text-xl font-black">Technologies</h2>
+                  <div className="space-y-3 text-sm">
+                    <p className="flex items-center gap-2 text-gray-200"><SiFlutter className="text-[#DDEFEA]" /> Flutter</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiDart className="text-[#DDEFEA]" /> Dart</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiFirebase className="text-[#DDEFEA]" /> Firebase</p>
+                    <p className="flex items-center gap-2 text-gray-200"><FaWifi className="text-[#DDEFEA]" /> IoT Integration</p>
+                  </div>
+                </div>
+
+                <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
+                  <h2 className="mb-4 text-xl font-black">Main Stack</h2>
+                  <div className="flex flex-wrap gap-2">
+                    {stack.map((item) => (
+                      <span key={item} className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-sm text-gray-200">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <Link
+                  to="/contact"
+                  className="block rounded-2xl bg-[#DDEFEA] px-5 py-4 text-center font-bold text-[#002040] shadow-lg shadow-[#DDEFEA]/20 transition hover:-translate-y-1 hover:bg-[#F3FFFB]"
+                >
+                  Discuss this work
+                </Link>
+              </aside>
+            </div>
+
+            <motion.section
+              id="solarflow-demo"
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mt-14 rounded-3xl border border-white/15 bg-white/10 p-5 shadow-2xl shadow-black/20 backdrop-blur-xl md:p-7"
+              aria-labelledby="solarflow-demo-title"
             >
-              <div className="bg-[#0c0b44] border border-white/10 rounded-2xl p-8 sticky top-24 shadow-xl">
-                <h3 className="text-2xl font-bold text-white mb-6 border-l-4 border-[#4CAF50] pl-4">
-                  Project Details
-                </h3>
+              <div className="mb-8">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#DDEFEA]/30 bg-[#DDEFEA]/10 px-4 py-2 text-sm font-semibold text-[#F3FFFB]">
+                  <FaPlay aria-hidden="true" />
+                  Role-based demos
+                </div>
+                <h2 id="solarflow-demo-title" className="text-2xl font-black text-white md:text-3xl">
+                  Demo Videos
+                </h2>
+                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-300 md:text-base">
+                  Three mobile walkthroughs showing the user, maintenance, and admin sides of the SolarFlow experience.
+                </p>
+              </div>
 
-                <ul className="space-y-6">
-                  <li className="flex flex-col">
-                    <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
-                      My Role
-                    </span>
-                    <span className="text-white font-medium text-lg">
-                      Flutter Developer
-                    </span>
-                  </li>
-                  <li className="flex flex-col">
-                    <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
-                      Project Name
-                    </span>
-                    <span className="text-white font-medium text-lg">
-                      SolarFlow App
-                    </span>
-                  </li>
-                  <li className="flex flex-col">
-                    <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
-                      Category
-                    </span>
-                    <span className="text-white font-medium text-lg">
-                      Mobile App Development
-                    </span>
-                  </li>
-                  <li className="flex flex-col">
-                    <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
-                      Technologies
-                    </span>
-                    <div className="text-white font-medium text-sm space-y-1">
-                      <p className="flex items-center gap-2">
-                        <SiFlutter className="text-[#4CAF50]" /> Flutter -{" "}
-                        <SiDart className="text-[#4CAF50]" /> Dart
-                      </p>
-                      <p className="flex items-center gap-2">
-                        <SiFirebase className="text-[#4CAF50]" /> Firebase
-                      </p>
-                      <p className="flex items-center gap-2">
-                        <FaWifi className="text-[#4CAF50]" /> IoT Integration
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex flex-col">
-                    <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
-                      Main Focus
-                    </span>
-                    <span className="text-white font-medium text-lg">
-                      Real-time energy analytics
-                    </span>
-                  </li>
-                  <li className="flex flex-col">
-                    <span className="text-gray-400 text-sm uppercase tracking-wider mb-1">
-                      Duration
-                    </span>
-                    <span className="text-white font-medium text-lg">
-                      3 Months
-                    </span>
-                  </li>
-                </ul>
-
-                <div className="mt-8">
-                  <Link
-                    to="/contact"
-                    className="block w-full text-center py-3 rounded-lg bg-gradient-to-r from-[#4CAF50] to-[#45a049] text-white font-bold tracking-wide shadow-lg hover:shadow-[#4CAF50]/40 transition-all transform hover:-translate-y-1"
+              <div className="grid gap-8 md:grid-cols-3">
+                {demoVideos.map((video, index) => (
+                  <motion.div
+                    key={video.key}
+                    initial={{ opacity: 0, y: 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45, delay: index * 0.1 }}
+                    className="flex flex-col items-center rounded-2xl border border-white/10 bg-[#08073d]/70 p-5"
                   >
+                    <h3 className="mb-4 text-center text-xl font-bold text-white">{video.title}</h3>
+                    <div className="relative aspect-[9/16] w-full max-w-[300px] overflow-hidden rounded-2xl border border-white/10 bg-black shadow-lg shadow-black/30">
+                      <video
+                        ref={videoRefs[video.key]}
+                        src={video.src}
+                        poster={solarLogo}
+                        preload="metadata"
+                        className="h-full w-full object-cover"
+                        onEnded={() => setPlayingVideo(null)}
+                        onPause={() => playingVideo === video.key && setPlayingVideo(null)}
+                        controls={playingVideo === video.key}
+                        playsInline
+                      />
+                      {playingVideo !== video.key && (
+                        <button
+                          type="button"
+                          aria-label={video.label}
+                          onClick={() => handlePlay(video.key)}
+                          className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 hover:bg-black/20 focus:outline-none focus:ring-2 focus:ring-[#DDEFEA]/70 focus:ring-inset"
+                        >
+                          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#DDEFEA] shadow-lg transition-transform duration-300 hover:scale-110">
+                            <FaPlay className="ml-1 text-xl text-[#002040]" aria-hidden="true" />
+                          </span>
+                        </button>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.section>
+
+            <div className="mt-14 rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
+              <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <h2 className="mb-2 text-2xl font-black">Explore the project</h2>
+                  <p className="text-gray-300">Watch the demo flows, return to the project list, or start a conversation.</p>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <a href="#solarflow-demo" className="inline-flex items-center gap-2 rounded-full bg-[#DDEFEA] px-5 py-3 font-semibold text-[#002040] transition hover:bg-[#F3FFFB]">
+                    <FaPlay aria-hidden="true" />
+                    Demos
+                  </a>
+                  <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#DDEFEA]/60 hover:bg-[#DDEFEA]/10">
+                    Portfolio
+                  </Link>
+                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#DDEFEA]/60 hover:bg-[#DDEFEA]/10">
                     Contact Me
+                    <FaArrowRight aria-hidden="true" />
                   </Link>
                 </div>
               </div>
+            </div>
+
+            <motion.div
+              className="mt-14 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-10 md:flex-row"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Link to="/portfolio" className="group flex items-center gap-3 text-gray-400 transition-colors hover:text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-all group-hover:border-[#DDEFEA] group-hover:bg-[#DDEFEA] group-hover:text-[#002040]">
+                  <FaArrowLeft />
+                </div>
+                <div>
+                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">Previous Project</span>
+                  <span className="text-lg font-semibold">SmartClaim</span>
+                </div>
+              </Link>
+
+              <Link to="/portfolio" className="group flex items-center gap-3 text-right text-gray-400 transition-colors hover:text-white">
+                <div>
+                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">Next Project</span>
+                  <span className="text-lg font-semibold">Onboardify</span>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-all group-hover:border-[#DDEFEA] group-hover:bg-[#DDEFEA] group-hover:text-[#002040]">
+                  <FaArrowRight />
+                </div>
+              </Link>
             </motion.div>
-          </motion.div>
-
-          {/* Case Study */}
-          <motion.div
-            className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            <div className="lg:col-span-8">
-              <motion.h3
-                variants={fadeInUp}
-                className="text-3xl font-bold text-white mb-6 border-l-4 border-[#4CAF50] pl-4"
-              >
-                Project Summary
-              </motion.h3>
-              <motion.div
-                variants={fadeInUp}
-                className="prose prose-lg text-[#8c8b8b] prose-invert max-w-none"
-              >
-                <p className="leading-relaxed mb-6 block">
-                  SolarFlow is a cross-platform mobile application developed
-                  using Flutter to monitor and manage solar-powered devices in
-                  real time. It allows users to track energy production, control
-                  connected systems, and optimize renewable energy usage -
-                  ensuring a seamless experience across both iOS and Android
-                  devices. The app was built as part of an internship project
-                  focused on IoT integration, real-time data handling, and
-                  energy efficiency.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-10">
-                  {caseStudyMetrics.map((metric) => (
-                    <div
-                      key={metric.label}
-                      className="rounded-xl border border-white/10 bg-white/5 p-5"
-                    >
-                      <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
-                        {metric.label}
-                      </p>
-                      <p className="mt-2 text-2xl font-bold text-white">
-                        {metric.value}
-                      </p>
-                      <p className="mt-2 text-sm text-gray-300">
-                        {metric.detail}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-                  <div className="bg-[#0b0d26] p-6 rounded-lg border-l-4 border-[#4CAF50]">
-                    <h4 className="text-white font-semibold mb-2">
-                      The Problem
-                    </h4>
-                    <p className="text-sm">
-                      Solar energy systems need clear mobile visibility for
-                      production, consumption, maintenance, and administration
-                      activity.
-                    </p>
-                  </div>
-                  <div className="bg-[#0b0d26] p-6 rounded-lg border-l-4 border-green-300">
-                    <h4 className="text-white font-semibold mb-2">
-                      The Solution
-                    </h4>
-                    <p className="text-sm">
-                      SolarFlow brings monitoring, IoT control, and role-based
-                      workflows into one Flutter mobile experience.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-                  <div className="bg-[#0b0d26] p-6 rounded-lg border border-white/5 hover:border-[#4CAF50]/30 transition-colors">
-                    <FaBolt className="text-[#4CAF50] text-3xl mb-3" />
-                    <h4 className="text-white font-semibold mb-2">
-                      Real-time Monitoring
-                    </h4>
-                    <p className="text-sm">
-                      Live tracking of solar energy production and consumption
-                      data.
-                    </p>
-                  </div>
-                  <div className="bg-[#0b0d26] p-6 rounded-lg border border-white/5 hover:border-[#4CAF50]/30 transition-colors">
-                    <FaWifi className="text-[#4CAF50] text-3xl mb-3" />
-                    <h4 className="text-white font-semibold mb-2">
-                      IoT Control
-                    </h4>
-                    <p className="text-sm">
-                      Remote control of connected devices via secure IoT
-                      protocols.
-                    </p>
-                  </div>
-                  <div className="bg-[#0b0d26] p-6 rounded-lg border border-white/5 hover:border-[#4CAF50]/30 transition-colors">
-                    <FaMobileAlt className="text-[#4CAF50] text-3xl mb-3" />
-                    <h4 className="text-white font-semibold mb-2">
-                      Responsive UI
-                    </h4>
-                    <p className="text-sm">
-                      Clean, modern interface built with Flutter for iOS and
-                      Android.
-                    </p>
-                  </div>
-                  <div className="bg-[#0b0d26] p-6 rounded-lg border border-white/5 hover:border-[#4CAF50]/30 transition-colors">
-                    <FaDatabase className="text-[#4CAF50] text-3xl mb-3" />
-                    <h4 className="text-white font-semibold mb-2">
-                      Optimization
-                    </h4>
-                    <p className="text-sm">
-                      Smart dashboard for optimizing renewable energy usage.
-                    </p>
-                  </div>
-                </div>
-
-                <p className="font-mono text-sm text-[#4CAF50] mt-4">
-                  Tech Stack: Flutter - Dart - Firebase - IoT Protocols
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="mt-12">
-                <h3 className="text-2xl font-bold text-white mb-5">My Role</h3>
-                <div className="grid grid-cols-1 gap-3">
-                  {responsibilities.map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-gray-200"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="mt-12">
-                <h3 className="text-2xl font-bold text-white mb-5">
-                  Architecture / Technical Approach
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {approachSteps.map((step, index) => (
-                    <div
-                      key={step.title}
-                      className="rounded-xl border border-white/10 bg-[#0b0d26] p-6"
-                    >
-                      <span className="text-sm font-bold text-[#4CAF50]">
-                        0{index + 1}
-                      </span>
-                      <h4 className="mt-3 text-lg font-bold text-white">
-                        {step.title}
-                      </h4>
-                      <p className="mt-2 text-sm leading-6 text-gray-300">
-                        {step.text}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-
-            <aside className="lg:col-span-4 space-y-6">
-              <motion.div
-                variants={fadeInUp}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6"
-              >
-                <h3 className="text-xl font-bold text-white mb-4">
-                  Challenges and Tradeoffs
-                </h3>
-                <ul className="space-y-3 text-sm leading-6 text-gray-300">
-                  {tradeoffs.map((item) => (
-                    <li key={item} className="border-l-2 border-[#4CAF50] pl-4">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              <motion.div
-                variants={fadeInUp}
-                className="rounded-2xl border border-white/10 bg-[#0b0d26] p-6"
-              >
-                <h3 className="text-xl font-bold text-white mb-4">
-                  What I Learned
-                </h3>
-                <p className="text-sm leading-6 text-gray-300">
-                  SolarFlow strengthened my understanding of Flutter mobile
-                  dashboards, IoT-oriented app flows, and how to organize
-                  energy data for different user roles.
-                </p>
-              </motion.div>
-            </aside>
-          </motion.div>
-
-          {/* Key Features / Videos */}
-          <div id="solarflow-demo" className="mt-24 scroll-mt-28">
-            <h3 className="text-3xl font-bold text-white mb-12 text-center">
-              Demo Videos
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Video 1: Users Features */}
-              <motion.div
-                className="bg-[#0b0d26] p-6 rounded-2xl border border-white/5 flex flex-col items-center"
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                <h4 className="text-xl font-semibold text-white mb-4 text-center">
-                  Users Features
-                </h4>
-                <div
-                  className="relative rounded-xl overflow-hidden shadow-lg border border-white/10 group w-full max-w-[300px] aspect-[9/16]"
-                >
-                  <video
-                    ref={userVideoRef}
-                    src={userVideo}
-                    poster={solarLogo}
-                    preload="metadata"
-                    className="w-full h-full object-cover"
-                    onEnded={() => setPlayingVideo(null)}
-                    onPause={() =>
-                      playingVideo === "user" && setPlayingVideo(null)
-                    }
-                    controls={playingVideo === "user"}
-                    playsInline
-                  />
-                  {playingVideo !== "user" && (
-                    <button
-                      type="button"
-                      aria-label="Play SolarFlow user features demo"
-                      onClick={() => handlePlay("user", userVideoRef)}
-                      className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 hover:bg-black/20 focus:outline-none focus:ring-2 focus:ring-[#4CAF50]/70 focus:ring-inset"
-                    >
-                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#4CAF50] shadow-lg transition-transform duration-300 group-hover:scale-110">
-                        <FaPlay
-                          className="ml-1 text-xl text-white"
-                          aria-hidden="true"
-                        />
-                      </span>
-                    </button>
-                  )}
-                </div>
-              </motion.div>
-
-              {/* Video 2: Maintenance Features */}
-              <motion.div
-                className="bg-[#0b0d26] p-6 rounded-2xl border border-white/5 flex flex-col items-center"
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                <h4 className="text-xl font-semibold text-white mb-4 text-center">
-                  Maintenance Features
-                </h4>
-                <div
-                  className="relative rounded-xl overflow-hidden shadow-lg border border-white/10 group w-full max-w-[300px] aspect-[9/16]"
-                >
-                  <video
-                    ref={maintenanceVideoRef}
-                    src={maintenanceVideo}
-                    poster={solarLogo}
-                    preload="metadata"
-                    className="w-full h-full object-cover"
-                    onEnded={() => setPlayingVideo(null)}
-                    onPause={() =>
-                      playingVideo === "maintenance" && setPlayingVideo(null)
-                    }
-                    controls={playingVideo === "maintenance"}
-                    playsInline
-                  />
-                  {playingVideo !== "maintenance" && (
-                    <button
-                      type="button"
-                      aria-label="Play SolarFlow maintenance features demo"
-                      onClick={() =>
-                        handlePlay("maintenance", maintenanceVideoRef)
-                      }
-                      className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 hover:bg-black/20 focus:outline-none focus:ring-2 focus:ring-[#4CAF50]/70 focus:ring-inset"
-                    >
-                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#4CAF50] shadow-lg transition-transform duration-300 group-hover:scale-110">
-                        <FaPlay
-                          className="ml-1 text-xl text-white"
-                          aria-hidden="true"
-                        />
-                      </span>
-                    </button>
-                  )}
-                </div>
-              </motion.div>
-
-              {/* Video 3: Admin Features */}
-              <motion.div
-                className="bg-[#0b0d26] p-6 rounded-2xl border border-white/5 flex flex-col items-center"
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-              >
-                <h4 className="text-xl font-semibold text-white mb-4 text-center">
-                  Admin Features
-                </h4>
-                <div
-                  className="relative rounded-xl overflow-hidden shadow-lg border border-white/10 group w-full max-w-[300px] aspect-[9/16]"
-                >
-                  <video
-                    ref={adminVideoRef}
-                    src={adminVideo}
-                    poster={solarLogo}
-                    preload="metadata"
-                    className="w-full h-full object-cover"
-                    onEnded={() => setPlayingVideo(null)}
-                    onPause={() =>
-                      playingVideo === "admin" && setPlayingVideo(null)
-                    }
-                    controls={playingVideo === "admin"}
-                    playsInline
-                  />
-                  {playingVideo !== "admin" && (
-                    <button
-                      type="button"
-                      aria-label="Play SolarFlow admin features demo"
-                      onClick={() => handlePlay("admin", adminVideoRef)}
-                      className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 hover:bg-black/20 focus:outline-none focus:ring-2 focus:ring-[#4CAF50]/70 focus:ring-inset"
-                    >
-                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#4CAF50] shadow-lg transition-transform duration-300 group-hover:scale-110">
-                        <FaPlay
-                          className="ml-1 text-xl text-white"
-                          aria-hidden="true"
-                        />
-                      </span>
-                    </button>
-                  )}
-                </div>
-              </motion.div>
-            </div>
           </div>
-
-          {/* Navigation */}
-          <motion.div
-            className="mt-24 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <Link
-              to="/portfolio"
-              className="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
-            >
-              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[#4CAF50] group-hover:border-[#4CAF50] transition-all">
-                <FaArrowLeft />
-              </div>
-              <div>
-                <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">
-                  Previous Project
-                </span>
-                <span className="font-semibold text-lg">SmartClaim</span>
-              </div>
-            </Link>
-
-            <Link
-              to="/portfolio"
-              className="group flex items-center gap-3 text-right text-gray-400 hover:text-white transition-colors"
-            >
-              <div>
-                <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">
-                  Next Project
-                </span>
-                <span className="font-semibold text-lg">Onboardify</span>
-              </div>
-              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[#4CAF50] group-hover:border-[#4CAF50] transition-all">
-                <FaArrowRight />
-              </div>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       <Footer />
     </div>

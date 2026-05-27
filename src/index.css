@@ -25,6 +25,55 @@
     border-color: #fe3e57;
     box-shadow: 0 0 10px rgba(254, 62, 87, 0.3);
   }
+
+  .project-card {
+    --project-accent: #fe3e57;
+    --project-accent-text: #fe3e57;
+    --project-accent-soft: rgba(254, 62, 87, 0.15);
+    --project-accent-border: rgba(254, 62, 87, 0.4);
+    --project-accent-shadow: rgba(254, 62, 87, 0.22);
+    --project-accent-foreground: #ffffff;
+  }
+
+  .project-card:hover {
+    border-color: var(--project-accent-border);
+    box-shadow: 0 18px 42px var(--project-accent-shadow);
+  }
+
+  .project-type-pill {
+    border-color: var(--project-accent-border);
+    background: var(--project-accent-soft);
+  }
+
+  .project-tech-pill {
+    background: var(--project-accent);
+    color: var(--project-accent-foreground);
+  }
+
+  .project-overlay-cta {
+    border-color: var(--project-accent);
+    --tw-ring-color: var(--project-accent-border);
+  }
+
+  .project-overlay-cta:hover {
+    background: var(--project-accent);
+    color: var(--project-accent-foreground);
+  }
+
+  .project-role,
+  .project-card-link,
+  .project-card:hover .project-title {
+    color: var(--project-accent-text);
+  }
+
+  .project-impact {
+    border-left-color: var(--project-accent);
+    background: var(--project-accent-soft);
+  }
+
+  .project-card-link {
+    --tw-ring-color: var(--project-accent-border);
+  }
 }
 
 body {
