@@ -1,104 +1,110 @@
 import { motion } from "framer-motion";
 import {
     FaBrain,
-    FaChartLine,
     FaCode,
+    FaCogs,
+    FaDatabase,
     FaEye,
-    FaLayerGroup,
+    FaFileCode,
     FaMobileAlt,
-    FaNetworkWired,
     FaRobot,
     FaRocket,
+    FaRoute,
     FaServer,
-    FaTree,
+    FaShieldAlt,
+    FaTools,
+    FaUserCheck,
 } from "react-icons/fa";
 import {
-    SiAndroidstudio,
+    SiDart,
     SiFirebase,
+    SiFastapi,
     SiFlutter,
     SiMongodb,
-    SiNestjs,
+    SiMysql,
     SiNextdotjs,
-    SiNodedotjs,
     SiOpencv,
-    SiPandas,
     SiPytorch,
     SiReact,
     SiScikitlearn,
-    SiSymfony,
     SiTailwindcss,
-    SiTensorflow,
+    SiTypescript,
 } from "react-icons/si";
+import { services as homeServices } from "../../data/skills";
 import SectionTitle from "../SectionTitle"; // Reusing from Resume
 import ServiceCard from "./ServiceCard";
 
+const tagIconMap = {
+  Flutter: { icon: SiFlutter, color: "#02569B" },
+  Dart: { icon: SiDart, color: "#0175C2" },
+  Firebase: { icon: SiFirebase, color: "#FFCA28" },
+  "REST APIs": { icon: FaServer, color: "#61DAFB" },
+  FlutterFlow: { icon: FaMobileAlt, color: "#5066AD" },
+  "Offline mobile AI": { icon: FaBrain, color: "#fe3e57" },
+  YOLOv8: { icon: FaEye, color: "#6FB9CC" },
+  OpenCV: { icon: SiOpencv, color: "#5C3EE8" },
+  PyTorch: { icon: SiPytorch, color: "#EE4C2C" },
+  "Image preprocessing": { icon: FaCogs, color: "#39c4ff" },
+  "Object detection": { icon: FaEye, color: "#00C2F0" },
+  "Damage detection": { icon: FaShieldAlt, color: "#6FB9CC" },
+  LangGraph: { icon: FaRoute, color: "#7AC943" },
+  LangChain: { icon: FaTools, color: "#7AC943" },
+  "RAG Chatbots": { icon: FaRobot, color: "#ff6b81" },
+  ChromaDB: { icon: FaDatabase, color: "#9B8CFF" },
+  "Vector database": { icon: FaDatabase, color: "#9B8CFF" },
+  "LLM reasoning": { icon: FaBrain, color: "#fe3e57" },
+  "Tool-assisted agents": { icon: FaTools, color: "#7AC943" },
+  "Human-in-the-loop": { icon: FaUserCheck, color: "#00C2F0" },
+  "Validation layers": { icon: FaShieldAlt, color: "#ff6b81" },
+  "Fallback rules": { icon: FaRoute, color: "#ffb347" },
+  "Safety checks": { icon: FaShieldAlt, color: "#7AC943" },
+  "Explainable recommendations": { icon: FaBrain, color: "#39c4ff" },
+  Python: { icon: FaCode, color: "#FFD43B" },
+  "scikit-learn": { icon: SiScikitlearn, color: "#F7931E" },
+  XGBoost: { icon: FaRocket, color: "#00BFFF" },
+  SHAP: { icon: FaEye, color: "#ff6b81" },
+  "Explainable AI": { icon: FaBrain, color: "#39c4ff" },
+  "Model Evaluation": { icon: FaCogs, color: "#fe3e57" },
+  Classification: { icon: FaBrain, color: "#9B8CFF" },
+  "Class imbalance": { icon: FaDatabase, color: "#ffb347" },
+  "CRISP-DM": { icon: FaRoute, color: "#00C2F0" },
+  React: { icon: SiReact, color: "#61DAFB" },
+  "Next.js": { icon: SiNextdotjs, color: "#ffffff" },
+  TypeScript: { icon: SiTypescript, color: "#3178C6" },
+  "Tailwind CSS": { icon: SiTailwindcss, color: "#06B6D4" },
+  "Three.js": { icon: FaCode, color: "#ffffff" },
+  "Dashboard UI": { icon: FaFileCode, color: "#B8C5FF" },
+  "3D digital twin": { icon: FaCogs, color: "#7AC943" },
+  FastAPI: { icon: SiFastapi, color: "#009485" },
+  MongoDB: { icon: SiMongodb, color: "#47A248" },
+  MySQL: { icon: SiMysql, color: "#4479A1" },
+  Joblib: { icon: FaDatabase, color: "#ffb347" },
+};
+
+const serviceOrder = [
+  "AI Agents / Agentic AI",
+  "Full-Stack Web Development",
+  "AI / Machine Learning",
+  "Mobile Development",
+  "Computer Vision",
+];
+
+const services = [...homeServices].sort(
+  (firstService, secondService) =>
+    serviceOrder.indexOf(firstService.title) -
+    serviceOrder.indexOf(secondService.title),
+).map((service) => ({
+  title: service.title,
+  description: service.desc,
+  icon: service.icon,
+  stack: service.tags.map((tag) => ({
+    name: tag,
+    icon: tagIconMap[tag]?.icon || service.icon,
+    color: tagIconMap[tag]?.color || "#fe3e57",
+  })),
+}));
+
 const ServicesSection = () => {
-  const services = [
-    {
-      title: "Cross-Platform Mobile Apps",
-      description:
-        "Flutter-powered mobile applications with native performance. Leveraging Node.js and Firebase for robust backend solutions, alongside real-time data processing and modern UI/UX design patterns.",
-      icon: FaMobileAlt,
-      stack: [
-        { name: "Flutter", icon: SiFlutter, color: "#02569B" },
-        { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-        { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
-        { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
-        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-        { name: "Android Studio", icon: SiAndroidstudio, color: "#3DDC84" },
-        { name: "REST API", icon: FaServer, color: "#61DAFB" },
-        { name: "BLOC/Cubit", icon: FaLayerGroup, color: "#8E24AA" },
-      ],
-    },
-    {
-      title: "AI & Computer Vision",
-      description:
-        "YOLO-powered computer vision solutions for damage detection, object recognition, and intelligent automation. Experience with real-world AI implementation in insurance applications and agentic workflows.",
-      icon: FaRobot,
-      stack: [
-        { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
-        { name: "OpenCV", icon: SiOpencv, color: "#5C3EE8" },
-        { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
-        { name: "YOLOv8 Model", icon: FaEye, color: "#00FF00" },
-        { name: "RAG Systems", icon: FaBrain, color: "#FF00FF" },
-        { name: "CNN Model", icon: FaNetworkWired, color: "#990099" },
-        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-        { name: "LangGraph", icon: FaBrain, color: "#FF00FF" },
-      ],
-    },
-    {
-      title: "Full-Stack Web Development",
-      description:
-        "End-to-end web solutions using React and Next.js for the frontend, coupled with Node.js and NestJS for robust backend architectures. Includes experience with FastAPI, Three.js 3D dashboards, and enterprise systems.",
-      icon: FaCode,
-      stack: [
-        { name: "React", icon: SiReact, color: "#61DAFB" },
-        { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
-        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-        { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-        { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
-        { name: "Symfony", icon: SiSymfony, color: "#000000" },
-        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-        { name: "FastAPI", icon: FaServer, color: "#009485" },
-        { name: "Three.js", icon: FaCode, color: "#ffffff" },
-      ],
-    },
-    {
-      title: "Data Science & ML Solutions",
-      description:
-        "Machine learning implementations with KNN, Linear Regression, Decision Trees, and K-Means clustering. Expertise in Explainable AI (SHAP), model evaluation (CRISP-DM/TDSP), and predictive analytics.",
-      icon: FaChartLine,
-      stack: [
-        { name: "Pandas", icon: SiPandas, color: "#150458" },
-        { name: "Scikit-learn", icon: SiScikitlearn, color: "#F7931E" },
-        { name: "Random Forest Model", icon: FaTree, color: "#228B22" },
-        { name: "XGBoost Model", icon: FaRocket, color: "#00Bfff" },
-        { name: "MLP Model", icon: FaNetworkWired, color: "#FF4500" },
-        { name: "Logistic Reg Model", icon: FaChartLine, color: "#4B0082" },
-        { name: "SHAP (Explainable AI)", icon: FaEye, color: "#4B0082" },
-      ],
-    },
-  ];
 
   return (
     <section className="py-20 bg-deep-indigo relative z-10 w-full overflow-hidden">

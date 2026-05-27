@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
-import { FaCheck, FaCopy, FaDownload, FaTimes } from "react-icons/fa";
+import { lazy, Suspense, useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/social-icons.css";
 import Footer from "../components/Footer";
@@ -37,9 +36,6 @@ const containerVariants = {
 };
 
 const CV_PATH = "/assets/cv/Cv_Ang.pdf";
-const CV_PREVIEW_PATH = `${CV_PATH}#toolbar=1&navpanes=0&scrollbar=1&view=Fit`;
-const MODAL_FOCUSABLE_SELECTOR =
-  'a[href], button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
 const HERO_NAME = "Fedi Hmida";
 const HERO_PRIMARY_ROLE = "Software Engineering Student";
 const HERO_SPECIALIZATION = "Data Science & AI Engineering";
@@ -47,11 +43,6 @@ const heroNameLetters = Array.from(HERO_NAME);
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState("services"); // Default tab changed from "soft skills" to "hard skills"
-  const [isCvModalOpen, setIsCvModalOpen] = useState(false);
-  const [cvCopyStatus, setCvCopyStatus] = useState("idle");
-  const modalRef = useRef(null);
-  const closeButtonRef = useRef(null);
-  const previousFocusRef = useRef(null);
 
   const portfolioPreview = getProjectCards("home");
   const newsPreview = latestNewsPreview;
@@ -70,89 +61,6 @@ const Home = () => {
     hardSkillsPage * hardSkillsPerPage,
   );
 
-  const openCvModal = () => {
-    previousFocusRef.current = document.activeElement;
-    setCvCopyStatus("idle");
-    setIsCvModalOpen(true);
-  };
-
-  const copyCvLink = async () => {
-    const cvUrl = new URL(CV_PATH, window.location.origin).href;
-
-    try {
-      if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(cvUrl);
-      } else {
-        const textArea = document.createElement("textarea");
-        textArea.value = cvUrl;
-        textArea.setAttribute("readonly", "");
-        textArea.style.position = "fixed";
-        textArea.style.opacity = "0";
-        document.body.appendChild(textArea);
-        textArea.select();
-        const copied = document.execCommand("copy");
-        document.body.removeChild(textArea);
-
-        if (!copied) {
-          throw new Error("Clipboard fallback failed");
-        }
-      }
-
-      setCvCopyStatus("copied");
-      window.setTimeout(() => setCvCopyStatus("idle"), 1800);
-    } catch {
-      setCvCopyStatus("failed");
-    }
-  };
-
-  useEffect(() => {
-    if (!isCvModalOpen) {
-      return undefined;
-    }
-
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    window.setTimeout(() => closeButtonRef.current?.focus(), 0);
-
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        setIsCvModalOpen(false);
-        return;
-      }
-
-      if (event.key !== "Tab" || !modalRef.current) {
-        return;
-      }
-
-      const focusableElements = Array.from(
-        modalRef.current.querySelectorAll(MODAL_FOCUSABLE_SELECTOR),
-      ).filter((element) => !element.hasAttribute("disabled"));
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-
-      if (!firstElement || !lastElement) {
-        event.preventDefault();
-        return;
-      }
-
-      if (event.shiftKey && document.activeElement === firstElement) {
-        event.preventDefault();
-        lastElement.focus();
-      } else if (!event.shiftKey && document.activeElement === lastElement) {
-        event.preventDefault();
-        firstElement.focus();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = originalOverflow;
-      previousFocusRef.current?.focus?.();
-    };
-  }, [isCvModalOpen]);
-
   return (
     <div className="relative min-h-screen bg-deep-indigo text-white font-sans overflow-x-hidden">
       <Suspense
@@ -161,119 +69,6 @@ const Home = () => {
         <ParticlesBackground />
       </Suspense>
       <Navbar />
-
-      <AnimatePresence>
-        {isCvModalOpen && (
-          <motion.div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#030225]/80 px-3 py-4 backdrop-blur-md sm:px-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            role="presentation"
-            onMouseDown={(event) => {
-              if (event.target === event.currentTarget) {
-                setIsCvModalOpen(false);
-              }
-            }}
-          >
-            <motion.div
-              ref={modalRef}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="cv-preview-title"
-              aria-describedby="cv-preview-description"
-              className="glass-card flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl shadow-2xl shadow-primary-pink/20"
-              initial={{ opacity: 0, y: 28, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 22, scale: 0.97 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="flex items-start justify-between gap-4 border-b border-white/10 bg-darker-indigo/80 p-4 sm:items-center sm:px-5">
-                <div>
-                  <h2
-                    id="cv-preview-title"
-                    className="text-xl font-bold text-white sm:text-2xl"
-                  >
-                    CV Preview
-                  </h2>
-                  <p
-                    id="cv-preview-description"
-                    className="mt-1 text-sm text-gray-300"
-                  >
-                    Review the PDF, copy the share link, or download a copy.
-                  </p>
-                </div>
-
-                <button
-                  ref={closeButtonRef}
-                  type="button"
-                  aria-label="Close CV preview"
-                  onClick={() => setIsCvModalOpen(false)}
-                  className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-primary-pink/50 bg-white/5 text-white shadow-lg shadow-primary-pink/10 transition-all hover:border-primary-pink hover:bg-primary-pink/20 focus:outline-none focus:ring-2 focus:ring-primary-pink/70"
-                >
-                  <FaTimes aria-hidden="true" />
-                </button>
-              </div>
-
-              <div className="min-h-0 flex-1 bg-[#05043a]/80 p-3 sm:p-4">
-                <div className="h-[64vh] min-h-[360px] overflow-hidden rounded-xl border border-white/10 bg-[#f8f8f8] shadow-inner shadow-black/20">
-                  <iframe
-                    title="Fedi Hmida CV PDF preview"
-                    src={CV_PREVIEW_PATH}
-                    className="h-full w-full"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-4 border-t border-white/10 bg-darker-indigo/80 p-4 lg:flex-row lg:items-center lg:justify-between lg:px-5">
-                <a
-                  href={CV_PATH}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm font-semibold text-primary-pink transition-colors hover:text-secondary-pink"
-                >
-                  Open PDF in browser
-                </a>
-
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
-                  <button
-                    type="button"
-                    onClick={copyCvLink}
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:border-primary-pink hover:text-primary-pink focus:outline-none focus:ring-2 focus:ring-primary-pink/70"
-                  >
-                    {cvCopyStatus === "copied" ? (
-                      <FaCheck aria-hidden="true" />
-                    ) : (
-                      <FaCopy aria-hidden="true" />
-                    )}
-                    {cvCopyStatus === "copied"
-                      ? "Copied"
-                      : cvCopyStatus === "failed"
-                        ? "Copy failed"
-                        : "Copy CV link"}
-                  </button>
-                  <a
-                    href={CV_PATH}
-                    download
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-pink px-5 py-3 text-sm font-bold text-white shadow-lg shadow-primary-pink/20 transition-all hover:-translate-y-0.5 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-primary-pink/70"
-                  >
-                    <FaDownload aria-hidden="true" />
-                    Download CV
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => setIsCvModalOpen(false)}
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-bold text-gray-200 transition-all hover:-translate-y-0.5 hover:border-white/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-pink/70"
-                  >
-                    <FaTimes aria-hidden="true" />
-                    Close
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* --- HERO SECTION --- */}
       <section className="relative flex items-center justify-center px-4 pb-10 pt-28 sm:px-6 sm:pb-12 lg:min-h-[620px] lg:px-8 lg:pb-8 lg:pt-24">
@@ -357,13 +152,14 @@ const Home = () => {
                 >
                   View Projects
                 </Link>
-                <button
-                  type="button"
-                  onClick={openCvModal}
+                <a
+                  href={CV_PATH}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3 text-sm font-bold text-white transition-all hover:-translate-y-1 hover:border-primary-pink hover:text-primary-pink focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
                 >
                   View CV
-                </button>
+                </a>
                 <Link
                   to="/about"
                   className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 px-7 py-3 text-sm font-bold text-gray-200 transition-all hover:-translate-y-1 hover:border-white/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"

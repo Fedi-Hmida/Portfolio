@@ -22,7 +22,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
             {/* Left Column - Image */}
-            <div className="lg:col-span-5 relative">
+            <div className="lg:col-span-6 relative">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -44,7 +44,7 @@ const About = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:col-span-7 text-white space-y-6"
+              className="lg:col-span-6 text-white space-y-6"
             >
               <h2 className="text-4xl font-bold mb-4">
                 <ReactTyped
@@ -58,30 +58,26 @@ const About = () => {
 
               <div className="space-y-4 text-gray-300 leading-relaxed text-lg text-justify">
                 <p>
-                  I'm a <strong>Data Science & AI Engineering student</strong>{" "}
-                  at ESPRIT, holding a Bachelor's degree in Computer Engineering
-                  (2024) and hands-on experience building production-ready
-                  applications.
+                  I'm a <strong>Software Engineering student</strong>{" "}
+                  specializing in <strong>Data Science and AI</strong>, holding
+                  a{" "}
+                  <strong>Bachelor's degree in Computer Engineering</strong>{" "}
+                  from 2024.
                 </p>
                 <p>
-                  My technical expertise spans{" "}
-                  <strong>cross-platform mobile development (Flutter)</strong>,{" "}
-                  <strong>Computer vision technology (advanced YOLO)</strong>,{" "}
-                  <strong>
-                    AI/ML frameworks (TensorFlow, PyTorch, OpenCV)
-                  </strong>
-                  , and <strong>full-stack solutions</strong> (
-                  <strong>NextJS</strong>, <strong>NestJS</strong>,{" "}
-                  <strong>Symfony</strong>). I focus on creating solutions that
-                  bridge business needs and{" "}
-                  <strong>intelligent automation</strong>.
+                  I build mobile, web, and AI-powered applications using{" "}
+                  <strong>Flutter</strong>, <strong>FastAPI</strong>,{" "}
+                  <strong>Next.js</strong>, <strong>computer vision</strong>,{" "}
+                  <strong>machine learning</strong>, and{" "}
+                  <strong>Agentic AI workflows</strong>.
                 </p>
                 <p>
-                  What drives me is the intersection of intelligent systems and
-                  human-centered design. I believe{" "}
-                  <strong>discipline shapes success</strong>, and in
-                  engineering, that means combining technical precision with
-                  purposeful innovation.
+                  My projects range from{" "}
+                  <strong>insurance claim automation</strong> and{" "}
+                  <strong>medical ML prototypes</strong> to{" "}
+                  <strong>smart farming platforms</strong>, with a focus on
+                  practical systems that connect strong engineering foundations
+                  with intelligent product experiences.
                 </p>
               </div>
 

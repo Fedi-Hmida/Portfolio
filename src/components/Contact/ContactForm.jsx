@@ -45,8 +45,13 @@ const ContactForm = () => {
     }
 
     const templateParams = {
+      first_name: data.firstName,
+      last_name: data.lastName,
       from_name: `${data.firstName} ${data.lastName}`,
       from_email: data.email,
+      user_name: `${data.firstName} ${data.lastName}`,
+      user_email: data.email,
+      reply_to: data.email,
       to_name: "Fedi HMIDA",
       subject: data.subject,
       message: data.message,

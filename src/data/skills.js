@@ -308,18 +308,6 @@ export const hardSkills = [
 
 export const services = [
   {
-    title: "Mobile Development",
-    desc: "Flutter and Dart mobile apps with Firebase data flows, REST API integration, FlutterFlow prototypes, and offline mobile AI paths for field usage.",
-    icon: FaMobileAlt,
-    tags: ["Flutter", "Dart", "Firebase", "REST APIs", "FlutterFlow", "Offline mobile AI"],
-  },
-  {
-    title: "Computer Vision",
-    desc: "YOLOv8, OpenCV, and PyTorch pipelines for image preprocessing, object detection, and vehicle damage detection in SmartClaim.",
-    icon: FaEye,
-    tags: ["YOLOv8", "OpenCV", "PyTorch", "Image preprocessing", "Object detection", "Damage detection"],
-  },
-  {
     title: "AI Agents / Agentic AI",
     desc: "LangGraph workflows with LLM reasoning, tool-assisted irrigation decisions, human-in-the-loop approval, validation layers, fallback rules, and safety checks.",
     icon: FaRobot,
@@ -336,22 +324,6 @@ export const services = [
       "Fallback rules",
       "Safety checks",
       "Explainable recommendations",
-    ],
-  },
-  {
-    title: "AI / Machine Learning",
-    desc: "Python ML work with scikit-learn, XGBoost, SHAP, classification, model evaluation, class imbalance handling, and CRISP-DM framing.",
-    icon: FaBrain,
-    tags: [
-      "Python",
-      "scikit-learn",
-      "XGBoost",
-      "SHAP",
-      "Explainable AI",
-      "Model Evaluation",
-      "Classification",
-      "Class imbalance",
-      "CRISP-DM",
     ],
   },
   {
@@ -373,6 +345,34 @@ export const services = [
       "MySQL",
       "Joblib",
     ],
+  },
+  {
+    title: "AI / Machine Learning",
+    desc: "Python ML work with scikit-learn, XGBoost, SHAP, classification, model evaluation, class imbalance handling, and CRISP-DM framing.",
+    icon: FaBrain,
+    tags: [
+      "Python",
+      "scikit-learn",
+      "XGBoost",
+      "SHAP",
+      "Explainable AI",
+      "Model Evaluation",
+      "Classification",
+      "Class imbalance",
+      "CRISP-DM",
+    ],
+  },
+  {
+    title: "Mobile Development",
+    desc: "Flutter and Dart mobile apps with Firebase data flows, REST API integration, FlutterFlow prototypes, and offline mobile AI paths for field usage.",
+    icon: FaMobileAlt,
+    tags: ["Flutter", "Dart", "Firebase", "REST APIs", "FlutterFlow", "Offline mobile AI"],
+  },
+  {
+    title: "Computer Vision",
+    desc: "YOLOv8, OpenCV, and PyTorch pipelines for image preprocessing, object detection, and vehicle damage detection in SmartClaim.",
+    icon: FaEye,
+    tags: ["YOLOv8", "OpenCV", "PyTorch", "Image preprocessing", "Object detection", "Damage detection"],
   },
 ];
 
