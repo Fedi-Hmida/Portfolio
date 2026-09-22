@@ -13,12 +13,19 @@ import nvidiaAnomalyImg from "../assets/images/news17/nvidea2.jpg";
 import biatMasterclassImg from "../assets/images/news18/biat-1.jpg";
 import firmaaLaunchImg from "../assets/images/news19/firmaa-poster.jpg";
 import doubleDegreeImg from "../assets/images/news20/3il-campus.jpg";
+import bnsInternshipImg from "../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.jpg";
 import houImg from "../assets/images/new8/Hou.png";
 import nivineImg from "../assets/images/new9/nivine.png";
 import ieeeImg from "../assets/images/news6/me 2.jpg";
 import graduationImg from "../assets/images/pf1.png";
 
 export const newsItems = [
+  {
+    id: 21,
+    author: "Fedi Hmida",
+    image: bnsInternshipImg,
+    link: "/news/21",
+  },
   {
     id: 20,
     author: "Fedi Hmida",
