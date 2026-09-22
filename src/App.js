@@ -27,6 +27,9 @@ const NewsInternshipStart = lazy(
 );
 const NewsList = lazy(() => import("./pages/News/NewsList"));
 const NewsNvidiaAnomalyDetection = lazy(() => import("./pages/News/NewsNvidiaAnomalyDetection"));
+const NewsDoubleDegree = lazy(() => import("./pages/News/NewsDoubleDegree"));
+const NewsFirmaaLaunch = lazy(() => import("./pages/News/NewsFirmaaLaunch"));
+const NewsBiatMasterclass = lazy(() => import("./pages/News/NewsBiatMasterclass"));
 const NewsIASTAM = lazy(() => import("./pages/News/NewsIASTAM"));
 const NewsMaraTechHackathon = lazy(() => import("./pages/News/NewsMaraTechHackathon"));
 const NewsNvidiaDLI = lazy(() => import("./pages/News/NewsNvidiaDLI"));
@@ -156,6 +159,30 @@ const AppRoutes = () => {
             element={
               <AnimatedPage>
                 <NewsList />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/20"
+            element={
+              <AnimatedPage>
+                <NewsDoubleDegree />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/19"
+            element={
+              <AnimatedPage>
+                <NewsFirmaaLaunch />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/18"
+            element={
+              <AnimatedPage>
+                <NewsBiatMasterclass />
               </AnimatedPage>
             }
           />

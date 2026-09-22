@@ -10,12 +10,54 @@ import nvidiaDliImg from "../assets/images/news14/nvidea1.jpg";
 import maratechHackImg from "../assets/images/news15/hack.jpg";
 import iastamMainImg from "../assets/images/news16/2.jpg";
 import nvidiaAnomalyImg from "../assets/images/news17/nvidea2.jpg";
+import biatMasterclassImg from "../assets/images/news18/biat-2.jpg";
+import firmaaLaunchImg from "../assets/images/news19/firmaa-poster.jpg";
+import doubleDegreeImg from "../assets/images/news20/3il-cohort.jpg";
 import houImg from "../assets/images/new8/Hou.png";
 import nivineImg from "../assets/images/new9/nivine.png";
 import ieeeImg from "../assets/images/news6/me 2.jpg";
 import graduationImg from "../assets/images/pf1.png";
 
 export const newsItems = [
+  {
+    id: 20,
+    title: "A New Chapter - Double Degree Between ESPRIT and 3iL Ingénieurs",
+    homeTitle: "Double Degree in France",
+    date: "September 2026",
+    author: "Fedi Hmida",
+    image: doubleDegreeImg,
+    description:
+      "September 2024, first class in Tunis. September 2026, first class in France. I am continuing my engineering cycle as a double degree between ESPRIT and 3iL Ingénieurs in Limoges - the programme does not restart, it continues elsewhere.",
+    homeDescription:
+      "Continuing my engineering cycle as a double degree between ESPRIT and 3iL Ingénieurs, now based in Limoges, France.",
+    link: "/news/20",
+  },
+  {
+    id: 19,
+    title: "FIRMAA - AI-Powered Smart Agriculture Platform",
+    homeTitle: "FIRMAA Smart Agriculture",
+    date: "May 2026",
+    author: "Fedi Hmida",
+    image: firmaaLaunchImg,
+    description:
+      "Shared FIRMAA, the AI-powered smart agriculture platform our team of seven built as the ESPRIT Integrated Project - a LangGraph irrigation agent, crop, livestock and insect detection models, a 3D farm view, and IoT integration in one platform.",
+    homeDescription:
+      "AI-powered smart agriculture platform built by a team of seven for the ESPRIT Integrated Project.",
+    link: "/news/19",
+  },
+  {
+    id: 18,
+    title: "BIAT Masterclass - InGenius Budget at ESPRIT",
+    homeTitle: "BIAT Masterclass at ESPRIT",
+    date: "April 2026",
+    author: "Fedi Hmida",
+    image: biatMasterclassImg,
+    description:
+      "Attended the BIAT InGenius Budget Masterclass hosted at ESPRIT on 21 April 2026 - financial planning, savings, and how banks can support students at every step of their journey.",
+    homeDescription:
+      "BIAT InGenius Budget Masterclass at ESPRIT on financial planning and student savings.",
+    link: "/news/18",
+  },
   {
     id: 17,
     title: "NVIDIA DLI - Applications of AI for Anomaly Detection",
