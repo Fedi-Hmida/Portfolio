@@ -54,6 +54,7 @@ import { BsBarChartSteps } from "react-icons/bs";
 export const softSkills = [
   {
     title: "Communication",
+    key: "communication",
     desc: "Effective verbal and written communication skills",
     icon: FaComments,
     color: "text-[#fe3e57]",
@@ -61,6 +62,7 @@ export const softSkills = [
   },
   {
     title: "Project Management",
+    key: "project_management",
     desc: "Organized and efficient project handling",
     icon: FaTasks,
     color: "text-[#54faae]",
@@ -68,6 +70,7 @@ export const softSkills = [
   },
   {
     title: "Team Collaboration",
+    key: "team_collaboration",
     desc: "Strong team player with collaborative mindset",
     icon: FaUsers,
     color: "text-[#ff8c2f]",
@@ -75,6 +78,7 @@ export const softSkills = [
   },
   {
     title: "Analytical",
+    key: "analytical",
     desc: "Data-driven decision making",
     icon: FaChartLine,
     color: "text-[#f1f965]",
@@ -82,6 +86,7 @@ export const softSkills = [
   },
   {
     title: "Organization",
+    key: "organization",
     desc: "Structured and methodical approach",
     icon: FaSitemap,
     color: "text-[#ff0173]",
@@ -89,6 +94,7 @@ export const softSkills = [
   },
   {
     title: "Creativity",
+    key: "creativity",
     desc: "Innovative thinking and solutions",
     icon: FaLightbulb,
     color: "text-[#39c4ff]",
@@ -99,6 +105,7 @@ export const softSkills = [
 export const hardSkills = [
   {
     title: "LangGraph",
+    key: "langgraph",
     icon: FaBrain,
     desc: "Agentic AI workflows",
     color: "text-[#FF00FF]",
@@ -106,6 +113,7 @@ export const hardSkills = [
   },
   {
     title: "LangChain",
+    key: "langchain",
     icon: FaLayerGroup,
     desc: "LLM and RAG orchestration",
     color: "text-[#54faae]",
@@ -113,6 +121,7 @@ export const hardSkills = [
   },
   {
     title: "RAG Chatbots",
+    key: "rag_chatbots",
     icon: FaRobot,
     desc: "Retrieval-augmented assistants",
     color: "text-[#39c4ff]",
@@ -120,6 +129,7 @@ export const hardSkills = [
   },
   {
     title: "ChromaDB",
+    key: "chromadb",
     icon: FaDatabase,
     desc: "Vector database for RAG",
     color: "text-[#ff6b81]",
@@ -127,6 +137,7 @@ export const hardSkills = [
   },
   {
     title: "LLM Reasoning",
+    key: "llm_reasoning",
     icon: FaBrain,
     desc: "Context-aware AI decisions",
     color: "text-[#f1f965]",
@@ -134,6 +145,7 @@ export const hardSkills = [
   },
   {
     title: "Tool-Assisted Agents",
+    key: "tool_assisted_agents",
     icon: FaTools,
     desc: "Agent tool calls and workflows",
     color: "text-[#54faae]",
@@ -141,6 +153,7 @@ export const hardSkills = [
   },
   {
     title: "React",
+    key: "react",
     icon: SiReact,
     desc: "Frontend library for UI",
     color: "text-[#61DAFB]",
@@ -148,6 +161,7 @@ export const hardSkills = [
   },
   {
     title: "Next.js",
+    key: "next_js",
     icon: SiNextdotjs,
     desc: "React framework for production",
     color: "text-[#ffffff]",
@@ -155,6 +169,7 @@ export const hardSkills = [
   },
   {
     title: "TypeScript",
+    key: "typescript",
     icon: SiTypescript,
     desc: "Typed dashboard interfaces",
     color: "text-[#3178C6]",
@@ -162,6 +177,7 @@ export const hardSkills = [
   },
   {
     title: "Node.js",
+    key: "node_js",
     icon: SiNodedotjs,
     desc: "JavaScript runtime",
     color: "text-[#339933]",
@@ -169,6 +185,7 @@ export const hardSkills = [
   },
   {
     title: "NestJS",
+    key: "nestjs",
     icon: SiNestjs,
     desc: "Efficient Node.js framework",
     color: "text-[#E0234E]",
@@ -176,6 +193,7 @@ export const hardSkills = [
   },
   {
     title: "FastAPI",
+    key: "fastapi",
     icon: SiFastapi,
     desc: "REST APIs for model inference",
     color: "text-[#009485]",
@@ -183,6 +201,7 @@ export const hardSkills = [
   },
   {
     title: "Java 17",
+    key: "java_17",
     icon: SiOpenjdk,
     desc: "Enterprise back-end development",
     color: "text-[#f1f965]",
@@ -190,6 +209,7 @@ export const hardSkills = [
   },
   {
     title: "Spring Boot",
+    key: "spring_boot",
     icon: SiSpringboot,
     desc: "REST API and service layer",
     color: "text-[#6DB33F]",
@@ -197,6 +217,7 @@ export const hardSkills = [
   },
   {
     title: "Spring Security",
+    key: "spring_security",
     icon: FaShieldAlt,
     desc: "Authorization and access control",
     color: "text-[#6DB33F]",
@@ -204,6 +225,7 @@ export const hardSkills = [
   },
   {
     title: "Keycloak",
+    key: "keycloak",
     icon: FaKey,
     desc: "Identity and access management",
     color: "text-[#00A5CF]",
@@ -211,6 +233,7 @@ export const hardSkills = [
   },
   {
     title: "OAuth2 / OIDC",
+    key: "oauth2_oidc",
     icon: FaLock,
     desc: "Delegated authentication flows",
     color: "text-[#54faae]",
@@ -218,6 +241,7 @@ export const hardSkills = [
   },
   {
     title: "PostgreSQL",
+    key: "postgresql",
     icon: SiPostgresql,
     desc: "Relational data and migrations",
     color: "text-[#4169E1]",
@@ -225,6 +249,7 @@ export const hardSkills = [
   },
   {
     title: "MinIO / S3",
+    key: "minio_s3",
     icon: FaCubes,
     desc: "Object storage for documents",
     color: "text-[#ff6b81]",
@@ -232,6 +257,7 @@ export const hardSkills = [
   },
   {
     title: "MLFlow",
+    key: "mlflow",
     icon: SiMlflow,
     desc: "Experiment and model tracking",
     color: "text-[#0194E2]",
@@ -239,6 +265,7 @@ export const hardSkills = [
   },
   {
     title: "MCP",
+    key: "mcp",
     icon: FaPlug,
     desc: "Model Context Protocol tooling",
     color: "text-[#39c4ff]",
@@ -246,6 +273,7 @@ export const hardSkills = [
   },
   {
     title: "Playwright",
+    key: "playwright",
     icon: FaVials,
     desc: "End-to-end test automation",
     color: "text-[#2EAD33]",
@@ -253,6 +281,7 @@ export const hardSkills = [
   },
   {
     title: "GitLab CI/CD",
+    key: "gitlab_ci_cd",
     icon: SiGitlab,
     desc: "Pipelines and automated delivery",
     color: "text-[#ff8c2f]",
@@ -260,6 +289,7 @@ export const hardSkills = [
   },
   {
     title: "Docker",
+    key: "docker",
     icon: SiDocker,
     desc: "Containerized deployment",
     color: "text-[#2496ED]",
@@ -267,6 +297,7 @@ export const hardSkills = [
   },
   {
     title: "Tailwind CSS",
+    key: "tailwind_css",
     icon: SiTailwindcss,
     desc: "Optimized UI styling",
     color: "text-[#06B6D4]",
@@ -274,6 +305,7 @@ export const hardSkills = [
   },
   {
     title: "Three.js",
+    key: "three_js",
     icon: SiThreedotjs,
     desc: "3D digital twin interfaces",
     color: "text-[#ffffff]",
@@ -281,6 +313,7 @@ export const hardSkills = [
   },
   {
     title: "REST APIs",
+    key: "rest_apis",
     icon: FaServer,
     desc: "Service and model integration",
     color: "text-[#54faae]",
@@ -288,6 +321,7 @@ export const hardSkills = [
   },
   {
     title: "MongoDB",
+    key: "mongodb",
     icon: SiMongodb,
     desc: "NoSQL database management",
     color: "text-[#47A248]",
@@ -295,6 +329,7 @@ export const hardSkills = [
   },
   {
     title: "Firebase",
+    key: "firebase",
     icon: SiFirebase,
     desc: "Realtime mobile data flows",
     color: "text-[#FFCA28]",
@@ -302,6 +337,7 @@ export const hardSkills = [
   },
   {
     title: "MySQL",
+    key: "mysql",
     icon: SiMysql,
     desc: "Relational data modeling",
     color: "text-[#4479A1]",
@@ -309,6 +345,7 @@ export const hardSkills = [
   },
   {
     title: "Git",
+    key: "git",
     icon: SiGit,
     desc: "Version control and collaboration",
     color: "text-[#f1f965]",
@@ -316,6 +353,7 @@ export const hardSkills = [
   },
   {
     title: "YOLOv8",
+    key: "yolov8",
     icon: FaBrain,
     desc: "Object and damage detection",
     color: "text-[#fe3e57]",
@@ -323,6 +361,7 @@ export const hardSkills = [
   },
   {
     title: "OpenCV",
+    key: "opencv",
     icon: SiOpencv,
     desc: "Computer vision preprocessing",
     color: "text-[#00C4FF]",
@@ -330,6 +369,7 @@ export const hardSkills = [
   },
   {
     title: "PyTorch",
+    key: "pytorch",
     icon: SiPytorch,
     desc: "Model training and experimentation",
     color: "text-[#ff0173]",
@@ -337,6 +377,7 @@ export const hardSkills = [
   },
   {
     title: "Python",
+    key: "python",
     icon: SiPython,
     desc: "ML pipelines and evaluation",
     color: "text-[#f1f965]",
@@ -344,6 +385,7 @@ export const hardSkills = [
   },
   {
     title: "Scikit-Learn",
+    key: "scikit_learn",
     icon: SiScikitlearn,
     desc: "Machine Learning models",
     color: "text-[#F7931E]",
@@ -351,6 +393,7 @@ export const hardSkills = [
   },
   {
     title: "XGBoost",
+    key: "xgboost",
     icon: FaChartLine,
     desc: "Gradient boosting capabilities",
     color: "text-[#00Bfff]",
@@ -358,6 +401,7 @@ export const hardSkills = [
   },
   {
     title: "SHAP",
+    key: "shap",
     icon: BsBarChartSteps,
     desc: "Explainable AI models",
     color: "text-[#4B0082]",
@@ -365,6 +409,7 @@ export const hardSkills = [
   },
   {
     title: "Model Evaluation",
+    key: "model_evaluation",
     icon: FaChartLine,
     desc: "ROC-AUC, recall, precision",
     color: "text-[#ff6b81]",
@@ -372,6 +417,7 @@ export const hardSkills = [
   },
   {
     title: "TensorFlow",
+    key: "tensorflow",
     icon: SiTensorflow,
     desc: "Deep learning model development",
     color: "text-[#ff8c2f]",
@@ -379,6 +425,7 @@ export const hardSkills = [
   },
   {
     title: "Flutter",
+    key: "flutter",
     icon: SiFlutter,
     desc: "Cross-platform mobile development",
     color: "text-[#39c4ff]",
@@ -386,6 +433,7 @@ export const hardSkills = [
   },
   {
     title: "Dart",
+    key: "dart",
     icon: SiDart,
     desc: "Flutter app development",
     color: "text-[#0175C2]",
@@ -396,6 +444,7 @@ export const hardSkills = [
 export const services = [
   {
     title: "AI Agents / Agentic AI",
+    key: "ai_agents_agentic_ai",
     desc: "LangGraph workflows with LLM reasoning, tool-assisted irrigation decisions, human-in-the-loop approval, validation layers, fallback rules, and safety checks.",
     icon: FaRobot,
     tags: [
@@ -415,6 +464,7 @@ export const services = [
   },
   {
     title: "Full-Stack Web Development",
+    key: "full_stack_web_development",
     desc: "React and Next.js dashboard interfaces with TypeScript, Tailwind CSS, Three.js, FastAPI model inference APIs, REST APIs, MongoDB, Firebase, MySQL, and Joblib persistence.",
     icon: FaCode,
     tags: [
@@ -435,6 +485,7 @@ export const services = [
   },
   {
     title: "AI / Machine Learning",
+    key: "ai_machine_learning",
     desc: "Python ML work with scikit-learn, XGBoost, SHAP, classification, model evaluation, class imbalance handling, and CRISP-DM framing.",
     icon: FaBrain,
     tags: [
@@ -451,12 +502,14 @@ export const services = [
   },
   {
     title: "Mobile Development",
+    key: "mobile_development",
     desc: "Flutter and Dart mobile apps with Firebase data flows, REST API integration, FlutterFlow prototypes, and offline mobile AI paths for field usage.",
     icon: FaMobileAlt,
     tags: ["Flutter", "Dart", "Firebase", "REST APIs", "FlutterFlow", "Offline mobile AI"],
   },
   {
     title: "Computer Vision",
+    key: "computer_vision",
     desc: "YOLOv8, OpenCV, and PyTorch pipelines for image preprocessing, object detection, and vehicle damage detection in SmartClaim.",
     icon: FaEye,
     tags: ["YOLOv8", "OpenCV", "PyTorch", "Image preprocessing", "Object detection", "Damage detection"],
@@ -466,6 +519,7 @@ export const services = [
 export const methodologies = [
   {
     title: "Data Science Methodology",
+    key: "data_science_methodology",
     icon: FaCubes,
     color: "text-[#39c4ff]",
     hex: "#39c4ff",
@@ -473,6 +527,7 @@ export const methodologies = [
   },
   {
     title: "Agile Methodology",
+    key: "agile_methodology",
     icon: FaBolt,
     color: "text-[#fe3e57]",
     hex: "#fe3e57",

@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { FaCalendar, FaUser } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const NewsCard = ({ date, author, image, title, description, link, index }) => {
+  const { t } = useTranslation();
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -53,7 +55,7 @@ const NewsCard = ({ date, author, image, title, description, link, index }) => {
           to={link}
           className="inline-flex items-center text-white font-semibold hover:text-primary-pink transition-colors group/link"
         >
-          Read More
+          {t("common.readMore")}
           <span
             className="ml-2 transform group-hover/link:translate-x-1 transition-transform"
             aria-hidden="true"

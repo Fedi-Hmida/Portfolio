@@ -26,7 +26,13 @@
   "common": {
     "cvFile": "/assets/cv/Fedi_Hmida_CV_FR.pdf",
     "englishOnlyTitle": "Disponible en anglais",
-    "englishOnlyBody": "Cette étude de cas n'est pas encore traduite. Le contenu détaillé est disponible en anglais."
+    "englishOnlyBody": "Cette étude de cas n'est pas encore traduite. Le contenu détaillé est disponible en anglais.",
+    "readMore": "Lire la suite",
+    "viewLetter": "Voir la lettre",
+    "download": "Télécharger",
+    "viewCaseStudy": "Voir l'étude de cas",
+    "closePreview": "Fermer l'aperçu de l'image",
+    "close": "Fermer"
   },
   "home": {
     "role": "Élève-ingénieur en informatique",
@@ -87,7 +93,8 @@
     "careerFocusTitle": "Objectif professionnel",
     "careerFocus": "Je recherche un <b>stage de 4 mois à partir d'avril 2027</b> ainsi qu'une <b>alternance en IA / génie logiciel à partir de septembre 2027</b>, en France. Je souhaite rejoindre une équipe qui construit des <b>systèmes d'IA agentique</b>, des <b>produits ML</b> ou des <b>plateformes back-end en production</b>, où je pourrai livrer des systèmes de bout en bout.",
     "downloadCv": "Télécharger le CV",
-    "viewPortfolio": "Voir le portfolio"
+    "viewPortfolio": "Voir le portfolio",
+    "whatIOffer": "Ce que je propose"
   },
   "portfolio": {
     "title": "Mes projets",
@@ -295,5 +302,111 @@
       "homeDescription": "Plateforme mobile de mise en relation pour les demandes de projet et la collaboration professionnelle.",
       "cta": "Voir l'étude de cas"
     }
+  },
+  "skills": {
+    "soft": {
+      "communication": {
+        "title": "Communication",
+        "desc": "Communication orale et écrite efficace"
+      },
+      "project_management": {
+        "title": "Gestion de projet",
+        "desc": "Organisation et pilotage efficaces"
+      },
+      "team_collaboration": {
+        "title": "Travail en équipe",
+        "desc": "Esprit collaboratif et sens du collectif"
+      },
+      "analytical": {
+        "title": "Esprit d'analyse",
+        "desc": "Décisions fondées sur les données"
+      },
+      "organization": {
+        "title": "Organisation",
+        "desc": "Approche structurée et méthodique"
+      },
+      "creativity": {
+        "title": "Créativité",
+        "desc": "Idées et solutions innovantes"
+      }
+    },
+    "hard": {
+      "langgraph": "Workflows d'IA agentique",
+      "langchain": "Orchestration de LLM et de RAG",
+      "rag_chatbots": "Assistants a génération augmentée",
+      "chromadb": "Base vectorielle pour le RAG",
+      "llm_reasoning": "Décisions IA sensibles au contexte",
+      "tool_assisted_agents": "Appels d'outils et workflows d'agents",
+      "react": "Bibliothèque front-end pour l'UI",
+      "next_js": "Framework React pour la production",
+      "typescript": "Interfaces typées pour tableaux de bord",
+      "node_js": "Environnement d'exécution JavaScript",
+      "nestjs": "Framework Node.js performant",
+      "fastapi": "APIs REST pour l'inférence de modèles",
+      "java_17": "Développement back-end d'entreprise",
+      "spring_boot": "API REST et couche service",
+      "spring_security": "Autorisation et contrôle d'accès",
+      "keycloak": "Gestion des identités et des accès",
+      "oauth2_oidc": "Flux d'authentification délégués",
+      "postgresql": "Donnees relationnelles et migrations",
+      "minio_s3": "Stockage objet pour les documents",
+      "mlflow": "Suivi des expériences et des modèles",
+      "mcp": "Outillage Model Context Protocol",
+      "playwright": "Automatisation des tests de bout en bout",
+      "gitlab_ci_cd": "Pipelines et livraison automatisée",
+      "docker": "Déploiement conteneurisé",
+      "tailwind_css": "Mise en forme optimisée de l'UI",
+      "three_js": "Interfaces de jumeau numérique 3D",
+      "rest_apis": "Intégration de services et de modèles",
+      "mongodb": "Gestion de bases NoSQL",
+      "firebase": "Flux de données mobiles en temps réel",
+      "mysql": "Modélisation de données relationnelles",
+      "git": "Gestion de versions et collaboration",
+      "yolov8": "Détection d'objets et de dommages",
+      "opencv": "Prétraitement en vision par ordinateur",
+      "pytorch": "Entraînement et expérimentation de modèles",
+      "python": "Pipelines ML et evaluation",
+      "scikit_learn": "Modèles de machine learning",
+      "xgboost": "Gradient boosting",
+      "shap": "Modèles d'IA explicable",
+      "model_evaluation": "ROC-AUC, rappel, precision",
+      "tensorflow": "Développement de modèles deep learning",
+      "flutter": "Développement mobile multiplateforme",
+      "dart": "Développement d'applications Flutter"
+    },
+    "services": {
+      "ai_agents_agentic_ai": {
+        "title": "Agents IA / IA agentique",
+        "desc": "Workflows LangGraph avec raisonnement LLM, decisions assistées par outils, validation humaine, couches de verification, règles de repli et contrôles de sécurité."
+      },
+      "full_stack_web_development": {
+        "title": "Développement web full-stack",
+        "desc": "Interfaces et tableaux de bord React et Next.js en TypeScript, Tailwind CSS, Three.js, APIs d'inférence FastAPI, APIs REST, MongoDB, Firebase, MySQL et persistance Joblib."
+      },
+      "ai_machine_learning": {
+        "title": "IA / Machine Learning",
+        "desc": "Travaux ML en Python avec scikit-learn, XGBoost, SHAP : classification, evaluation de modèles, gestion du déséquilibre des classes et cadrage CRISP-DM."
+      },
+      "mobile_development": {
+        "title": "Développement mobile",
+        "desc": "Applications mobiles Flutter et Dart avec flux de données Firebase, intégration d'APIs REST, prototypes FlutterFlow et IA mobile hors ligne pour le terrain."
+      },
+      "computer_vision": {
+        "title": "Vision par ordinateur",
+        "desc": "Pipelines YOLOv8, OpenCV et PyTorch pour le prétraitement d'images, la détection d'objets et la détection de dommages dans SmartClaim."
+      }
+    },
+    "methodologies": {
+      "data_science_methodology": "Méthodologie Data Science",
+      "agile_methodology": "Méthodologie Agile"
+    }
+  },
+  "phone": {
+    "dialogLabel": "Copier le numéro de téléphone",
+    "label": "Numéro de téléphone",
+    "hint": "Copiez mon numéro et contactez-moi directement pour une opportunité ou un projet.",
+    "copy": "Copier le numéro",
+    "copied": "Copié",
+    "selectNumber": "Sélectionner le numéro"
   }
 }

@@ -71,8 +71,9 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="-mr-2 flex md:hidden">
+          {/* Mobile: language toggle + menu button */}
+          <div className="-mr-2 flex items-center gap-2 md:hidden">
+            <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-pink/60"
@@ -115,9 +116,6 @@ const Navbar = () => {
                   {t(`nav.${link.key}`)}
                 </Link>
               ))}
-              <div className="px-3 pt-3">
-                <LanguageSwitcher onNavigate={() => setIsOpen(false)} />
-              </div>
             </div>
           </motion.div>
         )}

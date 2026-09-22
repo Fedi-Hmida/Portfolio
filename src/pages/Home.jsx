@@ -351,11 +351,11 @@ const Home = () => {
                         className="text-lg font-bold mb-2 text-center transition-colors duration-300 group-hover:text-white"
                         style={{ color: "white" }}
                       >
-                        {skill.title}
+                        {t(`skills.soft.${skill.key}.title`)}
                       </h3>
 
                       <p className="text-gray-400 text-center text-xs leading-relaxed group-hover:text-gray-200 transition-colors max-w-[90%]">
-                        {skill.desc}
+                        {t(`skills.soft.${skill.key}.desc`)}
                       </p>
                     </motion.div>
                   ))}
@@ -418,7 +418,7 @@ const Home = () => {
                         </h3>
 
                         <p className="text-gray-400 text-center text-xs leading-relaxed group-hover:text-gray-200 transition-colors max-w-[90%]">
-                          {skill.desc}
+                          {t(`skills.hard.${skill.key}`)}
                         </p>
                       </motion.div>
                     ))}
@@ -515,7 +515,7 @@ const Home = () => {
 
                       {/* Content */}
                       <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary-pink transition-colors duration-300">
-                        {service.title}
+                        {t(`skills.services.${service.key}.title`)}
                       </h3>
 
                       <div className="h-1 w-12 bg-white/10 rounded-full mb-4 group-hover:w-24 group-hover:bg-primary-pink/50 transition-all duration-500" />
@@ -578,7 +578,7 @@ const Home = () => {
                       </div>
 
                       <h3 className="mb-5 text-2xl font-bold text-white transition-colors duration-300 group-hover:text-primary-pink">
-                        {method.title}
+                        {t(`skills.methodologies.${method.key}`)}
                       </h3>
 
                       <div className="relative z-10 flex flex-wrap justify-center gap-2">

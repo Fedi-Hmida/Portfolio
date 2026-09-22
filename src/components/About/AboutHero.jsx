@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import shape3 from "../../assets/images/shape/shape-3.png";
 import shape4 from "../../assets/images/shape/shape-4.png";
 import shape5 from "../../assets/images/shape/shape-5.png";
@@ -7,6 +8,7 @@ import shape7 from "../../assets/images/shape/shape-7.png";
 import shape8 from "../../assets/images/shape/shape-8.png";
 
 const AboutHero = () => {
+  const { t } = useTranslation();
   const shapes = [
     {
       src: shape7,
@@ -43,7 +45,7 @@ const AboutHero = () => {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-7xl font-bold text-white relative inline-block z-10"
         >
-          About Me
+          {t("about.heroTitle")}
         </motion.h1>
       </div>
 

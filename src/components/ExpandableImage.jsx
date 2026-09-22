@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
 import { FaTimes } from "react-icons/fa";
 
 const ExpandableImage = ({ alt = "Image", className = "", src, ...props }) => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -66,7 +68,7 @@ const ExpandableImage = ({ alt = "Image", className = "", src, ...props }) => {
                   type="button"
                   onClick={() => setIsOpen(false)}
                   className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:border-pink-300/70 hover:text-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-300/70"
-                  aria-label="Close image preview"
+                  aria-label={t("common.closePreview")}
                 >
                   <FaTimes />
                 </button>

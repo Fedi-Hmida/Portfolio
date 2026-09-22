@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Download, Linkedin, Eye } from "lucide-react";
 
 const RecommendationCard = ({ name, role, linkedinUrl, pdfLink }) => {
+  const { t } = useTranslation();
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
@@ -30,7 +32,7 @@ const RecommendationCard = ({ name, role, linkedinUrl, pdfLink }) => {
           className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white border-b border-primary-pink pb-1 hover:border-white transition-all"
         >
           <Eye size={16} aria-hidden="true" />
-          View Letter
+          {t("common.viewLetter")}
         </a>
         <a
           href={pdfLink}
@@ -38,7 +40,7 @@ const RecommendationCard = ({ name, role, linkedinUrl, pdfLink }) => {
           className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white border-b border-primary-pink pb-1 hover:border-white transition-all"
         >
           <Download size={16} aria-hidden="true" />
-          Download
+          {t("common.download")}
         </a>
       </div>
     </motion.div>

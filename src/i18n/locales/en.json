@@ -26,7 +26,13 @@
   "common": {
     "cvFile": "/assets/cv/Fedi_Hmida_CV.pdf",
     "englishOnlyTitle": "Available in English",
-    "englishOnlyBody": "This case study has not been translated yet. The full write-up is available in English."
+    "englishOnlyBody": "This case study has not been translated yet. The full write-up is available in English.",
+    "readMore": "Read More",
+    "viewLetter": "View Letter",
+    "download": "Download",
+    "viewCaseStudy": "View case study",
+    "closePreview": "Close image preview",
+    "close": "Close"
   },
   "home": {
     "role": "Software Engineering Student",
@@ -87,7 +93,8 @@
     "careerFocusTitle": "Career Focus",
     "careerFocus": "Seeking a <b>4-month internship from April 2027</b> and an <b>alternance in AI / Software Engineering from September 2027</b>, based in France. Most interested in teams building <b>agentic AI systems</b>, <b>ML products</b>, or <b>production back-end platforms</b> where I can deliver production-ready systems end to end.",
     "downloadCv": "Download CV",
-    "viewPortfolio": "View Portfolio"
+    "viewPortfolio": "View Portfolio",
+    "whatIOffer": "What I Offer"
   },
   "portfolio": {
     "title": "My Projects",
@@ -295,5 +302,111 @@
       "homeDescription": "Mobile networking platform for project requests and professional collaboration.",
       "cta": "View case study"
     }
+  },
+  "skills": {
+    "soft": {
+      "communication": {
+        "title": "Communication",
+        "desc": "Effective verbal and written communication skills"
+      },
+      "project_management": {
+        "title": "Project Management",
+        "desc": "Organized and efficient project handling"
+      },
+      "team_collaboration": {
+        "title": "Team Collaboration",
+        "desc": "Strong team player with collaborative mindset"
+      },
+      "analytical": {
+        "title": "Analytical",
+        "desc": "Data-driven decision making"
+      },
+      "organization": {
+        "title": "Organization",
+        "desc": "Structured and methodical approach"
+      },
+      "creativity": {
+        "title": "Creativity",
+        "desc": "Innovative thinking and solutions"
+      }
+    },
+    "hard": {
+      "langgraph": "Agentic AI workflows",
+      "langchain": "LLM and RAG orchestration",
+      "rag_chatbots": "Retrieval-augmented assistants",
+      "chromadb": "Vector database for RAG",
+      "llm_reasoning": "Context-aware AI decisions",
+      "tool_assisted_agents": "Agent tool calls and workflows",
+      "react": "Frontend library for UI",
+      "next_js": "React framework for production",
+      "typescript": "Typed dashboard interfaces",
+      "node_js": "JavaScript runtime",
+      "nestjs": "Efficient Node.js framework",
+      "fastapi": "REST APIs for model inference",
+      "java_17": "Enterprise back-end development",
+      "spring_boot": "REST API and service layer",
+      "spring_security": "Authorization and access control",
+      "keycloak": "Identity and access management",
+      "oauth2_oidc": "Delegated authentication flows",
+      "postgresql": "Relational data and migrations",
+      "minio_s3": "Object storage for documents",
+      "mlflow": "Experiment and model tracking",
+      "mcp": "Model Context Protocol tooling",
+      "playwright": "End-to-end test automation",
+      "gitlab_ci_cd": "Pipelines and automated delivery",
+      "docker": "Containerized deployment",
+      "tailwind_css": "Optimized UI styling",
+      "three_js": "3D digital twin interfaces",
+      "rest_apis": "Service and model integration",
+      "mongodb": "NoSQL database management",
+      "firebase": "Realtime mobile data flows",
+      "mysql": "Relational data modeling",
+      "git": "Version control and collaboration",
+      "yolov8": "Object and damage detection",
+      "opencv": "Computer vision preprocessing",
+      "pytorch": "Model training and experimentation",
+      "python": "ML pipelines and evaluation",
+      "scikit_learn": "Machine Learning models",
+      "xgboost": "Gradient boosting capabilities",
+      "shap": "Explainable AI models",
+      "model_evaluation": "ROC-AUC, recall, precision",
+      "tensorflow": "Deep learning model development",
+      "flutter": "Cross-platform mobile development",
+      "dart": "Flutter app development"
+    },
+    "services": {
+      "ai_agents_agentic_ai": {
+        "title": "AI Agents / Agentic AI",
+        "desc": "LangGraph workflows with LLM reasoning, tool-assisted irrigation decisions, human-in-the-loop approval, validation layers, fallback rules, and safety checks."
+      },
+      "full_stack_web_development": {
+        "title": "Full-Stack Web Development",
+        "desc": "React and Next.js dashboard interfaces with TypeScript, Tailwind CSS, Three.js, FastAPI model inference APIs, REST APIs, MongoDB, Firebase, MySQL, and Joblib persistence."
+      },
+      "ai_machine_learning": {
+        "title": "AI / Machine Learning",
+        "desc": "Python ML work with scikit-learn, XGBoost, SHAP, classification, model evaluation, class imbalance handling, and CRISP-DM framing."
+      },
+      "mobile_development": {
+        "title": "Mobile Development",
+        "desc": "Flutter and Dart mobile apps with Firebase data flows, REST API integration, FlutterFlow prototypes, and offline mobile AI paths for field usage."
+      },
+      "computer_vision": {
+        "title": "Computer Vision",
+        "desc": "YOLOv8, OpenCV, and PyTorch pipelines for image preprocessing, object detection, and vehicle damage detection in SmartClaim."
+      }
+    },
+    "methodologies": {
+      "data_science_methodology": "Data Science Methodology",
+      "agile_methodology": "Agile Methodology"
+    }
+  },
+  "phone": {
+    "dialogLabel": "Copy phone number",
+    "label": "Phone number",
+    "hint": "Copy my number and contact me directly for opportunities or project discussions.",
+    "copy": "Copy Number",
+    "copied": "Copied",
+    "selectNumber": "Select Number"
   }
 }
