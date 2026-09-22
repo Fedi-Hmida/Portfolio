@@ -408,5 +408,134 @@
     "copy": "Copier le numéro",
     "copied": "Copié",
     "selectNumber": "Sélectionner le numéro"
+  },
+  "news": {
+    "20": {
+      "title": "Un nouveau chapitre - Double diplôme entre ESPRIT et 3iL Ingénieurs",
+      "date": "Septembre 2026",
+      "description": "Septembre 2024, premier cours à Tunis. Septembre 2026, premier cours en France. Je poursuis mon cycle ingénieur en double diplôme entre ESPRIT et 3iL Ingénieurs à Limoges - le cursus ne recommence pas, il continue ailleurs.",
+      "homeTitle": "Double diplôme en France",
+      "homeDescription": "Je poursuis mon cycle ingénieur en double diplôme entre ESPRIT et 3iL Ingénieurs, désormais à Limoges."
+    },
+    "19": {
+      "title": "FIRMAA - Plateforme d'agriculture intelligente pilotée par l'IA",
+      "date": "Mai 2026",
+      "description": "Présentation de FIRMAA, la plateforme d'agriculture intelligente que notre équipe de sept a construite pour le Projet Intégré ESPRIT : un agent d'irrigation LangGraph, des modèles de détection pour les cultures, le bétail et les insectes, une vue 3D de la ferme et l'intégration IoT sur une seule plateforme.",
+      "homeTitle": "FIRMAA, agriculture intelligente",
+      "homeDescription": "Plateforme d'agriculture intelligente pilotée par l'IA, construite par une équipe de sept pour le Projet Intégré ESPRIT."
+    },
+    "18": {
+      "title": "Masterclass BIAT - InGenius Budget à ESPRIT",
+      "date": "Avril 2026",
+      "description": "Participation à la Masterclass BIAT InGenius Budget organisée à ESPRIT le 21 avril 2026 : planification financière, épargne, et comment les banques peuvent accompagner les étudiants à chaque étape de leur parcours.",
+      "homeTitle": "Masterclass BIAT à ESPRIT",
+      "homeDescription": "Masterclass BIAT InGenius Budget à ESPRIT, sur la planification financière et l'épargne étudiante."
+    },
+    "17": {
+      "title": "NVIDIA DLI - Applications de l'IA pour la détection d'anomalies",
+      "date": "Avril 2026",
+      "description": "Obtention du certificat de compétence du NVIDIA Deep Learning Institute en Applications de l'IA pour la détection d'anomalies...",
+      "homeTitle": "NVIDIA, IA et détection d'anomalies",
+      "homeDescription": "Formation NVIDIA DLI sur les applications de l'IA pour la détection d'anomalies, avec XGBoost, auto-encodeurs et GAN..."
+    },
+    "16": {
+      "title": "IASTAM 5.0 - Réunion annuelle IEEE IAS Tunisie",
+      "date": "Mars 2026",
+      "description": "De très bons souvenirs d'IASTAM 5.0, où j'ai siégé au comité exécutif en tant que responsable RH...",
+      "homeTitle": "Souvenirs d'IASTAM 5.0",
+      "homeDescription": "Responsable RH au comité exécutif d'IASTAM 5.0 et contribution à un congrès IEEE inspirant..."
+    },
+    "15": {
+      "title": "MaraTech Web Hackathon - 42 heures de code non-stop",
+      "date": "Février 2026",
+      "description": "Fin du MaraTech Web Hackathon après 42 heures de code non-stop, à concevoir des solutions numériques accessibles pour les associations...",
+      "homeTitle": "MaraTech Web Hackathon",
+      "homeDescription": "42 heures de code non-stop au MaraTech Web Hackathon, autour de solutions numériques accessibles pour les associations..."
+    },
+    "14": {
+      "title": "NVIDIA DLI - Certification Fondamentaux du Deep Learning",
+      "date": "Février 2026",
+      "description": "Certifié NVIDIA DLI - Fondamentaux du Deep Learning après un travail pratique sur l'entraînement de modèles, le fine-tuning et les défis de précision...",
+      "homeTitle": "NVIDIA DLI, Deep Learning certifié",
+      "homeDescription": "Formation NVIDIA DLI - Fondamentaux du Deep Learning, une étape concrète en entraînement et fine-tuning de modèles..."
+    },
+    "13": {
+      "title": "Congrès IEEE IES SYP",
+      "date": "10-01-2026",
+      "description": "Recevoir ce certificat ne se résume pas à une participation : c'est le rappel d'expériences marquantes..."
+    },
+    "12": {
+      "title": "1re place au Energy Utopia Challenge",
+      "date": "26-12-2025",
+      "description": "Vainqueur de la 1re place au Energy Utopia Challenge : l'IA pour un avenir plus intelligent et plus vert...",
+      "homeTitle": "1re place au Energy Utopia Challenge",
+      "homeDescription": "1re place au Energy Utopia Challenge : l'IA pour un avenir plus intelligent et plus vert..."
+    },
+    "11": {
+      "title": "Certification Déploiement de modèles IA sur AWS",
+      "date": "30-11-2025",
+      "description": "J'ai le plaisir de partager l'obtention de la certification Déploiement de modèles IA sur AWS...",
+      "homeTitle": "Déploiement de modèles IA sur AWS",
+      "homeDescription": "Certification Déploiement de modèles IA sur AWS obtenue..."
+    },
+    "1": {
+      "title": "SmartClaim - Plateforme d'assistance à la déclaration de sinistres",
+      "date": "28-11-2025",
+      "description": "Ravi de dévoiler le point fort de mon stage d'ingénieur chez ADDINN Group..."
+    },
+    "2": {
+      "title": "Reconnaissance d'excellence en Data Science",
+      "date": "19-09-2025",
+      "description": "Fier de recevoir une lettre de recommandation professionnelle du Dr Nivine ATTOUE..."
+    },
+    "3": {
+      "title": "Recommandation d'un ingénieur Flutter senior",
+      "date": "1-09-2025",
+      "description": "Honoré de recevoir une lettre de recommandation professionnelle de Houssem Eddine FADHLI..."
+    },
+    "4": {
+      "title": "Fin de mon stage - ADDINN Group",
+      "date": "1-09-2025",
+      "description": "Stage de 2 mois chez ADDINN Group mené à son terme..."
+    },
+    "5": {
+      "title": "Congrès IEEE IES SYP",
+      "date": "Récemment",
+      "description": "Participation au congrès IEEE IES SYP."
+    },
+    "6": {
+      "title": "Début de stage chez ADDINN",
+      "date": "3 juillet 2025",
+      "description": "Début d'une nouvelle aventure comme stagiaire développeur mobile chez ADDINN Group."
+    },
+    "7": {
+      "title": "Onboardify",
+      "date": "26 mai 2025",
+      "description": "Lancement d'Onboardify, une plateforme RH d'intégration gamifiée."
+    },
+    "8": {
+      "title": "IEEEXtreme",
+      "date": "15 mars 2025",
+      "description": "Participation au concours de programmation IEEEXtreme."
+    },
+    "9": {
+      "title": "Congrès IEEE TSYP12",
+      "date": "24 décembre 2024",
+      "description": "Participation au congrès IEEE TSYP12."
+    },
+    "10": {
+      "title": "Remise des diplômes",
+      "date": "13 juin 2024",
+      "description": "Célébration du jour de la remise des diplômes."
+    }
+  },
+  "newsList": {
+    "typed": [
+      "Dernières actualités",
+      "Mon blog",
+      "Mises à jour"
+    ],
+    "prevPage": "Page précédente",
+    "nextPage": "Page suivante"
   }
 }

@@ -10,7 +10,7 @@ import Navbar from "../components/Navbar";
 import NewsCard from "../components/News/NewsCard";
 import ProjectCard from "../components/Portfolio/ProjectCard"; // Make sure to export this if not already
 import SocialIconLink from "../components/SocialIconLink";
-import { latestNewsPreview } from "../data/news";
+import { getLatestNewsPreview } from "../data/news";
 import { getProjectCards } from "../data/projects";
 import {
   hardSkills,
@@ -45,7 +45,7 @@ const Home = () => {
   const [activeTab, setActiveTab] = useState("services"); // Default tab changed from "soft skills" to "hard skills"
 
   const portfolioPreview = getProjectCards(t, "home");
-  const newsPreview = latestNewsPreview;
+  const newsPreview = getLatestNewsPreview(t);
   const projectsPerPage = 2;
   const hardSkillsPerPage = 8;
   const [workPage, setWorkPage] = useState(1);

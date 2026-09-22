@@ -408,5 +408,134 @@
     "copy": "Copy Number",
     "copied": "Copied",
     "selectNumber": "Select Number"
+  },
+  "news": {
+    "20": {
+      "title": "A New Chapter - Double Degree Between ESPRIT and 3iL Ingénieurs",
+      "date": "September 2026",
+      "description": "September 2024, first class in Tunis. September 2026, first class in France. I am continuing my engineering cycle as a double degree between ESPRIT and 3iL Ingénieurs in Limoges - the programme does not restart, it continues elsewhere.",
+      "homeTitle": "Double Degree in France",
+      "homeDescription": "Continuing my engineering cycle as a double degree between ESPRIT and 3iL Ingénieurs, now based in Limoges, France."
+    },
+    "19": {
+      "title": "FIRMAA - AI-Powered Smart Agriculture Platform",
+      "date": "May 2026",
+      "description": "Shared FIRMAA, the AI-powered smart agriculture platform our team of seven built as the ESPRIT Integrated Project - a LangGraph irrigation agent, crop, livestock and insect detection models, a 3D farm view, and IoT integration in one platform.",
+      "homeTitle": "FIRMAA Smart Agriculture",
+      "homeDescription": "AI-powered smart agriculture platform built by a team of seven for the ESPRIT Integrated Project."
+    },
+    "18": {
+      "title": "BIAT Masterclass - InGenius Budget at ESPRIT",
+      "date": "April 2026",
+      "description": "Attended the BIAT InGenius Budget Masterclass hosted at ESPRIT on 21 April 2026 - financial planning, savings, and how banks can support students at every step of their journey.",
+      "homeTitle": "BIAT Masterclass at ESPRIT",
+      "homeDescription": "BIAT InGenius Budget Masterclass at ESPRIT on financial planning and student savings."
+    },
+    "17": {
+      "title": "NVIDIA DLI - Applications of AI for Anomaly Detection",
+      "date": "April 2026",
+      "description": "Earned the NVIDIA Deep Learning Institute Certificate of Competency in Applications of AI for Anomaly Detection...",
+      "homeTitle": "NVIDIA AI for Anomaly Detection",
+      "homeDescription": "Completed NVIDIA DLI Applications of AI for Anomaly Detection, with hands-on XGBoost, autoencoders, and GANs..."
+    },
+    "16": {
+      "title": "IASTAM 5.0 - IEEE IAS Tunisian Annual Meeting",
+      "date": "March 2026",
+      "description": "Great memories from IASTAM 5.0, where I served on the Executive Committee as HR Manager...",
+      "homeTitle": "IASTAM 5.0 Memories",
+      "homeDescription": "Serving as HR Manager on the IASTAM 5.0 Executive Committee and contributing to an inspiring IEEE congress..."
+    },
+    "15": {
+      "title": "MaraTech Web Hackathon - 42 Hours of Non-Stop Coding",
+      "date": "February 2026",
+      "description": "Wrapped up the MaraTech Web Hackathon after 42 hours of non-stop coding, building accessible digital solutions for associations...",
+      "homeTitle": "MaraTech Web Hackathon",
+      "homeDescription": "42 hours of non-stop coding at the MaraTech Web Hackathon, focused on accessible digital solutions for associations..."
+    },
+    "14": {
+      "title": "NVIDIA DLI - Fundamentals of Deep Learning Certified",
+      "date": "February 2026",
+      "description": "Certified in NVIDIA DLI - Fundamentals of Deep Learning after hands-on work with model training, fine-tuning, and accuracy challenges...",
+      "homeTitle": "NVIDIA DLI Deep Learning Certified",
+      "homeDescription": "Completed NVIDIA DLI - Fundamentals of Deep Learning, a practical milestone in model training and fine-tuning..."
+    },
+    "13": {
+      "title": "IEEE IES SYP Congress",
+      "date": "10-01-2026",
+      "description": "Receiving this certificate is not just about participation, it's a reminder of the incredible experiences..."
+    },
+    "12": {
+      "title": "1st Place at the Energy Utopia Challenge",
+      "date": "26-12-2025",
+      "description": "Winner of the 1st Place at the Energy Utopia Challenge: AI for a Smarter, Greener Future...",
+      "homeTitle": "1st Place at Energy Utopia Challenge",
+      "homeDescription": "Winning 1st Place at the Energy Utopia Challenge: AI for a Smarter, Greener Future..."
+    },
+    "11": {
+      "title": "AI Model Deployment on AWS Certification",
+      "date": "30-11-2025",
+      "description": "I'm pleased to share that I've earned the AI Model Deployment on AWS certification...",
+      "homeTitle": "AI Model Deployment on AWS",
+      "homeDescription": "Earned the AI Model Deployment on AWS certification..."
+    },
+    "1": {
+      "title": "SmartClaim - Digital Claims Assistant Platform",
+      "date": "28-11-2025",
+      "description": "Thrilled to reveal the highlight of my Engineering internship at ADDINN Group..."
+    },
+    "2": {
+      "title": "Data Science Excellence Recognition",
+      "date": "19-09-2025",
+      "description": "Proud to receive a professional recommendation letter from Dr. Nivine ATTOUE..."
+    },
+    "3": {
+      "title": "Professional Recognition from Senior Flutter Engineer",
+      "date": "1-09-2025",
+      "description": "Honored to receive a professional recommendation letter from Houssem Eddine FADHLI..."
+    },
+    "4": {
+      "title": "End of My Internship - ADDINN Group",
+      "date": "1-09-2025",
+      "description": "Successfully completed my 2-month internship at ADDINN Group..."
+    },
+    "5": {
+      "title": "IEEE IES SYP Congress",
+      "date": "Recent",
+      "description": "Participation in the IEEE IES SYP Congress."
+    },
+    "6": {
+      "title": "Internship Start at ADDINN",
+      "date": "July 3, 2025",
+      "description": "Beginning a new journey as a Mobile Developer Intern at ADDINN Group."
+    },
+    "7": {
+      "title": "Onboardify",
+      "date": "May 26, 2025",
+      "description": "Launching Onboardify, a gamified HR onboarding platform."
+    },
+    "8": {
+      "title": "IEEEXtreme",
+      "date": "March 15, 2025",
+      "description": "Participation in the IEEEXtreme programming competition."
+    },
+    "9": {
+      "title": "IEEE TSYP12 Congress",
+      "date": "December 24, 2024",
+      "description": "Attending the IEEE TSYP12 Congress."
+    },
+    "10": {
+      "title": "Graduation",
+      "date": "June 13, 2024",
+      "description": "Celebrating graduation day."
+    }
+  },
+  "newsList": {
+    "typed": [
+      "Latest News",
+      "My Blog",
+      "Updates"
+    ],
+    "prevPage": "Previous Page",
+    "nextPage": "Next Page"
   }
 }
