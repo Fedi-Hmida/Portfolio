@@ -7,7 +7,9 @@ import {
   useLocation,
 } from "react-router-dom";
 import AnimatedPage from "./components/AnimatedPage";
+import LocaleHead from "./components/LocaleHead";
 import ScrollToTop from "./components/ScrollToTop";
+import { basenameFor, detectLocale } from "./i18n/locale";
 import Home from "./pages/Home";
 
 const About = lazy(() => import("./pages/About"));
@@ -316,8 +318,11 @@ const AppRoutes = () => {
 };
 
 function App() {
+  const locale = detectLocale();
+
   return (
-    <Router>
+    <Router basename={basenameFor(locale)}>
+      <LocaleHead />
       <ScrollToTop />
       <div className="App">
         <AppRoutes />

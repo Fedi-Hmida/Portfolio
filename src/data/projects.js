@@ -11,10 +11,10 @@ import solarFlowImg from "../assets/images/logo_1555.png";
 import solarFlowPreviewImg from "../assets/images/logo_15553.png";
 
 export const projectCategories = [
-  { id: "all", label: "All Projects" },
-  { id: "ia", label: "AI / ML" },
-  { id: "mobile", label: "Mobile Apps" },
-  { id: "web", label: "Web Apps" },
+  { id: "all" },
+  { id: "ia" },
+  { id: "mobile" },
+  { id: "web" },
 ];
 
 export const projects = [
@@ -31,21 +31,9 @@ export const projects = [
       "Keycloak",
     ],
     homeTech: ["Spring Boot", "React 19", "Keycloak"],
-    role: "Back-End & Front-End Co-Lead",
-    type: "Enterprise HR platform",
-    status: "BNS Engineering internship",
-    impact:
-      "102 REST endpoints, 104 authorization gates, and 2,072 automated tests across 11 modules.",
-    homeImpact:
-      "Enterprise HR platform with 102 REST endpoints and OAuth2 / Keycloak security.",
-    description:
-      "Internal HR platform built by an 8-intern team at BNS Engineering, pairing a Java 17 / Spring Boot API with a React 19 / TypeScript client, OAuth2 / Keycloak security, and AI workstreams for OCR extraction, RAG assistance, and workforce prediction.",
-    homeDescription:
-      "Internal HR platform combining Spring Boot, React 19, Keycloak security, and AI workstreams for OCR, RAG, and workforce prediction.",
     image: smartHrmAiImg,
     homeImage: smartHrmAiImg,
     link: "/portfolio/smart-hrm-ai",
-    cta: "View case study",
     accentColor: "#1E8AF0",
     accentText: "#6FC2FF",
     accentSoft: "rgba(30, 138, 240, 0.14)",
@@ -59,18 +47,9 @@ export const projects = [
     category: ["ia", "web", "mobile"],
     tech: ["LangGraph", "FastAPI", "MongoDB", "Next.js", "Flutter", "Three.js"],
     homeTech: ["LangGraph", "Flutter", "FastAPI", "Next.js"],
-    role: "Project Lead / AI Agent Engineer",
-    type: "AI-Powered Smart Farming Platform",
-    status: "Integrated ESPRIT project",
-    impact: "Autonomous irrigation agent with 3D farm monitoring and human-in-the-loop approvals.",
-    description:
-      "AI-powered smart agriculture platform unifying Flutter mobile access, zone monitoring, autonomous irrigation recommendations, IoT/sensor data, and a 3D digital-twin farm dashboard.",
-    homeDescription:
-      "Agentic AI farming platform with Flutter mobile access, LangGraph irrigation workflow, FastAPI, MongoDB, Next.js, and 3D farm monitoring.",
     image: firmaaCoverImg,
     homeImage: firmaaCoverImg,
     link: "/portfolio/firmaa",
-    cta: "View case study",
     scale: 1.18,
     accentColor: "#7AC943",
     accentText: "#A7E85A",
@@ -85,19 +64,9 @@ export const projects = [
     category: ["ia", "web", "mobile"],
     tech: ["Python", "scikit-learn", "FastAPI", "Next.js", "SHAP"],
     homeTech: ["Python", "FastAPI", "Next.js"],
-    role: "ML Engineer / Full-Stack AI Developer",
-    type: "Medical ML platform",
-    status: "Academic team project",
-    impact: "98.83% accuracy, 98.44% malignant recall, and 0.9975 ROC-AUC.",
-    homeImpact: "CRISP-DM medical ML prototype with FastAPI and Next.js.",
-    description:
-      "Medical machine-learning decision-support prototype using the WDBC dataset, CRISP-DM methodology, clinical metric prioritization, FastAPI, Next.js, and SHAP explainability.",
-    homeDescription:
-      "Medical ML decision-support case study using CRISP-DM, WDBC data, FastAPI, and Next.js.",
     image: sahitnaSafeImg,
     homeImage: sahitnaSafeImg,
     link: "/portfolio/sahitna-safe",
-    cta: "View case study",
     scale: 1.35,
     accentColor: "#00C2F0",
     accentText: "#41DFFF",
@@ -112,18 +81,9 @@ export const projects = [
     category: ["ia", "mobile"],
     tech: ["Flutter", "YOLOv8", "FastAPI", "Docker"],
     homeTech: ["Flutter", "YOLOv8", "FastAPI"],
-    role: "Data & Mobile Developer Intern",
-    type: "Flagship case study",
-    status: "Internship project",
-    impact: "92.9% precision for real-time car damage detection.",
-    description:
-      "Cross-platform Flutter app for intelligent insurance claim management with real-time AI car damage detection.",
-    homeDescription:
-      "AI-powered insurance claim assistant combining Flutter, computer vision, and FastAPI.",
     image: smartClaimImg,
     homeImage: smartClaimPreviewImg,
     link: "/portfolio/smart-claim",
-    cta: "View SmartClaim",
     accentColor: "#6FB9CC",
     accentText: "#8ED5E4",
     accentSoft: "rgba(111, 185, 204, 0.14)",
@@ -138,19 +98,9 @@ export const projects = [
     category: ["mobile"],
     tech: ["Flutter", "IoT", "Energy"],
     homeTech: ["Flutter", "IoT"],
-    role: "Flutter Developer",
-    type: "Mobile + IoT",
-    status: "Final year project",
-    impact: "Real-time solar energy monitoring and consumption analytics.",
-    homeImpact: "Real-time solar energy monitoring and analytics.",
-    description:
-      "Comprehensive Flutter mobile application for real-time solar energy management and consumption monitoring.",
-    homeDescription:
-      "Smart energy management mobile app for monitoring connected solar systems.",
     image: solarFlowImg,
     homeImage: solarFlowPreviewImg,
     link: "/portfolio/solar-flow",
-    cta: "View case study",
     accentColor: "#DDEFEA",
     accentText: "#DDEFEA",
     accentSoft: "rgba(221, 239, 234, 0.12)",
@@ -164,18 +114,9 @@ export const projects = [
     category: ["web"],
     tech: ["JavaFX", "Symfony", "HR Tech"],
     homeTech: ["JavaFX", "Symfony"],
-    role: "Full-stack contributor",
-    type: "HR platform",
-    status: "Portfolio project",
-    impact: "Gamified onboarding flow for employee engagement.",
-    description:
-      "Gamified onboarding platform built with JavaFX & Symfony to enhance employee engagement and retention.",
-    homeDescription:
-      "Gamified HR onboarding platform using JavaFX and Symfony workflows.",
     image: onboardifyImg,
     homeImage: onboardifyPreviewImg,
     link: "/portfolio/onboardify",
-    cta: "View case study",
     accentColor: "#5B73D6",
     accentText: "#AEBBFF",
     accentSoft: "rgba(91, 115, 214, 0.16)",
@@ -188,18 +129,9 @@ export const projects = [
     title: "Pro-Link",
     category: ["mobile"],
     tech: ["Flutter", "Networking"],
-    role: "Mobile app builder",
-    type: "Mobile app",
-    status: "Portfolio project",
-    impact: "Professional networking and collaboration workflow.",
-    description:
-      "Professional networking mobile application built with Flutter to connect professionals and facilitate collaboration.",
-    homeDescription:
-      "Mobile networking platform for project requests and professional collaboration.",
     image: proLinkImg,
     homeImage: proLinkPreviewImg,
     link: "/portfolio/pro-link",
-    cta: "View case study",
     scale: 1.4,
     accentColor: "#5066AD",
     accentText: "#AEBBFF",
@@ -210,18 +142,26 @@ export const projects = [
   },
 ];
 
-export const getProjectCards = (variant = "portfolio") =>
+/**
+ * Merges the structural project data above with the translated copy held in
+ * src/i18n/locales/*.json under `projects.<id>`. `t` comes from
+ * useTranslation(), passed in so this file stays a plain module.
+ */
+export const getProjectCards = (t, variant = "portfolio") =>
   projects.map((project) => {
-    if (variant !== "home") {
-      return project;
-    }
+    const key = `projects.${project.id}`;
+    const home = variant === "home";
 
     return {
       ...project,
-      title: project.homeTitle || project.title,
-      tech: project.homeTech || project.tech,
-      impact: project.homeImpact || project.impact,
-      description: project.homeDescription || project.description,
-      image: project.homeImage || project.image,
+      title: home ? project.homeTitle || project.title : project.title,
+      tech: home ? project.homeTech || project.tech : project.tech,
+      image: home ? project.homeImage || project.image : project.image,
+      role: t(`${key}.role`),
+      type: t(`${key}.type`),
+      status: t(`${key}.status`),
+      cta: t(`${key}.cta`),
+      impact: t(home ? `${key}.homeImpact` : `${key}.impact`),
+      description: t(home ? `${key}.homeDescription` : `${key}.description`),
     };
   });

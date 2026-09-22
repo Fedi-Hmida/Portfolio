@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { lazy, Suspense, useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/social-icons.css";
@@ -36,17 +37,14 @@ const containerVariants = {
   },
 };
 
-const CV_PATH = "/assets/cv/Fedi_Hmida_CV.pdf";
 const HERO_NAME = "Fedi Hmida";
-const HERO_PRIMARY_ROLE = "Software Engineering Student";
-const HERO_SPECIALIZATION = "Data Science & AI Engineering";
-const HERO_LOCATION = "Limoges, France";
 const heroNameLetters = Array.from(HERO_NAME);
 
 const Home = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("services"); // Default tab changed from "soft skills" to "hard skills"
 
-  const portfolioPreview = getProjectCards("home");
+  const portfolioPreview = getProjectCards(t, "home");
   const newsPreview = latestNewsPreview;
   const projectsPerPage = 2;
   const hardSkillsPerPage = 8;
@@ -128,17 +126,17 @@ const Home = () => {
                 className="relative mt-3 flex flex-col items-center gap-1 text-center lg:items-start lg:text-left"
               >
                 <span className="text-base font-semibold text-primary-pink sm:text-lg md:text-xl">
-                  {HERO_PRIMARY_ROLE}
+                  {t("home.role")}
                 </span>
                 <span className="text-sm font-medium text-sky-300/90 sm:text-base md:text-lg">
-                  {HERO_SPECIALIZATION}
+                  {t("home.specialization")}
                 </span>
                 <span className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-gray-300/90 sm:text-base">
                   <MapPin
                     className="h-4 w-4 flex-shrink-0 text-primary-pink"
                     aria-hidden="true"
                   />
-                  {HERO_LOCATION}
+                  {t("home.location")}
                 </span>
                 <motion.span
                   aria-hidden="true"
@@ -159,21 +157,21 @@ const Home = () => {
                   to="/portfolio"
                   className="inline-flex min-h-12 items-center justify-center rounded-full bg-primary-pink px-7 py-3 text-sm font-bold text-white shadow-lg shadow-primary-pink/20 transition-all hover:-translate-y-1 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
                 >
-                  View Projects
+                  {t("home.viewProjects")}
                 </Link>
                 <a
-                  href={CV_PATH}
+                  href={t("common.cvFile")}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3 text-sm font-bold text-white transition-all hover:-translate-y-1 hover:border-primary-pink hover:text-primary-pink focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
                 >
-                  View CV
+                  {t("home.viewCv")}
                 </a>
                 <Link
                   to="/about"
                   className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 px-7 py-3 text-sm font-bold text-gray-200 transition-all hover:-translate-y-1 hover:border-white/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-deep-indigo"
                 >
-                  About Me
+                  {t("home.aboutMe")}
                 </Link>
               </motion.div>
 
@@ -256,7 +254,7 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white inline-block relative pb-2">
-              About Me
+              {t("home.aboutTitle")}
               <motion.div
                 className="absolute bottom-0 left-0 h-1 bg-primary-pink rounded-full"
                 initial={{ width: 0 }}
@@ -295,7 +293,7 @@ const Home = () => {
                       }}
                     />
                   )}
-                  {tab}
+                  {t(`home.tabs.${tab}`)}
                 </button>
               ))}
             </div>
@@ -619,7 +617,7 @@ const Home = () => {
                 viewport={{ once: true }}
               >
                 <h2 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white inline-block relative pb-2">
-                  My Work
+                  {t("home.myWork")}
                   <motion.div
                     className="absolute bottom-0 left-0 h-1 bg-primary-pink rounded-full"
                     initial={{ width: 0 }}
@@ -633,7 +631,7 @@ const Home = () => {
               to="/portfolio"
               className="hidden md:inline-flex items-center text-gray-300 hover:text-white transition-colors"
             >
-              View All Projects <span className="ml-2">&rarr;</span>
+              {t("home.viewAllProjects")} <span className="ml-2">&rarr;</span>
             </Link>
           </div>
 
@@ -696,7 +694,7 @@ const Home = () => {
               to="/portfolio"
               className="btn-primary inline-block px-8 py-3 rounded-full border border-white/20"
             >
-              View All Projects
+              {t("home.viewAllProjects")}
             </Link>
           </div>
         </div>
@@ -716,7 +714,7 @@ const Home = () => {
               className="mt-2"
             >
               <h2 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white inline-block relative pb-2">
-                Latest News
+                {t("home.latestNews")}
                 <motion.div
                   className="absolute bottom-0 left-0 h-1 bg-primary-pink rounded-full"
                   initial={{ width: 0 }}
@@ -738,7 +736,7 @@ const Home = () => {
               to="/news"
               className="inline-flex items-center px-8 py-3 rounded-full bg-primary-pink text-white font-bold shadow-lg hover:shadow-glow hover:-translate-y-1 transition-all"
             >
-              See More News
+              {t("home.seeMoreNews")}
             </Link>
           </div>
         </div>

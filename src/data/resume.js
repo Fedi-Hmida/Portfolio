@@ -1,6 +1,8 @@
+// Skill groups keep their `type` (which selects the SkillCard icon) and their
+// skill lists here - technology names are not translated. Group titles,
+// experiences and education live in src/i18n/locales/*.json.
 export const technicalSkills = [
   {
-    title: "AI Agents / Agentic AI",
     type: "agentic_ai",
     skills: [
       "LangGraph",
@@ -18,7 +20,6 @@ export const technicalSkills = [
     ],
   },
   {
-    title: "AI / Machine Learning",
     type: "ml",
     skills: [
       "Python",
@@ -37,7 +38,6 @@ export const technicalSkills = [
     ],
   },
   {
-    title: "Computer Vision",
     type: "vision",
     skills: [
       "YOLOv8",
@@ -50,7 +50,6 @@ export const technicalSkills = [
     ],
   },
   {
-    title: "Back-End Engineering",
     type: "backend",
     skills: [
       "Java 17",
@@ -65,7 +64,6 @@ export const technicalSkills = [
     ],
   },
   {
-    title: "Data & Storage",
     type: "database",
     skills: [
       "PostgreSQL",
@@ -79,7 +77,6 @@ export const technicalSkills = [
     ],
   },
   {
-    title: "Full-Stack Web Development",
     type: "fullstack",
     skills: [
       "React",
@@ -92,7 +89,6 @@ export const technicalSkills = [
     ],
   },
   {
-    title: "Mobile Development",
     type: "mobile",
     skills: [
       "Flutter",
@@ -104,7 +100,6 @@ export const technicalSkills = [
     ],
   },
   {
-    title: "Security & DevOps",
     type: "devops",
     skills: [
       "OAuth2 / OpenID Connect",
@@ -119,127 +114,6 @@ export const technicalSkills = [
       "Vitest",
       "Playwright",
     ],
-  },
-];
-
-export const experiences = [
-  {
-    role: "Full-Stack Engineering Intern - Co-Lead",
-    company: "BNS Engineering, Tunis",
-    duration: "July - August 2026",
-    bullets: [
-      [
-        { text: "Co-led the " },
-        { text: "back-end and front-end poles", strong: true },
-        { text: " of " },
-        { text: "SMART HRM AI", strong: true },
-        { text: ", an internal HR platform built by an " },
-        { text: "8-intern team", strong: true },
-        { text: ", across a " },
-        { text: "Java 17 / Spring Boot", strong: true },
-        { text: " API and a " },
-        { text: "React 19 / TypeScript", strong: true },
-        { text: " client." },
-      ],
-      [
-        { text: "Designed the platform's security model: " },
-        { text: "OAuth2 / OpenID Connect", strong: true },
-        { text: " delegated to " },
-        { text: "Keycloak", strong: true },
-        { text: ", a 4-role RBAC model enforced by " },
-        { text: "104 authorization gates", strong: true },
-        { text: ", and " },
-        { text: "AES-256-GCM", strong: true },
-        { text: " encryption at rest for salary and bank data." },
-      ],
-      [
-        { text: "Built " },
-        { text: "102 REST endpoints", strong: true },
-        { text: " over PostgreSQL with " },
-        { text: "32 Flyway migrations", strong: true },
-        { text: " and MinIO object storage, applying Clean Architecture across " },
-        { text: "11 modules", strong: true },
-        { text: " and " },
-        { text: "2,072 automated tests", strong: true },
-        { text: " (JUnit, Vitest, Playwright)." },
-      ],
-      [
-        { text: "Owned three AI workstreams: the authorization contract for the " },
-        { text: "OCR document-extraction", strong: true },
-        { text: " service, a " },
-        { text: "RAG conversational assistant", strong: true },
-        { text: ", and predictive models for absence and staff turnover." },
-      ],
-    ],
-  },
-  {
-    role: "AI / Mobile Development Intern",
-    company: "ADDINN Group Tunisia",
-    duration: "July - September 2025",
-    bullets: [
-      [
-        { text: "Built a " },
-        { text: "YOLO-based vehicle damage detection", strong: true },
-        { text: " and classification pipeline (" },
-        { text: "PyTorch, OpenCV", strong: true },
-        { text: "), benchmarked against existing computer vision approaches." },
-      ],
-      [
-        { text: "Deployed the model as a " },
-        { text: "FastAPI", strong: true },
-        { text: " REST microservice containerized with " },
-        { text: "Docker", strong: true },
-        { text: ", reaching " },
-        { text: "92.9% precision", strong: true },
-        { text: " on real-time damage detection." },
-      ],
-      [
-        { text: "Developed " },
-        { text: "SmartClaim", strong: true },
-        {
-          text: ", a cross-platform Flutter application for insurance claim submission, evidence upload and real-time claim tracking.",
-        },
-      ],
-    ],
-  },
-  {
-    role: "Mobile Developer Intern",
-    company: "Msign",
-    duration: "February - June 2024",
-    bullets: [
-      [
-        { text: "Built " },
-        { text: "SolarFlow", strong: true },
-        {
-          text: ", a Flutter application for real-time energy production tracking, connected-device management and remote control.",
-        },
-      ],
-      [
-        { text: "Deployed the application to the " },
-        { text: "App Store and Play Store", strong: true },
-        { text: ", and developed the " },
-        { text: "IoT monitoring platform", strong: true },
-        { text: " behind it with REST API integration." },
-      ],
-    ],
-  },
-];
-
-export const education = [
-  {
-    degree: "Engineering Degree, Double Degree, Big Data",
-    institution: "3iL Ingénieurs, Limoges, France",
-    year: "2026 - 2028",
-  },
-  {
-    degree: "Software Engineering, Data Science & AI",
-    institution: "ESPRIT, Tunis",
-    year: "2024 - 2027",
-  },
-  {
-    degree: "Bachelor's Degree in Computer Engineering",
-    institution: "Higher Institute of Computer Science of Mahdia",
-    year: "2021 - 2024",
   },
 ];
 

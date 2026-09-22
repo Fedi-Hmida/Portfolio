@@ -1,15 +1,25 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { FaBriefcase, FaDownload } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ReactTyped } from "react-typed";
 import fediImg from "../assets/images/slider/Fedi_Hmida.png";
 import AboutHero from "../components/About/AboutHero";
+import { rich } from "../i18n/rich";
 import ServicesSection from "../components/About/ServicesSection";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ParticlesBackground from "../components/ParticlesBackground";
 
+// Paired by index with the `about.recognition` entries in the locale files.
+const RECOMMENDATION_FILES = [
+  "/assets/cv/Recommendation_FediHmida.pdf",
+  "/assets/cv/Fedi_Hmida_Letter%20of%20Recommendation.pdf",
+];
+
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="relative min-h-screen bg-deep-indigo">
       <ParticlesBackground />
@@ -48,7 +58,7 @@ const About = () => {
             >
               <h2 className="text-4xl font-bold mb-4">
                 <ReactTyped
-                  strings={["Who Am I?", "My Background", "About Me"]}
+                  strings={t("about.typed", { returnObjects: true })}
                   typeSpeed={80}
                   backSpeed={50}
                   loop
@@ -57,51 +67,19 @@ const About = () => {
               </h2>
 
               <div className="space-y-4 text-gray-300 leading-relaxed text-lg text-justify">
-                <p>
-                  I'm a <strong>Software Engineering student</strong> in a{" "}
-                  <strong>double-degree Engineering Cycle</strong> between{" "}
-                  <strong>3iL Ingénieurs</strong> in Limoges, France and{" "}
-                  <strong>ESPRIT</strong> in Tunis, currently in my second year,
-                  specializing in{" "}
-                  <strong>Data Science &amp; Artificial Intelligence</strong>.
-                </p>
-                <p>
-                  I build <strong>multi-agent LLM systems</strong> with{" "}
-                  <strong>LangGraph</strong>, <strong>RAG</strong> and{" "}
-                  <strong>MCP</strong>, and{" "}
-                  <strong>computer-vision pipelines</strong> with{" "}
-                  <strong>YOLO</strong> and <strong>PyTorch</strong>. I also
-                  ship production systems: I co-led the full-stack development
-                  of an <strong>8-person HR platform</strong> built on{" "}
-                  <strong>Spring Boot</strong>,{" "}
-                  <strong>OAuth2 / Keycloak</strong> and{" "}
-                  <strong>React / TypeScript</strong>, spanning{" "}
-                  <strong>102 REST endpoints</strong>.
-                </p>
-                <p>
-                  My work ranges from an{" "}
-                  <strong>autonomous multi-agent farming platform</strong> and a{" "}
-                  <strong>98.83%-accuracy diagnostic ML pipeline</strong> to{" "}
-                  <strong>insurance claim automation</strong> — always with the
-                  same focus: practical systems that pair applied AI with solid
-                  engineering foundations.
-                </p>
+                <p>{rich(t("about.bio1"))}</p>
+                <p>{rich(t("about.bio2"))}</p>
+                <p>{rich(t("about.bio3"))}</p>
               </div>
 
               {/* Core Competencies */}
               <div className="py-6">
                 <h3 className="text-primary-pink text-xl font-bold mb-4">
-                  Core Competencies
+                  {t("about.coreCompetencies")}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <ul className="space-y-3">
-                    {[
-                      "Agentic AI & Multi-Agent Systems (LangGraph, MCP)",
-                      "RAG Pipelines & LLM Orchestration (LangChain, ChromaDB)",
-                      "Machine Learning & Model Evaluation (CRISP-DM)",
-                      "Computer Vision Pipelines (YOLO, OpenCV, PyTorch)",
-                      "Cross-Platform Mobile Development (Flutter)",
-                    ].map((item, i) => (
+                    {t("about.competenciesLeft", { returnObjects: true }).map((item, i) => (
                       <li
                         key={i}
                         className="flex items-start gap-3 text-sm text-gray-300 shine-effect p-2 rounded hover:bg-white/5"
@@ -112,13 +90,7 @@ const About = () => {
                     ))}
                   </ul>
                   <ul className="space-y-3">
-                    {[
-                      "Back-End Engineering (Java 17, Spring Boot, FastAPI)",
-                      "API Security & IAM (OAuth2, Keycloak, RBAC, JWT)",
-                      "Full-Stack Web Development (React, Next.js, TypeScript)",
-                      "Data & Storage Architecture (PostgreSQL, MongoDB, MinIO)",
-                      "Testing & CI/CD (JUnit, Vitest, Playwright, Docker)",
-                    ].map((item, i) => (
+                    {t("about.competenciesRight", { returnObjects: true }).map((item, i) => (
                       <li
                         key={i}
                         className="flex items-start gap-3 text-sm text-gray-300 shine-effect p-2 rounded hover:bg-white/5"
@@ -134,21 +106,15 @@ const About = () => {
               {/* Professional Recognition */}
               <div className="bg-darker-indigo p-6 rounded-xl border border-white/10 shadow-lg mb-8">
                 <h3 className="text-primary-pink text-lg font-bold mb-4">
-                  Professional Recognition
+                  {t("about.recognitionTitle")}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {[
-                    {
-                      title: "Data Science Excellence",
-                      by: "Dr. Nivine ATTOUE, ADDINN Group",
-                      file: "/assets/cv/Recommendation_FediHmida.pdf",
-                    },
-                    {
-                      title: "Mobile Development Excellence",
-                      by: "Houssem Eddine FADHLI, Senior Flutter Engineer",
-                      file: "/assets/cv/Fedi_Hmida_Letter%20of%20Recommendation.pdf",
-                    },
-                  ].map((rec, index) => (
+                  {t("about.recognition", { returnObjects: true })
+                    .map((rec, i) => ({
+                      ...rec,
+                      file: RECOMMENDATION_FILES[i],
+                    }))
+                    .map((rec, index) => (
                     <motion.a
                       key={index}
                       href={rec.file}
@@ -172,7 +138,7 @@ const About = () => {
                           className="text-xs text-primary-pink flex items-center gap-2 overflow-hidden"
                         >
                           <FaDownload className="animate-bounce" aria-hidden="true" />{" "}
-                          Click to download certification
+                          {t("about.downloadHint")}
                         </motion.div>
                       </div>
                     </motion.a>
@@ -183,37 +149,28 @@ const About = () => {
               {/* Career Focus */}
               <div className="mb-8">
                 <h3 className="text-primary-pink text-lg font-bold mb-2">
-                  Career Focus
+                  {t("about.careerFocusTitle")}
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
-                  Seeking a <strong>4-month internship from April 2027</strong>{" "}
-                  and an{" "}
-                  <strong>
-                    alternance in AI / Software Engineering from September 2027
-                  </strong>
-                  , based in France. Most interested in teams building{" "}
-                  <strong>agentic AI systems</strong>,{" "}
-                  <strong>ML products</strong>, or{" "}
-                  <strong>production back-end platforms</strong> where I can
-                  deliver production-ready systems end to end.
+                  {rich(t("about.careerFocus"))}
                 </p>
               </div>
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
-                  href="/assets/cv/Fedi_Hmida_CV.pdf"
+                  href={t("common.cvFile")}
                   download
                   className="px-8 py-3 rounded-full border border-primary-pink text-white font-semibold hover:bg-primary-pink hover:shadow-glow transition-all duration-300 flex items-center justify-center gap-2 group shine-effect"
                 >
                   <FaDownload className="group-hover:animate-bounce" aria-hidden="true" />{" "}
-                  Download CV
+                  {t("about.downloadCv")}
                 </a>
                 <Link
                   to="/portfolio"
                   className="px-8 py-3 rounded-full bg-gradient-to-r from-primary-pink to-secondary-pink text-white font-semibold shadow-lg hover:shadow-primary-pink/50 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <FaBriefcase aria-hidden="true" /> View Portfolio
+                  <FaBriefcase aria-hidden="true" /> {t("about.viewPortfolio")}
                 </Link>
               </div>
             </motion.div>

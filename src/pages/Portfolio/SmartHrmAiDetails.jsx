@@ -16,6 +16,7 @@ import smartHrmAiVisual from "../../assets/images/Portfolio/SmartHrmAi/smart-hrm
 import smartHrmAiDemoVideo from "../../assets/videos/SmartHrmAi/smart-hrm-ai-demo.mp4";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 
 const ACCENT = "#1E8AF0";
@@ -201,6 +202,10 @@ const SmartHrmAiDetails = () => {
     <div className="relative min-h-screen overflow-hidden bg-[#070640] text-white">
       <ParticlesBackground />
       <Navbar />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
+        <EnglishOnlyNotice />
+      </div>
 
       <main className="relative z-10">
         {/* Hero */}

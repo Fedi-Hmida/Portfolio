@@ -1,16 +1,19 @@
 import { motion } from "framer-motion";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import { ReactTyped } from "react-typed";
 import SocialIconLink from "../SocialIconLink";
 import { contactActions, contactInfo, socialLinks } from "../../data/socialLinks";
 
 const ConnectSection = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="mt-20">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
           <ReactTyped
-            strings={["Recruiter Friendly", "Quick Response", "Clear Next Step"]}
+            strings={t("contact.connectTyped", { returnObjects: true })}
             typeSpeed={100}
             backSpeed={50}
             loop
@@ -18,9 +21,7 @@ const ConnectSection = () => {
         </h2>
         <div className="w-16 h-1 bg-primary-pink mx-auto rounded"></div>
         <p className="mx-auto mt-4 max-w-2xl text-gray-300">
-          Send a role, project brief, or collaboration idea. For technical
-          review, start with SMART HRM AI and Firmaa, then reach out through
-          LinkedIn or email.
+          {t("contact.connectIntro")}
         </p>
       </div>
 
@@ -32,7 +33,7 @@ const ConnectSection = () => {
         className="w-full h-80 rounded-2xl overflow-hidden shadow-2xl border border-white/10 mb-12"
       >
         <iframe
-          title="Map showing Limoges, France"
+          title={t("contact.mapTitle")}
           src="https://maps.google.com/maps?q=Limoges%2C%20France&t=&z=12&ie=UTF8&iwloc=&output=embed"
           className="w-full h-full border-0 filter grayscale invert contrast-125 opacity-80 hover:opacity-100 transition-opacity duration-500"
           allowFullScreen=""
@@ -63,7 +64,7 @@ const ConnectSection = () => {
                     {action.name}
                   </span>
                   <span className="mt-1 block text-sm text-gray-400">
-                    {action.description}
+                    {t(`contact.actions.${action.key}`)}
                   </span>
                 </span>
                 <div
@@ -84,7 +85,9 @@ const ConnectSection = () => {
               <FaMapMarkerAlt size={20} aria-hidden="true" />
             </div>
             <div>
-              <h4 className="text-xl font-bold text-white mb-1">Location</h4>
+              <h4 className="text-xl font-bold text-white mb-1">
+                {t("contact.locationLabel")}
+              </h4>
               <p className="text-gray-400">{contactInfo.location}</p>
             </div>
           </div>
@@ -95,7 +98,9 @@ const ConnectSection = () => {
               <FaEnvelope size={20} aria-hidden="true" />
             </div>
             <div>
-              <h4 className="text-xl font-bold text-white mb-1">Email</h4>
+              <h4 className="text-xl font-bold text-white mb-1">
+                {t("contact.emailLabel")}
+              </h4>
               <p className="text-gray-400">{contactInfo.email}</p>
             </div>
           </div>
@@ -106,7 +111,9 @@ const ConnectSection = () => {
               <FaPhoneAlt size={20} aria-hidden="true" />
             </div>
             <div>
-              <h4 className="text-xl font-bold text-white mb-1">Phone</h4>
+              <h4 className="text-xl font-bold text-white mb-1">
+                {t("contact.phoneLabel")}
+              </h4>
               <p className="text-gray-400">{contactInfo.phone}</p>
             </div>
           </div>
@@ -115,7 +122,9 @@ const ConnectSection = () => {
 
           {/* Social Row */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
+            <h4 className="text-lg font-semibold text-white mb-4">
+              {t("contact.followMe")}
+            </h4>
             <div className="flex gap-4 flex-wrap">
               {socialLinks.map((social) => {
                 return (

@@ -25,6 +25,7 @@ import {
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 
 import onboardifyLogo from "../../assets/images/logo3.png";
@@ -266,6 +267,10 @@ const OnboardifyDetails = () => {
     <div className="relative min-h-screen overflow-hidden bg-[#070640] text-white">
       <ParticlesBackground />
       <Navbar />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
+        <EnglishOnlyNotice />
+      </div>
 
       <main className="relative z-10">
         <section className="px-6 pb-16 pt-32 md:px-12 lg:px-20">

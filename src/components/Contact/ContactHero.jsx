@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const ContactHero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 text-center z-10 relative">
@@ -10,25 +13,17 @@ const ContactHero = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-            Let's Work{" "}
+            {t("contact.heroTitle")}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-pink to-secondary-pink">
-              Together
+              {t("contact.heroTitleAccent")}
             </span>
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-pink to-secondary-pink mx-auto rounded-full"></div>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-300 md:text-xl">
-            Based in Limoges, France. Looking for a 4-month internship from
-            April 2027 and an alternance in AI / Software Engineering from
-            September 2027, with teams building agentic AI systems, ML
-            products, or production back-end platforms.
+            {t("contact.heroIntro")}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {[
-              "Internship - April 2027",
-              "Alternance - September 2027",
-              "AI / Software Engineering",
-              "Based in France",
-            ].map(
+            {t("contact.pills", { returnObjects: true }).map(
               (item) => (
                 <span
                   key={item}

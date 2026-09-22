@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "title": "Fedi Hmida - AI & Software Engineer",
+    "description": "Portfolio of Fedi Hmida, AI and Software Engineer based in Limoges, France - agentic AI, machine learning, and production full-stack systems."
+  },
+  "lang": {
+    "label": "Language",
+    "switchTo": "Passer en français",
+    "current": "English"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "resume": "Resume",
+    "news": "News",
+    "contact": "Contact",
+    "cta": "Let's Talk",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "mainNav": "Main navigation"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "common": {
+    "cvFile": "/assets/cv/Fedi_Hmida_CV.pdf",
+    "englishOnlyTitle": "Available in English",
+    "englishOnlyBody": "This case study has not been translated yet. The full write-up is available in English."
+  },
+  "home": {
+    "role": "Software Engineering Student",
+    "specialization": "Data Science & AI Engineering",
+    "location": "Limoges, France",
+    "viewProjects": "View Projects",
+    "viewCv": "View CV",
+    "aboutMe": "About Me",
+    "aboutTitle": "About Me",
+    "tabs": {
+      "soft skills": "Soft Skills",
+      "hard skills": "Hard Skills",
+      "services": "Services",
+      "project methodologies": "Methodologies"
+    },
+    "myWork": "My Work",
+    "viewAllProjects": "View All Projects",
+    "latestNews": "Latest News",
+    "seeMoreNews": "See More News"
+  },
+  "about": {
+    "heroTitle": "About Me",
+    "typed": [
+      "Who Am I?",
+      "My Background",
+      "About Me"
+    ],
+    "bio1": "I'm a <b>Software Engineering student</b> in a <b>double-degree Engineering Cycle</b> between <b>3iL Ingénieurs</b> in Limoges, France and <b>ESPRIT</b> in Tunis, currently in my second year, specializing in <b>Data Science & Artificial Intelligence</b>.",
+    "bio2": "I build <b>multi-agent LLM systems</b> with <b>LangGraph</b>, <b>RAG</b> and <b>MCP</b>, and <b>computer-vision pipelines</b> with <b>YOLO</b> and <b>PyTorch</b>. I also ship production systems: I co-led the full-stack development of an <b>8-person HR platform</b> built on <b>Spring Boot</b>, <b>OAuth2 / Keycloak</b> and <b>React / TypeScript</b>, spanning <b>102 REST endpoints</b>.",
+    "bio3": "My work ranges from an <b>autonomous multi-agent farming platform</b> and a <b>98.83%-accuracy diagnostic ML pipeline</b> to <b>insurance claim automation</b> - always with the same focus: practical systems that pair applied AI with solid engineering foundations.",
+    "coreCompetencies": "Core Competencies",
+    "competenciesLeft": [
+      "Agentic AI & Multi-Agent Systems (LangGraph, MCP)",
+      "RAG Pipelines & LLM Orchestration (LangChain, ChromaDB)",
+      "Machine Learning & Model Evaluation (CRISP-DM)",
+      "Computer Vision Pipelines (YOLO, OpenCV, PyTorch)",
+      "Cross-Platform Mobile Development (Flutter)"
+    ],
+    "competenciesRight": [
+      "Back-End Engineering (Java 17, Spring Boot, FastAPI)",
+      "API Security & IAM (OAuth2, Keycloak, RBAC, JWT)",
+      "Full-Stack Web Development (React, Next.js, TypeScript)",
+      "Data & Storage Architecture (PostgreSQL, MongoDB, MinIO)",
+      "Testing & CI/CD (JUnit, Vitest, Playwright, Docker)"
+    ],
+    "recognitionTitle": "Professional Recognition",
+    "recognition": [
+      {
+        "title": "Data Science Excellence",
+        "by": "Dr. Nivine ATTOUE, ADDINN Group"
+      },
+      {
+        "title": "Mobile Development Excellence",
+        "by": "Houssem Eddine FADHLI, Senior Flutter Engineer"
+      }
+    ],
+    "downloadHint": "Click to download certification",
+    "careerFocusTitle": "Career Focus",
+    "careerFocus": "Seeking a <b>4-month internship from April 2027</b> and an <b>alternance in AI / Software Engineering from September 2027</b>, based in France. Most interested in teams building <b>agentic AI systems</b>, <b>ML products</b>, or <b>production back-end platforms</b> where I can deliver production-ready systems end to end.",
+    "downloadCv": "Download CV",
+    "viewPortfolio": "View Portfolio"
+  },
+  "portfolio": {
+    "title": "My Projects",
+    "intro": "Recruiter-focused case studies showing my role, technical approach, and the proof behind each project, from Flutter mobile apps to AI and full-stack systems.",
+    "empty": "No projects found in this category.",
+    "categories": {
+      "all": "All Projects",
+      "ia": "AI / ML",
+      "mobile": "Mobile Apps",
+      "web": "Web Apps"
+    }
+  },
+  "resume": {
+    "typed": [
+      "Resume",
+      "Curriculum Vitae",
+      "My Journey"
+    ],
+    "downloadPdf": "Download PDF Version",
+    "experienceTitle": "Professional Experience",
+    "skillsTitle": "Technical Skills",
+    "educationTitle": "Education",
+    "recommendationsTitle": "Recommendation Letters",
+    "experiences": [
+      {
+        "role": "Full-Stack Engineering Intern - Co-Lead",
+        "company": "BNS Engineering, Tunis",
+        "duration": "July - August 2026",
+        "bullets": [
+          "Co-led the <b>back-end and front-end poles</b> of <b>SMART HRM AI</b>, an internal HR platform built by an <b>8-intern team</b>, across a <b>Java 17 / Spring Boot</b> API and a <b>React 19 / TypeScript</b> client.",
+          "Designed the platform's security model: <b>OAuth2 / OpenID Connect</b> delegated to <b>Keycloak</b>, a 4-role RBAC model enforced by <b>104 authorization gates</b>, and <b>AES-256-GCM</b> encryption at rest for salary and bank data.",
+          "Built <b>102 REST endpoints</b> over PostgreSQL with <b>32 Flyway migrations</b> and MinIO object storage, applying Clean Architecture across <b>11 modules</b> and <b>2,072 automated tests</b> (JUnit, Vitest, Playwright).",
+          "Owned three AI workstreams: the authorization contract for the <b>OCR document-extraction</b> service, a <b>RAG conversational assistant</b>, and predictive models for absence and staff turnover."
+        ]
+      },
+      {
+        "role": "AI / Mobile Development Intern",
+        "company": "ADDINN Group Tunisia",
+        "duration": "July - September 2025",
+        "bullets": [
+          "Built a <b>YOLO-based vehicle damage detection</b> and classification pipeline (<b>PyTorch, OpenCV</b>), benchmarked against existing computer vision approaches.",
+          "Deployed the model as a <b>FastAPI</b> REST microservice containerized with <b>Docker</b>, reaching <b>92.9% precision</b> on real-time damage detection.",
+          "Developed <b>SmartClaim</b>, a cross-platform Flutter application for insurance claim submission, evidence upload and real-time claim tracking."
+        ]
+      },
+      {
+        "role": "Mobile Developer Intern",
+        "company": "Msign",
+        "duration": "February - June 2024",
+        "bullets": [
+          "Built <b>SolarFlow</b>, a Flutter application for real-time energy production tracking, connected-device management and remote control.",
+          "Deployed the application to the <b>App Store and Play Store</b>, and developed the <b>IoT monitoring platform</b> behind it with REST API integration."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Engineering Degree, Double Degree, Big Data",
+        "institution": "3iL Ingénieurs, Limoges, France",
+        "year": "2026 - 2028"
+      },
+      {
+        "degree": "Software Engineering, Data Science & AI",
+        "institution": "ESPRIT, Tunis",
+        "year": "2024 - 2027"
+      },
+      {
+        "degree": "Bachelor's Degree in Computer Engineering",
+        "institution": "Higher Institute of Computer Science of Mahdia",
+        "year": "2021 - 2024"
+      }
+    ],
+    "skillGroups": {
+      "agentic_ai": "AI Agents / Agentic AI",
+      "ml": "AI / Machine Learning",
+      "vision": "Computer Vision",
+      "backend": "Back-End Engineering",
+      "database": "Data & Storage",
+      "fullstack": "Full-Stack Web Development",
+      "mobile": "Mobile Development",
+      "devops": "Security & DevOps"
+    }
+  },
+  "contact": {
+    "heroTitle": "Let's Work",
+    "heroTitleAccent": "Together",
+    "heroIntro": "Based in Limoges, France. Looking for a 4-month internship from April 2027 and an alternance in AI / Software Engineering from September 2027, with teams building agentic AI systems, ML products, or production back-end platforms.",
+    "pills": [
+      "Internship - April 2027",
+      "Alternance - September 2027",
+      "AI / Software Engineering",
+      "Based in France"
+    ],
+    "connectTyped": [
+      "Recruiter Friendly",
+      "Quick Response",
+      "Clear Next Step"
+    ],
+    "connectIntro": "Send a role, project brief, or collaboration idea. For technical review, start with SMART HRM AI and Firmaa, then reach out through LinkedIn or email.",
+    "mapTitle": "Map showing Limoges, France",
+    "locationLabel": "Location",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "followMe": "Follow Me",
+    "actions": {
+      "whatsapp": "Fastest for quick coordination.",
+      "linkedin": "Best for recruiters and professional messages.",
+      "email": "Best for detailed opportunities and documents."
+    },
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "emailRequired": "Email address is required",
+      "emailInvalid": "Please enter a valid email address",
+      "subjectRequired": "Subject is required",
+      "messageRequired": "Message is required",
+      "messageTooLong": "Message must be 500 characters or fewer",
+      "notConfigured": "Contact form is not configured yet. Please use email or LinkedIn.",
+      "success": "Message sent successfully! I'll get back to you soon.",
+      "error": "Failed to send message. Please try again later.",
+      "title": "Let's Connect",
+      "subtitle": "Send a role, internship, project brief, or technical question."
+    }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "body": "Oops! The page you are looking for might have been removed or is temporarily unavailable.",
+    "back": "Back to Home"
+  },
+  "projects": {
+    "7": {
+      "type": "Enterprise HR platform",
+      "status": "BNS Engineering internship",
+      "role": "Back-End & Front-End Co-Lead",
+      "impact": "102 REST endpoints, 104 authorization gates, and 2,072 automated tests across 11 modules.",
+      "homeImpact": "Enterprise HR platform with 102 REST endpoints and OAuth2 / Keycloak security.",
+      "description": "Internal HR platform built by an 8-intern team at BNS Engineering, pairing a Java 17 / Spring Boot API with a React 19 / TypeScript client, OAuth2 / Keycloak security, and AI workstreams for OCR extraction, RAG assistance, and workforce prediction.",
+      "homeDescription": "Internal HR platform combining Spring Boot, React 19, Keycloak security, and AI workstreams for OCR, RAG, and workforce prediction.",
+      "cta": "View case study"
+    },
+    "6": {
+      "type": "AI-Powered Smart Farming Platform",
+      "status": "Integrated ESPRIT project",
+      "role": "Project Lead / AI Agent Engineer",
+      "impact": "Autonomous irrigation agent with 3D farm monitoring and human-in-the-loop approvals.",
+      "homeImpact": "Autonomous irrigation agent with 3D farm monitoring and human-in-the-loop approvals.",
+      "description": "AI-powered smart agriculture platform unifying Flutter mobile access, zone monitoring, autonomous irrigation recommendations, IoT/sensor data, and a 3D digital-twin farm dashboard.",
+      "homeDescription": "Agentic AI farming platform with Flutter mobile access, LangGraph irrigation workflow, FastAPI, MongoDB, Next.js, and 3D farm monitoring.",
+      "cta": "View case study"
+    },
+    "5": {
+      "type": "Medical ML platform",
+      "status": "Academic team project",
+      "role": "ML Engineer / Full-Stack AI Developer",
+      "impact": "98.83% accuracy, 98.44% malignant recall, and 0.9975 ROC-AUC.",
+      "homeImpact": "CRISP-DM medical ML prototype with FastAPI and Next.js.",
+      "description": "Medical machine-learning decision-support prototype using the WDBC dataset, CRISP-DM methodology, clinical metric prioritization, FastAPI, Next.js, and SHAP explainability.",
+      "homeDescription": "Medical ML decision-support case study using CRISP-DM, WDBC data, FastAPI, and Next.js.",
+      "cta": "View case study"
+    },
+    "1": {
+      "type": "Flagship case study",
+      "status": "Internship project",
+      "role": "Data & Mobile Developer Intern",
+      "impact": "92.9% precision for real-time car damage detection.",
+      "homeImpact": "92.9% precision for real-time car damage detection.",
+      "description": "Cross-platform Flutter app for intelligent insurance claim management with real-time AI car damage detection.",
+      "homeDescription": "AI-powered insurance claim assistant combining Flutter, computer vision, and FastAPI.",
+      "cta": "View SmartClaim"
+    },
+    "2": {
+      "type": "Mobile + IoT",
+      "status": "Final year project",
+      "role": "Flutter Developer",
+      "impact": "Real-time solar energy monitoring and consumption analytics.",
+      "homeImpact": "Real-time solar energy monitoring and analytics.",
+      "description": "Comprehensive Flutter mobile application for real-time solar energy management and consumption monitoring.",
+      "homeDescription": "Smart energy management mobile app for monitoring connected solar systems.",
+      "cta": "View case study"
+    },
+    "3": {
+      "type": "HR platform",
+      "status": "Portfolio project",
+      "role": "Full-stack contributor",
+      "impact": "Gamified onboarding flow for employee engagement.",
+      "homeImpact": "Gamified onboarding flow for employee engagement.",
+      "description": "Gamified onboarding platform built with JavaFX & Symfony to enhance employee engagement and retention.",
+      "homeDescription": "Gamified HR onboarding platform using JavaFX and Symfony workflows.",
+      "cta": "View case study"
+    },
+    "4": {
+      "type": "Mobile app",
+      "status": "Portfolio project",
+      "role": "Mobile app builder",
+      "impact": "Professional networking and collaboration workflow.",
+      "homeImpact": "Professional networking and collaboration workflow.",
+      "description": "Professional networking mobile application built with Flutter to connect professionals and facilitate collaboration.",
+      "homeDescription": "Mobile networking platform for project requests and professional collaboration.",
+      "cta": "View case study"
+    }
+  }
+}

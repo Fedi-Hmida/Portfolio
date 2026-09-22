@@ -7,6 +7,7 @@ import awsImg from "../../assets/images/AI_AWS.jpg";
 import flogo from "../../assets/images/flogo.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 
@@ -48,6 +49,10 @@ const NewsAWS = () => {
       </div>
 
       <Navbar />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
+        <EnglishOnlyNotice />
+      </div>
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         {/* Header / Breadcrumb */}
