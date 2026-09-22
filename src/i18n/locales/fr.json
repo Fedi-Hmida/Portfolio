@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Fedi Hmida - Ingénieur IA & Logiciel",
-    "description": "Portfolio de Fedi Hmida, élève-ingénieur en IA et génie logiciel à Limoges - IA agentique, machine learning et systèmes full-stack en production."
+    "description": "Portfolio de Fedi Hmida, étudiant ingénieur en IA et génie logiciel à Limoges - IA agentique, machine learning et systèmes full-stack en production."
   },
   "lang": {
     "label": "Langue",
@@ -35,7 +35,7 @@
     "close": "Fermer"
   },
   "home": {
-    "role": "Élève-ingénieur en informatique",
+    "role": "Étudiant ingénieur en informatique",
     "specialization": "Data Science & Intelligence Artificielle",
     "location": "Limoges, France",
     "viewProjects": "Voir les projets",
@@ -60,7 +60,7 @@
       "Mon parcours",
       "À propos"
     ],
-    "bio1": "Je suis <b>élève-ingénieur en informatique</b> dans un <b>Cycle Ingénieur en double diplôme</b> entre <b>3iL Ingénieurs</b> à Limoges et <b>ESPRIT</b> à Tunis, actuellement en deuxième année, spécialisé en <b>Data Science & Intelligence Artificielle</b>.",
+    "bio1": "Je suis <b>étudiant ingénieur en informatique</b> dans un <b>Cycle Ingénieur en double diplôme</b> entre <b>3iL Ingénieurs</b> à Limoges et <b>ESPRIT</b> à Tunis, actuellement en deuxième année, spécialisé en <b>Data Science & Intelligence Artificielle</b>.",
     "bio2": "Je conçois des <b>systèmes LLM multi-agents</b> avec <b>LangGraph</b>, <b>RAG</b> et <b>MCP</b>, ainsi que des <b>pipelines de vision par ordinateur</b> avec <b>YOLO</b> et <b>PyTorch</b>. Je développe aussi des systèmes destinés à la production : j'ai co-piloté le développement full-stack d'une <b>plateforme RH à 8 stagiaires</b> reposant sur <b>Spring Boot</b>, <b>OAuth2 / Keycloak</b> et <b>React / TypeScript</b>, couvrant <b>102 endpoints REST</b>.",
     "bio3": "Mes projets vont d'une <b>plateforme agricole autonome multi-agents</b> et d'un <b>pipeline ML de diagnostic à 98,83 % de précision</b> jusqu'à l'<b>automatisation de déclarations de sinistres</b> - toujours avec la même exigence : des systèmes concrets qui allient IA appliquée et bases solides d'ingénierie.",
     "coreCompetencies": "Compétences clés",
