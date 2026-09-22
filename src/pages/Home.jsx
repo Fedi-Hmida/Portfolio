@@ -36,7 +36,7 @@ const containerVariants = {
   },
 };
 
-const CV_PATH = "/assets/cv/CV_Ang_ATS.pdf";
+const CV_PATH = "/assets/cv/Fedi_Hmida_CV.pdf";
 const HERO_NAME = "Fedi Hmida";
 const HERO_PRIMARY_ROLE = "Software Engineering Student";
 const HERO_SPECIALIZATION = "Data Science & AI Engineering";

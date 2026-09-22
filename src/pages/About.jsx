@@ -202,7 +202,7 @@ const About = () => {
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
-                  href="/assets/cv/CV_Ang_ATS.pdf"
+                  href="/assets/cv/Fedi_Hmida_CV.pdf"
                   download
                   className="px-8 py-3 rounded-full border border-primary-pink text-white font-semibold hover:bg-primary-pink hover:shadow-glow transition-all duration-300 flex items-center justify-center gap-2 group shine-effect"
                 >
