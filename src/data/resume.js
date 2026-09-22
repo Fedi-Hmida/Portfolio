@@ -1,55 +1,94 @@
+// Skill groups keep their `type` (which selects the SkillCard icon) and their
+// skill lists here - technology names are not translated. Group titles,
+// experiences and education live in src/i18n/locales/*.json.
 export const technicalSkills = [
   {
-    title: "AI Agents / Agentic AI",
     type: "agentic_ai",
     skills: [
       "LangGraph",
       "LangChain",
+      "LangSmith (Agent tracing)",
+      "MCP (Model Context Protocol)",
       "RAG Chatbots",
       "ChromaDB (Vector database)",
+      "Ollama (Local LLM runtime)",
       "LLM reasoning",
       "Tool-assisted agents",
       "Human-in-the-loop",
       "Validation layers",
       "Fallback rules",
-      "Safety checks",
-      "Explainable recommendations",
     ],
   },
   {
-    title: "Full-Stack Web Development",
-    type: "fullstack",
-    skills: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Three.js (3D digital twin)",
-      "Dashboard UI",
-      "FastAPI",
-      "REST APIs",
-      "MongoDB",
-      "Firebase",
-      "MySQL",
-      "Joblib",
-    ],
-  },
-  {
-    title: "AI / Machine Learning",
     type: "ml",
     skills: [
       "Python",
       "scikit-learn",
       "XGBoost",
+      "TensorFlow",
+      "PyTorch",
+      "HuggingFace",
+      "Prompt Engineering",
+      "Fine-tuning",
       "SHAP (Explainable AI)",
-      "Model Evaluation",
-      "Classification",
-      "Class imbalance",
+      "Anomaly Detection",
+      "MLFlow (Experiment tracking)",
       "CRISP-DM",
+      "TDSP",
     ],
   },
   {
-    title: "Mobile Development",
+    type: "vision",
+    skills: [
+      "YOLOv8",
+      "OpenCV",
+      "PyTorch",
+      "CNN",
+      "Image preprocessing",
+      "Object detection",
+      "Damage detection",
+    ],
+  },
+  {
+    type: "backend",
+    skills: [
+      "Java 17",
+      "Spring Boot",
+      "Spring Security",
+      "Spring Data JPA",
+      "FastAPI",
+      "REST APIs",
+      "Microservices",
+      "Clean Architecture",
+      "Node.js",
+    ],
+  },
+  {
+    type: "database",
+    skills: [
+      "PostgreSQL",
+      "MongoDB",
+      "MySQL",
+      "SQL",
+      "Flyway (Schema migrations)",
+      "MinIO / S3 (Object storage)",
+      "Pandas",
+      "Firebase",
+    ],
+  },
+  {
+    type: "fullstack",
+    skills: [
+      "React",
+      "React 19",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "Three.js (3D digital twin)",
+      "Dashboard UI",
+    ],
+  },
+  {
     type: "mobile",
     skills: [
       "Flutter",
@@ -61,79 +100,20 @@ export const technicalSkills = [
     ],
   },
   {
-    title: "Computer Vision",
-    type: "vision",
+    type: "devops",
     skills: [
-      "YOLOv8",
-      "OpenCV",
-      "PyTorch",
-      "Image preprocessing",
-      "Object detection",
-      "Damage detection",
+      "OAuth2 / OpenID Connect",
+      "Keycloak",
+      "RBAC",
+      "JWT",
+      "Encryption at rest (AES-256-GCM)",
+      "Docker",
+      "CI/CD",
+      "Git / GitLab",
+      "JUnit",
+      "Vitest",
+      "Playwright",
     ],
-  },
-];
-
-export const experiences = [
-  {
-    role: "Data & Mobile Developer Intern",
-    company: "Addinn Group",
-    duration: "Summer 2025 - 2 months",
-    bullets: [
-      [
-        { text: "Developed " },
-        { text: "SmartClaim", strong: true },
-        {
-          text: ", a Flutter application for intelligent car crash claim reporting.",
-        },
-      ],
-      [
-        { text: "Integrated " },
-        { text: "YOLOv8", strong: true },
-        { text: " for real-time car damage detection with " },
-        { text: "92.9% precision", strong: true },
-        { text: "." },
-      ],
-      [
-        { text: "Built a robust backend using " },
-        { text: "FastAPI", strong: true },
-        { text: " and containerized the solution with " },
-        { text: "Docker", strong: true },
-        { text: "." },
-      ],
-    ],
-  },
-  {
-    role: "Msign - Final Year Project Internship",
-    company: "Msign",
-    duration: "Feb 2024 - Jun 2024",
-    bullets: [
-      [
-        { text: "Designed and implemented an " },
-        { text: "Energy Monitoring System", strong: true },
-        { text: "." },
-      ],
-      [
-        { text: "Created " },
-        { text: "SolarFlow", strong: true },
-        {
-          text: ", a cross-platform mobile app using Flutter for real-time energy analytics.",
-        },
-      ],
-    ],
-  },
-];
-
-export const education = [
-  {
-    degree: "Data Science & AI Engineering Student",
-    institution: "ESPRIT High School of Engineering",
-    year: "Currently Enrolled",
-  },
-  {
-    degree: "Bachelor's Degree in Computer Engineering",
-    institution: "Higher Institute of Computer Science of Mahdia",
-    year: "2024",
   },
 ];
 

@@ -1,15 +1,18 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import ProjectCard from "../../components/Portfolio/ProjectCard";
 import SectionTitle from "../../components/SectionTitle";
-import { projectCategories, projects } from "../../data/projects";
+import { getProjectCards, projectCategories } from "../../data/projects";
 
 const Portfolio = () => {
+  const { t } = useTranslation();
   const [filter, setFilter] = useState("all");
 
+  const projects = getProjectCards(t);
   const filteredProjects =
     filter === "all"
       ? projects
@@ -23,11 +26,9 @@ const Portfolio = () => {
       <main className="relative z-10 pt-32 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero & Title */}
         <div className="text-center mb-16 px-4">
-          <SectionTitle title="My Projects" />
+          <SectionTitle title={t("portfolio.title")} />
           <p className="text-gray-300 max-w-2xl mx-auto mt-4">
-            Recruiter-focused case studies showing my role, technical approach,
-            and the proof behind each project, from Flutter mobile apps to AI
-            and full-stack systems.
+            {t("portfolio.intro")}
           </p>
         </div>
 
@@ -46,7 +47,7 @@ const Portfolio = () => {
                         }
                     `}
             >
-              {cat.label}
+              {t(`portfolio.categories.${cat.id}`)}
             </button>
           ))}
         </div>
@@ -69,7 +70,7 @@ const Portfolio = () => {
             animate={{ opacity: 1 }}
             className="text-center text-gray-400 py-20"
           >
-            <p>No projects found in this category.</p>
+            <p>{t("portfolio.empty")}</p>
           </motion.div>
         )}
       </main>

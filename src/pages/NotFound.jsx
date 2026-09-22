@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import ParticlesBackground from "../components/ParticlesBackground";
 
 const NotFound = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="relative min-h-screen bg-[#070640] flex items-center justify-center overflow-hidden">
       <ParticlesBackground />
@@ -22,7 +25,7 @@ const NotFound = () => {
           transition={{ delay: 0.2 }}
           className="text-4xl text-white font-bold mt-4 mb-6"
         >
-          Page Not Found
+          {t("notFound.title")}
         </motion.h2>
 
         <motion.p
@@ -31,8 +34,7 @@ const NotFound = () => {
           transition={{ delay: 0.4 }}
           className="text-gray-300 text-lg mb-8 max-w-md mx-auto"
         >
-          Oops! The page you are looking for might have been removed or is
-          temporarily unavailable.
+          {t("notFound.body")}
         </motion.p>
 
         <motion.div
@@ -44,7 +46,7 @@ const NotFound = () => {
             to="/"
             className="px-8 py-3 bg-primary-pink text-white rounded-full font-bold hover:bg-secondary-pink transition-colors shadow-lg hover:shadow-primary-pink/50"
           >
-            Go Back Home
+            {t("notFound.back")}
           </Link>
         </motion.div>
       </div>

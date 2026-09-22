@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const ContactHero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 text-center z-10 relative">
@@ -10,19 +13,17 @@ const ContactHero = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-            Let's Work{" "}
+            {t("contact.heroTitle")}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-pink to-secondary-pink">
-              Together
+              {t("contact.heroTitleAccent")}
             </span>
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-pink to-secondary-pink mx-auto rounded-full"></div>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-300 md:text-xl">
-            Open to junior Flutter/mobile roles, AI engineering internships,
-            and product-focused collaborations where mobile apps, computer
-            vision, and backend APIs meet.
+            {t("contact.heroIntro")}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {["Recruiter inquiries", "Internships", "Flutter projects", "AI products"].map(
+            {t("contact.pills", { returnObjects: true }).map(
               (item) => (
                 <span
                   key={item}

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { ReactTyped } from "react-typed";
@@ -6,9 +7,11 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import NewsCard from "../../components/News/NewsCard";
 import ParticlesBackground from "../../components/ParticlesBackground";
-import { newsItems } from "../../data/news";
+import { getNewsCards } from "../../data/news";
 
 const NewsList = () => {
+  const { t } = useTranslation();
+  const newsItems = getNewsCards(t);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4;
 
@@ -45,7 +48,7 @@ const NewsList = () => {
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             <ReactTyped
-              strings={["Latest News", "My Blog", "Updates"]}
+              strings={t("newsList.typed", { returnObjects: true })}
               typeSpeed={50}
               backSpeed={30}
               loop
@@ -78,7 +81,7 @@ const NewsList = () => {
                   ? "opacity-50 cursor-not-allowed bg-white/5"
                   : "bg-white/10 hover:bg-primary-pink text-white hover:shadow-lg hover:-translate-y-1"
               }`}
-              aria-label="Previous Page"
+              aria-label={t("newsList.prevPage")}
             >
               <ChevronLeft className="w-5 h-5" aria-hidden="true" />
             </button>
@@ -109,7 +112,7 @@ const NewsList = () => {
                   ? "opacity-50 cursor-not-allowed bg-white/5"
                   : "bg-white/10 hover:bg-primary-pink text-white hover:shadow-lg hover:-translate-y-1"
               }`}
-              aria-label="Next Page"
+              aria-label={t("newsList.nextPage")}
             >
               <ChevronRight className="w-5 h-5" aria-hidden="true" />
             </button>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { ReactTyped } from "react-typed";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -9,19 +10,14 @@ import ExperienceCard from "../components/Resume/ExperienceCard";
 import RecommendationCard from "../components/Resume/RecommendationCard";
 import SkillCard from "../components/Resume/SkillCard";
 import SectionTitle from "../components/SectionTitle";
-import {
-  education,
-  experiences,
-  recommendations,
-  technicalSkills,
-} from "../data/resume";
-
-const renderBullet = (parts) =>
-  parts.map((part, index) =>
-    part.strong ? <strong key={index}>{part.text}</strong> : part.text,
-  );
+import { rich } from "../i18n/rich";
+import { recommendations, technicalSkills } from "../data/resume";
 
 const Resume = () => {
+  const { t } = useTranslation();
+  const experiences = t("resume.experiences", { returnObjects: true });
+  const education = t("resume.education", { returnObjects: true });
+
   return (
     <div className="relative min-h-screen">
       <ParticlesBackground />
@@ -32,7 +28,7 @@ const Resume = () => {
         <div className="text-center mb-20">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             <ReactTyped
-              strings={["Resume", "Curriculum Vitae", "My Journey"]}
+              strings={t("resume.typed", { returnObjects: true })}
               typeSpeed={100}
               backSpeed={50}
               loop
@@ -46,11 +42,11 @@ const Resume = () => {
             className="flex justify-center"
           >
             <a
-              href="/assets/cv/Cv_Ang.pdf"
+              href={t("common.cvFile")}
               download
               className="group relative px-8 py-4 bg-gradient-to-r from-primary-pink to-secondary-pink rounded-full text-white font-bold text-lg shadow-lg hover:shadow-primary-pink/50 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3 overflow-hidden"
             >
-              <span className="relative z-10">Download PDF Version</span>
+              <span className="relative z-10">{t("resume.downloadPdf")}</span>
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
@@ -68,7 +64,7 @@ const Resume = () => {
           <div className="lg:col-span-12 space-y-20">
             {/* Professional Experience */}
             <section>
-              <SectionTitle title="Professional Experience" />
+              <SectionTitle title={t("resume.experienceTitle")} />
               <div className="md:w-3/4 mx-auto space-y-8">
                 {experiences.map((experience) => (
                   <ExperienceCard
@@ -79,7 +75,7 @@ const Resume = () => {
                   >
                     <ul className="list-disc space-y-2 text-sm">
                       {experience.bullets.map((bullet, index) => (
-                        <li key={index}>{renderBullet(bullet)}</li>
+                        <li key={index}>{rich(bullet)}</li>
                       ))}
                     </ul>
                   </ExperienceCard>
@@ -89,10 +85,15 @@ const Resume = () => {
 
             {/* Technical Skills */}
             <section>
-              <SectionTitle title="Technical Skills" />
+              <SectionTitle title={t("resume.skillsTitle")} />
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {technicalSkills.map((skill, index) => (
-                  <SkillCard key={index} index={index} {...skill} />
+                  <SkillCard
+                    key={skill.type}
+                    index={index}
+                    {...skill}
+                    title={t(`resume.skillGroups.${skill.type}`)}
+                  />
                 ))}
               </div>
             </section>
@@ -101,7 +102,7 @@ const Resume = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Education */}
               <section>
-                <SectionTitle title="Education" />
+                <SectionTitle title={t("resume.educationTitle")} />
                 <div className="space-y-6">
                   {education.map((item) => (
                     <EducationCard key={item.degree} {...item} />
@@ -111,7 +112,7 @@ const Resume = () => {
 
               {/* Recommendations */}
               <section>
-                <SectionTitle title="Recommendation Letters" />
+                <SectionTitle title={t("resume.recommendationsTitle")} />
                 <div className="grid grid-cols-1 gap-6">
                   {recommendations.map((recommendation) => (
                     <RecommendationCard

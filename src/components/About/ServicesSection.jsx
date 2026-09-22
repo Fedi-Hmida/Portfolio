@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
     FaBrain,
     FaCode,
@@ -81,21 +82,20 @@ const tagIconMap = {
   Joblib: { icon: FaDatabase, color: "#ffb347" },
 };
 
+// Ordered by stable key so the sequence survives translation.
 const serviceOrder = [
-  "AI Agents / Agentic AI",
-  "Full-Stack Web Development",
-  "AI / Machine Learning",
-  "Mobile Development",
-  "Computer Vision",
+  "ai_agents_agentic_ai",
+  "full_stack_web_development",
+  "ai_machine_learning",
+  "mobile_development",
+  "computer_vision",
 ];
 
 const services = [...homeServices].sort(
   (firstService, secondService) =>
-    serviceOrder.indexOf(firstService.title) -
-    serviceOrder.indexOf(secondService.title),
+    serviceOrder.indexOf(firstService.key) - serviceOrder.indexOf(secondService.key),
 ).map((service) => ({
-  title: service.title,
-  description: service.desc,
+  key: service.key,
   icon: service.icon,
   stack: service.tags.map((tag) => ({
     name: tag,
@@ -105,11 +105,12 @@ const services = [...homeServices].sort(
 }));
 
 const ServicesSection = () => {
+  const { t } = useTranslation();
 
   return (
     <section className="py-20 bg-deep-indigo relative z-10 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="What I Offer" />
+        <SectionTitle title={t("about.whatIOffer")} />
 
         <motion.div
           initial="hidden"
@@ -118,8 +119,13 @@ const ServicesSection = () => {
           transition={{ staggerChildren: 0.2 }}
           className="grid grid-cols-12 gap-8"
         >
-          {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
+          {services.map((service) => (
+            <ServiceCard
+              key={service.key}
+              {...service}
+              title={t(`skills.services.${service.key}.title`)}
+              description={t(`skills.services.${service.key}.desc`)}
+            />
           ))}
         </motion.div>
       </div>

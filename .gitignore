@@ -35,3 +35,6 @@ pnpm-debug.log*
 Thumbs.db
 
 temp_import.css
+
+# Working notes: prompts, audits and roadmaps (kept locally, not shipped)
+md_files/

@@ -1,0 +1,548 @@
+{
+  "meta": {
+    "title": "Fedi Hmida - Ingénieur IA & Logiciel",
+    "description": "Portfolio de Fedi Hmida, étudiant ingénieur en IA et génie logiciel à Limoges - IA agentique, machine learning et systèmes full-stack en production."
+  },
+  "lang": {
+    "label": "Langue",
+    "switchTo": "Switch to English",
+    "current": "Français"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "portfolio": "Portfolio",
+    "resume": "Parcours",
+    "news": "Actualités",
+    "contact": "Contact",
+    "cta": "Discutons",
+    "openMenu": "Ouvrir le menu de navigation",
+    "closeMenu": "Fermer le menu de navigation",
+    "mainNav": "Navigation principale"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  },
+  "common": {
+    "cvFile": "/assets/cv/Fedi_Hmida_CV_FR.pdf",
+    "englishOnlyTitle": "Disponible en anglais",
+    "englishOnlyBody": "Cette étude de cas n'est pas encore traduite. Le contenu détaillé est disponible en anglais.",
+    "readMore": "Lire la suite",
+    "viewLetter": "Voir la lettre",
+    "download": "Télécharger",
+    "viewCaseStudy": "Voir l'étude de cas",
+    "closePreview": "Fermer l'aperçu de l'image",
+    "close": "Fermer"
+  },
+  "home": {
+    "role": "Étudiant ingénieur en informatique",
+    "specialization": "Data Science & Intelligence Artificielle",
+    "location": "Limoges, France",
+    "viewProjects": "Voir les projets",
+    "viewCv": "Voir le CV",
+    "aboutMe": "À propos",
+    "aboutTitle": "À propos de moi",
+    "tabs": {
+      "soft skills": "Savoir-être",
+      "hard skills": "Compétences techniques",
+      "services": "Services",
+      "project methodologies": "Méthodologies"
+    },
+    "myWork": "Mes réalisations",
+    "viewAllProjects": "Voir tous les projets",
+    "latestNews": "Dernières actualités",
+    "seeMoreNews": "Voir plus d'actualités"
+  },
+  "about": {
+    "heroTitle": "À propos de moi",
+    "typed": [
+      "Qui suis-je ?",
+      "Mon parcours",
+      "À propos"
+    ],
+    "bio1": "Je suis <b>étudiant ingénieur en informatique</b> dans un <b>Cycle Ingénieur en double diplôme</b> entre <b>3iL Ingénieurs</b> à Limoges et <b>ESPRIT</b> à Tunis, actuellement en deuxième année, spécialisé en <b>Data Science & Intelligence Artificielle</b>.",
+    "bio2": "Je conçois des <b>systèmes LLM multi-agents</b> avec <b>LangGraph</b>, <b>RAG</b> et <b>MCP</b>, ainsi que des <b>pipelines de vision par ordinateur</b> avec <b>YOLO</b> et <b>PyTorch</b>. Je développe aussi des systèmes destinés à la production : j'ai co-piloté le développement full-stack d'une <b>plateforme RH à 8 stagiaires</b> reposant sur <b>Spring Boot</b>, <b>OAuth2 / Keycloak</b> et <b>React / TypeScript</b>, couvrant <b>102 endpoints REST</b>.",
+    "bio3": "Mes projets vont d'une <b>plateforme agricole autonome multi-agents</b> et d'un <b>pipeline ML de diagnostic à 98,83 % de précision</b> jusqu'à l'<b>automatisation de déclarations de sinistres</b> - toujours avec la même exigence : des systèmes concrets qui allient IA appliquée et bases solides d'ingénierie.",
+    "coreCompetencies": "Compétences clés",
+    "competenciesLeft": [
+      "IA agentique & systèmes multi-agents (LangGraph, MCP)",
+      "Pipelines RAG & orchestration de LLM (LangChain, ChromaDB)",
+      "Machine learning & évaluation de modèles (CRISP-DM)",
+      "Pipelines de vision par ordinateur (YOLO, OpenCV, PyTorch)",
+      "Développement mobile multiplateforme (Flutter)"
+    ],
+    "competenciesRight": [
+      "Développement back-end (Java 17, Spring Boot, FastAPI)",
+      "Sécurité des API & gestion des identités (OAuth2, Keycloak, RBAC, JWT)",
+      "Développement web full-stack (React, Next.js, TypeScript)",
+      "Architecture de données & stockage (PostgreSQL, MongoDB, MinIO)",
+      "Tests & CI/CD (JUnit, Vitest, Playwright, Docker)"
+    ],
+    "recognitionTitle": "Recommandations professionnelles",
+    "recognition": [
+      {
+        "title": "Excellence en Data Science",
+        "by": "Dr. Nivine ATTOUE, ADDINN Group"
+      },
+      {
+        "title": "Excellence en développement mobile",
+        "by": "Houssem Eddine FADHLI, Ingénieur Flutter senior"
+      }
+    ],
+    "downloadHint": "Cliquez pour télécharger la recommandation",
+    "careerFocusTitle": "Objectif professionnel",
+    "careerFocus": "Je recherche un <b>stage de 4 mois à partir d'avril 2027</b> ainsi qu'une <b>alternance en IA / génie logiciel à partir de septembre 2027</b>, en France. Je souhaite rejoindre une équipe qui construit des <b>systèmes d'IA agentique</b>, des <b>produits ML</b> ou des <b>plateformes back-end en production</b>, où je pourrai livrer des systèmes de bout en bout.",
+    "downloadCv": "Télécharger le CV",
+    "viewPortfolio": "Voir le portfolio",
+    "whatIOffer": "Ce que je propose"
+  },
+  "portfolio": {
+    "title": "Mes projets",
+    "intro": "Des études de cas pensées pour les recruteurs : mon rôle, l'approche technique et les résultats de chaque projet, des applications mobiles Flutter aux systèmes IA et full-stack.",
+    "empty": "Aucun projet dans cette catégorie.",
+    "categories": {
+      "all": "Tous les projets",
+      "ia": "IA / ML",
+      "mobile": "Applications mobiles",
+      "web": "Applications web"
+    }
+  },
+  "resume": {
+    "typed": [
+      "Parcours",
+      "Curriculum Vitae",
+      "Mon parcours"
+    ],
+    "downloadPdf": "Télécharger le CV en PDF",
+    "experienceTitle": "Expérience professionnelle",
+    "skillsTitle": "Compétences techniques",
+    "educationTitle": "Formation",
+    "recommendationsTitle": "Lettres de recommandation",
+    "experiences": [
+      {
+        "role": "Stagiaire ingénierie full-stack - Co-responsable",
+        "company": "BNS Engineering, Tunis",
+        "duration": "Juillet - Août 2026",
+        "bullets": [
+          "Co-piloté les <b>pôles back-end et front-end</b> de <b>SMART HRM AI</b>, une plateforme RH interne développée par une <b>équipe de 8 stagiaires</b>, autour d'une API <b>Java 17 / Spring Boot</b> et d'un client <b>React 19 / TypeScript</b>.",
+          "Conçu le modèle de sécurité de la plateforme : <b>OAuth2 / OpenID Connect</b> délégué à <b>Keycloak</b>, un modèle RBAC à 4 rôles appliqué par <b>104 points de contrôle d'autorisation</b> et un chiffrement <b>AES-256-GCM</b> au repos pour les données salariales et bancaires.",
+          "Développé <b>102 endpoints REST</b> sur PostgreSQL avec <b>32 migrations Flyway</b> et un stockage objet MinIO, en appliquant la Clean Architecture sur <b>11 modules</b> et <b>2 072 tests automatisés</b> (JUnit, Vitest, Playwright).",
+          "Piloté trois chantiers IA : le contrat d'autorisation du service d'<b>extraction documentaire OCR</b>, un <b>assistant conversationnel RAG</b> et des modèles prédictifs d'absentéisme et de turnover."
+        ]
+      },
+      {
+        "role": "Stagiaire développement IA / Mobile",
+        "company": "ADDINN Group Tunisie",
+        "duration": "Juillet - Septembre 2025",
+        "bullets": [
+          "Développé un pipeline de <b>détection et classification de dommages automobiles basé sur YOLO</b> (<b>PyTorch, OpenCV</b>), comparé aux approches de vision par ordinateur existantes.",
+          "Déployé le modèle sous forme de microservice REST <b>FastAPI</b> conteneurisé avec <b>Docker</b>, atteignant <b>92,9 % de précision</b> en détection temps réel.",
+          "Développé <b>SmartClaim</b>, une application Flutter multiplateforme pour la déclaration de sinistres, l'envoi de justificatifs et le suivi en temps réel."
+        ]
+      },
+      {
+        "role": "Stagiaire développeur mobile",
+        "company": "Msign",
+        "duration": "Février - Juin 2024",
+        "bullets": [
+          "Développé <b>SolarFlow</b>, une application Flutter de suivi en temps réel de la production d'énergie, de gestion des équipements connectés et de pilotage à distance.",
+          "Publié l'application sur l'<b>App Store et le Play Store</b>, et développé la <b>plateforme de supervision IoT</b> associée avec intégration d'API REST."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Diplôme d'Ingénieur, Double Diplôme, Big Data",
+        "institution": "3iL Ingénieurs, Limoges, France",
+        "year": "2026 - 2028"
+      },
+      {
+        "degree": "Génie Logiciel, Data Science & IA",
+        "institution": "ESPRIT, Tunis",
+        "year": "2024 - 2027"
+      },
+      {
+        "degree": "Licence en Génie Informatique",
+        "institution": "Institut Supérieur d'Informatique de Mahdia",
+        "year": "2021 - 2024"
+      }
+    ],
+    "skillGroups": {
+      "agentic_ai": "Agents IA / IA agentique",
+      "ml": "IA / Machine Learning",
+      "vision": "Vision par ordinateur",
+      "backend": "Développement back-end",
+      "database": "Données & stockage",
+      "fullstack": "Développement web full-stack",
+      "mobile": "Développement mobile",
+      "devops": "Sécurité & DevOps"
+    }
+  },
+  "contact": {
+    "heroTitle": "Travaillons",
+    "heroTitleAccent": "ensemble",
+    "heroIntro": "Basé à Limoges. Je recherche un stage de 4 mois à partir d'avril 2027 et une alternance en IA / génie logiciel à partir de septembre 2027, au sein d'équipes qui construisent des systèmes d'IA agentique, des produits ML ou des plateformes back-end en production.",
+    "pills": [
+      "Stage - avril 2027",
+      "Alternance - septembre 2027",
+      "IA / Génie logiciel",
+      "Basé en France"
+    ],
+    "connectTyped": [
+      "À l'écoute des recruteurs",
+      "Réponse rapide",
+      "Prochaine étape claire"
+    ],
+    "connectIntro": "Envoyez-moi une offre, un brief projet ou une idée de collaboration. Pour une lecture technique, commencez par SMART HRM AI et Firmaa, puis contactez-moi sur LinkedIn ou par e-mail.",
+    "mapTitle": "Carte de Limoges, France",
+    "locationLabel": "Localisation",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Téléphone",
+    "followMe": "Me suivre",
+    "actions": {
+      "whatsapp": "Le plus rapide pour un échange court.",
+      "linkedin": "Idéal pour les recruteurs et les messages professionnels.",
+      "email": "Idéal pour les offres détaillées et les documents."
+    },
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Adresse e-mail",
+      "subject": "Objet",
+      "message": "Votre message",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "firstNameRequired": "Le prénom est obligatoire",
+      "lastNameRequired": "Le nom est obligatoire",
+      "emailRequired": "L'adresse e-mail est obligatoire",
+      "emailInvalid": "Veuillez saisir une adresse e-mail valide",
+      "subjectRequired": "L'objet est obligatoire",
+      "messageRequired": "Le message est obligatoire",
+      "messageTooLong": "Le message ne doit pas dépasser 500 caractères",
+      "notConfigured": "Le formulaire de contact n'est pas encore configuré. Merci de passer par e-mail ou LinkedIn.",
+      "success": "Message envoyé. Je vous réponds très vite.",
+      "error": "L'envoi a échoué. Merci de réessayer plus tard.",
+      "title": "Prenons contact",
+      "subtitle": "Envoyez-moi une offre, un stage, un brief projet ou une question technique."
+    }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "body": "La page que vous cherchez a peut-être été supprimée ou n'est temporairement pas disponible.",
+    "back": "Retour à l'accueil"
+  },
+  "projects": {
+    "7": {
+      "type": "Plateforme RH d'entreprise",
+      "status": "Stage BNS Engineering",
+      "role": "Co-responsable back-end & front-end",
+      "impact": "102 endpoints REST, 104 points de contrôle d'autorisation et 2 072 tests automatisés sur 11 modules.",
+      "homeImpact": "Plateforme RH d'entreprise avec 102 endpoints REST et sécurité OAuth2 / Keycloak.",
+      "description": "Plateforme RH interne développée par une équipe de 8 stagiaires chez BNS Engineering, associant une API Java 17 / Spring Boot à un client React 19 / TypeScript, une sécurité OAuth2 / Keycloak et des chantiers IA pour l'extraction OCR, l'assistance RAG et la prédiction RH.",
+      "homeDescription": "Plateforme RH interne combinant Spring Boot, React 19, sécurité Keycloak et chantiers IA pour l'OCR, le RAG et la prédiction RH.",
+      "cta": "Voir l'étude de cas"
+    },
+    "6": {
+      "type": "Plateforme agricole intelligente",
+      "status": "Projet intégré ESPRIT",
+      "role": "Chef de projet / Ingénieur agents IA",
+      "impact": "Agent d'irrigation autonome avec supervision 3D et validation humaine.",
+      "homeImpact": "Agent d'irrigation autonome avec supervision 3D et validation humaine.",
+      "description": "Plateforme d'agriculture intelligente pilotée par IA, réunissant un accès mobile Flutter, la supervision des zones, des recommandations d'irrigation autonomes, les données IoT et un tableau de bord jumeau numérique 3D.",
+      "homeDescription": "Plateforme agricole à IA agentique : accès mobile Flutter, workflow d'irrigation LangGraph, FastAPI, MongoDB, Next.js et supervision 3D.",
+      "cta": "Voir l'étude de cas"
+    },
+    "5": {
+      "type": "Plateforme ML médicale",
+      "status": "Projet académique en équipe",
+      "role": "Ingénieur ML / Développeur full-stack IA",
+      "impact": "98,83 % de précision, 98,44 % de rappel sur les cas malins et 0,9975 de ROC-AUC.",
+      "homeImpact": "Prototype ML médical CRISP-DM avec FastAPI et Next.js.",
+      "description": "Prototype d'aide à la décision médicale par machine learning sur le jeu de données WDBC, méthodologie CRISP-DM, priorisation des métriques cliniques, FastAPI, Next.js et explicabilité SHAP.",
+      "homeDescription": "Étude de cas d'aide à la décision médicale par ML, avec CRISP-DM, données WDBC, FastAPI et Next.js.",
+      "cta": "Voir l'étude de cas"
+    },
+    "1": {
+      "type": "Étude de cas phare",
+      "status": "Projet de stage",
+      "role": "Stagiaire développement data & mobile",
+      "impact": "92,9 % de précision en détection temps réel des dommages automobiles.",
+      "homeImpact": "92,9 % de précision en détection temps réel des dommages automobiles.",
+      "description": "Application Flutter multiplateforme de gestion intelligente des sinistres, avec détection des dommages automobiles par IA en temps réel.",
+      "homeDescription": "Assistant de déclaration de sinistres par IA, combinant Flutter, vision par ordinateur et FastAPI.",
+      "cta": "Voir SmartClaim"
+    },
+    "2": {
+      "type": "Mobile + IoT",
+      "status": "Projet de fin d'études",
+      "role": "Développeur Flutter",
+      "impact": "Supervision et analyse en temps réel de la production solaire.",
+      "homeImpact": "Supervision et analyse en temps réel de la production solaire.",
+      "description": "Application mobile Flutter complète pour la gestion et le suivi en temps réel de la consommation et de la production d'énergie solaire.",
+      "homeDescription": "Application mobile de gestion intelligente de l'énergie pour installations solaires connectées.",
+      "cta": "Voir l'étude de cas"
+    },
+    "3": {
+      "type": "Plateforme RH",
+      "status": "Projet portfolio",
+      "role": "Contributeur full-stack",
+      "impact": "Parcours d'intégration gamifié pour l'engagement des collaborateurs.",
+      "homeImpact": "Parcours d'intégration gamifié pour l'engagement des collaborateurs.",
+      "description": "Plateforme d'intégration gamifiée développée avec JavaFX et Symfony pour renforcer l'engagement et la fidélisation des collaborateurs.",
+      "homeDescription": "Plateforme RH d'intégration gamifiée s'appuyant sur JavaFX et Symfony.",
+      "cta": "Voir l'étude de cas"
+    },
+    "4": {
+      "type": "Application mobile",
+      "status": "Projet portfolio",
+      "role": "Développeur mobile",
+      "impact": "Mise en relation professionnelle et collaboration.",
+      "homeImpact": "Mise en relation professionnelle et collaboration.",
+      "description": "Application mobile de réseautage professionnel développée avec Flutter pour connecter les professionnels et faciliter la collaboration.",
+      "homeDescription": "Plateforme mobile de mise en relation pour les demandes de projet et la collaboration professionnelle.",
+      "cta": "Voir l'étude de cas"
+    }
+  },
+  "skills": {
+    "soft": {
+      "communication": {
+        "title": "Communication",
+        "desc": "Communication orale et écrite efficace"
+      },
+      "project_management": {
+        "title": "Gestion de projet",
+        "desc": "Organisation et pilotage efficaces"
+      },
+      "team_collaboration": {
+        "title": "Travail en équipe",
+        "desc": "Esprit collaboratif et sens du collectif"
+      },
+      "analytical": {
+        "title": "Esprit d'analyse",
+        "desc": "Décisions fondées sur les données"
+      },
+      "organization": {
+        "title": "Organisation",
+        "desc": "Approche structurée et méthodique"
+      },
+      "creativity": {
+        "title": "Créativité",
+        "desc": "Idées et solutions innovantes"
+      }
+    },
+    "hard": {
+      "langgraph": "Workflows d'IA agentique",
+      "langchain": "Orchestration de LLM et de RAG",
+      "rag_chatbots": "Assistants a génération augmentée",
+      "chromadb": "Base vectorielle pour le RAG",
+      "llm_reasoning": "Décisions IA sensibles au contexte",
+      "tool_assisted_agents": "Appels d'outils et workflows d'agents",
+      "react": "Bibliothèque front-end pour l'UI",
+      "next_js": "Framework React pour la production",
+      "typescript": "Interfaces typées pour tableaux de bord",
+      "node_js": "Environnement d'exécution JavaScript",
+      "nestjs": "Framework Node.js performant",
+      "fastapi": "APIs REST pour l'inférence de modèles",
+      "java_17": "Développement back-end d'entreprise",
+      "spring_boot": "API REST et couche service",
+      "spring_security": "Autorisation et contrôle d'accès",
+      "keycloak": "Gestion des identités et des accès",
+      "oauth2_oidc": "Flux d'authentification délégués",
+      "postgresql": "Donnees relationnelles et migrations",
+      "minio_s3": "Stockage objet pour les documents",
+      "mlflow": "Suivi des expériences et des modèles",
+      "mcp": "Outillage Model Context Protocol",
+      "playwright": "Automatisation des tests de bout en bout",
+      "gitlab_ci_cd": "Pipelines et livraison automatisée",
+      "docker": "Déploiement conteneurisé",
+      "tailwind_css": "Mise en forme optimisée de l'UI",
+      "three_js": "Interfaces de jumeau numérique 3D",
+      "rest_apis": "Intégration de services et de modèles",
+      "mongodb": "Gestion de bases NoSQL",
+      "firebase": "Flux de données mobiles en temps réel",
+      "mysql": "Modélisation de données relationnelles",
+      "git": "Gestion de versions et collaboration",
+      "yolov8": "Détection d'objets et de dommages",
+      "opencv": "Prétraitement en vision par ordinateur",
+      "pytorch": "Entraînement et expérimentation de modèles",
+      "python": "Pipelines ML et evaluation",
+      "scikit_learn": "Modèles de machine learning",
+      "xgboost": "Gradient boosting",
+      "shap": "Modèles d'IA explicable",
+      "model_evaluation": "ROC-AUC, rappel, precision",
+      "tensorflow": "Développement de modèles deep learning",
+      "flutter": "Développement mobile multiplateforme",
+      "dart": "Développement d'applications Flutter"
+    },
+    "services": {
+      "ai_agents_agentic_ai": {
+        "title": "Agents IA / IA agentique",
+        "desc": "Workflows LangGraph avec raisonnement LLM, decisions assistées par outils, validation humaine, couches de verification, règles de repli et contrôles de sécurité."
+      },
+      "full_stack_web_development": {
+        "title": "Développement web full-stack",
+        "desc": "Interfaces et tableaux de bord React et Next.js en TypeScript, Tailwind CSS, Three.js, APIs d'inférence FastAPI, APIs REST, MongoDB, Firebase, MySQL et persistance Joblib."
+      },
+      "ai_machine_learning": {
+        "title": "IA / Machine Learning",
+        "desc": "Travaux ML en Python avec scikit-learn, XGBoost, SHAP : classification, evaluation de modèles, gestion du déséquilibre des classes et cadrage CRISP-DM."
+      },
+      "mobile_development": {
+        "title": "Développement mobile",
+        "desc": "Applications mobiles Flutter et Dart avec flux de données Firebase, intégration d'APIs REST, prototypes FlutterFlow et IA mobile hors ligne pour le terrain."
+      },
+      "computer_vision": {
+        "title": "Vision par ordinateur",
+        "desc": "Pipelines YOLOv8, OpenCV et PyTorch pour le prétraitement d'images, la détection d'objets et la détection de dommages dans SmartClaim."
+      }
+    },
+    "methodologies": {
+      "data_science_methodology": "Méthodologie Data Science",
+      "agile_methodology": "Méthodologie Agile"
+    }
+  },
+  "phone": {
+    "dialogLabel": "Copier le numéro de téléphone",
+    "label": "Numéro de téléphone",
+    "hint": "Copiez mon numéro et contactez-moi directement pour une opportunité ou un projet.",
+    "copy": "Copier le numéro",
+    "copied": "Copié",
+    "selectNumber": "Sélectionner le numéro"
+  },
+  "news": {
+    "21": {
+      "title": "Deux mois d'été chez BNS Engineering - SMART HRM AI livré",
+      "date": "Septembre 2026",
+      "description": "Mon stage d'été s'est achevé fin août, et avec lui SMART HRM AI - une plateforme RH de bout en bout : collaborateurs, congés, matériel, dossiers administratifs, tableau de bord. Pas une ligne sur un CV : une équipe, et un produit qui tourne.",
+      "homeTitle": "Stage d'été chez BNS Engineering",
+      "homeDescription": "Deux mois d'été chez BNS Engineering à livrer SMART HRM AI, une plateforme RH de bout en bout."
+    },
+    "20": {
+      "title": "Un nouveau chapitre - Double diplôme entre ESPRIT et 3iL Ingénieurs",
+      "date": "Septembre 2026",
+      "description": "Septembre 2024, premier cours à Tunis. Septembre 2026, premier cours en France. Je poursuis mon cycle ingénieur en double diplôme entre ESPRIT et 3iL Ingénieurs à Limoges - le cursus ne recommence pas, il continue ailleurs.",
+      "homeTitle": "Double diplôme en France",
+      "homeDescription": "Je poursuis mon cycle ingénieur en double diplôme entre ESPRIT et 3iL Ingénieurs, désormais à Limoges."
+    },
+    "19": {
+      "title": "FIRMAA - Plateforme d'agriculture intelligente pilotée par l'IA",
+      "date": "Mai 2026",
+      "description": "Présentation de FIRMAA, la plateforme d'agriculture intelligente que notre équipe de sept a construite pour le Projet Intégré ESPRIT : un agent d'irrigation LangGraph, des modèles de détection pour les cultures, le bétail et les insectes, une vue 3D de la ferme et l'intégration IoT sur une seule plateforme.",
+      "homeTitle": "FIRMAA, agriculture intelligente",
+      "homeDescription": "Plateforme d'agriculture intelligente pilotée par l'IA, construite par une équipe de sept pour le Projet Intégré ESPRIT."
+    },
+    "18": {
+      "title": "Masterclass BIAT - InGenius Budget à ESPRIT",
+      "date": "Avril 2026",
+      "description": "Participation à la Masterclass BIAT InGenius Budget organisée à ESPRIT le 21 avril 2026 : planification financière, épargne, et comment les banques peuvent accompagner les étudiants à chaque étape de leur parcours.",
+      "homeTitle": "Masterclass BIAT à ESPRIT",
+      "homeDescription": "Masterclass BIAT InGenius Budget à ESPRIT, sur la planification financière et l'épargne étudiante."
+    },
+    "17": {
+      "title": "NVIDIA DLI - Applications de l'IA pour la détection d'anomalies",
+      "date": "Avril 2026",
+      "description": "Obtention du certificat de compétence du NVIDIA Deep Learning Institute en Applications de l'IA pour la détection d'anomalies...",
+      "homeTitle": "NVIDIA, IA et détection d'anomalies",
+      "homeDescription": "Formation NVIDIA DLI sur les applications de l'IA pour la détection d'anomalies, avec XGBoost, auto-encodeurs et GAN..."
+    },
+    "16": {
+      "title": "IASTAM 5.0 - Réunion annuelle IEEE IAS Tunisie",
+      "date": "Mars 2026",
+      "description": "De très bons souvenirs d'IASTAM 5.0, où j'ai siégé au comité exécutif en tant que responsable RH...",
+      "homeTitle": "Souvenirs d'IASTAM 5.0",
+      "homeDescription": "Responsable RH au comité exécutif d'IASTAM 5.0 et contribution à un congrès IEEE inspirant..."
+    },
+    "15": {
+      "title": "MaraTech Web Hackathon - 42 heures de code non-stop",
+      "date": "Février 2026",
+      "description": "Fin du MaraTech Web Hackathon après 42 heures de code non-stop, à concevoir des solutions numériques accessibles pour les associations...",
+      "homeTitle": "MaraTech Web Hackathon",
+      "homeDescription": "42 heures de code non-stop au MaraTech Web Hackathon, autour de solutions numériques accessibles pour les associations..."
+    },
+    "14": {
+      "title": "NVIDIA DLI - Certification Fondamentaux du Deep Learning",
+      "date": "Février 2026",
+      "description": "Certifié NVIDIA DLI - Fondamentaux du Deep Learning après un travail pratique sur l'entraînement de modèles, le fine-tuning et les défis de précision...",
+      "homeTitle": "NVIDIA DLI, Deep Learning certifié",
+      "homeDescription": "Formation NVIDIA DLI - Fondamentaux du Deep Learning, une étape concrète en entraînement et fine-tuning de modèles..."
+    },
+    "13": {
+      "title": "Congrès IEEE IES SYP",
+      "date": "10-01-2026",
+      "description": "Recevoir ce certificat ne se résume pas à une participation : c'est le rappel d'expériences marquantes..."
+    },
+    "12": {
+      "title": "1re place au Energy Utopia Challenge",
+      "date": "26-12-2025",
+      "description": "Vainqueur de la 1re place au Energy Utopia Challenge : l'IA pour un avenir plus intelligent et plus vert...",
+      "homeTitle": "1re place au Energy Utopia Challenge",
+      "homeDescription": "1re place au Energy Utopia Challenge : l'IA pour un avenir plus intelligent et plus vert..."
+    },
+    "11": {
+      "title": "Certification Déploiement de modèles IA sur AWS",
+      "date": "30-11-2025",
+      "description": "J'ai le plaisir de partager l'obtention de la certification Déploiement de modèles IA sur AWS...",
+      "homeTitle": "Déploiement de modèles IA sur AWS",
+      "homeDescription": "Certification Déploiement de modèles IA sur AWS obtenue..."
+    },
+    "1": {
+      "title": "SmartClaim - Plateforme d'assistance à la déclaration de sinistres",
+      "date": "28-11-2025",
+      "description": "Ravi de dévoiler le point fort de mon stage d'ingénieur chez ADDINN Group..."
+    },
+    "2": {
+      "title": "Reconnaissance d'excellence en Data Science",
+      "date": "19-09-2025",
+      "description": "Fier de recevoir une lettre de recommandation professionnelle du Dr Nivine ATTOUE..."
+    },
+    "3": {
+      "title": "Recommandation d'un ingénieur Flutter senior",
+      "date": "1-09-2025",
+      "description": "Honoré de recevoir une lettre de recommandation professionnelle de Houssem Eddine FADHLI..."
+    },
+    "4": {
+      "title": "Fin de mon stage - ADDINN Group",
+      "date": "1-09-2025",
+      "description": "Stage de 2 mois chez ADDINN Group mené à son terme..."
+    },
+    "5": {
+      "title": "Congrès IEEE IES SYP",
+      "date": "Récemment",
+      "description": "Participation au congrès IEEE IES SYP."
+    },
+    "6": {
+      "title": "Début de stage chez ADDINN",
+      "date": "3 juillet 2025",
+      "description": "Début d'une nouvelle aventure comme stagiaire développeur mobile chez ADDINN Group."
+    },
+    "7": {
+      "title": "Onboardify",
+      "date": "26 mai 2025",
+      "description": "Lancement d'Onboardify, une plateforme RH d'intégration gamifiée."
+    },
+    "8": {
+      "title": "IEEEXtreme",
+      "date": "15 mars 2025",
+      "description": "Participation au concours de programmation IEEEXtreme."
+    },
+    "9": {
+      "title": "Congrès IEEE TSYP12",
+      "date": "24 décembre 2024",
+      "description": "Participation au congrès IEEE TSYP12."
+    },
+    "10": {
+      "title": "Remise des diplômes",
+      "date": "13 juin 2024",
+      "description": "Célébration du jour de la remise des diplômes."
+    }
+  },
+  "newsList": {
+    "typed": [
+      "Dernières actualités",
+      "Mon blog",
+      "Mises à jour"
+    ],
+    "prevPage": "Page précédente",
+    "nextPage": "Page suivante"
+  }
+}

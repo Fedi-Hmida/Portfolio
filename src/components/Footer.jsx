@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/flogo.png";
 import { footerLinks } from "../data/navigation";
@@ -5,6 +6,7 @@ import { socialLinks } from "../data/socialLinks";
 import SocialIconLink from "./SocialIconLink";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -28,11 +30,11 @@ const Footer = () => {
           <div className="flex flex-wrap justify-center gap-6">
             {footerLinks.map((link) => (
               <Link
-                key={link.name}
+                key={link.key}
                 to={link.to}
                 className="text-gray-400 hover:text-primary-pink text-sm transition-colors"
               >
-                {link.name}
+                {t(`nav.${link.key}`)}
               </Link>
             ))}
           </div>
@@ -52,7 +54,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/5 pt-8 text-center text-gray-500 text-sm">
-          <p>&copy; {currentYear} Fedi Hmida. All rights reserved.</p>
+          <p>
+            &copy; {currentYear} Fedi Hmida. {t("footer.rights")}
+          </p>
         </div>
       </div>
     </footer>

@@ -1,15 +1,25 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { FaBriefcase, FaDownload } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ReactTyped } from "react-typed";
-import fediImg from "../assets/images/slider/me.png";
+import fediImg from "../assets/images/slider/Fedi_Hmida.png";
 import AboutHero from "../components/About/AboutHero";
+import { rich } from "../i18n/rich";
 import ServicesSection from "../components/About/ServicesSection";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ParticlesBackground from "../components/ParticlesBackground";
 
+// Paired by index with the `about.recognition` entries in the locale files.
+const RECOMMENDATION_FILES = [
+  "/assets/cv/Recommendation_FediHmida.pdf",
+  "/assets/cv/Fedi_Hmida_Letter%20of%20Recommendation.pdf",
+];
+
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="relative min-h-screen bg-deep-indigo">
       <ParticlesBackground />
@@ -48,7 +58,7 @@ const About = () => {
             >
               <h2 className="text-4xl font-bold mb-4">
                 <ReactTyped
-                  strings={["Who Am I?", "My Background", "About Me"]}
+                  strings={t("about.typed", { returnObjects: true })}
                   typeSpeed={80}
                   backSpeed={50}
                   loop
@@ -57,44 +67,19 @@ const About = () => {
               </h2>
 
               <div className="space-y-4 text-gray-300 leading-relaxed text-lg text-justify">
-                <p>
-                  I'm a <strong>Software Engineering student</strong>{" "}
-                  specializing in <strong>Data Science and AI</strong>, holding
-                  a{" "}
-                  <strong>Bachelor's degree in Computer Engineering</strong>{" "}
-                  from 2024.
-                </p>
-                <p>
-                  I build mobile, web, and AI-powered applications using{" "}
-                  <strong>Flutter</strong>, <strong>FastAPI</strong>,{" "}
-                  <strong>Next.js</strong>, <strong>computer vision</strong>,{" "}
-                  <strong>machine learning</strong>, and{" "}
-                  <strong>Agentic AI workflows</strong>.
-                </p>
-                <p>
-                  My projects range from{" "}
-                  <strong>insurance claim automation</strong> and{" "}
-                  <strong>medical ML prototypes</strong> to{" "}
-                  <strong>smart farming platforms</strong>, with a focus on
-                  practical systems that connect strong engineering foundations
-                  with intelligent product experiences.
-                </p>
+                <p>{rich(t("about.bio1"))}</p>
+                <p>{rich(t("about.bio2"))}</p>
+                <p>{rich(t("about.bio3"))}</p>
               </div>
 
               {/* Core Competencies */}
               <div className="py-6">
                 <h3 className="text-primary-pink text-xl font-bold mb-4">
-                  Core Competencies
+                  {t("about.coreCompetencies")}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <ul className="space-y-3">
-                    {[
-                      "Cross-Platform Mobile Development (Flutter)",
-                      "AI & Computer Vision Integration (YOLO)",
-                      "Data Science & Machine Learning",
-                      "Agentic AI & LLM Workflows (LangGraph, Human-in-the-loop)",
-                      "Explainable AI (SHAP) & ML Pipelines (CRISP-DM)",
-                    ].map((item, i) => (
+                    {t("about.competenciesLeft", { returnObjects: true }).map((item, i) => (
                       <li
                         key={i}
                         className="flex items-start gap-3 text-sm text-gray-300 shine-effect p-2 rounded hover:bg-white/5"
@@ -105,13 +90,7 @@ const About = () => {
                     ))}
                   </ul>
                   <ul className="space-y-3">
-                    {[
-                      "Full-Stack Web Development (Next.js, FastAPI, Symfony)",
-                      "IoT & Energy Management Systems",
-                      "Agile Development & Team Collaboration",
-                      "3D Digital Twin Dashboards (Three.js)",
-                      "Database Architecture & REST APIs (MongoDB, FastAPI)",
-                    ].map((item, i) => (
+                    {t("about.competenciesRight", { returnObjects: true }).map((item, i) => (
                       <li
                         key={i}
                         className="flex items-start gap-3 text-sm text-gray-300 shine-effect p-2 rounded hover:bg-white/5"
@@ -127,21 +106,15 @@ const About = () => {
               {/* Professional Recognition */}
               <div className="bg-darker-indigo p-6 rounded-xl border border-white/10 shadow-lg mb-8">
                 <h3 className="text-primary-pink text-lg font-bold mb-4">
-                  Professional Recognition
+                  {t("about.recognitionTitle")}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {[
-                    {
-                      title: "Data Science Excellence",
-                      by: "Dr. Nivine ATTOUE, ADDINN Group",
-                      file: "/assets/cv/Recommendation_FediHmida.pdf",
-                    },
-                    {
-                      title: "Mobile Development Excellence",
-                      by: "Houssem Eddine FADHLI, Senior Flutter Engineer",
-                      file: "/assets/cv/Fedi_Hmida_Letter%20of%20Recommendation.pdf",
-                    },
-                  ].map((rec, index) => (
+                  {t("about.recognition", { returnObjects: true })
+                    .map((rec, i) => ({
+                      ...rec,
+                      file: RECOMMENDATION_FILES[i],
+                    }))
+                    .map((rec, index) => (
                     <motion.a
                       key={index}
                       href={rec.file}
@@ -165,7 +138,7 @@ const About = () => {
                           className="text-xs text-primary-pink flex items-center gap-2 overflow-hidden"
                         >
                           <FaDownload className="animate-bounce" aria-hidden="true" />{" "}
-                          Click to download certification
+                          {t("about.downloadHint")}
                         </motion.div>
                       </div>
                     </motion.a>
@@ -176,33 +149,28 @@ const About = () => {
               {/* Career Focus */}
               <div className="mb-8">
                 <h3 className="text-primary-pink text-lg font-bold mb-2">
-                  Career Focus
+                  {t("about.careerFocusTitle")}
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
-                  Seeking opportunities in{" "}
-                  <strong>full-stack development</strong>,{" "}
-                  <strong>mobile application architecture</strong>, or{" "}
-                  <strong>AI-powered solution development</strong> where I can
-                  leverage my proven ability to delivery production-ready
-                  applications.
+                  {rich(t("about.careerFocus"))}
                 </p>
               </div>
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
-                  href="/assets/cv/Cv_Ang.pdf"
+                  href={t("common.cvFile")}
                   download
                   className="px-8 py-3 rounded-full border border-primary-pink text-white font-semibold hover:bg-primary-pink hover:shadow-glow transition-all duration-300 flex items-center justify-center gap-2 group shine-effect"
                 >
                   <FaDownload className="group-hover:animate-bounce" aria-hidden="true" />{" "}
-                  Download CV
+                  {t("about.downloadCv")}
                 </a>
                 <Link
                   to="/portfolio"
                   className="px-8 py-3 rounded-full bg-gradient-to-r from-primary-pink to-secondary-pink text-white font-semibold shadow-lg hover:shadow-primary-pink/50 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <FaBriefcase aria-hidden="true" /> View Portfolio
+                  <FaBriefcase aria-hidden="true" /> {t("about.viewPortfolio")}
                 </Link>
               </div>
             </motion.div>

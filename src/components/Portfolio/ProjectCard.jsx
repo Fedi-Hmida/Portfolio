@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const ProjectCard = ({ project }) => {
+  const { t } = useTranslation();
   const accentStyle = {
     "--project-accent": project.accentColor || "#fe3e57",
     "--project-accent-text": project.accentText || project.accentColor || "#fe3e57",
@@ -83,7 +85,7 @@ const ProjectCard = ({ project }) => {
             to={project.link}
             className="project-overlay-cta flex items-center gap-2 rounded-full border-2 bg-transparent px-6 py-2 text-white transition-colors duration-300 focus:outline-none focus:ring-2"
           >
-            {project.cta || "View case study"}{" "}
+            {project.cta || t("common.viewCaseStudy")}{" "}
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </div>
@@ -127,7 +129,7 @@ const ProjectCard = ({ project }) => {
           to={project.link}
           className="project-card-link mt-6 inline-flex w-fit items-center gap-2 text-sm font-bold transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#0c0b44]"
         >
-          {project.cta || "View case study"}{" "}
+          {project.cta || t("common.viewCaseStudy")}{" "}
           <ArrowRight size={16} aria-hidden="true" />
         </Link>
       </div>

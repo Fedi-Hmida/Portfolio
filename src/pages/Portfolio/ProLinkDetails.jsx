@@ -21,6 +21,7 @@ import { SiDart, SiFirebase, SiFlutter } from "react-icons/si";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 
 import proLinkLogo from "../../assets/images/FlutterFlow.png";
@@ -189,6 +190,10 @@ const ProLinkDetails = () => {
     <div className="relative min-h-screen overflow-hidden bg-[#070640] text-white">
       <ParticlesBackground />
       <Navbar />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
+        <EnglishOnlyNotice />
+      </div>
 
       <main className="relative z-10">
         <section className="px-6 pb-16 pt-32 md:px-12 lg:px-20">

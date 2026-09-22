@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Mail, MessageSquare, Send, Type, User } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -19,6 +20,7 @@ const ErrorMessage = ({ id, children }) => (
 );
 
 const ContactForm = () => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -37,9 +39,7 @@ const ContactForm = () => {
       !emailConfig.templateId ||
       !emailConfig.publicKey
     ) {
-      toast.error(
-        "Contact form is not configured yet. Please use email or LinkedIn.",
-      );
+      toast.error(t("contact.form.notConfigured"));
       setIsSending(false);
       return;
     }
@@ -64,10 +64,10 @@ const ContactForm = () => {
         templateParams,
         emailConfig.publicKey,
       );
-      toast.success("Message sent successfully! I'll get back to you soon.");
+      toast.success(t("contact.form.success"));
       reset();
     } catch {
-      toast.error("Failed to send message. Please try again later.");
+      toast.error(t("contact.form.error"));
     } finally {
       setIsSending(false);
     }
@@ -90,10 +90,10 @@ const ContactForm = () => {
 
       <div className="relative z-10 mb-8">
         <h2 className="text-3xl font-bold bg-gradient-to-r from-primary-pink to-pink-300 bg-clip-text text-transparent">
-          Let's Connect
+          {t("contact.form.title")}
         </h2>
         <p className="text-gray-400 mt-2">
-          Send a role, internship, project brief, or technical question.
+          {t("contact.form.subtitle")}
         </p>
       </div>
 
@@ -101,7 +101,7 @@ const ContactForm = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="firstName" className="sr-only">
-              First name
+              {t("contact.form.firstName")}
             </label>
             <div className="relative">
               <User
@@ -112,8 +112,10 @@ const ContactForm = () => {
               <input
                 id="firstName"
                 type="text"
-                placeholder="First Name"
-                {...register("firstName", { required: "First name is required" })}
+                placeholder={t("contact.form.firstName")}
+                {...register("firstName", {
+                  required: t("contact.form.firstNameRequired"),
+                })}
                 className={inputClasses(errors.firstName)}
                 aria-invalid={errors.firstName ? "true" : "false"}
                 aria-describedby={
@@ -130,7 +132,7 @@ const ContactForm = () => {
 
           <div>
             <label htmlFor="lastName" className="sr-only">
-              Last name
+              {t("contact.form.lastName")}
             </label>
             <div className="relative">
               <User
@@ -141,8 +143,10 @@ const ContactForm = () => {
               <input
                 id="lastName"
                 type="text"
-                placeholder="Last Name"
-                {...register("lastName", { required: "Last name is required" })}
+                placeholder={t("contact.form.lastName")}
+                {...register("lastName", {
+                  required: t("contact.form.lastNameRequired"),
+                })}
                 className={inputClasses(errors.lastName)}
                 aria-invalid={errors.lastName ? "true" : "false"}
                 aria-describedby={errors.lastName ? "lastName-error" : undefined}
@@ -158,7 +162,7 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="email" className="sr-only">
-            Email address
+            {t("contact.form.email")}
           </label>
           <div className="relative">
             <Mail
@@ -169,12 +173,12 @@ const ContactForm = () => {
             <input
               id="email"
               type="email"
-              placeholder="Email Address"
+              placeholder={t("contact.form.email")}
               {...register("email", {
-                required: "Email address is required",
+                required: t("contact.form.emailRequired"),
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: "Please enter a valid email address",
+                  message: t("contact.form.emailInvalid"),
                 },
               })}
               className={inputClasses(errors.email)}
@@ -189,7 +193,7 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="subject" className="sr-only">
-            Subject
+            {t("contact.form.subject")}
           </label>
           <div className="relative">
             <Type
@@ -200,8 +204,10 @@ const ContactForm = () => {
             <input
               id="subject"
               type="text"
-              placeholder="Subject"
-              {...register("subject", { required: "Subject is required" })}
+              placeholder={t("contact.form.subject")}
+              {...register("subject", {
+              required: t("contact.form.subjectRequired"),
+            })}
               className={inputClasses(errors.subject)}
               aria-invalid={errors.subject ? "true" : "false"}
               aria-describedby={errors.subject ? "subject-error" : undefined}
@@ -216,7 +222,7 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="message" className="sr-only">
-            Message
+            {t("contact.form.message")}
           </label>
           <div className="relative">
             <MessageSquare
@@ -226,12 +232,12 @@ const ContactForm = () => {
             />
             <textarea
               id="message"
-              placeholder="Your Message"
+              placeholder={t("contact.form.message")}
               {...register("message", {
-                required: "Message is required",
+                required: t("contact.form.messageRequired"),
                 maxLength: {
                   value: 500,
-                  message: "Message must be 500 characters or fewer",
+                  message: t("contact.form.messageTooLong"),
                 },
               })}
               rows="6"
@@ -270,12 +276,12 @@ const ContactForm = () => {
                 className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"
                 aria-hidden="true"
               />
-              Sending...
+              {t("contact.form.sending")}
             </>
           ) : (
             <>
               <Send size={20} aria-hidden="true" />
-              Send Message
+              {t("contact.form.send")}
             </>
           )}
         </motion.button>

@@ -7,7 +7,9 @@ import {
   useLocation,
 } from "react-router-dom";
 import AnimatedPage from "./components/AnimatedPage";
+import LocaleHead from "./components/LocaleHead";
 import ScrollToTop from "./components/ScrollToTop";
+import { basenameFor, detectLocale } from "./i18n/locale";
 import Home from "./pages/Home";
 
 const About = lazy(() => import("./pages/About"));
@@ -25,6 +27,10 @@ const NewsInternshipStart = lazy(
 );
 const NewsList = lazy(() => import("./pages/News/NewsList"));
 const NewsNvidiaAnomalyDetection = lazy(() => import("./pages/News/NewsNvidiaAnomalyDetection"));
+const NewsBnsInternship = lazy(() => import("./pages/News/NewsBnsInternship"));
+const NewsDoubleDegree = lazy(() => import("./pages/News/NewsDoubleDegree"));
+const NewsFirmaaLaunch = lazy(() => import("./pages/News/NewsFirmaaLaunch"));
+const NewsBiatMasterclass = lazy(() => import("./pages/News/NewsBiatMasterclass"));
 const NewsIASTAM = lazy(() => import("./pages/News/NewsIASTAM"));
 const NewsMaraTechHackathon = lazy(() => import("./pages/News/NewsMaraTechHackathon"));
 const NewsNvidiaDLI = lazy(() => import("./pages/News/NewsNvidiaDLI"));
@@ -39,6 +45,9 @@ const Portfolio = lazy(() => import("./pages/Portfolio/Portfolio"));
 const ProLinkDetails = lazy(() => import("./pages/Portfolio/ProLinkDetails"));
 const SmartClaimDetails = lazy(
   () => import("./pages/Portfolio/SmartClaimDetails"),
+);
+const SmartHrmAiDetails = lazy(
+  () => import("./pages/Portfolio/SmartHrmAiDetails"),
 );
 const SahitnaSafeDetails = lazy(
   () => import("./pages/Portfolio/SahitnaSafeDetails"),
@@ -87,6 +96,14 @@ const AppRoutes = () => {
             element={
               <AnimatedPage>
                 <SmartClaimDetails />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/portfolio/smart-hrm-ai"
+            element={
+              <AnimatedPage>
+                <SmartHrmAiDetails />
               </AnimatedPage>
             }
           />
@@ -143,6 +160,38 @@ const AppRoutes = () => {
             element={
               <AnimatedPage>
                 <NewsList />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/21"
+            element={
+              <AnimatedPage>
+                <NewsBnsInternship />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/20"
+            element={
+              <AnimatedPage>
+                <NewsDoubleDegree />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/19"
+            element={
+              <AnimatedPage>
+                <NewsFirmaaLaunch />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/18"
+            element={
+              <AnimatedPage>
+                <NewsBiatMasterclass />
               </AnimatedPage>
             }
           />
@@ -305,8 +354,11 @@ const AppRoutes = () => {
 };
 
 function App() {
+  const locale = detectLocale();
+
   return (
-    <Router>
+    <Router basename={basenameFor(locale)}>
+      <LocaleHead />
       <ScrollToTop />
       <div className="App">
         <AppRoutes />

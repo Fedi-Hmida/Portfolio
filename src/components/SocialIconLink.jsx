@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const fallbackCopyText = (value) => {
   const textArea = document.createElement("textarea");
@@ -45,6 +46,7 @@ const SocialIconLink = ({
   className,
   animated = false,
 }) => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [copyStatus, setCopyStatus] = useState("idle");
   const timeoutRef = useRef(null);
@@ -160,7 +162,7 @@ const SocialIconLink = ({
               onClick={(event) => event.stopPropagation()}
               role="dialog"
               aria-modal="true"
-              aria-label="Copy phone number"
+              aria-label={t("phone.dialogLabel")}
               className="w-full max-w-md rounded-2xl border border-white/10 bg-darker-indigo/95 p-6 text-center shadow-2xl shadow-black/40"
             >
               <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-green-400/30 bg-green-400/10 text-3xl text-green-400">
@@ -171,14 +173,13 @@ const SocialIconLink = ({
                 />
               </div>
               <span className="block text-xs font-semibold uppercase tracking-wider text-primary-pink">
-                Phone number
+                {t("phone.label")}
               </span>
               <span className="mt-3 block select-all rounded-xl border border-white/10 bg-white/5 px-4 py-4 text-xl font-bold tracking-wide text-white sm:text-2xl">
                 {social.displayValue}
               </span>
               <p className="mt-3 text-sm text-gray-400">
-                Copy my number and contact me directly for opportunities or
-                project discussions.
+                {t("phone.hint")}
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <button
@@ -187,17 +188,17 @@ const SocialIconLink = ({
                   className="flex-1 rounded-full bg-primary-pink px-5 py-3 text-sm font-bold text-white transition hover:bg-primary-pink/90 focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-darker-indigo"
                 >
                   {copyStatus === "copied"
-                    ? "Copied"
+                    ? t("phone.copied")
                     : copyStatus === "failed"
-                      ? "Select Number"
-                      : "Copy Number"}
+                      ? t("phone.selectNumber")
+                      : t("phone.copy")}
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
                   className="flex-1 rounded-full border border-white/15 px-5 py-3 text-sm font-bold text-gray-200 transition hover:border-white/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-pink/70 focus:ring-offset-2 focus:ring-offset-darker-indigo"
                 >
-                  Close
+                  {t("common.close")}
                 </button>
               </div>
             </motion.div>

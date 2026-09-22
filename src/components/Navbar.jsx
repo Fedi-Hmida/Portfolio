@@ -1,11 +1,14 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/images/flogo.png";
 import { navLinks } from "../data/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -20,7 +23,7 @@ const Navbar = () => {
 
   return (
     <nav
-      aria-label="Main navigation"
+      aria-label={t("nav.mainNav")}
       className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-deep-indigo/90 backdrop-blur-sm shadow-lg" : "bg-transparent"}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +47,7 @@ const Navbar = () => {
             <div className="hidden md:flex items-baseline space-x-8">
               {navLinks.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.key}
                   to={link.to}
                   className={`text-sm font-medium transition-colors duration-300 ${
                     location.pathname === link.to
@@ -52,26 +55,29 @@ const Navbar = () => {
                       : "text-gray-300 hover:text-primary-pink"
                   }`}
                 >
-                  {link.name}
+                  {t(`nav.${link.key}`)}
                 </Link>
               ))}
             </div>
+
+            <LanguageSwitcher />
 
             <Link
               to="/contact"
               className="px-6 py-2.5 bg-primary-pink text-white text-sm font-bold rounded-full relative overflow-hidden group transition-all duration-300 hover:shadow-[0_0_20px_rgba(254,62,87,0.5)] hover:-translate-y-1"
             >
-              <span className="relative z-10">Let's Talk</span>
+              <span className="relative z-10">{t("nav.cta")}</span>
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="-mr-2 flex md:hidden">
+          {/* Mobile: language toggle + menu button */}
+          <div className="-mr-2 flex items-center gap-2 md:hidden">
+            <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-pink/60"
-              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-label={isOpen ? t("nav.closeMenu") : t("nav.openMenu")}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation"
             >
@@ -98,7 +104,7 @@ const Navbar = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navLinks.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.key}
                   to={link.to}
                   className={`block px-3 py-2 rounded-md text-base font-medium hover:bg-white/5 ${
                     location.pathname === link.to
@@ -107,7 +113,7 @@ const Navbar = () => {
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
-                  {link.name}
+                  {t(`nav.${link.key}`)}
                 </Link>
               ))}
             </div>
