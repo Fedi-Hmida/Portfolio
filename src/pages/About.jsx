@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FaBriefcase, FaDownload } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ReactTyped } from "react-typed";
-import fediImg from "../assets/images/slider/me.png";
+import fediImg from "../assets/images/slider/Fedi_Hmida.png";
 import AboutHero from "../components/About/AboutHero";
 import ServicesSection from "../components/About/ServicesSection";
 import Footer from "../components/Footer";
@@ -58,26 +58,33 @@ const About = () => {
 
               <div className="space-y-4 text-gray-300 leading-relaxed text-lg text-justify">
                 <p>
-                  I'm a <strong>Software Engineering student</strong>{" "}
-                  specializing in <strong>Data Science and AI</strong>, holding
-                  a{" "}
-                  <strong>Bachelor's degree in Computer Engineering</strong>{" "}
-                  from 2024.
+                  I'm a <strong>Software Engineering student</strong> in a{" "}
+                  <strong>double-degree Engineering Cycle</strong> between{" "}
+                  <strong>3iL Ingénieurs</strong> in Limoges, France and{" "}
+                  <strong>ESPRIT</strong> in Tunis, currently in my second year,
+                  specializing in{" "}
+                  <strong>Data Science &amp; Artificial Intelligence</strong>.
                 </p>
                 <p>
-                  I build mobile, web, and AI-powered applications using{" "}
-                  <strong>Flutter</strong>, <strong>FastAPI</strong>,{" "}
-                  <strong>Next.js</strong>, <strong>computer vision</strong>,{" "}
-                  <strong>machine learning</strong>, and{" "}
-                  <strong>Agentic AI workflows</strong>.
+                  I build <strong>multi-agent LLM systems</strong> with{" "}
+                  <strong>LangGraph</strong>, <strong>RAG</strong> and{" "}
+                  <strong>MCP</strong>, and{" "}
+                  <strong>computer-vision pipelines</strong> with{" "}
+                  <strong>YOLO</strong> and <strong>PyTorch</strong>. I also
+                  ship production systems: I co-led the full-stack development
+                  of an <strong>8-person HR platform</strong> built on{" "}
+                  <strong>Spring Boot</strong>,{" "}
+                  <strong>OAuth2 / Keycloak</strong> and{" "}
+                  <strong>React / TypeScript</strong>, spanning{" "}
+                  <strong>102 REST endpoints</strong>.
                 </p>
                 <p>
-                  My projects range from{" "}
-                  <strong>insurance claim automation</strong> and{" "}
-                  <strong>medical ML prototypes</strong> to{" "}
-                  <strong>smart farming platforms</strong>, with a focus on
-                  practical systems that connect strong engineering foundations
-                  with intelligent product experiences.
+                  My work ranges from an{" "}
+                  <strong>autonomous multi-agent farming platform</strong> and a{" "}
+                  <strong>98.83%-accuracy diagnostic ML pipeline</strong> to{" "}
+                  <strong>insurance claim automation</strong> — always with the
+                  same focus: practical systems that pair applied AI with solid
+                  engineering foundations.
                 </p>
               </div>
 
@@ -89,11 +96,11 @@ const About = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <ul className="space-y-3">
                     {[
+                      "Agentic AI & Multi-Agent Systems (LangGraph, MCP)",
+                      "RAG Pipelines & LLM Orchestration (LangChain, ChromaDB)",
+                      "Machine Learning & Model Evaluation (CRISP-DM)",
+                      "Computer Vision Pipelines (YOLO, OpenCV, PyTorch)",
                       "Cross-Platform Mobile Development (Flutter)",
-                      "AI & Computer Vision Integration (YOLO)",
-                      "Data Science & Machine Learning",
-                      "Agentic AI & LLM Workflows (LangGraph, Human-in-the-loop)",
-                      "Explainable AI (SHAP) & ML Pipelines (CRISP-DM)",
                     ].map((item, i) => (
                       <li
                         key={i}
@@ -106,11 +113,11 @@ const About = () => {
                   </ul>
                   <ul className="space-y-3">
                     {[
-                      "Full-Stack Web Development (Next.js, FastAPI, Symfony)",
-                      "IoT & Energy Management Systems",
-                      "Agile Development & Team Collaboration",
-                      "3D Digital Twin Dashboards (Three.js)",
-                      "Database Architecture & REST APIs (MongoDB, FastAPI)",
+                      "Back-End Engineering (Java 17, Spring Boot, FastAPI)",
+                      "API Security & IAM (OAuth2, Keycloak, RBAC, JWT)",
+                      "Full-Stack Web Development (React, Next.js, TypeScript)",
+                      "Data & Storage Architecture (PostgreSQL, MongoDB, MinIO)",
+                      "Testing & CI/CD (JUnit, Vitest, Playwright, Docker)",
                     ].map((item, i) => (
                       <li
                         key={i}
@@ -179,19 +186,23 @@ const About = () => {
                   Career Focus
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
-                  Seeking opportunities in{" "}
-                  <strong>full-stack development</strong>,{" "}
-                  <strong>mobile application architecture</strong>, or{" "}
-                  <strong>AI-powered solution development</strong> where I can
-                  leverage my proven ability to delivery production-ready
-                  applications.
+                  Seeking a <strong>4-month internship from April 2027</strong>{" "}
+                  and an{" "}
+                  <strong>
+                    alternance in AI / Software Engineering from September 2027
+                  </strong>
+                  , based in France. Most interested in teams building{" "}
+                  <strong>agentic AI systems</strong>,{" "}
+                  <strong>ML products</strong>, or{" "}
+                  <strong>production back-end platforms</strong> where I can
+                  deliver production-ready systems end to end.
                 </p>
               </div>
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
-                  href="/assets/cv/Cv_Ang.pdf"
+                  href="/assets/cv/CV_Ang_ATS.pdf"
                   download
                   className="px-8 py-3 rounded-full border border-primary-pink text-white font-semibold hover:bg-primary-pink hover:shadow-glow transition-all duration-300 flex items-center justify-center gap-2 group shine-effect"
                 >

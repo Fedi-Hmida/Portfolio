@@ -2,11 +2,11 @@ import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export const contactInfo = {
-  location: "Tunis",
-  email: "Fedi.Hmida@esprit.tn",
-  phone: "+216 93 722 130",
-  phoneHref: "tel:+21693722130",
-  phoneCopy: "+216 93 722 130",
+  location: "Limoges, France",
+  email: "hmidaf@3il.fr",
+  phone: "+33 6 02 75 32 87",
+  phoneHref: "tel:+33602753287",
+  phoneCopy: "+33 6 02 75 32 87",
 };
 
 export const socialLinks = [
@@ -49,7 +49,7 @@ export const contactActions = [
     iconClassName: "text-3xl",
     name: "WhatsApp",
     description: "Fastest for quick coordination.",
-    href: "https://wa.me/21693722130",
+    href: "https://wa.me/33602753287",
     color: "group-hover:text-whatsapp-green",
     borderColor: "group-hover:border-whatsapp-green",
   },

@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 import { lazy, Suspense, useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/social-icons.css";
@@ -19,7 +20,7 @@ import {
 import { socialLinks } from "../data/socialLinks";
 
 // Asset Imports
-import heroImg from "../assets/images/slider/me.png";
+import heroImg from "../assets/images/slider/Fedi_Hmida.png";
 
 const ParticlesBackground = lazy(
   () => import("../components/ParticlesBackground"),
@@ -35,10 +36,11 @@ const containerVariants = {
   },
 };
 
-const CV_PATH = "/assets/cv/Cv_Ang.pdf";
+const CV_PATH = "/assets/cv/CV_Ang_ATS.pdf";
 const HERO_NAME = "Fedi Hmida";
 const HERO_PRIMARY_ROLE = "Software Engineering Student";
 const HERO_SPECIALIZATION = "Data Science & AI Engineering";
+const HERO_LOCATION = "Limoges, France";
 const heroNameLetters = Array.from(HERO_NAME);
 
 const Home = () => {
@@ -130,6 +132,13 @@ const Home = () => {
                 </span>
                 <span className="text-sm font-medium text-sky-300/90 sm:text-base md:text-lg">
                   {HERO_SPECIALIZATION}
+                </span>
+                <span className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-gray-300/90 sm:text-base">
+                  <MapPin
+                    className="h-4 w-4 flex-shrink-0 text-primary-pink"
+                    aria-hidden="true"
+                  />
+                  {HERO_LOCATION}
                 </span>
                 <motion.span
                   aria-hidden="true"

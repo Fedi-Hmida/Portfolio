@@ -40,6 +40,9 @@ const ProLinkDetails = lazy(() => import("./pages/Portfolio/ProLinkDetails"));
 const SmartClaimDetails = lazy(
   () => import("./pages/Portfolio/SmartClaimDetails"),
 );
+const SmartHrmAiDetails = lazy(
+  () => import("./pages/Portfolio/SmartHrmAiDetails"),
+);
 const SahitnaSafeDetails = lazy(
   () => import("./pages/Portfolio/SahitnaSafeDetails"),
 );
@@ -87,6 +90,14 @@ const AppRoutes = () => {
             element={
               <AnimatedPage>
                 <SmartClaimDetails />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/portfolio/smart-hrm-ai"
+            element={
+              <AnimatedPage>
+                <SmartHrmAiDetails />
               </AnimatedPage>
             }
           />

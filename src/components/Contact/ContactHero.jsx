@@ -17,12 +17,18 @@ const ContactHero = () => {
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-pink to-secondary-pink mx-auto rounded-full"></div>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-300 md:text-xl">
-            Open to junior Flutter/mobile roles, AI engineering internships,
-            and product-focused collaborations where mobile apps, computer
-            vision, and backend APIs meet.
+            Based in Limoges, France. Looking for a 4-month internship from
+            April 2027 and an alternance in AI / Software Engineering from
+            September 2027, with teams building agentic AI systems, ML
+            products, or production back-end platforms.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {["Recruiter inquiries", "Internships", "Flutter projects", "AI products"].map(
+            {[
+              "Internship - April 2027",
+              "Alternance - September 2027",
+              "AI / Software Engineering",
+              "Based in France",
+            ].map(
               (item) => (
                 <span
                   key={item}

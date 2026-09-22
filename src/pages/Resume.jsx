@@ -46,7 +46,7 @@ const Resume = () => {
             className="flex justify-center"
           >
             <a
-              href="/assets/cv/Cv_Ang.pdf"
+              href="/assets/cv/CV_Ang_ATS.pdf"
               download
               className="group relative px-8 py-4 bg-gradient-to-r from-primary-pink to-secondary-pink rounded-full text-white font-bold text-lg shadow-lg hover:shadow-primary-pink/50 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3 overflow-hidden"
             >

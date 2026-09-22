@@ -19,7 +19,7 @@ const ConnectSection = () => {
         <div className="w-16 h-1 bg-primary-pink mx-auto rounded"></div>
         <p className="mx-auto mt-4 max-w-2xl text-gray-300">
           Send a role, project brief, or collaboration idea. For technical
-          review, start with SmartClaim and the CV, then reach out through
+          review, start with SMART HRM AI and Firmaa, then reach out through
           LinkedIn or email.
         </p>
       </div>
@@ -32,8 +32,8 @@ const ConnectSection = () => {
         className="w-full h-80 rounded-2xl overflow-hidden shadow-2xl border border-white/10 mb-12"
       >
         <iframe
-          title="Map showing Tunis, Tunisia"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102118.23232145398!2d10.070624896792942!3d36.818970000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd337f5e7ef543%3A0xd671924e714a0275!2sTunis%2C%20Tunisia!5e0!3m2!1sen!2suk!4v1655655787682!5m2!1sen!2suk"
+          title="Map showing Limoges, France"
+          src="https://maps.google.com/maps?q=Limoges%2C%20France&t=&z=12&ie=UTF8&iwloc=&output=embed"
           className="w-full h-full border-0 filter grayscale invert contrast-125 opacity-80 hover:opacity-100 transition-opacity duration-500"
           allowFullScreen=""
           loading="lazy"

@@ -4,6 +4,7 @@ import smartClaimImg from "../assets/images/Portfolio/New Logo SmartClaim.png";
 import smartClaimPreviewImg from "../assets/images/Portfolio/New Logo SmartClaim2.png";
 import sahitnaSafeImg from "../assets/images/Portfolio/ML2.png";
 import firmaaCoverImg from "../assets/images/Portfolio/Firmaa/logo_firmaa.png";
+import smartHrmAiImg from "../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.jpg";
 import onboardifyImg from "../assets/images/logo3.png";
 import onboardifyPreviewImg from "../assets/images/logo31.png";
 import solarFlowImg from "../assets/images/logo_1555.png";
@@ -17,6 +18,41 @@ export const projectCategories = [
 ];
 
 export const projects = [
+  {
+    id: 7,
+    title: "SMART HRM AI",
+    category: ["web", "ia"],
+    tech: [
+      "Java 17",
+      "Spring Boot",
+      "React 19",
+      "TypeScript",
+      "PostgreSQL",
+      "Keycloak",
+    ],
+    homeTech: ["Spring Boot", "React 19", "Keycloak"],
+    role: "Back-End & Front-End Co-Lead",
+    type: "Enterprise HR platform",
+    status: "BNS Engineering internship",
+    impact:
+      "102 REST endpoints, 104 authorization gates, and 2,072 automated tests across 11 modules.",
+    homeImpact:
+      "Enterprise HR platform with 102 REST endpoints and OAuth2 / Keycloak security.",
+    description:
+      "Internal HR platform built by an 8-intern team at BNS Engineering, pairing a Java 17 / Spring Boot API with a React 19 / TypeScript client, OAuth2 / Keycloak security, and AI workstreams for OCR extraction, RAG assistance, and workforce prediction.",
+    homeDescription:
+      "Internal HR platform combining Spring Boot, React 19, Keycloak security, and AI workstreams for OCR, RAG, and workforce prediction.",
+    image: smartHrmAiImg,
+    homeImage: smartHrmAiImg,
+    link: "/portfolio/smart-hrm-ai",
+    cta: "View case study",
+    accentColor: "#1E8AF0",
+    accentText: "#6FC2FF",
+    accentSoft: "rgba(30, 138, 240, 0.14)",
+    accentBorder: "rgba(30, 138, 240, 0.45)",
+    accentShadow: "rgba(30, 138, 240, 0.22)",
+    accentForeground: "#061429",
+  },
   {
     id: 6,
     title: "Firmaa",
