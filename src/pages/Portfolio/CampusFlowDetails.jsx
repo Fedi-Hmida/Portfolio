@@ -55,9 +55,9 @@ const metricCards = [
   },
   {
     label: "Latency p90, hybrid",
-    value: "18.7 s",
+    value: "18.7 s",
     detail:
-      "Highest p90 across the four test sets, end to end on a CPU laptop - every question under the 90 s budget. Fully local, a regulation answer took 116-148 s.",
+      "Highest p90 across the four test sets, end to end on a CPU laptop - every question under the 90 s budget. Fully local, a regulation answer took 116‑148 s.",
   },
   {
     label: "Adversarial cases",
@@ -659,12 +659,13 @@ const CampusFlowDetails = () => {
               intro="Fully local was the plan. The measurement said no."
             >
               <p className="max-w-4xl text-base leading-relaxed text-gray-300">
-                On a CPU laptop, a regulation answer took 116-148 s end to end
-                against a 90 s budget. We kept the router, the lookups, the
-                embeddings and the checks local and moved the two long-writing
-                agents and vision to Gemini Flash-Lite: a p90 of at most
-                18.7 s, every question under budget. One setting moves the text
-                agents back to the local model.
+                On a CPU laptop, a regulation answer took{" "}
+                {"116‑148 s"} end to end against a {"90 s"}{" "}
+                budget. We kept the router, the lookups, the embeddings and the
+                checks local and moved the two long-writing agents and vision to
+                Gemini Flash-Lite: a p90 of at most {"18.7 s"}, every
+                question under budget. One setting moves the text agents back
+                to the local model.
               </p>
             </Section>
 
