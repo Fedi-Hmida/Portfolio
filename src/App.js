@@ -49,6 +49,9 @@ const SmartClaimDetails = lazy(
 const SmartHrmAiDetails = lazy(
   () => import("./pages/Portfolio/SmartHrmAiDetails"),
 );
+const CampusFlowDetails = lazy(
+  () => import("./pages/Portfolio/CampusFlowDetails"),
+);
 const SahitnaSafeDetails = lazy(
   () => import("./pages/Portfolio/SahitnaSafeDetails"),
 );
@@ -104,6 +107,14 @@ const AppRoutes = () => {
             element={
               <AnimatedPage>
                 <SmartHrmAiDetails />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/portfolio/campusflow-ai"
+            element={
+              <AnimatedPage>
+                <CampusFlowDetails />
               </AnimatedPage>
             }
           />
