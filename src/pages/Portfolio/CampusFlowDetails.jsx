@@ -45,7 +45,7 @@ const metricCards = [
     label: "Retrieval Hit@5",
     value: "1.00",
     detail:
-      "Recall@5 0.93 on the 22 answerable T1 questions, with article-level chunks and official documents first (0.86 with fixed windows).",
+      "Recall@5 0.93 on the 22 answerable T1 questions, with article-level chunks and official documents first. Fixed windows with the same ordering reach 0.95.",
   },
   {
     label: "End-to-end questions",
@@ -55,9 +55,9 @@ const metricCards = [
   },
   {
     label: "Latency p90, hybrid",
-    value: "18.7 s",
+    value: "18.7\u00a0s",
     detail:
-      "Highest p90 across the four test sets, end to end on a CPU laptop - every question under the 90 s budget. Fully local, a regulation answer took 116‑148 s.",
+      "Highest p90 across the four test sets, end to end on a CPU laptop - every question under the 90\u00a0s budget. Fully local, a regulation answer took 116\u2011148\u00a0s.",
   },
   {
     label: "Adversarial cases",
@@ -135,10 +135,12 @@ const agents = [
   },
 ];
 
+/* eval/retrieval/results_T1.md: A = fixed 2,000-character windows, B = article chunks. */
 const retrievalRows = [
-  { label: "Fixed 2,000-character windows", value: "0.86", note: "Hit@5, 8,843 characters of context" },
-  { label: "Article-level chunks", value: "0.86", note: "Same hit rate with half the context: 4,145 characters" },
-  { label: "Articles, official documents first", value: "1.00", note: "Recall@5 0.93 - the configuration we kept", best: true },
+  { label: "Fixed windows, regime filter", value: "0.86", note: "8,843 characters of context" },
+  { label: "Article chunks, regime filter", value: "0.86", note: "Same hit rate with half the context: 4,145 characters" },
+  { label: "Fixed windows, official documents first", value: "0.95", note: "Recall@5 0.93, 9,351 characters of context" },
+  { label: "Article chunks, official documents first", value: "1.00", note: "Recall@5 0.93 with 5,297 characters - the configuration we kept", best: true },
 ];
 
 const safetyPoints = [
@@ -268,6 +270,7 @@ const Bullets = ({ items }) => (
         <span
           className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full"
           style={{ backgroundColor: ACCENT }}
+          aria-hidden="true"
         />
         {item}
       </li>
@@ -556,7 +559,7 @@ const CampusFlowDetails = () => {
               title="Retrieval, Measured"
               intro="Chunking was chosen by measurement, not by default."
             >
-              <div className="grid gap-4 md:grid-cols-3">
+              <div className="grid gap-4 md:grid-cols-2">
                 {retrievalRows.map((row) => (
                   <div
                     key={row.label}
@@ -579,8 +582,10 @@ const CampusFlowDetails = () => {
                 ))}
               </div>
               <p className="mt-4 text-sm leading-relaxed text-gray-400">
-                Hit@5 on T1, 22 answerable questions. Fixed windows keep a
-                slightly better MRR (0.65 vs 0.63).
+                Hit@5 on T1, 22 answerable questions. Putting official
+                documents first brings most of the gain; article chunks add the
+                last step with about 43% less context. Fixed windows keep a
+                slightly better MRR (0.67 vs 0.63).
               </p>
 
               <div className="mt-6 grid items-start gap-6 lg:grid-cols-[1fr_1.1fr]">
@@ -660,10 +665,10 @@ const CampusFlowDetails = () => {
             >
               <p className="max-w-4xl text-base leading-relaxed text-gray-300">
                 On a CPU laptop, a regulation answer took{" "}
-                {"116‑148 s"} end to end against a {"90 s"}{" "}
+                {"116\u2011148\u00a0s"} end to end against a {"90\u00a0s"}{" "}
                 budget. We kept the router, the lookups, the embeddings and the
                 checks local and moved the two long-writing agents and vision to
-                Gemini Flash-Lite: a p90 of at most {"18.7 s"}, every
+                Gemini Flash-Lite: a p90 of at most {"18.7\u00a0s"}, every
                 question under budget. One setting moves the text agents back
                 to the local model.
               </p>

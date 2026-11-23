@@ -40,7 +40,7 @@ const howItWorks = [
   },
   {
     label: "Hybrid models",
-    text: "local Qwen3 (Ollama) + Gemini Flash-Lite, in Docker. Regulation answers: 116‑148 s fully local, a p90 of 18.7 s in hybrid (end to end, CPU laptop).",
+    text: "local Qwen3 (Ollama) + Gemini Flash-Lite, in Docker. Regulation answers: 116\u2011148\u00a0s fully local, a p90 of 18.7\u00a0s in hybrid (end to end, CPU laptop).",
   },
 ];
 
@@ -271,13 +271,13 @@ const NewsCampusFlow = () => {
                   <p className="text-white font-medium mb-2">Le fonctionnement</p>
                   <ul className="space-y-2">
                     <li>
-                      <span className="text-white font-medium">Routage :</span>{" "}
+                      <span className="text-white font-medium">{"Routage\u00a0:"}</span>{" "}
                       un routeur local oriente chaque question vers la vision,
                       le règlement, le calendrier ou l&apos;administration, ou
-                      la refuse hors périmètre.
+                      la refuse comme hors périmètre.
                     </li>
                     <li>
-                      <span className="text-white font-medium">Sources :</span>{" "}
+                      <span className="text-white font-medium">{"Sources\u00a0:"}</span>{" "}
                       RAG sur 13 PDF (3 officiels, 10 fictifs), découpés par
                       article, BGE-M3 + Qdrant, avec citations. Dates
                       d&apos;examen et contacts : recherche exacte, jamais le
@@ -285,17 +285,17 @@ const NewsCampusFlow = () => {
                     </li>
                     <li>
                       <span className="text-white font-medium">
-                        Auto-correction :
+                        {"Auto-correction\u00a0:"}
                       </span>{" "}
                       le code vérifie chaque citation, date et e-mail. En cas
                       d&apos;échec : une révision, puis{" "}
-                      {"« non trouvé »"} + le bon service.
+                      {"«\u00a0non trouvé\u00a0»"} + le bon service.
                     </li>
                     <li>
-                      <span className="text-white font-medium">Hybride :</span>{" "}
+                      <span className="text-white font-medium">{"Hybride\u00a0:"}</span>{" "}
                       Qwen3 local (Ollama) + Gemini Flash-Lite, sous Docker.
-                      Réponses réglementaires : {"116‑148 s"} en tout
-                      local, un p90 de {"18,7 s"} en hybride (de bout en
+                      Réponses réglementaires : {"116\u2011148\u00a0s"} en tout
+                      local, un p90 de {"18,7\u00a0s"} en hybride (de bout en
                       bout, sur un portable sans GPU).
                     </li>
                   </ul>
@@ -304,24 +304,24 @@ const NewsCampusFlow = () => {
                   <p className="text-white font-medium mb-2">Les chiffres</p>
                   <ul className="space-y-2">
                     <li>
-                      <span className="text-white font-medium">Recherche :</span>{" "}
+                      <span className="text-white font-medium">{"Recherche\u00a0:"}</span>{" "}
                       Hit@5 1,00, Recall@5 0,93 (T1, 22 questions répondables).
                     </li>
                     <li>
                       <span className="text-white font-medium">
-                        Bout en bout :
+                        {"Bout en bout\u00a0:"}
                       </span>{" "}
                       53 questions rédigées par l&apos;équipe, posées au vrai
-                      bot, une exécution par jeu, {"100 %"} conformes au schéma
+                      bot, une exécution par jeu, {"100\u00a0%"} conformes au schéma
                       JSON, relues à la main.
                     </li>
                     <li>
-                      <span className="text-white font-medium">Robustesse :</span>{" "}
+                      <span className="text-white font-medium">{"Robustesse\u00a0:"}</span>{" "}
                       6/6 cas adverses, dont une injection de prompt cachée dans
                       une photo.
                     </li>
                     <li>
-                      <span className="text-white font-medium">Limite :</span>{" "}
+                      <span className="text-white font-medium">{"Limite\u00a0:"}</span>{" "}
                       les démarches en plusieurs étapes, 3/10.
                     </li>
                   </ul>
