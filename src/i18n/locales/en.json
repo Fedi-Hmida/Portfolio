@@ -420,6 +420,13 @@
     "selectNumber": "Select Number"
   },
   "news": {
+    "22": {
+      "title": "CampusFlow AI - A Multi-Agent Assistant That Cites Its Sources",
+      "date": "November 19, 2026",
+      "description": "With my team, we built CampusFlow AI for our Advanced Deep Learning course at ESPRIT: a Telegram assistant where an n8n orchestrator routes each question to specialised agents, every rule is cited to its article, and dates and contacts never come from the LLM.",
+      "homeTitle": "CampusFlow AI Multi-Agent Assistant",
+      "homeDescription": "A multi-agent Telegram assistant on n8n with cited RAG answers, exact lookups and a measured evaluation."
+    },
     "21": {
       "title": "Two Summer Months at BNS Engineering - SMART HRM AI Delivered",
       "date": "September 2026",
