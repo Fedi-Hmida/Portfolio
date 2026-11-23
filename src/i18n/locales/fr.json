@@ -232,6 +232,16 @@
     "back": "Retour à l'accueil"
   },
   "projects": {
+    "8": {
+      "type": "Assistant IA multi-agents",
+      "status": "Projet de cours ESPRIT",
+      "role": "Responsable technique - architecture & intégration",
+      "impact": "Hit@5 de 1,00 sur 22 questions répondables avec un RAG découpé par article, un banc de test de bout en bout de 53 questions et 6/6 cas adverses, dont une injection de prompt cachée dans une photo.",
+      "homeImpact": "Assistant Telegram multi-agents : réponses citées, recherches exactes, RAG mesuré.",
+      "description": "Assistant Telegram pour les étudiants d'ESPRIT, construit à trois : un orchestrateur n8n confie chaque question aux agents vision, règlement (RAG), calendrier ou administration, le code vérifie chaque citation, date et e-mail, et un mode hybride Qwen3 local + Gemini Flash-Lite tient le budget de latence.",
+      "homeDescription": "Assistant Telegram multi-agents sous n8n : RAG cité sur Qdrant, recherche exacte des dates et des contacts, lecture de photos, auto-correction.",
+      "cta": "Voir l'étude de cas"
+    },
     "7": {
       "type": "Plateforme RH d'entreprise",
       "status": "Stage BNS Engineering",

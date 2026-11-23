@@ -232,6 +232,16 @@
     "back": "Back to Home"
   },
   "projects": {
+    "8": {
+      "type": "Multi-agent AI assistant",
+      "status": "ESPRIT course project",
+      "role": "Technical Lead - Architecture & Integration",
+      "impact": "Hit@5 1.00 on 22 answerable questions with article-level RAG, a 53-question end-to-end benchmark, and 6/6 adversarial cases including a prompt injection hidden in a photo.",
+      "homeImpact": "Multi-agent Telegram assistant: cited answers, exact lookups, measured RAG.",
+      "description": "Telegram assistant for ESPRIT students built by a team of three: an n8n orchestrator routes each question to vision, regulations RAG, calendar or admin agents, code checks every citation, date and e-mail, and a hybrid of local Qwen3 and Gemini Flash-Lite answers within the latency budget.",
+      "homeDescription": "Multi-agent Telegram assistant on n8n: RAG with citations over Qdrant, exact lookups for dates and contacts, photo reading, self-correction.",
+      "cta": "View case study"
+    },
     "7": {
       "type": "Enterprise HR platform",
       "status": "BNS Engineering internship",

@@ -4,6 +4,7 @@ import smartClaimImg from "../assets/images/Portfolio/New Logo SmartClaim.png";
 import smartClaimPreviewImg from "../assets/images/Portfolio/New Logo SmartClaim2.png";
 import sahitnaSafeImg from "../assets/images/Portfolio/ML2.png";
 import firmaaCoverImg from "../assets/images/Portfolio/Firmaa/logo_firmaa.png";
+import campusFlowImg from "../assets/images/Portfolio/CampusFlow/campusflow-card.png";
 import smartHrmAiImg from "../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.jpg";
 import onboardifyImg from "../assets/images/logo3.png";
 import onboardifyPreviewImg from "../assets/images/logo31.png";
@@ -18,6 +19,22 @@ export const projectCategories = [
 ];
 
 export const projects = [
+  {
+    id: 8,
+    title: "CampusFlow AI",
+    category: ["ia"],
+    tech: ["n8n", "RAG", "Qdrant", "Ollama", "Gemini", "Docker"],
+    homeTech: ["n8n", "RAG", "Qdrant"],
+    image: campusFlowImg,
+    homeImage: campusFlowImg,
+    link: "/portfolio/campusflow-ai",
+    accentColor: "#FE3E57",
+    accentText: "#FF8A9B",
+    accentSoft: "rgba(254, 62, 87, 0.14)",
+    accentBorder: "rgba(254, 62, 87, 0.45)",
+    accentShadow: "rgba(254, 62, 87, 0.22)",
+    accentForeground: "#ffffff",
+  },
   {
     id: 7,
     title: "SMART HRM AI",
