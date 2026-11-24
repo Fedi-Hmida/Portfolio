@@ -430,6 +430,13 @@
     "selectNumber": "Sélectionner le numéro"
   },
   "news": {
+    "23": {
+      "title": "CallVerse - Quatre agents IA dans le centre de relation client d'une banque, testés dans un Digital Twin",
+      "date": "24 novembre 2026",
+      "description": "Pour notre projet double diplôme entre 3iL et ESPRIT, notre équipe de cinq a construit CallVerse\u00a0: une plateforme de relation client bancaire où travaillent quatre agents IA, et où une politique d'effectifs apprise par renforcement est mesurée dans un jumeau numérique avant de toucher un vrai client.",
+      "homeTitle": "CallVerse, Digital Twin multi-agents",
+      "homeDescription": "Un Digital Twin multi-agents d'un centre de relation client bancaire\u00a0: conseiller LangGraph, politique d'effectifs PPO, juge qualité LLM et back-end Spring Boot."
+    },
     "22": {
       "title": "CampusFlow AI - Un assistant multi-agents qui cite ses sources",
       "date": "19 novembre 2026",

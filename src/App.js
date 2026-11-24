@@ -27,6 +27,7 @@ const NewsInternshipStart = lazy(
 );
 const NewsList = lazy(() => import("./pages/News/NewsList"));
 const NewsNvidiaAnomalyDetection = lazy(() => import("./pages/News/NewsNvidiaAnomalyDetection"));
+const NewsCallVerse = lazy(() => import("./pages/News/NewsCallVerse"));
 const NewsCampusFlow = lazy(() => import("./pages/News/NewsCampusFlow"));
 const NewsBnsInternship = lazy(() => import("./pages/News/NewsBnsInternship"));
 const NewsDoubleDegree = lazy(() => import("./pages/News/NewsDoubleDegree"));
@@ -183,6 +184,14 @@ const AppRoutes = () => {
             element={
               <AnimatedPage>
                 <NewsList />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/23"
+            element={
+              <AnimatedPage>
+                <NewsCallVerse />
               </AnimatedPage>
             }
           />
