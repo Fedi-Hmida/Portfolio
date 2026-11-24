@@ -16,6 +16,8 @@ import bnsNewsEn from "./bns/news.en";
 import bnsNewsFr from "./bns/news.fr";
 import doubleDegreeNewsEn from "./doubleDegree/news.en";
 import doubleDegreeNewsFr from "./doubleDegree/news.fr";
+import smartHrmAiCaseEn from "./smartHrmAi/caseStudy.en";
+import smartHrmAiCaseFr from "./smartHrmAi/caseStudy.fr";
 
 const pairs = {
   "callverse/caseStudy": [callVerseCaseEn, callVerseCaseFr],
@@ -24,6 +26,7 @@ const pairs = {
   "campusflow/news": [campusFlowNewsEn, campusFlowNewsFr],
   "bns/news": [bnsNewsEn, bnsNewsFr],
   "doubleDegree/news": [doubleDegreeNewsEn, doubleDegreeNewsFr],
+  "smartHrmAi/caseStudy": [smartHrmAiCaseEn, smartHrmAiCaseFr],
 };
 
 const NBSP = String.fromCharCode(0xa0);
