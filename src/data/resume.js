@@ -21,6 +21,8 @@ export const technicalSkills = [
       "Human-in-the-loop",
       "Validation layers",
       "Fallback rules",
+      "LLM-as-a-judge",
+      "pgvector (Vector search)",
     ],
   },
   {
@@ -39,6 +41,8 @@ export const technicalSkills = [
       "MLFlow (Experiment tracking)",
       "CRISP-DM",
       "TDSP",
+      "Reinforcement Learning (PPO, Stable-Baselines3)",
+      "Gymnasium (custom environments)",
     ],
   },
   {
@@ -57,6 +61,7 @@ export const technicalSkills = [
     type: "backend",
     skills: [
       "Java 17",
+      "Java 21",
       "Spring Boot",
       "Spring Security",
       "Spring Data JPA",
@@ -65,6 +70,9 @@ export const technicalSkills = [
       "Microservices",
       "Clean Architecture",
       "Node.js",
+      "WebSocket / STOMP",
+      "CQRS",
+      "OpenAPI",
     ],
   },
   {
@@ -90,6 +98,7 @@ export const technicalSkills = [
       "Tailwind CSS",
       "Three.js (3D digital twin)",
       "Dashboard UI",
+      "Web accessibility (WCAG, axe, Lighthouse)",
     ],
   },
   {
@@ -117,6 +126,9 @@ export const technicalSkills = [
       "JUnit",
       "Vitest",
       "Playwright",
+      "Testcontainers",
+      "ArchUnit",
+      "GitHub Actions",
     ],
   },
 ];
