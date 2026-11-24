@@ -47,7 +47,7 @@ const metricCards = [
     label: "Twin SLA, medium load",
     value: "0.31\u00a0→\u00a00.43",
     detail:
-      "FIFO vs PPO on the same simulated day (12 advisors, 8-hour day, seeds 7 and 8). The cost: abandonment 12.9% → 18.9%.",
+      "FIFO vs PPO on the same simulated day (12 advisors, 8-hour day, mean of seeds 7 and 8, SLA on all arrivals). The cost: abandonment 12.9% → 18.9%.",
   },
   {
     label: "Backend tests",
@@ -59,7 +59,7 @@ const metricCards = [
     label: "Accessibility",
     value: "100",
     detail:
-      "Lighthouse accessibility on the public pages; 0 violations with axe 4.13 on 15 signed-in screens at two widths (Oct 2026).",
+      "Lighthouse accessibility on / and /login; 0 violations with axe 4.13 on 15 signed-in screens at two widths (Oct 2026).",
   },
 ];
 
@@ -105,7 +105,7 @@ const agents = [
     name: "Customer Advisor",
     builder: "Doua Omrani",
     detail:
-      "A LangGraph tool loop: decide, call one of six banking tools or the knowledge base, decide again, then answer - four turns at most, the last one forced to conclude.",
+      "A LangGraph tool loop: decide, call one of six tools - the knowledge base, the customer, transactions, system status, a case or a credit - decide again, then answer; four turns at most, the last one forced to conclude.",
   },
   {
     name: "Client Simulator",
@@ -171,7 +171,7 @@ const safetyPoints = [
 
 const platformPoints = [
   "One live conversation per customer - four simultaneous opens give exactly one.",
-  "Staff open a complete customer in one transaction: login, profile, account with a valid IBAN, debit card.",
+  "Staff onboard a new customer in one transaction: login, profile, account with a valid IBAN, debit card.",
   "No card number, CVV or PIN stored - last four digits only, enforced by the database.",
 ];
 
@@ -179,14 +179,14 @@ const qualityPoints = [
   "610 backend tests, 0 failures, on a real PostgreSQL with Testcontainers (mvn verify, 19 Oct 2026).",
   "285 AI-service tests, run by GitHub Actions on every change to the service; 95 frontend tests.",
   "7 ArchUnit rules that fail the build on a layer violation, each checked to fire before being trusted.",
-  "0 violations with axe 4.13 on 15 signed-in screens at 1440 and 390 px; Lighthouse accessibility 100 on the public pages (Oct 2026).",
-  "Audit phases P0 to P2 with a test for every fix - a quick second customer message went unanswered 9 times out of 10, then 10 out of 10 after the dispatcher fix.",
+  "0 violations with axe 4.13 on 15 signed-in screens at 1440 and 390 px; Lighthouse accessibility 100 on / and /login (Oct 2026).",
+  "Audit phases P0 to P2 with a test for every fix - a quick second customer message went unanswered 9 times out of 10; after the dispatcher fix it was answered 10 out of 10 (tested with 50 conversations × 20 messages).",
 ];
 
 const limits = [
   "The staffing policy buys SLA with abandonment at low and medium load; it stays advisory.",
   "The quality judge is not yet calibrated against human reviewers - agreement (Cohen's kappa) is the next step, not a result.",
-  "Free-tier model quotas allow about one AI turn per minute; a multi-chat demo needs a paid key.",
+  "Free-tier model quotas allow about one AI turn per minute on gpt-oss-120b; a multi-chat demo needs a paid key.",
   "A course project run locally on demo data - not a live bank system, and not load-tested.",
 ];
 
@@ -205,7 +205,7 @@ const learnings = [
 ];
 
 const stack = [
-  { group: "AI", items: ["LangGraph", "PPO (Stable-Baselines3)", "Gymnasium", "Groq gpt-oss", "sentence-transformers", "pgvector"] },
+  { group: "AI", items: ["LangGraph", "PPO (Stable-Baselines3)", "Gymnasium", "Groq gpt-oss", "sentence-transformers"] },
   { group: "Backend", items: ["Java 21", "Spring Boot 3", "Spring Security", "JWT", "STOMP / WebSocket", "Flyway", "OpenAPI"] },
   { group: "Data", items: ["PostgreSQL (Neon)", "pgvector"] },
   { group: "Frontend", items: ["Next.js 15", "React 19", "TypeScript", "Tailwind 4"] },
@@ -316,12 +316,13 @@ const CallVerseDetails = () => {
                   </h1>
 
                   <p className="mb-8 max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">
-                    A working contact centre for a retail bank where four AI
-                    agents operate - one answers customers, one plays them, one
-                    recommends staffing, one grades the conversations - and where
-                    a staffing strategy is tested in a digital twin before it
-                    touches a real customer. Built by a team of five for a
-                    double-degree project between 3iL and ESPRIT.
+                    A working contact-centre platform for a fictional retail bank,
+                    where four AI agents operate - one answers customers, one
+                    plays them, one recommends staffing, one grades the
+                    conversations - and where a staffing strategy is tested in a
+                    digital twin before it would ever reach real customers. Built
+                    by a team of five for a double-degree project between 3iL and
+                    ESPRIT.
                   </p>
 
                   <div className="mb-8 flex flex-wrap gap-3">
@@ -364,7 +365,7 @@ const CallVerseDetails = () => {
                 >
                   <img
                     src={callVerseCover}
-                    alt="CallVerse logo with the tagline Chaque échange compte"
+                    alt={'CallVerse logo with the tagline "Chaque échange compte"'}
                     className="w-full rounded-2xl"
                     loading="eager"
                     decoding="async"
@@ -430,7 +431,7 @@ const CallVerseDetails = () => {
             >
               <Bullets
                 items={[
-                  "Owned the Spring Boot backend: Clean Architecture with CQRS slices, 27 entities, 89 REST endpoint mappings in 24 controllers, JWT and four roles, live STOMP events, queues with skill-based routing, SLAs and escalations - 610 tests.",
+                  "Owned the Spring Boot backend: Clean Architecture with CQRS slices, 27 entities, 89 REST endpoint mappings in 24 controllers, JWT and four roles, live STOMP events, queues with skill-based routing, SLAs and escalations; the backend suite runs 610 tests.",
                   "Designed the AI service: one FastAPI host for the four agents, the shared Pydantic contracts frozen first, and the work split for the two AI developers.",
                   "Integrated the agents with the platform: the advisor's tool calls through the backend, the twin runs, the quality grading, and the safety rules around them.",
                   "Co-developed the Next.js frontend with its lead: accessibility, the landing and login redesign, the customer space and the staff dashboards.",
@@ -517,8 +518,10 @@ const CallVerseDetails = () => {
               <div className="grid gap-4 lg:grid-cols-2">
                 {twinLoads.map((block) => (
                   <div key={block.load} className="overflow-x-auto rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5">
-                    <p className="mb-3 font-bold text-white">{block.load}</p>
                     <table className="w-full text-left text-xs sm:text-sm">
+                      <caption className="mb-3 text-left text-base font-bold text-white">
+                        {block.load}
+                      </caption>
                       <thead>
                         <tr className="text-gray-400">
                           <th scope="col" className="pb-2 pr-2 font-semibold sm:pr-3">Strategy</th>

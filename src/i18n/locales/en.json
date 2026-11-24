@@ -433,7 +433,7 @@
     "23": {
       "title": "CallVerse - Four AI Agents in a Bank's Contact Centre, Tested in a Digital Twin",
       "date": "November 24, 2026",
-      "description": "For our double-degree project between 3iL and ESPRIT, our team of five built CallVerse: a working bank contact centre where four AI agents operate, and where a reinforcement-learning staffing policy is measured in a digital twin before it touches a real customer.",
+      "description": "For our double-degree project between 3iL and ESPRIT, our team of five built CallVerse: a working contact-centre platform for a fictional retail bank, where four AI agents operate, and where a reinforcement-learning staffing policy is measured in a digital twin before it would ever reach real customers.",
       "homeTitle": "CallVerse Multi-Agent Digital Twin",
       "homeDescription": "A multi-agent digital twin of a bank's contact centre: LangGraph advisor, PPO staffing policy, LLM quality judge and a Spring Boot backend."
     },

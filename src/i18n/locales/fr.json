@@ -238,8 +238,8 @@
       "role": "Responsable back-end & architecte IA",
       "impact": "Quatre agents IA sur une plateforme Spring Boot validée par 610 tests\u00a0; dans le jumeau, la politique PPO fait passer le SLA de 0,31 à 0,43 en charge moyenne, au prix de davantage d'abandons (12,9\u00a0% → 18,9\u00a0%).",
       "homeImpact": "Un centre de relation client bancaire où travaillent quatre agents IA - et où l'on teste les stratégies d'effectifs dans un jumeau.",
-      "description": "Digital Twin du centre de relation client d'une banque de détail, construit à cinq\u00a0: un conseiller LangGraph qui répond avec un RAG et des outils bancaires, un simulateur de clients, un gestionnaire d'effectifs par apprentissage par renforcement et un juge qualité LLM, sur un back-end Spring Boot en Clean Architecture dont j'avais la charge, avec une interface Next.js pour quatre rôles.",
-      "homeDescription": "Digital Twin multi-agents\u00a0: conseiller LangGraph avec RAG, politique d'effectifs PPO, juge qualité LLM, back-end Spring Boot et espaces Next.js en direct.",
+      "description": "Jumeau numérique du centre de relation client d'une banque de détail, construit à cinq\u00a0: un conseiller LangGraph qui répond avec un RAG et des outils bancaires, un simulateur de clients, un gestionnaire d'effectifs par apprentissage par renforcement et un juge qualité LLM, sur un back-end Spring Boot en Clean Architecture dont j'avais la charge, avec une interface Next.js pour quatre rôles.",
+      "homeDescription": "Jumeau numérique multi-agents\u00a0: conseiller LangGraph avec RAG, politique d'effectifs PPO, juge qualité LLM, back-end Spring Boot et espaces Next.js en temps réel.",
       "cta": "Voir l'étude de cas"
     },
     "8": {
@@ -433,9 +433,9 @@
     "23": {
       "title": "CallVerse - Quatre agents IA dans le centre de relation client d'une banque, testés dans un Digital Twin",
       "date": "24 novembre 2026",
-      "description": "Pour notre projet double diplôme entre 3iL et ESPRIT, notre équipe de cinq a construit CallVerse\u00a0: une plateforme de relation client bancaire où travaillent quatre agents IA, et où une politique d'effectifs apprise par renforcement est mesurée dans un jumeau numérique avant de toucher un vrai client.",
+      "description": "Pour notre projet double diplôme entre 3iL et ESPRIT, notre équipe de cinq a construit CallVerse\u00a0: une plateforme de relation client pour une banque de détail fictive, où travaillent quatre agents IA, et où une politique d'effectifs apprise par renforcement est mesurée dans un jumeau numérique avant de jamais toucher de vrais clients.",
       "homeTitle": "CallVerse, Digital Twin multi-agents",
-      "homeDescription": "Un Digital Twin multi-agents d'un centre de relation client bancaire\u00a0: conseiller LangGraph, politique d'effectifs PPO, juge qualité LLM et back-end Spring Boot."
+      "homeDescription": "Un jumeau numérique multi-agents d'un centre de relation client bancaire\u00a0: conseiller LangGraph, politique d'effectifs PPO, juge qualité LLM et back-end Spring Boot."
     },
     "22": {
       "title": "CampusFlow AI - Un assistant multi-agents qui cite ses sources",

@@ -28,7 +28,7 @@ const githubUrl = "https://github.com/Fedi-Hmida/callverse-backend";
 const agents = [
   {
     label: "Advisor",
-    text: "a LangGraph agent answers from the bank's procedures (RAG on pgvector) and six banking tools. The backend, never the agent, decides what is allowed.",
+    text: "a LangGraph agent answers with six tools, including the bank's procedures (RAG on pgvector). The backend, never the agent, decides what is allowed.",
   },
   {
     label: "Simulator",
@@ -51,7 +51,7 @@ const measured = [
   },
   {
     label: "Backend",
-    text: "Spring Boot in Clean Architecture, live STOMP events, 610 passing tests.",
+    text: "Spring Boot in Clean Architecture, live STOMP events, 610 tests, 0 failures (19 Oct 2026).",
   },
   {
     label: "Safety",
@@ -199,8 +199,9 @@ const NewsCallVerse = () => {
                 </p>
                 <p className="text-lg leading-relaxed text-[#e3f2fd]/90">
                   For our double-degree project between 3iL and ESPRIT, our team
-                  of five built CallVerse, a digital twin of a retail bank&apos;s
-                  customer relation centre, where four AI agents work. I owned
+                  of five built CallVerse, a digital twin of a fictional retail
+                  bank&apos;s customer relation centre, where four AI agents
+                  work. I owned
                   the backend and designed the AI service.
                 </p>
               </div>
@@ -265,8 +266,8 @@ const NewsCallVerse = () => {
                 </p>
                 <p>
                   Pour notre projet double diplôme entre 3iL et ESPRIT, notre
-                  équipe de cinq a construit CallVerse{"\u00a0:"} un Digital Twin du
-                  centre de relation client d&apos;une banque de détail, où
+                  équipe de cinq a construit CallVerse{"\u00a0:"} un jumeau numérique du
+                  centre de relation client d&apos;une banque de détail fictive, où
                   travaillent quatre agents IA. J&apos;avais la charge du
                   back-end et j&apos;ai conçu le service IA.
                 </p>
@@ -275,8 +276,8 @@ const NewsCallVerse = () => {
                   <ul className="space-y-2">
                     <li>
                       <span className="text-white font-medium">{"Conseiller\u00a0:"}</span>{" "}
-                      un agent LangGraph répond à partir des procédures de la
-                      banque (RAG sur pgvector) et de six outils bancaires.
+                      un agent LangGraph répond avec six outils, dont les
+                      procédures de la banque (RAG sur pgvector).
                       C&apos;est le back-end, jamais l&apos;agent, qui décide de
                       ce qui est permis.
                     </li>
@@ -312,8 +313,8 @@ const NewsCallVerse = () => {
                     </li>
                     <li>
                       <span className="text-white font-medium">{"Back-end\u00a0:"}</span>{" "}
-                      Spring Boot en Clean Architecture, événements en direct
-                      STOMP, 610 tests au vert.
+                      Spring Boot en Clean Architecture, événements STOMP
+                      en temps réel, 610 tests au vert (0 échec, 19 octobre 2026).
                     </li>
                     <li>
                       <span className="text-white font-medium">{"Sécurité\u00a0:"}</span>{" "}
@@ -325,7 +326,8 @@ const NewsCallVerse = () => {
                 </div>
                 <p>
                   <span className="text-white font-medium">{"Prochaine étape\u00a0:"}</span>{" "}
-                  calibrer le juge qualité face à des évaluateurs humains.
+                  calibrer le juge qualité par rapport à des
+                  évaluations humaines.
                 </p>
                 <p>
                   Merci à{" "}
