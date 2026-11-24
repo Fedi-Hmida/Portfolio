@@ -34,6 +34,8 @@ import newsBiatMasterclassEn from "./news/biatMasterclass.en";
 import newsBiatMasterclassFr from "./news/biatMasterclass.fr";
 import newsFirmaaLaunchEn from "./news/firmaaLaunch.en";
 import newsFirmaaLaunchFr from "./news/firmaaLaunch.fr";
+import newsIastamEn from "./news/iastam.en";
+import newsIastamFr from "./news/iastam.fr";
 import newsNvidiaAnomalyDetectionEn from "./news/nvidiaAnomalyDetection.en";
 import newsNvidiaAnomalyDetectionFr from "./news/nvidiaAnomalyDetection.fr";
 
@@ -53,6 +55,7 @@ const pairs = {
   "proLink/caseStudy": [proLinkCaseEn, proLinkCaseFr],
   "news/biatMasterclass": [newsBiatMasterclassEn, newsBiatMasterclassFr],
   "news/firmaaLaunch": [newsFirmaaLaunchEn, newsFirmaaLaunchFr],
+  "news/iastam": [newsIastamEn, newsIastamFr],
   "news/nvidiaAnomalyDetection": [newsNvidiaAnomalyDetectionEn, newsNvidiaAnomalyDetectionFr],
 };
 
