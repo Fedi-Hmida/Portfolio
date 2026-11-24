@@ -16,73 +16,14 @@ import flogo from "../../assets/images/flogo.png";
 import orchestratorImg from "../../assets/images/Portfolio/CampusFlow/n8n-orchestrator.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
+import en from "../../content/campusflow/news.en";
+import fr from "../../content/campusflow/news.fr";
+import { pickContent } from "../../i18n/localeContent";
 
 const ACCENT = "#FE3E57";
 const githubUrl = "https://github.com/Fedi-Hmida/CampusFlow_AI";
-
-/* Mirrors the LinkedIn post of November 19, 2026. Numbers keep the
-   conditions they carry in the CampusFlow AI repository. */
-const howItWorks = [
-  {
-    label: "Routing",
-    text: "a local router sends each question to vision, regulations, calendar or admin, or refuses it as out of scope.",
-  },
-  {
-    label: "Grounding",
-    text: "RAG over 13 PDFs (3 official, 10 fictitious), chunked by article, BGE-M3 + Qdrant, with citations. Exam dates and contacts come from exact lookups, never from the LLM.",
-  },
-  {
-    label: "Self-correction",
-    text: "code checks every citation, date and e-mail. On failure: one revision, then \"not found\" + the right office.",
-  },
-  {
-    label: "Hybrid models",
-    text: "local Qwen3 (Ollama) + Gemini Flash-Lite, in Docker. Regulation answers: 116\u2011148\u00a0s fully local, a p90 of 18.7\u00a0s in hybrid (end to end, CPU laptop).",
-  },
-];
-
-const howWeMeasured = [
-  {
-    label: "Retrieval",
-    text: "Hit@5 1.00, Recall@5 0.93 (T1, 22 answerable questions).",
-  },
-  {
-    label: "End-to-end",
-    text: "53 team-written questions on the real bot, one run per set, 100% schema-valid, reviewed by hand.",
-  },
-  {
-    label: "Robustness",
-    text: "6/6 adversarial cases, including a prompt injection hidden in a photo.",
-  },
-  {
-    label: "Known gap",
-    text: "multi-step procedures, 3/10.",
-    limit: true,
-  },
-];
-
-const thanks = [
-  {
-    name: "Douaa Omrani",
-    role: "RAG, evaluation",
-    detail:
-      "Thank you for the RAG strategy and for an end-to-end harness that told us honestly where the bot stood.",
-  },
-  {
-    name: "Ines Bendhifallah",
-    role: "prompts, vision",
-    detail:
-      "Thank you for the Regulations and Vision prompts, each version judged against a measurement rather than an impression.",
-  },
-  {
-    name: "Ghassen Fodha",
-    role: "supervisor",
-    detail: "Thank you for the guidance.",
-  },
-];
 
 const ArrowList = ({ items }) => (
   <ul className="space-y-4">
@@ -101,8 +42,7 @@ const ArrowList = ({ items }) => (
           aria-hidden="true"
         />
         <span>
-          <span className="font-bold text-white">{item.label}:</span>{" "}
-          {item.text}
+          <span className="font-bold text-white">{item.label}</span> {item.text}
         </span>
       </li>
     ))}
@@ -110,6 +50,9 @@ const ArrowList = ({ items }) => (
 );
 
 const NewsCampusFlow = () => {
+  // Long-form copy lives in src/content/campusflow/news.{en,fr}.js; /fr shows the French post.
+  const c = pickContent({ en, fr });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
@@ -130,9 +73,8 @@ const NewsCampusFlow = () => {
 
       <Navbar />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
-      </div>
+      {/* Same top spacing as the sibling news pages. */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20" />
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -145,16 +87,10 @@ const NewsCampusFlow = () => {
               to="/news"
               className="text-[#81d4fa] hover:text-white transition-colors flex items-center gap-2"
             >
-              <FaArrowLeft /> Back to News
+              <FaArrowLeft /> {c.back}
             </Link>
           </div>
-          <img
-            src={flogo}
-            alt="Fedi Hmida logo"
-            loading="lazy"
-            decoding="async"
-            className="h-8 w-auto opacity-80"
-          />
+          <img src={flogo} alt={c.logoAlt} loading="lazy" decoding="async" className="h-8 w-auto opacity-80" />
         </motion.div>
 
         <motion.div
@@ -182,24 +118,16 @@ const NewsCampusFlow = () => {
                     backgroundColor: "rgba(254, 62, 87, 0.18)",
                   }}
                 >
-                  Project
+                  {c.badge}
                 </span>
                 <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6">
-                  CampusFlow AI
+                  {c.title}
                   <span className="block" style={{ color: ACCENT }}>
-                    A multi-agent assistant that cites its sources
+                    {c.accent}
                   </span>
                 </h1>
-                <p className="text-xl md:text-2xl font-bold italic text-white mb-5">
-                  An assistant that invents a date does more harm than one that
-                  stays silent.
-                </p>
-                <p className="text-lg leading-relaxed text-[#e3f2fd]/90">
-                  With my team, we built CampusFlow AI, a multi-agent Telegram
-                  assistant for ESPRIT students, for our Advanced Deep Learning
-                  course. I led the architecture and integration. Pictured: its
-                  n8n orchestrator.
-                </p>
+                <p className="text-xl md:text-2xl font-bold italic text-white mb-5">{c.hook}</p>
+                <p className="text-lg leading-relaxed text-[#e3f2fd]/90">{c.intro}</p>
               </div>
             </motion.div>
 
@@ -208,14 +136,14 @@ const NewsCampusFlow = () => {
               className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.1)] bg-[rgba(26,35,126,0.3)] backdrop-blur-[12px]"
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaSitemap style={{ color: ACCENT }} /> How It Works
+                <FaSitemap style={{ color: ACCENT }} /> {c.howTitle}
               </h3>
-              <ArrowList items={howItWorks} />
+              <ArrowList items={c.how} />
 
               <h3 className="text-2xl font-bold text-white mt-10 mb-6 flex items-center gap-2">
-                <FaFlask style={{ color: ACCENT }} /> How We Measured It
+                <FaFlask style={{ color: ACCENT }} /> {c.measuredTitle}
               </h3>
-              <ArrowList items={howWeMeasured} />
+              <ArrowList items={c.measured} />
             </motion.div>
 
             <motion.div
@@ -223,120 +151,18 @@ const NewsCampusFlow = () => {
               className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.1)] bg-[rgba(26,35,126,0.3)] backdrop-blur-[12px]"
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaHeart style={{ color: ACCENT }} /> Thank You
+                <FaHeart style={{ color: ACCENT }} /> {c.thanksTitle}
               </h3>
               <div className="space-y-4">
-                {thanks.map((person) => (
-                  <div
-                    key={person.name}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-5"
-                  >
+                {c.thanks.map((person) => (
+                  <div key={person.name} className="rounded-2xl border border-white/10 bg-white/5 p-5">
                     <p className="text-white font-semibold mb-1">
                       {person.name}
-                      <span className="font-normal text-[#e3f2fd]/60">
-                        {" "}
-                        - {person.role}
-                      </span>
+                      <span className="font-normal text-[#e3f2fd]/60"> - {person.role}</span>
                     </p>
-                    <p className="text-sm text-[#e3f2fd]/80 leading-relaxed">
-                      {person.detail}
-                    </p>
+                    <p className="text-sm text-[#e3f2fd]/80 leading-relaxed">{person.detail}</p>
                   </div>
                 ))}
-              </div>
-            </motion.div>
-
-            {/* Published bilingually; the French is written, not translated. */}
-            <motion.div
-              variants={fadeInUp}
-              lang="fr"
-              className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.1)] bg-[rgba(26,35,126,0.3)] backdrop-blur-[12px]"
-            >
-              <h3 className="text-xl font-bold text-white mb-5">
-                Version française
-              </h3>
-              <div className="space-y-4 text-[#e3f2fd]/85 leading-relaxed">
-                <p className="italic text-white font-semibold">
-                  Un assistant qui invente une date fait plus de mal qu&apos;un
-                  assistant qui se tait.
-                </p>
-                <p>
-                  Avec mon équipe, nous avons construit CampusFlow AI, un
-                  assistant Telegram multi-agents pour les étudiants
-                  d&apos;ESPRIT, pour le cours d&apos;Advanced Deep Learning.
-                  J&apos;ai porté l&apos;architecture et l&apos;intégration. En
-                  image : son orchestrateur n8n.
-                </p>
-                <div>
-                  <p className="text-white font-medium mb-2">Le fonctionnement</p>
-                  <ul className="space-y-2">
-                    <li>
-                      <span className="text-white font-medium">{"Routage\u00a0:"}</span>{" "}
-                      un routeur local oriente chaque question vers la vision,
-                      le règlement, le calendrier ou l&apos;administration, ou
-                      la refuse comme hors périmètre.
-                    </li>
-                    <li>
-                      <span className="text-white font-medium">{"Sources\u00a0:"}</span>{" "}
-                      RAG sur 13 PDF (3 officiels, 10 fictifs), découpés par
-                      article, BGE-M3 + Qdrant, avec citations. Dates
-                      d&apos;examen et contacts : recherche exacte, jamais le
-                      LLM.
-                    </li>
-                    <li>
-                      <span className="text-white font-medium">
-                        {"Auto-correction\u00a0:"}
-                      </span>{" "}
-                      le code vérifie chaque citation, date et e-mail. En cas
-                      d&apos;échec : une révision, puis{" "}
-                      {"«\u00a0non trouvé\u00a0»"} + le bon service.
-                    </li>
-                    <li>
-                      <span className="text-white font-medium">{"Hybride\u00a0:"}</span>{" "}
-                      Qwen3 local (Ollama) + Gemini Flash-Lite, sous Docker.
-                      Réponses réglementaires : {"116\u2011148\u00a0s"} en tout
-                      local, un p90 de {"18,7\u00a0s"} en hybride (de bout en
-                      bout, sur un portable sans GPU).
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="text-white font-medium mb-2">Les chiffres</p>
-                  <ul className="space-y-2">
-                    <li>
-                      <span className="text-white font-medium">{"Recherche\u00a0:"}</span>{" "}
-                      Hit@5 1,00, Recall@5 0,93 (T1, 22 questions répondables).
-                    </li>
-                    <li>
-                      <span className="text-white font-medium">
-                        {"Bout en bout\u00a0:"}
-                      </span>{" "}
-                      53 questions rédigées par l&apos;équipe, posées au vrai
-                      bot, une exécution par jeu, {"100\u00a0%"} conformes au schéma
-                      JSON, relues à la main.
-                    </li>
-                    <li>
-                      <span className="text-white font-medium">{"Robustesse\u00a0:"}</span>{" "}
-                      6/6 cas adverses, dont une injection de prompt cachée dans
-                      une photo.
-                    </li>
-                    <li>
-                      <span className="text-white font-medium">{"Limite\u00a0:"}</span>{" "}
-                      les démarches en plusieurs étapes, 3/10.
-                    </li>
-                  </ul>
-                </div>
-                <p>
-                  Merci à{" "}
-                  <span className="text-white font-medium">Douaa Omrani</span>{" "}
-                  (RAG, évaluation),{" "}
-                  <span className="text-white font-medium">
-                    Ines Bendhifallah
-                  </span>{" "}
-                  (prompts, vision) et à{" "}
-                  <span className="text-white font-medium">Ghassen Fodha</span>{" "}
-                  pour l&apos;encadrement.
-                </p>
               </div>
             </motion.div>
           </div>
@@ -349,7 +175,7 @@ const NewsCampusFlow = () => {
               <div className="relative overflow-hidden rounded-[20px] group">
                 <ExpandableImage
                   src={orchestratorImg}
-                  alt="n8n orchestrator of CampusFlow AI: router, out-of-scope refusal, vision, regulations RAG with checks and one revision, calendar lookup, admin lookups and draft, output"
+                  alt={c.orchestratorAlt}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
@@ -362,43 +188,15 @@ const NewsCampusFlow = () => {
               className="p-6 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.6)] backdrop-blur-[16px]"
             >
               <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaUserTie className="text-[#81d4fa]" /> Quick Info
+                <FaUserTie className="text-[#81d4fa]" /> {c.quickInfo.title}
               </h3>
               <ul className="space-y-4">
-                <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Project</span>
-                  <span className="text-white font-medium text-right">
-                    CampusFlow AI
-                  </span>
-                </li>
-                <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Course</span>
-                  <span className="text-white font-medium text-right">
-                    Advanced Deep Learning, ESPRIT (5DS9)
-                  </span>
-                </li>
-                <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Team</span>
-                  <span className="text-white font-medium text-right">
-                    3 students
-                  </span>
-                </li>
-                <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Built</span>
-                  <span className="text-white font-medium text-right">
-                    24 Oct - 1 Nov 2026
-                  </span>
-                </li>
-                <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Published</span>
-                  <span className="text-white font-medium text-right">
-                    November 19, 2026 (LinkedIn)
-                  </span>
-                </li>
-                <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Author</span>
-                  <span className="text-white font-medium">Fedi Hmida</span>
-                </li>
+                {c.quickInfo.rows.map((row) => (
+                  <li key={row.label} className="flex justify-between items-center gap-4 text-sm">
+                    <span className="text-[#81d4fa]">{row.label}</span>
+                    <span className="text-white font-medium text-right">{row.value}</span>
+                  </li>
+                ))}
               </ul>
               <div className="mt-8 pt-6 border-t border-[rgba(79,195,247,0.2)] space-y-3">
                 <Link
@@ -406,7 +204,7 @@ const NewsCampusFlow = () => {
                   className="block w-full text-center rounded-full px-5 py-3 text-sm font-bold transition hover:opacity-90"
                   style={{ backgroundColor: ACCENT, color: "#ffffff" }}
                 >
-                  View the full case study
+                  {c.caseStudyCta}
                 </Link>
                 <a
                   href={githubUrl}
@@ -415,21 +213,19 @@ const NewsCampusFlow = () => {
                   className="flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-bold text-white transition hover:border-[#FE3E57]/60 hover:bg-[#FE3E57]/10"
                 >
                   <FaGithub aria-hidden="true" />
-                  View on GitHub
+                  {c.githubCta}
                   <FaExternalLinkAlt className="text-xs" aria-hidden="true" />
                 </a>
               </div>
               <div className="mt-6 pt-6 border-t border-[rgba(79,195,247,0.2)] text-center">
-                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">
-                  Connect
-                </p>
+                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">{c.connect}</p>
                 <div className="flex justify-center gap-4">
                   <a
                     href="https://www.linkedin.com/in/fedi-hmida/"
                     target="_blank"
                     rel="noreferrer"
                     className="text-white hover:text-[#0077b5] transition-colors text-2xl"
-                    aria-label="Open Fedi Hmida LinkedIn profile"
+                    aria-label={c.linkedinAria}
                   >
                     <FaLinkedin />
                   </a>
