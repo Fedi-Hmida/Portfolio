@@ -8,6 +8,8 @@ import callVerseCaseEn from "./callverse/caseStudy.en";
 import callVerseCaseFr from "./callverse/caseStudy.fr";
 import callVerseNewsEn from "./callverse/news.en";
 import callVerseNewsFr from "./callverse/news.fr";
+import campusFlowCaseEn from "./campusflow/caseStudy.en";
+import campusFlowCaseFr from "./campusflow/caseStudy.fr";
 import campusFlowNewsEn from "./campusflow/news.en";
 import campusFlowNewsFr from "./campusflow/news.fr";
 import bnsNewsEn from "./bns/news.en";
@@ -18,6 +20,7 @@ import doubleDegreeNewsFr from "./doubleDegree/news.fr";
 const pairs = {
   "callverse/caseStudy": [callVerseCaseEn, callVerseCaseFr],
   "callverse/news": [callVerseNewsEn, callVerseNewsFr],
+  "campusflow/caseStudy": [campusFlowCaseEn, campusFlowCaseFr],
   "campusflow/news": [campusFlowNewsEn, campusFlowNewsFr],
   "bns/news": [bnsNewsEn, bnsNewsFr],
   "doubleDegree/news": [doubleDegreeNewsEn, doubleDegreeNewsFr],
