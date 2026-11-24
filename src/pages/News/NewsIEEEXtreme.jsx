@@ -10,9 +10,15 @@ import certifImg from "../../assets/images/certif.png";
 import flogo from "../../assets/images/flogo.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
+import en from "../../content/news/ieeeXtreme.en";
+import fr from "../../content/news/ieeeXtreme.fr";
+import { pickContent } from "../../i18n/localeContent";
+
+// Long-form copy lives in src/content/news/ieeeXtreme.{en,fr}.js. The locale comes from the
+// URL and switching language reloads the page, so picking once at module level is safe.
+const c = pickContent({ en, fr });
 
 const NewsIEEEXtreme = () => {
   // Animation Variants
@@ -43,7 +49,7 @@ const NewsIEEEXtreme = () => {
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
+        
       </div>
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
@@ -58,12 +64,11 @@ const NewsIEEEXtreme = () => {
               to="/news"
               className="text-[#81d4fa] hover:text-white transition-colors flex items-center gap-2"
             >
-              <FaArrowLeft /> Back to News
-            </Link>
+              <FaArrowLeft />{" "}{c.s001}</Link>
           </div>
           <img
             src={flogo}
-            alt="Fedi Hmida logo"
+            alt={c.s002}
             loading="lazy"
             decoding="async"
             className="h-8 w-auto opacity-80"
@@ -86,57 +91,32 @@ const NewsIEEEXtreme = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#05608a] rounded-full filter blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
 
               <div className="relative z-10">
-                <span className="inline-block py-1 px-3 rounded-full bg-[#05608a]/30 border border-[#81d4fa]/30 text-[#81d4fa] text-xs font-bold uppercase tracking-widest mb-4">
-                  Competition
-                </span>
-                <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#81d4fa]">
-                  IEEEXtreme 18.0 Journey
-                </h1>
-                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
-                  IEEEXtreme is one of the world's largest competitive
-                  programming competitions, testing participants' coding skills,
-                  teamwork, and problem-solving abilities in an intense 24-hour
-                  marathon.
-                </p>
+                <span className="inline-block py-1 px-3 rounded-full bg-[#05608a]/30 border border-[#81d4fa]/30 text-[#81d4fa] text-xs font-bold uppercase tracking-widest mb-4">{c.s003}</span>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#81d4fa]">{c.s004}</h1>
+                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">{c.s005}</p>
               </div>
             </motion.div>
 
             {/* Content Body */}
             <motion.div variants={fadeInUp}>
               <div className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.4)] backdrop-blur-[12px] mb-8">
-                <h2 className="text-2xl font-bold text-white mb-6 pl-4 border-l-4 border-[#05608a]">
-                  The Challenge
-                </h2>
-                <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">
-                  Participating in IEEEXtreme 18.0 was an exhilarating
-                  experience. For 24 hours straight, teams from across the globe
-                  pushed their limits to solve complex algorithmic problems. It
-                  wasn't just about coding; it was about endurance, strategy,
-                  and collaboration under pressure.
-                </p>
+                <h2 className="text-2xl font-bold text-white mb-6 pl-4 border-l-4 border-[#05608a]">{c.s006}</h2>
+                <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">{c.s007}</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                   <div className="p-6 rounded-2xl bg-[#1a237e]/40 border border-[#81d4fa]/10 hover:border-[#81d4fa]/30 transition-all">
                     <div className="w-12 h-12 rounded-full bg-[#05608a]/20 flex items-center justify-center mb-4 text-[#81d4fa]">
                       <FaClock className="text-2xl" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
-                      24-Hour Marathon
-                    </h3>
-                    <p className="text-sm text-[#e3f2fd]/70">
-                      Non-stop problem solving against the clock.
-                    </p>
+                    <h3 className="text-lg font-semibold text-white mb-2">{c.s008}</h3>
+                    <p className="text-sm text-[#e3f2fd]/70">{c.s009}</p>
                   </div>
                   <div className="p-6 rounded-2xl bg-[#1a237e]/40 border border-[#81d4fa]/10 hover:border-[#81d4fa]/30 transition-all">
                     <div className="w-12 h-12 rounded-full bg-[#05608a]/20 flex items-center justify-center mb-4 text-[#81d4fa]">
                       <FaUsers className="text-2xl" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
-                      Team Synergy
-                    </h3>
-                    <p className="text-sm text-[#e3f2fd]/70">
-                      Collaborating effectively to tackle hard problems.
-                    </p>
+                    <h3 className="text-lg font-semibold text-white mb-2">{c.s010}</h3>
+                    <p className="text-sm text-[#e3f2fd]/70">{c.s011}</p>
                   </div>
                 </div>
               </div>
@@ -145,15 +125,13 @@ const NewsIEEEXtreme = () => {
               <div className="rounded-[24px] overflow-hidden border border-[rgba(79,195,247,0.2)] shadow-lg">
                 <ExpandableImage
                   src={certifImg}
-                  alt="IEEEXtreme Certificate"
+                  alt={c.s012}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                 />
                 <div className="p-4 bg-[rgba(26,35,126,0.8)] backdrop-blur-md">
-                  <p className="text-center text-sm text-[#81d4fa]">
-                    Official Certificate of Participation
-                  </p>
+                  <p className="text-center text-sm text-[#81d4fa]">{c.s013}</p>
                 </div>
               </div>
             </motion.div>
@@ -166,45 +144,26 @@ const NewsIEEEXtreme = () => {
               className="sticky top-32 p-8 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.8)] backdrop-blur-[20px] shadow-xl"
             >
               <h3 className="text-xl font-bold text-white mb-6 border-l-4 border-[#05608a] pl-4 flex items-center gap-3">
-                <FaTrophy className="text-[#ffd700]" /> Event Details
-              </h3>
+                <FaTrophy className="text-[#ffd700]" />{" "}{c.s014}</h3>
               <ul className="space-y-6">
                 <li className="flex flex-col border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">
-                    Event
-                  </span>
-                  <span className="text-white font-medium">
-                    IEEEXtreme 18.0
-                  </span>
+                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">{c.s015}</span>
+                  <span className="text-white font-medium">{c.s016}</span>
                 </li>
                 <li className="flex flex-col border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">
-                    Date
-                  </span>
-                  <span className="text-white font-medium">Mars 15, 2025</span>
+                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">{c.s017}</span>
+                  <span className="text-white font-medium">{c.s018}</span>
                 </li>
                 <li className="flex flex-col border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">
-                    Category
-                  </span>
-                  <span className="text-white font-medium">
-                    Competitive Programming
-                  </span>
+                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">{c.s019}</span>
+                  <span className="text-white font-medium">{c.s020}</span>
                 </li>
                 <li className="flex flex-col border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">
-                    Skills Used
-                  </span>
+                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">{c.s021}</span>
                   <div className="flex flex-wrap gap-2 mt-2">
-                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd] border border-[#05608a]/50">
-                      Algorithms
-                    </span>
-                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd] border border-[#05608a]/50">
-                      C++
-                    </span>
-                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd] border border-[#05608a]/50">
-                      Data Structures
-                    </span>
+                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd] border border-[#05608a]/50">{c.s022}</span>
+                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd] border border-[#05608a]/50">{c.s023}</span>
+                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd] border border-[#05608a]/50">{c.s024}</span>
                   </div>
                 </li>
               </ul>
