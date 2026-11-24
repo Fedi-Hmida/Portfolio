@@ -38,6 +38,8 @@ import newsEnergyUtopiaEn from "./news/energyUtopia.en";
 import newsEnergyUtopiaFr from "./news/energyUtopia.fr";
 import newsFirmaaLaunchEn from "./news/firmaaLaunch.en";
 import newsFirmaaLaunchFr from "./news/firmaaLaunch.fr";
+import newsGraduationEn from "./news/graduation.en";
+import newsGraduationFr from "./news/graduation.fr";
 import newsIastamEn from "./news/iastam.en";
 import newsIastamFr from "./news/iastam.fr";
 import newsIesCongressEn from "./news/iesCongress.en";
@@ -67,6 +69,7 @@ const pairs = {
   "news/biatMasterclass": [newsBiatMasterclassEn, newsBiatMasterclassFr],
   "news/energyUtopia": [newsEnergyUtopiaEn, newsEnergyUtopiaFr],
   "news/firmaaLaunch": [newsFirmaaLaunchEn, newsFirmaaLaunchFr],
+  "news/graduation": [newsGraduationEn, newsGraduationFr],
   "news/iastam": [newsIastamEn, newsIastamFr],
   "news/iesCongress": [newsIesCongressEn, newsIesCongressFr],
   "news/maraTechHackathon": [newsMaraTechHackathonEn, newsMaraTechHackathonFr],

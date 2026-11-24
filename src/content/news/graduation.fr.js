@@ -1,0 +1,30 @@
+// NewsGraduation.jsx - français. Mêmes clés que graduation.en.js.
+const content = {
+  s001: "Retour aux actualités",
+  s002: "Logo de Fedi Hmida",
+  s003: "Étape franchie",
+  s004: "Une belle nouvelle\u00a0: le jour du diplôme",
+  s005: "J'ai le plaisir d'annoncer que j'ai obtenu ma licence en génie informatique, spécialité Internet des objets (IoT).",
+  s006: "Gratitude et remerciements",
+  s007: "Ce parcours a été extrêmement enrichissant, plein d'apprentissages et de progrès. Je tiens à exprimer ma plus profonde gratitude à notre professeur exceptionnel,",
+  s008: "M. Hamdi Aloulou",
+  s009: ", pour ses conseils précieux et son soutien tout au long de ce parcours. Votre accompagnement a joué un rôle essentiel dans ma réussite.",
+  s010: "Un merci tout particulier à mon binôme,",
+  s011: "Khalil Ben Khemis",
+  s012: ". Travailler avec toi a été une expérience formidable, et je te suis reconnaissant pour ta collaboration et ton engagement.",
+  s013: "J'ai hâte de voir où ce nouveau chapitre me mènera, et je suis prêt pour les défis et les opportunités à venir\u00a0!",
+  s014: "Remise des diplômes",
+  s015: "Célébration",
+  s016: "Le moment du diplôme",
+  s017: "Souvenirs",
+  s018: "Détails de la formation",
+  s019: "Diplôme",
+  s020: "Licence",
+  s021: "Domaine",
+  s022: "Génie informatique",
+  s023: "Spécialité",
+  s024: "IoT",
+  s025: "Encadrant",
+};
+
+export default content;
