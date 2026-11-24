@@ -21,7 +21,6 @@ import { Link } from "react-router-dom";
 
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import firmaaDemoVideo from "../../assets/videos/demo_firmaa.mp4";
 import firmaaLogo from "../../assets/images/Portfolio/Firmaa/logo_firmaa.png";
@@ -31,254 +30,261 @@ import firmaaAgentPipeline from "../../assets/images/Portfolio/Firmaa/highlights
 import firmaaDashboard from "../../assets/images/Portfolio/Firmaa/highlights/dashboard.png";
 import firmaaLandingPage from "../../assets/images/Portfolio/Firmaa/highlights/landing_page.png";
 import firmaaMobileModules from "../../assets/images/Portfolio/Firmaa/highlights/mobile_modules.png";
+import en from "../../content/firmaa/caseStudy.en";
+import fr from "../../content/firmaa/caseStudy.fr";
+import { pickContent } from "../../i18n/localeContent";
+
+// Long-form copy lives in src/content/firmaa/caseStudy.{en,fr}.js. The locale comes from the
+// URL and switching language reloads the page, so picking once at module level is safe.
+const c = pickContent({ en, fr });
 
 const metricCards = [
-  { label: "Timeline", value: "Feb - May 2026", detail: "Integrated project at ESPRIT" },
-  { label: "Role", value: "Project Lead", detail: "AI agent direction and platform coherence" },
-  { label: "Focus", value: "Irrigation Agent", detail: "LangGraph workflow with human approval" },
-  { label: "Methodology", value: "TDSP", detail: "Structured delivery for the smart agriculture platform" },
+  { label: c.s001, value: c.s002, detail: c.s003 },
+  { label: c.s004, value: c.s005, detail: c.s006 },
+  { label: c.s007, value: c.s008, detail: c.s009 },
+  { label: c.s010, value: c.s011, detail: c.s012 },
 ];
 
 const stack = [
-  "LangGraph",
-  "FastAPI",
-  "MongoDB",
-  "Next.js",
-  "Three.js",
-  "React",
-  "Flutter",
-  "IoT / sensor data",
-  "Human-in-the-loop",
+  c.s013,
+  c.s014,
+  c.s015,
+  c.s016,
+  c.s017,
+  c.s018,
+  c.s019,
+  c.s020,
+  c.s021,
 ];
 
 const platformClusters = [
   {
-    title: "Farm Monitoring",
+    title: c.s022,
     icon: <FaSeedling />,
     items: [
-      "Web dashboard and Flutter mobile access for farm monitoring",
-      "Zone management and 3D farm simulation",
+      c.s023,
+      c.s024,
     ],
   },
   {
-    title: "AI Decision Support",
+    title: c.s025,
     icon: <FaBrain />,
     items: [
-      "AI irrigation agent based on moisture, weather, crop needs, and sensor data",
+      c.s026,
     ],
   },
   {
-    title: "Vision & Detection",
+    title: c.s027,
     icon: <FaCheckCircle />,
     items: [
-      "Crop disease detection from plant images",
-      "Chicken disease detection using droppings images",
-      "Livestock health prediction based on symptoms",
-      "Insect classification using sound analysis",
+      c.s028,
+      c.s029,
+      c.s030,
+      c.s031,
     ],
   },
   {
-    title: "Mobile / Offline AI",
+    title: c.s032,
     icon: <FaMobileAlt />,
     items: [
-      "Offline AI models available directly in the Flutter mobile app",
+      c.s033,
     ],
   },
   {
-    title: "IoT & Real-Time Data",
+    title: c.s034,
     icon: <FaWater />,
     items: [
-      "IoT integration with sensors and real-time camera detection",
+      c.s035,
     ],
   },
 ];
 
 const roleCards = [
   {
-    label: "Technical Vision",
+    label: c.s036,
     icon: <FaProjectDiagram />,
-    responsibility: "Coordinated the technical vision.",
-    impact: "Helped unify Firmaa into one coherent smart agriculture platform.",
-    area: "Platform leadership",
+    responsibility: c.s037,
+    impact: c.s038,
+    area: c.s039,
   },
   {
-    label: "Agent Workflow Direction",
+    label: c.s040,
     icon: <FaBrain />,
-    responsibility: "Led the Autonomous Irrigation Agent direction.",
-    impact: "Shaped the LangGraph decision workflow around farm context and approval.",
-    area: "LangGraph / agentic AI",
+    responsibility: c.s041,
+    impact: c.s042,
+    area: c.s043,
   },
   {
-    label: "Decision Logic",
+    label: c.s044,
     icon: <FaWater />,
-    responsibility: "Designed the irrigation agent flow.",
-    impact: "Connected soil moisture, weather forecasts, crop needs, sensor data, safety checks, and human approval logic.",
-    area: "Irrigation intelligence",
+    responsibility: c.s045,
+    impact: c.s046,
+    area: c.s047,
   },
   {
-    label: "Dashboard Experience",
+    label: c.s048,
     icon: <FaCube />,
-    responsibility: "Contributed to the dashboard experience.",
-    impact: "Improved zone management, AI command center, approvals flow, and farm visibility.",
-    area: "Next.js / 3D monitoring",
+    responsibility: c.s049,
+    impact: c.s050,
+    area: c.s051,
   },
   {
-    label: "Product Identity",
+    label: c.s052,
     icon: <FaSeedling />,
-    responsibility: "Helped shape the product identity.",
-    impact: "Made the platform feel cohesive across smart farming, mobile access, and AI recommendations.",
-    area: "Product thinking",
+    responsibility: c.s053,
+    impact: c.s054,
+    area: c.s055,
   },
 ];
 
 const workflow = [
   {
-    title: "Inputs",
-    text: "Soil moisture, weather forecasts, crop needs, and sensor data.",
+    title: c.s056,
+    text: c.s057,
   },
   {
-    title: "LangGraph Agent",
-    text: "LLM-based reasoning with tool-assisted decision support.",
+    title: c.s058,
+    text: c.s059,
   },
   {
-    title: "Validation / Safety",
-    text: "Safety checks, validation layers, and fallback rules before recommending action.",
+    title: c.s060,
+    text: c.s061,
   },
   {
-    title: "Recommendation",
-    text: "Explainable irrigation decision with water volume estimation.",
+    title: c.s062,
+    text: c.s063,
   },
   {
-    title: "Human Approval",
-    text: "Approval queue keeps the farmer in control before sensitive actions.",
+    title: c.s064,
+    text: c.s065,
   },
   {
-    title: "Action / Monitoring",
-    text: "Zone-based monitoring keeps the farm state visible after decisions.",
+    title: c.s066,
+    text: c.s067,
   },
 ];
 
 const architecture = [
   {
     icon: <FaWater />,
-    title: "IoT / Sensor Inputs",
-    text: "Soil moisture, weather forecasts, crop needs, sensor data, and real-time camera detection provide farm context.",
-    layer: "Input layer",
+    title: c.s068,
+    text: c.s069,
+    layer: c.s070,
   },
   {
     icon: <FaProjectDiagram />,
-    title: "Next.js Dashboard",
-    text: "Analytics dashboard, AI command center, approvals queue, zone management, profile access, and farm visibility.",
-    layer: "Interface layer",
+    title: c.s071,
+    text: c.s072,
+    layer: c.s073,
   },
   {
     icon: <FaCube />,
-    title: "Three.js Digital Twin",
-    text: "3D farm view designed to make zones, farm state, and monitoring context easier to understand.",
-    layer: "Visualization layer",
+    title: c.s074,
+    text: c.s075,
+    layer: c.s076,
   },
   {
     icon: <FaMobileAlt />,
-    title: "Flutter Mobile / Offline AI",
-    text: "Flutter mobile experience supporting field access and offline inference paths where connectivity can be limited.",
-    layer: "Field access layer",
+    title: c.s077,
+    text: c.s078,
+    layer: c.s079,
   },
   {
     icon: <FaServer />,
-    title: "FastAPI Backend",
-    text: "Backend layer connecting dashboard flows, agent orchestration, sensor data, and AI modules.",
-    layer: "API layer",
+    title: c.s080,
+    text: c.s081,
+    layer: c.s082,
   },
   {
     icon: <FaDatabase />,
-    title: "MongoDB Data Layer",
-    text: "Persistence layer for zones, monitoring records, approvals, users, and AI outputs.",
-    layer: "Data layer",
+    title: c.s083,
+    text: c.s084,
+    layer: c.s085,
   },
   {
     icon: <FaBrain />,
-    title: "LangGraph / AI Agent Layer",
-    text: "LangGraph irrigation workflow with LLM reasoning, tool calls, fallbacks, and explainability-oriented recommendations.",
-    layer: "Reasoning layer",
+    title: c.s086,
+    text: c.s087,
+    layer: c.s088,
   },
   {
     icon: <FaShieldAlt />,
-    title: "Human Approval Layer",
-    text: "Approval queue keeps the farmer in control before sensitive actions and connects recommendations to review.",
-    layer: "Trust layer",
+    title: c.s089,
+    text: c.s090,
+    layer: c.s091,
   },
 ];
 
 const productHighlights = [
-  "Autonomous irrigation agent with crop, soil, weather, and sensor context.",
-  "Human-in-the-loop approvals for safer AI recommendations.",
-  "3D digital-twin farm view for zone-based monitoring.",
-  "Flutter mobile app for field access, mobile AI modules, and IoT-aware farm visibility.",
+  c.s092,
+  c.s093,
+  c.s094,
+  c.s095,
 ];
 
 const visualHighlights = [
-  { title: "Landing Experience", image: firmaaLandingPage },
-  { title: "Analytics Dashboard", image: firmaaDashboard },
-  { title: "Irrigation Agent Pipeline", image: firmaaAgentPipeline },
-  { title: "Mobile AI Modules", image: firmaaMobileModules },
+  { title: c.s096, image: firmaaLandingPage },
+  { title: c.s097, image: firmaaDashboard },
+  { title: c.s098, image: firmaaAgentPipeline },
+  { title: c.s099, image: firmaaMobileModules },
 ];
 
 const tradeoffs = [
-  "Keeping autonomous irrigation useful while preserving farmer approval for sensitive actions.",
-  "Unifying web, mobile, IoT, AI modules, and 3D monitoring into one coherent platform story.",
-  "Making recommendations explainable enough to support practical farm decisions.",
+  c.s100,
+  c.s101,
+  c.s102,
 ];
 
 const learnings = [
   {
-    title: "Agent Workflow Design",
-    text: "Agentic AI needs validation layers, fallback rules, and human approval before it feels responsible in real workflows.",
-    area: "LangGraph / responsible AI",
+    title: c.s103,
+    text: c.s104,
+    area: c.s105,
   },
   {
-    title: "3D Dashboard Thinking",
-    text: "A 3D digital twin is strongest when it clarifies zone context instead of acting as decoration.",
-    area: "Three.js farm view",
+    title: c.s106,
+    text: c.s107,
+    area: c.s108,
   },
   {
-    title: "Full-Stack Integration",
-    text: "Product identity, dashboard UX, mobile access, and backend architecture all have to move together in platform projects.",
-    area: "Next.js / FastAPI / Flutter",
+    title: c.s109,
+    text: c.s110,
+    area: c.s111,
   },
   {
-    title: "Structured Delivery",
-    text: "TDSP helped organize the technical work around data, model behavior, implementation, and review.",
-    area: "Methodology",
+    title: c.s112,
+    text: c.s113,
+    area: c.s010,
   },
 ];
 
 const trustCards = [
   {
-    title: "Safety",
+    title: c.s114,
     icon: <FaShieldAlt />,
-    summary: "Sensitive irrigation decisions stay controlled instead of fully automatic.",
-    checks: ["Safety checks", "Human approval before sensitive actions"],
+    summary: c.s115,
+    checks: [c.s116, c.s117],
   },
   {
-    title: "Validation",
+    title: c.s118,
     icon: <FaCheckCircle />,
-    summary: "The agent recommendation is filtered before it reaches the farmer.",
-    checks: ["Validation layers", "Fallback rules", "Tool-assisted decision support"],
+    summary: c.s119,
+    checks: [c.s120, c.s121, c.s122],
   },
   {
-    title: "Explainability",
+    title: c.s123,
     icon: <FaBrain />,
-    summary: "Recommendations are designed to be understandable and reviewable.",
-    checks: ["LLM reasoning", "Explainable recommendations", "Water volume estimation"],
+    summary: c.s124,
+    checks: [c.s125, c.s126, c.s127],
   },
 ];
 
 const projectInfo = [
-  ["My Role", "Project Lead / AI Agent Engineer"],
-  ["Project Name", "Firmaa"],
-  ["Category", "AI-Powered Smart Farming Platform"],
-  ["Timeline", "February - May 2026"],
-  ["Methodology", "TDSP"],
+  [c.s128, c.s129],
+  [c.s130, c.s131],
+  [c.s132, c.s133],
+  [c.s001, c.s134],
+  [c.s010, c.s011],
 ];
 
 const FirmaaDetails = () => {
@@ -297,7 +303,7 @@ const FirmaaDetails = () => {
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
+        
       </div>
 
       <main className="relative z-10">
@@ -309,34 +315,24 @@ const FirmaaDetails = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-gray-300">
-                <Link to="/" className="transition hover:text-[#7AC943]">Home</Link>
+                <Link to="/" className="transition hover:text-[#7AC943]">{c.s135}</Link>
                 <span>/</span>
-                <Link to="/portfolio" className="transition hover:text-[#7AC943]">Portfolio</Link>
+                <Link to="/portfolio" className="transition hover:text-[#7AC943]">{c.s136}</Link>
                 <span>/</span>
-                <span className="text-[#7AC943]">Firmaa</span>
+                <span className="text-[#7AC943]">{c.s131}</span>
               </div>
 
               <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
                 <div>
                   <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#7AC943]/30 bg-[#7AC943]/10 px-4 py-2 text-sm font-semibold text-[#DDF6A1]">
-                    <FaSeedling aria-hidden="true" />
-                    Agentic AI smart farming platform
-                  </div>
-                  <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">
-                    Firmaa
-                    <span className="block text-[#7AC943]">Autonomous Irrigation Agent & Digital Farm Platform</span>
+                    <FaSeedling aria-hidden="true" />{c.s137}</div>
+                  <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">{c.s131}<span className="block text-[#7AC943]">{c.s138}</span>
                   </h1>
-                  <p className="mb-7 max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">
-                    AI-powered smart agriculture platform combining a LangGraph Autonomous Irrigation Agent,
-                    FastAPI, MongoDB, Next.js, Flutter mobile access, and a Three.js 3D digital-twin farm view.
-                  </p>
-                  <p className="mb-8 max-w-3xl text-base leading-8 text-gray-300">
-                    Firmaa helps farmers monitor zones, reason about irrigation decisions, estimate water needs,
-                    and approve AI recommendations through a full-stack dashboard and field-ready mobile experience.
-                  </p>
+                  <p className="mb-7 max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">{c.s139}</p>
+                  <p className="mb-8 max-w-3xl text-base leading-8 text-gray-300">{c.s140}</p>
 
                   <div className="mb-8 flex flex-wrap gap-3">
-                    {["LangGraph", "Human-in-the-loop", "FastAPI", "MongoDB", "Next.js", "Three.js", "Flutter"].map((item) => (
+                    {[c.s013, c.s021, c.s014, c.s015, c.s016, c.s017, c.s019].map((item) => (
                       <span key={item} className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-gray-200">
                         {item}
                       </span>
@@ -345,13 +341,9 @@ const FirmaaDetails = () => {
 
                   <div className="flex flex-wrap gap-4">
                     <a href="#firmaa-demo" className="inline-flex items-center gap-2 rounded-full bg-[#7AC943] px-6 py-3 font-semibold text-[#081824] shadow-lg shadow-[#7AC943]/25 transition hover:bg-[#92D957]">
-                      <FaPlay aria-hidden="true" />
-                      Watch demo
-                    </a>
+                      <FaPlay aria-hidden="true" />{c.s141}</a>
                     <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 font-semibold text-white transition hover:border-[#7AC943]/60 hover:bg-[#7AC943]/10">
-                      <FaArrowLeft aria-hidden="true" />
-                      Back to Portfolio
-                    </Link>
+                      <FaArrowLeft aria-hidden="true" />{c.s142}</Link>
                   </div>
                 </div>
 
@@ -362,24 +354,23 @@ const FirmaaDetails = () => {
                   className="rounded-3xl border border-white/15 bg-white/10 p-6 shadow-2xl shadow-black/30 backdrop-blur-xl"
                 >
                   <div className="mb-4 flex items-center justify-center gap-4 rounded-2xl border border-white/10 bg-[#08073d]/70 px-5 py-4">
-                    <img src={firmaaLogo} alt="Firmaa logo" className="h-16 w-16 object-contain" loading="eager" decoding="async" />
-                    <img src={firmaaName} alt="Firmaa wordmark" className="h-10 max-w-[210px] object-contain" loading="eager" decoding="async" />
+                    <img src={firmaaLogo} alt={c.s143} className="h-16 w-16 object-contain" loading="eager" decoding="async" />
+                    <img src={firmaaName} alt={c.s144} className="h-10 max-w-[210px] object-contain" loading="eager" decoding="async" />
                   </div>
                   <button
                     type="button"
-                    onClick={() => setSelectedImage({ src: firmaaSolutionCover, title: "Firmaa solution cover" })}
+                    onClick={() => setSelectedImage({ src: firmaaSolutionCover, title: c.s145 })}
                     className="group relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[#08073d]/70 p-3 focus:outline-none focus:ring-2 focus:ring-[#7AC943]/70"
                   >
                     <img
                       src={firmaaSolutionCover}
-                      alt="Firmaa solution cover"
+                      alt={c.s145}
                       className="mx-auto max-h-[420px] w-auto max-w-full rounded-xl object-contain transition duration-300 group-hover:scale-[1.01]"
                       loading="eager"
                       decoding="async"
                     />
                     <span className="absolute right-5 top-5 inline-flex items-center gap-2 rounded-full bg-black/65 px-3 py-1 text-xs font-bold text-white opacity-0 transition group-hover:opacity-100">
-                      <FaExpand /> View larger
-                    </span>
+                      <FaExpand />{" "}{c.s146}</span>
                   </button>
                 </motion.div>
               </div>
@@ -417,16 +408,9 @@ const FirmaaDetails = () => {
             >
               <div className="mb-5">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#7AC943]/30 bg-[#7AC943]/10 px-4 py-2 text-sm font-semibold text-[#DDF6A1]">
-                  <FaPlay aria-hidden="true" />
-                  Platform walkthrough
-                </div>
-                <h2 id="firmaa-demo-title" className="text-2xl font-black text-white md:text-3xl">
-                  Demo Video
-                </h2>
-                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-300 md:text-base">
-                  A walkthrough of the Firmaa smart agriculture platform, including the dashboard experience,
-                  AI command center, and connected farm workflow.
-                </p>
+                  <FaPlay aria-hidden="true" />{c.s147}</div>
+                <h2 id="firmaa-demo-title" className="text-2xl font-black text-white md:text-3xl">{c.s148}</h2>
+                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-300 md:text-base">{c.s149}</p>
               </div>
 
               <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#08073d]/80 shadow-2xl shadow-black/30">
@@ -440,12 +424,12 @@ const FirmaaDetails = () => {
                   onPause={() => playingVideo && setPlayingVideo(false)}
                   controls={playingVideo}
                   playsInline
-                  aria-label="Firmaa smart agriculture platform demo video"
+                  aria-label={c.s150}
                 />
                 {!playingVideo && (
                   <button
                     type="button"
-                    aria-label="Play Firmaa demo video"
+                    aria-label={c.s151}
                     onClick={handlePlay}
                     className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300 hover:bg-black/20 focus:outline-none focus:ring-2 focus:ring-[#7AC943]/70 focus:ring-inset"
                   >
@@ -462,38 +446,30 @@ const FirmaaDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#7AC943]">
                     <FaSeedling className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Project Summary</h2>
+                    <h2 className="text-2xl font-black">{c.s152}</h2>
                   </div>
-                  <p className="leading-relaxed text-gray-200">
-                    Firmaa is an AI-powered smart agriculture platform built as an integrated project at ESPRIT. It combines a Next.js dashboard, Flutter mobile access, a FastAPI backend, MongoDB persistence, a Three.js digital-twin farm view, and AI modules for farm monitoring and decision support.
-                  </p>
+                  <p className="leading-relaxed text-gray-200">{c.s153}</p>
                 </section>
 
                 <section className="grid gap-5 md:grid-cols-2">
                   <div className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl">
-                    <h2 className="mb-4 text-2xl font-black text-white">The Challenge</h2>
-                    <p className="leading-relaxed text-gray-300">
-                      Farmers often make irrigation, crop disease, livestock health, and insect monitoring decisions manually. Limited real-time information makes farm operations harder to coordinate and can leave decisions dependent on fragmented signals.
-                    </p>
+                    <h2 className="mb-4 text-2xl font-black text-white">{c.s154}</h2>
+                    <p className="leading-relaxed text-gray-300">{c.s155}</p>
                   </div>
                   <div className="rounded-3xl border border-[#7AC943]/30 bg-[#7AC943]/10 p-7 backdrop-blur-xl">
-                    <h2 className="mb-4 text-2xl font-black text-white">The Solution</h2>
-                    <p className="leading-relaxed text-gray-100">
-                      Firmaa brings smart farm operations into one platform: web monitoring, Flutter mobile access, AI recommendations, 3D farm visibility, mobile AI modules, and IoT-aware workflows designed around practical farm decisions.
-                    </p>
+                    <h2 className="mb-4 text-2xl font-black text-white">{c.s156}</h2>
+                    <p className="leading-relaxed text-gray-100">{c.s157}</p>
                   </div>
                 </section>
 
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#7AC943]">
                     <FaProjectDiagram className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">My Role</h2>
+                    <h2 className="text-2xl font-black">{c.s128}</h2>
                   </div>
                   <div className="mb-6 rounded-2xl border border-[#7AC943]/25 bg-[#7AC943]/10 p-5">
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#DDF6A1]">Project Lead / AI Agent Engineer</p>
-                    <p className="mt-3 leading-relaxed text-gray-100">
-                      I worked on the technical vision, agentic AI workflow, dashboard coherence, product identity, and the connection between AI recommendations and farmer approval.
-                    </p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#DDF6A1]">{c.s129}</p>
+                    <p className="mt-3 leading-relaxed text-gray-100">{c.s158}</p>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     {roleCards.map((item) => (
@@ -517,11 +493,9 @@ const FirmaaDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#7AC943]">
                     <FaCheckCircle className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Unified Platform Scope</h2>
+                    <h2 className="text-2xl font-black">{c.s159}</h2>
                   </div>
-                  <p className="mb-6 max-w-3xl text-sm leading-6 text-gray-300">
-                    Firmaa is easier to understand as a connected platform map: monitoring, decision support, detection modules, mobile/offline access, and IoT data all feed the same smart farming experience.
-                  </p>
+                  <p className="mb-6 max-w-3xl text-sm leading-6 text-gray-300">{c.s160}</p>
                   <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                     {platformClusters.map((cluster) => (
                       <div key={cluster.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5">
@@ -547,19 +521,16 @@ const FirmaaDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#7AC943]">
                     <FaWater className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Agentic AI Irrigation Workflow</h2>
+                    <h2 className="text-2xl font-black">{c.s161}</h2>
                   </div>
-                  <p className="mb-6 max-w-3xl text-sm leading-6 text-gray-300">
-                    The irrigation agent is presented as a decision workflow, from farm signals to explainable recommendation and human-approved action.
-                  </p>
+                  <p className="mb-6 max-w-3xl text-sm leading-6 text-gray-300">{c.s162}</p>
                   <div className="relative grid gap-4 md:grid-cols-2 xl:grid-cols-6">
                     {workflow.map((step, index) => (
                       <div key={step.title} className="relative rounded-2xl border border-white/10 bg-[#08073d]/70 p-5 transition hover:-translate-y-1 hover:border-[#7AC943]/45">
                         {index < workflow.length - 1 && (
                           <FaArrowRight className="absolute -right-3 top-10 z-10 hidden rounded-full bg-[#070640] text-[#7AC943] xl:block" aria-hidden="true" />
                         )}
-                        <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full border border-[#7AC943]/30 bg-[#7AC943]/15 text-sm font-black text-[#DDF6A1]">
-                          0{index + 1}
+                        <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full border border-[#7AC943]/30 bg-[#7AC943]/15 text-sm font-black text-[#DDF6A1]">{c.s163}{index + 1}
                         </div>
                         <h3 className="font-bold text-white">{step.title}</h3>
                         <p className="mt-3 text-sm leading-relaxed text-gray-300">{step.text}</p>
@@ -567,7 +538,7 @@ const FirmaaDetails = () => {
                     ))}
                   </div>
                   <div className="mt-6 flex flex-wrap gap-2">
-                    {["LangGraph", "LLM reasoning", "Tool-assisted agents", "Validation", "Human-in-the-loop"].map((item) => (
+                    {[c.s013, c.s125, c.s164, c.s118, c.s021].map((item) => (
                       <span key={item} className="rounded-full border border-[#7AC943]/25 bg-[#7AC943]/10 px-3 py-1 text-xs font-bold text-[#DDF6A1]">
                         {item}
                       </span>
@@ -578,11 +549,9 @@ const FirmaaDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#7AC943]">
                     <FaServer className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Architecture / Technical Approach</h2>
+                    <h2 className="text-2xl font-black">{c.s165}</h2>
                   </div>
-                  <p className="mb-6 max-w-3xl text-sm leading-6 text-gray-300">
-                    The platform architecture connects farm inputs, dashboard interfaces, mobile access, backend orchestration, stored records, AI reasoning, and farmer approval into one workflow.
-                  </p>
+                  <p className="mb-6 max-w-3xl text-sm leading-6 text-gray-300">{c.s166}</p>
                   <div className="grid gap-4">
                     {architecture.map((item) => (
                       <div key={item.title} className="grid gap-4 rounded-2xl border border-white/10 bg-[#08073d]/70 p-5 transition hover:border-[#7AC943]/40 md:grid-cols-[180px_minmax(0,1fr)] md:items-center">
@@ -601,19 +570,15 @@ const FirmaaDetails = () => {
                       </div>
                     ))}
                   </div>
-                  <p className="mt-5 rounded-2xl border border-[#7AC943]/25 bg-[#7AC943]/10 p-4 font-mono text-sm text-[#DDF6A1]">
-                    Tech Stack: LangGraph - FastAPI - MongoDB - Next.js - Three.js - React - Flutter - IoT / sensor data - Human-in-the-loop
-                  </p>
+                  <p className="mt-5 rounded-2xl border border-[#7AC943]/25 bg-[#7AC943]/10 p-4 font-mono text-sm text-[#DDF6A1]">{c.s167}</p>
                 </section>
 
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#7AC943]">
                     <FaShieldAlt className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Safety, Validation, and Explainability</h2>
+                    <h2 className="text-2xl font-black">{c.s168}</h2>
                   </div>
-                  <p className="mb-6 max-w-3xl leading-relaxed text-gray-200">
-                    The Autonomous Irrigation Agent was designed around LLM reasoning, tool-assisted decision support, validation layers, fallback rules, safety checks, explainable recommendations, and human approval before sensitive actions.
-                  </p>
+                  <p className="mb-6 max-w-3xl leading-relaxed text-gray-200">{c.s169}</p>
                   <div className="grid gap-4 md:grid-cols-3">
                     {trustCards.map((card) => (
                       <div key={card.title} className="rounded-2xl border border-[#7AC943]/20 bg-[#071f35]/70 p-5">
@@ -638,7 +603,7 @@ const FirmaaDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#7AC943]">
                     <FaDatabase className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Challenges and Tradeoffs</h2>
+                    <h2 className="text-2xl font-black">{c.s170}</h2>
                   </div>
                   <div className="grid gap-3 md:grid-cols-3">
                     {tradeoffs.map((item) => (
@@ -652,7 +617,7 @@ const FirmaaDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#7AC943]">
                     <FaBrain className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">What I Learned</h2>
+                    <h2 className="text-2xl font-black">{c.s171}</h2>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     {learnings.map((item) => (
@@ -670,7 +635,7 @@ const FirmaaDetails = () => {
 
               <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-5 text-xl font-black">Project Info</h2>
+                  <h2 className="mb-5 text-xl font-black">{c.s172}</h2>
                   <div className="space-y-4 text-sm">
                     {projectInfo.map(([label, value]) => (
                       <div key={label}>
@@ -682,7 +647,7 @@ const FirmaaDetails = () => {
                 </div>
 
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-4 text-xl font-black">Technologies</h2>
+                  <h2 className="mb-4 text-xl font-black">{c.s173}</h2>
                   <div className="flex flex-wrap gap-2">
                     {stack.map((item) => (
                       <span key={item} className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-sm text-gray-200">
@@ -693,7 +658,7 @@ const FirmaaDetails = () => {
                 </div>
 
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-4 text-xl font-black">Product Highlights</h2>
+                  <h2 className="mb-4 text-xl font-black">{c.s174}</h2>
                   <ul className="space-y-3 text-sm leading-relaxed text-gray-300">
                     {productHighlights.map((item) => (
                       <li key={item} className="border-l-2 border-[#7AC943] pl-4">
@@ -704,7 +669,7 @@ const FirmaaDetails = () => {
                 </div>
 
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-4 text-xl font-black">Platform Visuals</h2>
+                  <h2 className="mb-4 text-xl font-black">{c.s175}</h2>
                   <div className="grid gap-3">
                     {visualHighlights.map((item) => (
                       <button
@@ -716,8 +681,7 @@ const FirmaaDetails = () => {
                         <div className="relative aspect-video bg-[#080744]">
                           <img src={item.image} alt={item.title} className="h-full w-full object-contain transition duration-300 group-hover:scale-[1.02]" loading="lazy" decoding="async" />
                           <span className="absolute right-3 top-3 inline-flex items-center gap-2 rounded-full bg-black/65 px-3 py-1 text-xs font-bold text-white opacity-0 transition group-hover:opacity-100">
-                            <FaExpand /> View larger
-                          </span>
+                            <FaExpand />{" "}{c.s146}</span>
                         </div>
                         <p className="px-4 py-3 text-sm font-bold text-white">{item.title}</p>
                       </button>
@@ -728,29 +692,21 @@ const FirmaaDetails = () => {
                 <Link
                   to="/contact"
                   className="block rounded-2xl bg-[#7AC943] px-5 py-4 text-center font-bold text-[#081824] shadow-lg shadow-[#7AC943]/20 transition hover:-translate-y-1 hover:bg-[#92D957]"
-                >
-                  Discuss this work
-                </Link>
+                >{c.s176}</Link>
               </aside>
             </div>
 
             <div className="mt-14 rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
               <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                 <div>
-                  <h2 className="mb-2 text-2xl font-black">Explore the project</h2>
-                  <p className="text-gray-300">Watch the demo, review the platform visuals, return to the project list, or start a conversation.</p>
+                  <h2 className="mb-2 text-2xl font-black">{c.s177}</h2>
+                  <p className="text-gray-300">{c.s178}</p>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <a href="#firmaa-demo" className="inline-flex items-center gap-2 rounded-full bg-[#7AC943] px-5 py-3 font-semibold text-[#081824] transition hover:bg-[#92D957]">
-                    <FaPlay aria-hidden="true" />
-                    Demo
-                  </a>
-                  <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#7AC943]/60 hover:bg-[#7AC943]/10">
-                    Portfolio
-                  </Link>
-                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#7AC943]/60 hover:bg-[#7AC943]/10">
-                    Contact Me
-                    <FaArrowRight aria-hidden="true" />
+                    <FaPlay aria-hidden="true" />{c.s179}</a>
+                  <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#7AC943]/60 hover:bg-[#7AC943]/10">{c.s136}</Link>
+                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#7AC943]/60 hover:bg-[#7AC943]/10">{c.s180}<FaArrowRight aria-hidden="true" />
                   </Link>
                 </div>
               </div>
@@ -768,15 +724,15 @@ const FirmaaDetails = () => {
                   <FaArrowLeft />
                 </div>
                 <div>
-                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">Back to</span>
-                  <span className="text-lg font-semibold">Portfolio</span>
+                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">{c.s181}</span>
+                  <span className="text-lg font-semibold">{c.s136}</span>
                 </div>
               </Link>
 
               <Link to="/contact" className="group flex items-center gap-3 text-right text-gray-400 transition-colors hover:text-white">
                 <div>
-                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">Interested?</span>
-                  <span className="text-lg font-semibold">Contact Me</span>
+                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">{c.s182}</span>
+                  <span className="text-lg font-semibold">{c.s180}</span>
                 </div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-all group-hover:border-[#7AC943] group-hover:bg-[#7AC943]">
                   <FaArrowRight />
@@ -805,7 +761,7 @@ const FirmaaDetails = () => {
                 type="button"
                 onClick={() => setSelectedImage(null)}
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:border-[#DDF6A1]/70 hover:text-[#DDF6A1] focus:outline-none focus:ring-2 focus:ring-[#DDF6A1]/70"
-                aria-label="Close image preview"
+                aria-label={c.s183}
               >
                 <FaTimes />
               </button>

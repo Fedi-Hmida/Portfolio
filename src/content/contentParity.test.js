@@ -18,6 +18,8 @@ import doubleDegreeNewsEn from "./doubleDegree/news.en";
 import doubleDegreeNewsFr from "./doubleDegree/news.fr";
 import smartHrmAiCaseEn from "./smartHrmAi/caseStudy.en";
 import smartHrmAiCaseFr from "./smartHrmAi/caseStudy.fr";
+import firmaaCaseEn from "./firmaa/caseStudy.en";
+import firmaaCaseFr from "./firmaa/caseStudy.fr";
 
 const pairs = {
   "callverse/caseStudy": [callVerseCaseEn, callVerseCaseFr],
@@ -27,6 +29,7 @@ const pairs = {
   "bns/news": [bnsNewsEn, bnsNewsFr],
   "doubleDegree/news": [doubleDegreeNewsEn, doubleDegreeNewsFr],
   "smartHrmAi/caseStudy": [smartHrmAiCaseEn, smartHrmAiCaseFr],
+  "firmaa/caseStudy": [firmaaCaseEn, firmaaCaseFr],
 };
 
 const NBSP = String.fromCharCode(0xa0);
