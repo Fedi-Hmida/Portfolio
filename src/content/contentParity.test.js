@@ -64,6 +64,8 @@ import newsOnboardifyEn from "./news/onboardify.en";
 import newsOnboardifyFr from "./news/onboardify.fr";
 import newsRecognitionEn from "./news/recognition.en";
 import newsRecognitionFr from "./news/recognition.fr";
+import newsSmartClaimEn from "./news/smartClaim.en";
+import newsSmartClaimFr from "./news/smartClaim.fr";
 import newsTsypEn from "./news/tsyp.en";
 import newsTsypFr from "./news/tsyp.fr";
 
@@ -98,6 +100,7 @@ const pairs = {
   "news/nvidiaDli": [newsNvidiaDliEn, newsNvidiaDliFr],
   "news/onboardify": [newsOnboardifyEn, newsOnboardifyFr],
   "news/recognition": [newsRecognitionEn, newsRecognitionFr],
+  "news/smartClaim": [newsSmartClaimEn, newsSmartClaimFr],
   "news/tsyp": [newsTsypEn, newsTsypFr],
 };
 
