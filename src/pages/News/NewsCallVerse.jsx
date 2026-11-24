@@ -16,76 +16,14 @@ import flogo from "../../assets/images/flogo.png";
 import twinImg from "../../assets/images/Portfolio/CallVerse/screen-twin.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
+import en from "../../content/callverse/news.en";
+import fr from "../../content/callverse/news.fr";
+import { pickContent } from "../../i18n/localeContent";
 
 const ACCENT = "#C9A36A";
 const githubUrl = "https://github.com/Fedi-Hmida/callverse-backend";
-
-/* Mirrors the LinkedIn post drafted on November 24, 2026. Numbers keep the
-   conditions they carry in the CallVerse repositories. */
-const agents = [
-  {
-    label: "Advisor",
-    text: "a LangGraph agent answers with six tools, including the bank's procedures (RAG on pgvector). The backend, never the agent, decides what is allowed.",
-  },
-  {
-    label: "Simulator",
-    text: "six customer profiles whose patience reacts to every reply.",
-  },
-  {
-    label: "Workforce manager",
-    text: "a PPO policy (reinforcement learning) recommends staffing moves. A supervisor decides.",
-  },
-  {
-    label: "Quality analyst",
-    text: "an LLM judge grades each conversation on six weighted criteria.",
-  },
-];
-
-const measured = [
-  {
-    label: "Twin",
-    text: "same simulated day, same customers (12 advisors, 8-hour day, seeds 7 and 8): at medium load, SLA 0.31 → 0.43 (FIFO → PPO), but abandonment 12.9% → 18.9%. The gain has a cost, so the policy stays advisory.",
-  },
-  {
-    label: "Backend",
-    text: "Spring Boot in Clean Architecture, live STOMP events, 610 tests, 0 failures (19 Oct 2026).",
-  },
-  {
-    label: "Safety",
-    text: "personal data masked before any model call; \"I want a human advisor\" never depends on the model.",
-  },
-  {
-    label: "Next",
-    text: "calibrating the quality judge against human reviewers.",
-    limit: true,
-  },
-];
-
-const thanks = [
-  {
-    name: "Mohamed Aziz Bellagha",
-    role: "frontend",
-    detail: "Thank you for leading the frontend that every role works in.",
-  },
-  {
-    name: "Doua Omrani",
-    role: "advisor, simulator",
-    detail: "Thank you for the Customer Advisor and the Client Simulator.",
-  },
-  {
-    name: "Ines Bendhifallah",
-    role: "RL, quality",
-    detail: "Thank you for the Workforce Manager and the Quality Analyst.",
-  },
-  {
-    name: "Rayen Souissi",
-    role: "CI",
-    detail: "Thank you for the CI pipeline.",
-  },
-];
 
 const ArrowList = ({ items }) => (
   <ul className="space-y-4">
@@ -104,8 +42,7 @@ const ArrowList = ({ items }) => (
           aria-hidden="true"
         />
         <span>
-          <span className="font-bold text-white">{item.label}:</span>{" "}
-          {item.text}
+          <span className="font-bold text-white">{item.label}</span> {item.text}
         </span>
       </li>
     ))}
@@ -113,6 +50,9 @@ const ArrowList = ({ items }) => (
 );
 
 const NewsCallVerse = () => {
+  // Long-form copy lives in src/content/callverse/news.{en,fr}.js; /fr shows the French post.
+  const c = pickContent({ en, fr });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
@@ -133,9 +73,8 @@ const NewsCallVerse = () => {
 
       <Navbar />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
-      </div>
+      {/* Same top spacing as the sibling news pages. */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20" />
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -148,16 +87,10 @@ const NewsCallVerse = () => {
               to="/news"
               className="text-[#81d4fa] hover:text-white transition-colors flex items-center gap-2"
             >
-              <FaArrowLeft /> Back to News
+              <FaArrowLeft /> {c.back}
             </Link>
           </div>
-          <img
-            src={flogo}
-            alt="Fedi Hmida logo"
-            loading="lazy"
-            decoding="async"
-            className="h-8 w-auto opacity-80"
-          />
+          <img src={flogo} alt={c.logoAlt} loading="lazy" decoding="async" className="h-8 w-auto opacity-80" />
         </motion.div>
 
         <motion.div
@@ -185,25 +118,16 @@ const NewsCallVerse = () => {
                     backgroundColor: "rgba(201, 163, 106, 0.18)",
                   }}
                 >
-                  Project
+                  {c.badge}
                 </span>
                 <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6">
-                  CallVerse
+                  {c.title}
                   <span className="block" style={{ color: ACCENT }}>
-                    Four AI agents, one digital twin
+                    {c.accent}
                   </span>
                 </h1>
-                <p className="text-xl md:text-2xl font-bold italic text-white mb-5">
-                  You do not test a staffing strategy on real customers. You
-                  test it in a twin.
-                </p>
-                <p className="text-lg leading-relaxed text-[#e3f2fd]/90">
-                  For our double-degree project between 3iL and ESPRIT, our team
-                  of five built CallVerse, a digital twin of a fictional retail
-                  bank&apos;s customer relation centre, where four AI agents
-                  work. I owned
-                  the backend and designed the AI service.
-                </p>
+                <p className="text-xl md:text-2xl font-bold italic text-white mb-5">{c.hook}</p>
+                <p className="text-lg leading-relaxed text-[#e3f2fd]/90">{c.intro}</p>
               </div>
             </motion.div>
 
@@ -212,14 +136,14 @@ const NewsCallVerse = () => {
               className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.1)] bg-[rgba(26,35,126,0.3)] backdrop-blur-[12px]"
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaRobot style={{ color: ACCENT }} /> The Four Agents
+                <FaRobot style={{ color: ACCENT }} /> {c.agentsTitle}
               </h3>
-              <ArrowList items={agents} />
+              <ArrowList items={c.agents} />
 
               <h3 className="text-2xl font-bold text-white mt-10 mb-6 flex items-center gap-2">
-                <FaFlask style={{ color: ACCENT }} /> What We Measured
+                <FaFlask style={{ color: ACCENT }} /> {c.measuredTitle}
               </h3>
-              <ArrowList items={measured} />
+              <ArrowList items={c.measured} />
             </motion.div>
 
             <motion.div
@@ -227,119 +151,18 @@ const NewsCallVerse = () => {
               className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.1)] bg-[rgba(26,35,126,0.3)] backdrop-blur-[12px]"
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaHeart style={{ color: ACCENT }} /> Thank You
+                <FaHeart style={{ color: ACCENT }} /> {c.thanksTitle}
               </h3>
               <div className="space-y-4">
-                {thanks.map((person) => (
-                  <div
-                    key={person.name}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-5"
-                  >
+                {c.thanks.map((person) => (
+                  <div key={person.name} className="rounded-2xl border border-white/10 bg-white/5 p-5">
                     <p className="text-white font-semibold mb-1">
                       {person.name}
-                      <span className="font-normal text-[#e3f2fd]/60">
-                        {" "}
-                        - {person.role}
-                      </span>
+                      <span className="font-normal text-[#e3f2fd]/60"> - {person.role}</span>
                     </p>
-                    <p className="text-sm text-[#e3f2fd]/80 leading-relaxed">
-                      {person.detail}
-                    </p>
+                    <p className="text-sm text-[#e3f2fd]/80 leading-relaxed">{person.detail}</p>
                   </div>
                 ))}
-              </div>
-            </motion.div>
-
-            {/* Published bilingually; the French is written, not translated. */}
-            <motion.div
-              variants={fadeInUp}
-              lang="fr"
-              className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.1)] bg-[rgba(26,35,126,0.3)] backdrop-blur-[12px]"
-            >
-              <h3 className="text-xl font-bold text-white mb-5">
-                Version française
-              </h3>
-              <div className="space-y-4 text-[#e3f2fd]/85 leading-relaxed">
-                <p className="italic text-white font-semibold">
-                  On ne teste pas une stratégie d&apos;effectifs sur de vrais
-                  clients. On la teste dans un jumeau.
-                </p>
-                <p>
-                  Pour notre projet double diplôme entre 3iL et ESPRIT, notre
-                  équipe de cinq a construit CallVerse{"\u00a0:"} un jumeau numérique du
-                  centre de relation client d&apos;une banque de détail fictive, où
-                  travaillent quatre agents IA. J&apos;avais la charge du
-                  back-end et j&apos;ai conçu le service IA.
-                </p>
-                <div>
-                  <p className="text-white font-medium mb-2">Les quatre agents</p>
-                  <ul className="space-y-2">
-                    <li>
-                      <span className="text-white font-medium">{"Conseiller\u00a0:"}</span>{" "}
-                      un agent LangGraph répond avec six outils, dont les
-                      procédures de la banque (RAG sur pgvector).
-                      C&apos;est le back-end, jamais l&apos;agent, qui décide de
-                      ce qui est permis.
-                    </li>
-                    <li>
-                      <span className="text-white font-medium">{"Simulateur\u00a0:"}</span>{" "}
-                      six profils de clients dont la patience réagit à chaque
-                      réponse.
-                    </li>
-                    <li>
-                      <span className="text-white font-medium">
-                        {"Gestionnaire d'effectifs\u00a0:"}
-                      </span>{" "}
-                      une politique PPO (apprentissage par renforcement)
-                      recommande des réaffectations. Un superviseur décide.
-                    </li>
-                    <li>
-                      <span className="text-white font-medium">{"Analyste qualité\u00a0:"}</span>{" "}
-                      un juge LLM note chaque conversation sur six critères
-                      pondérés.
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="text-white font-medium mb-2">Les chiffres</p>
-                  <ul className="space-y-2">
-                    <li>
-                      <span className="text-white font-medium">{"Jumeau\u00a0:"}</span>{" "}
-                      même journée simulée, mêmes clients (12 conseillers,
-                      journée de 8{"\u00a0"}h, graines 7 et 8){"\u00a0:"} en charge
-                      moyenne, SLA 0,31 → 0,43 (FIFO → PPO), mais abandons{" "}
-                      {"12,9\u00a0% → 18,9\u00a0%"}. Le gain a un coût{"\u00a0:"} la politique
-                      reste une recommandation.
-                    </li>
-                    <li>
-                      <span className="text-white font-medium">{"Back-end\u00a0:"}</span>{" "}
-                      Spring Boot en Clean Architecture, événements STOMP
-                      en temps réel, 610 tests au vert (0 échec, 19 octobre 2026).
-                    </li>
-                    <li>
-                      <span className="text-white font-medium">{"Sécurité\u00a0:"}</span>{" "}
-                      données personnelles masquées avant tout appel au modèle{"\u00a0;"}{" "}
-                      {"«\u00a0Je veux un conseiller humain\u00a0»"} ne dépend jamais du
-                      modèle.
-                    </li>
-                  </ul>
-                </div>
-                <p>
-                  <span className="text-white font-medium">{"Prochaine étape\u00a0:"}</span>{" "}
-                  calibrer le juge qualité par rapport à des
-                  évaluations humaines.
-                </p>
-                <p>
-                  Merci à{" "}
-                  <span className="text-white font-medium">Mohamed Aziz Bellagha</span>{" "}
-                  (front-end),{" "}
-                  <span className="text-white font-medium">Doua Omrani</span>{" "}
-                  (conseiller, simulateur),{" "}
-                  <span className="text-white font-medium">Ines Bendhifallah</span>{" "}
-                  (RL, qualité) et{" "}
-                  <span className="text-white font-medium">Rayen Souissi</span>{" "}
-                  (CI).
-                </p>
               </div>
             </motion.div>
           </div>
@@ -352,7 +175,7 @@ const NewsCallVerse = () => {
               <div className="relative overflow-hidden rounded-[20px] group">
                 <ExpandableImage
                   src={twinImg}
-                  alt="Digital twin runs compared by strategy: SLA, abandonment and mean wait for the medium-load day"
+                  alt={c.twinAlt}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
@@ -365,37 +188,15 @@ const NewsCallVerse = () => {
               className="p-6 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.6)] backdrop-blur-[16px]"
             >
               <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaUserTie className="text-[#81d4fa]" /> Quick Info
+                <FaUserTie className="text-[#81d4fa]" /> {c.quickInfo.title}
               </h3>
               <ul className="space-y-4">
-                <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Project</span>
-                  <span className="text-white font-medium text-right">CallVerse</span>
-                </li>
-                <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Programme</span>
-                  <span className="text-white font-medium text-right">
-                    Double degree, 3iL × ESPRIT
-                  </span>
-                </li>
-                <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Team</span>
-                  <span className="text-white font-medium text-right">5 students</span>
-                </li>
-                <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Built</span>
-                  <span className="text-white font-medium text-right">Sept - Oct 2026</span>
-                </li>
-                <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Published</span>
-                  <span className="text-white font-medium text-right">
-                    November 24, 2026 (portfolio)
-                  </span>
-                </li>
-                <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Author</span>
-                  <span className="text-white font-medium">Fedi Hmida</span>
-                </li>
+                {c.quickInfo.rows.map((row) => (
+                  <li key={row.label} className="flex justify-between items-center gap-4 text-sm">
+                    <span className="text-[#81d4fa]">{row.label}</span>
+                    <span className="text-white font-medium text-right">{row.value}</span>
+                  </li>
+                ))}
               </ul>
               <div className="mt-8 pt-6 border-t border-[rgba(79,195,247,0.2)] space-y-3">
                 <Link
@@ -403,7 +204,7 @@ const NewsCallVerse = () => {
                   className="block w-full text-center rounded-full px-5 py-3 text-sm font-bold transition hover:opacity-90"
                   style={{ backgroundColor: ACCENT, color: "#1A1206" }}
                 >
-                  View the full case study
+                  {c.caseStudyCta}
                 </Link>
                 <a
                   href={githubUrl}
@@ -412,21 +213,19 @@ const NewsCallVerse = () => {
                   className="flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-bold text-white transition hover:border-[#C9A36A]/60 hover:bg-[#C9A36A]/10"
                 >
                   <FaGithub aria-hidden="true" />
-                  View on GitHub
+                  {c.githubCta}
                   <FaExternalLinkAlt className="text-xs" aria-hidden="true" />
                 </a>
               </div>
               <div className="mt-6 pt-6 border-t border-[rgba(79,195,247,0.2)] text-center">
-                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">
-                  Connect
-                </p>
+                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">{c.connect}</p>
                 <div className="flex justify-center gap-4">
                   <a
                     href="https://www.linkedin.com/in/fedi-hmida/"
                     target="_blank"
                     rel="noreferrer"
                     className="text-white hover:text-[#0077b5] transition-colors text-2xl"
-                    aria-label="Open Fedi Hmida LinkedIn profile"
+                    aria-label={c.linkedinAria}
                   >
                     <FaLinkedin />
                   </a>

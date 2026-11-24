@@ -6,9 +6,12 @@ import fs from "fs";
 import path from "path";
 import callVerseCaseEn from "./callverse/caseStudy.en";
 import callVerseCaseFr from "./callverse/caseStudy.fr";
+import callVerseNewsEn from "./callverse/news.en";
+import callVerseNewsFr from "./callverse/news.fr";
 
 const pairs = {
   "callverse/caseStudy": [callVerseCaseEn, callVerseCaseFr],
+  "callverse/news": [callVerseNewsEn, callVerseNewsFr],
 };
 
 const NBSP = String.fromCharCode(0xa0);
