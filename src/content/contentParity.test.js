@@ -34,6 +34,8 @@ import newsAwsEn from "./news/aws.en";
 import newsAwsFr from "./news/aws.fr";
 import newsBiatMasterclassEn from "./news/biatMasterclass.en";
 import newsBiatMasterclassFr from "./news/biatMasterclass.fr";
+import newsDataScienceEn from "./news/dataScience.en";
+import newsDataScienceFr from "./news/dataScience.fr";
 import newsEnergyUtopiaEn from "./news/energyUtopia.en";
 import newsEnergyUtopiaFr from "./news/energyUtopia.fr";
 import newsFirmaaLaunchEn from "./news/firmaaLaunch.en";
@@ -81,6 +83,7 @@ const pairs = {
   "proLink/caseStudy": [proLinkCaseEn, proLinkCaseFr],
   "news/aws": [newsAwsEn, newsAwsFr],
   "news/biatMasterclass": [newsBiatMasterclassEn, newsBiatMasterclassFr],
+  "news/dataScience": [newsDataScienceEn, newsDataScienceFr],
   "news/energyUtopia": [newsEnergyUtopiaEn, newsEnergyUtopiaFr],
   "news/firmaaLaunch": [newsFirmaaLaunchEn, newsFirmaaLaunchFr],
   "news/graduation": [newsGraduationEn, newsGraduationFr],

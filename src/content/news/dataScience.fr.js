@@ -1,0 +1,30 @@
+// NewsDataScience.jsx - français. Mêmes clés que dataScience.en.js.
+const content = {
+  s001: "Retour aux actualités",
+  s002: "Logo de Fedi Hmida",
+  s003: "Reconnaissance",
+  s004: "Une reconnaissance en data science",
+  s005: "Fier d'avoir reçu une lettre de recommandation professionnelle de Dr Nivine ATTOUE, experte en data science chez ADDINN Group.",
+  s006: "Lettre de recommandation",
+  s007: "Points forts",
+  s008: "IA et machine learning",
+  s009: "Un engagement à explorer et à appliquer des concepts d'IA avancés.",
+  s010: "Exploration des données",
+  s011: "Une capacité avérée à analyser des données complexes et à en tirer des enseignements.",
+  s012: "L'avis de mon encadrante",
+  s013: "Dr Nivine ATTOUE - experte en data science",
+  s014: "«\u00a0M. Fedi Hmida s'est montré un étudiant sérieux, motivé et très autonome durant son stage.\u00a0»",
+  s015: "Honoré de partager que j'ai reçu une lettre de recommandation professionnelle qui souligne mes contributions à des projets d'intelligence artificielle et de machine learning pendant mon stage chez ADDINN Group.",
+  s016: "Pendant cette période, j'ai eu le privilège de travailler sur des projets avancés de data science, en appliquant des concepts théoriques à des problèmes réels et en contribuant à la réussite de l'équipe.",
+  s017: "Détails",
+  s018: "Encadrante",
+  s019: "Dr Nivine ATTOUE",
+  s020: "Type",
+  s021: "Recommandation",
+  s022: "Date",
+  s023: "19 sept. 2025",
+  s024: "Contexte",
+  s025: "Stage chez ADDINN Group",
+};
+
+export default content;
