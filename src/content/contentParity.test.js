@@ -36,6 +36,8 @@ import newsFirmaaLaunchEn from "./news/firmaaLaunch.en";
 import newsFirmaaLaunchFr from "./news/firmaaLaunch.fr";
 import newsIastamEn from "./news/iastam.en";
 import newsIastamFr from "./news/iastam.fr";
+import newsMaraTechHackathonEn from "./news/maraTechHackathon.en";
+import newsMaraTechHackathonFr from "./news/maraTechHackathon.fr";
 import newsNvidiaAnomalyDetectionEn from "./news/nvidiaAnomalyDetection.en";
 import newsNvidiaAnomalyDetectionFr from "./news/nvidiaAnomalyDetection.fr";
 
@@ -56,6 +58,7 @@ const pairs = {
   "news/biatMasterclass": [newsBiatMasterclassEn, newsBiatMasterclassFr],
   "news/firmaaLaunch": [newsFirmaaLaunchEn, newsFirmaaLaunchFr],
   "news/iastam": [newsIastamEn, newsIastamFr],
+  "news/maraTechHackathon": [newsMaraTechHackathonEn, newsMaraTechHackathonFr],
   "news/nvidiaAnomalyDetection": [newsNvidiaAnomalyDetectionEn, newsNvidiaAnomalyDetectionFr],
 };
 

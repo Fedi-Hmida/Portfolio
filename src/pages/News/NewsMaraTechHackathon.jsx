@@ -15,9 +15,15 @@ import flogo from "../../assets/images/flogo.png";
 import maratechHackImg from "../../assets/images/news15/hack.jpg";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
+import en from "../../content/news/maraTechHackathon.en";
+import fr from "../../content/news/maraTechHackathon.fr";
+import { pickContent } from "../../i18n/localeContent";
+
+// Long-form copy lives in src/content/news/maraTechHackathon.{en,fr}.js. The locale comes from the
+// URL and switching language reloads the page, so picking once at module level is safe.
+const c = pickContent({ en, fr });
 
 const NewsMaraTechHackathon = () => {
   const containerVariants = {
@@ -47,18 +53,18 @@ const NewsMaraTechHackathon = () => {
   const highlights = [
     {
       icon: FaRegClock,
-      title: "42 hours",
-      text: "A non-stop build challenge with a tight delivery deadline.",
+      title: c.s001,
+      text: c.s002,
     },
     {
       icon: FaUniversalAccess,
-      title: "Accessibility focus",
-      text: "The challenge centered on creating useful digital solutions for associations.",
+      title: c.s003,
+      text: c.s004,
     },
     {
       icon: FaUsers,
-      title: "Team energy",
-      text: "A chance to push limits alongside talented peers at ESPRIT.",
+      title: c.s005,
+      text: c.s006,
     },
   ];
 
@@ -73,7 +79,7 @@ const NewsMaraTechHackathon = () => {
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
+        
       </div>
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
@@ -87,12 +93,11 @@ const NewsMaraTechHackathon = () => {
               to="/news"
               className="text-[#81d4fa] hover:text-white transition-colors flex items-center gap-2"
             >
-              <FaArrowLeft /> Back to News
-            </Link>
+              <FaArrowLeft />{" "}{c.s007}</Link>
           </div>
           <img
             src={flogo}
-            alt="Fedi Hmida logo"
+            alt={c.s008}
             loading="lazy"
             decoding="async"
             className="h-8 w-auto opacity-80"
@@ -113,17 +118,9 @@ const NewsMaraTechHackathon = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary-pink rounded-full filter blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
 
               <motion.div {...floatAnimation} className="relative z-10">
-                <span className="inline-block py-1 px-3 rounded-full bg-primary-pink/30 border border-primary-pink/30 text-primary-pink text-xs font-bold uppercase tracking-widest mb-4">
-                  Hackathon
-                </span>
-                <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary-pink">
-                  MaraTech Web Hackathon
-                </h1>
-                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
-                  42 hours of non-stop coding later, I wrapped up the MaraTech
-                  Web Hackathon: an intense challenge to design and build
-                  accessible digital solutions under a tight deadline.
-                </p>
+                <span className="inline-block py-1 px-3 rounded-full bg-primary-pink/30 border border-primary-pink/30 text-primary-pink text-xs font-bold uppercase tracking-widest mb-4">{c.s009}</span>
+                <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary-pink">{c.s010}</h1>
+                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">{c.s011}</p>
               </motion.div>
             </motion.div>
 
@@ -132,18 +129,9 @@ const NewsMaraTechHackathon = () => {
               className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.1)] bg-[rgba(26,35,126,0.3)] backdrop-blur-[12px]"
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaLaptopCode className="text-primary-pink" /> Building With Purpose
-              </h3>
-              <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">
-                The focus was on creating tools for associations, which added a
-                real layer of purpose to every line of code. It was a strong
-                reminder that web development is not only about shipping fast,
-                but also about designing something useful and accessible.
-              </p>
-              <p className="text-[#e3f2fd]/80 leading-relaxed mb-8">
-                Grateful for the experience and the opportunity to push my
-                limits alongside talented peers at ESPRIT.
-              </p>
+                <FaLaptopCode className="text-primary-pink" />{" "}{c.s012}</h3>
+              <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">{c.s013}</p>
+              <p className="text-[#e3f2fd]/80 leading-relaxed mb-8">{c.s014}</p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {highlights.map(({ icon: Icon, title, text }) => (
@@ -170,15 +158,14 @@ const NewsMaraTechHackathon = () => {
               <div className="relative overflow-hidden rounded-[20px] group bg-white flex items-center justify-center">
                 <ExpandableImage
                   src={maratechHackImg}
-                  alt="MaraTech Web Hackathon"
+                  alt={c.s010}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-contain transform transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e]/85 to-transparent flex items-end p-6 pointer-events-none">
                   <p className="text-white font-medium flex items-center gap-2">
-                    <FaCode className="text-primary-pink" /> 42-hour challenge
-                  </p>
+                    <FaCode className="text-primary-pink" />{" "}{c.s015}</p>
                 </div>
               </div>
             </motion.div>
@@ -188,28 +175,23 @@ const NewsMaraTechHackathon = () => {
               className="p-6 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.6)] backdrop-blur-[16px]"
             >
               <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaUserTie className="text-[#81d4fa]" /> Quick Info
-              </h3>
+                <FaUserTie className="text-[#81d4fa]" />{" "}{c.s016}</h3>
               <ul className="space-y-4">
                 <li className="flex justify-between items-center text-sm gap-4">
-                  <span className="text-[#81d4fa]">Event</span>
-                  <span className="text-white font-medium text-right">
-                    MaraTech Web Hackathon
-                  </span>
+                  <span className="text-[#81d4fa]">{c.s017}</span>
+                  <span className="text-white font-medium text-right">{c.s010}</span>
                 </li>
                 <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Date</span>
-                  <span className="text-white font-medium">February 2026</span>
+                  <span className="text-[#81d4fa]">{c.s018}</span>
+                  <span className="text-white font-medium">{c.s019}</span>
                 </li>
                 <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Author</span>
-                  <span className="text-white font-medium">Fedi Hmida</span>
+                  <span className="text-[#81d4fa]">{c.s020}</span>
+                  <span className="text-white font-medium">{c.s021}</span>
                 </li>
               </ul>
               <div className="mt-8 pt-6 border-t border-[rgba(79,195,247,0.2)] text-center">
-                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">
-                  Connect
-                </p>
+                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">{c.s022}</p>
                 <div className="flex justify-center gap-4">
                   <a
                     href="https://www.linkedin.com/in/fedi-hmida/"
