@@ -5,6 +5,7 @@ import smartClaimPreviewImg from "../assets/images/Portfolio/New Logo SmartClaim
 import sahitnaSafeImg from "../assets/images/Portfolio/ML2.png";
 import firmaaCoverImg from "../assets/images/Portfolio/Firmaa/logo_firmaa.png";
 import campusFlowImg from "../assets/images/Portfolio/CampusFlow/campusflow-card.png";
+import callVerseImg from "../assets/images/Portfolio/CallVerse/callverse-card.png";
 import smartHrmAiImg from "../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.jpg";
 import onboardifyImg from "../assets/images/logo3.png";
 import onboardifyPreviewImg from "../assets/images/logo31.png";
@@ -19,6 +20,22 @@ export const projectCategories = [
 ];
 
 export const projects = [
+  {
+    id: 9,
+    title: "CallVerse",
+    category: ["ia", "web"],
+    tech: ["LangGraph", "PPO (RL)", "Spring Boot", "Next.js", "PostgreSQL", "FastAPI"],
+    homeTech: ["LangGraph", "PPO", "Spring Boot"],
+    image: callVerseImg,
+    homeImage: callVerseImg,
+    link: "/portfolio/callverse",
+    accentColor: "#C9A36A",
+    accentText: "#E2C690",
+    accentSoft: "rgba(201, 163, 106, 0.14)",
+    accentBorder: "rgba(201, 163, 106, 0.45)",
+    accentShadow: "rgba(201, 163, 106, 0.22)",
+    accentForeground: "#1A1206",
+  },
   {
     id: 8,
     title: "CampusFlow AI",

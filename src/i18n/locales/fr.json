@@ -232,6 +232,16 @@
     "back": "Retour à l'accueil"
   },
   "projects": {
+    "9": {
+      "type": "Digital Twin multi-agents",
+      "status": "Projet double diplôme, 3iL × ESPRIT",
+      "role": "Responsable back-end & architecte IA",
+      "impact": "Quatre agents IA sur une plateforme Spring Boot validée par 610 tests\u00a0; dans le jumeau, la politique PPO fait passer le SLA de 0,31 à 0,43 en charge moyenne, au prix de davantage d'abandons (12,9\u00a0% → 18,9\u00a0%).",
+      "homeImpact": "Un centre de relation client bancaire où travaillent quatre agents IA - et où l'on teste les stratégies d'effectifs dans un jumeau.",
+      "description": "Digital Twin du centre de relation client d'une banque de détail, construit à cinq\u00a0: un conseiller LangGraph qui répond avec un RAG et des outils bancaires, un simulateur de clients, un gestionnaire d'effectifs par apprentissage par renforcement et un juge qualité LLM, sur un back-end Spring Boot en Clean Architecture dont j'avais la charge, avec une interface Next.js pour quatre rôles.",
+      "homeDescription": "Digital Twin multi-agents\u00a0: conseiller LangGraph avec RAG, politique d'effectifs PPO, juge qualité LLM, back-end Spring Boot et espaces Next.js en direct.",
+      "cta": "Voir l'étude de cas"
+    },
     "8": {
       "type": "Assistant IA multi-agents",
       "status": "Projet de cours ESPRIT",

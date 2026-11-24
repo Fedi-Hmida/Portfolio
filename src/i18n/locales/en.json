@@ -232,6 +232,16 @@
     "back": "Back to Home"
   },
   "projects": {
+    "9": {
+      "type": "Multi-agent digital twin",
+      "status": "Double-degree project, 3iL × ESPRIT",
+      "role": "Backend Owner & AI Architect",
+      "impact": "Four AI agents on a Spring Boot platform with 610 passing tests; in the twin, the PPO staffing policy lifts SLA from 0.31 to 0.43 at medium load, at the cost of more abandoned contacts (12.9% → 18.9%).",
+      "homeImpact": "A bank contact centre where four AI agents work - and staffing strategies are tested in a twin.",
+      "description": "Digital twin of a retail bank's customer relation centre, built by a team of five: a LangGraph advisor answering with RAG and banking tools, a customer simulator, a reinforcement-learning workforce manager and an LLM quality judge, on a Clean Architecture Spring Boot backend I owned, with a Next.js interface for four roles.",
+      "homeDescription": "Multi-agent digital twin: LangGraph advisor with RAG, PPO staffing policy, LLM quality judge, Spring Boot backend and live Next.js workspaces.",
+      "cta": "View case study"
+    },
     "8": {
       "type": "Multi-agent AI assistant",
       "status": "ESPRIT course project",
