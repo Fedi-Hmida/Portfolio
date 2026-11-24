@@ -516,28 +516,28 @@ const CallVerseDetails = () => {
             >
               <div className="grid gap-4 lg:grid-cols-2">
                 {twinLoads.map((block) => (
-                  <div key={block.load} className="overflow-x-auto rounded-2xl border border-white/10 bg-white/5 p-5">
+                  <div key={block.load} className="overflow-x-auto rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5">
                     <p className="mb-3 font-bold text-white">{block.load}</p>
-                    <table className="w-full text-left text-sm">
+                    <table className="w-full text-left text-xs sm:text-sm">
                       <thead>
                         <tr className="text-gray-400">
-                          <th scope="col" className="pb-2 pr-3 font-semibold">Strategy</th>
-                          <th scope="col" className="pb-2 pr-3 font-semibold">SLA</th>
-                          <th scope="col" className="pb-2 pr-3 font-semibold">Abandoned</th>
-                          <th scope="col" className="pb-2 font-semibold">Mean wait</th>
+                          <th scope="col" className="pb-2 pr-2 font-semibold sm:pr-3">Strategy</th>
+                          <th scope="col" className="pb-2 pr-2 font-semibold sm:pr-3">SLA</th>
+                          <th scope="col" className="pb-2 pr-2 font-semibold sm:pr-3">Abandoned</th>
+                          <th scope="col" className="pb-2 font-semibold">Wait</th>
                         </tr>
                       </thead>
                       <tbody>
                         {block.rows.map((row) => (
                           <tr key={row.strategy} className="border-t border-white/10 text-gray-300">
-                            <td className="py-2 pr-3 font-semibold text-white">{row.strategy}</td>
+                            <td className="py-2 pr-2 font-semibold text-white sm:pr-3">{row.strategy}</td>
                             <td
-                              className={`py-2 pr-3 ${row.ppo ? "font-black" : ""}`}
+                              className={`py-2 pr-2 sm:pr-3 ${row.ppo ? "font-black" : ""}`}
                               style={row.ppo ? { color: ACCENT } : undefined}
                             >
                               {row.sla}
                             </td>
-                            <td className={`py-2 pr-3 ${row.ppo ? "font-bold text-amber-300" : ""}`}>
+                            <td className={`py-2 pr-2 sm:pr-3 ${row.ppo ? "font-bold text-amber-300" : ""}`}>
                               {row.abandon}
                             </td>
                             <td className="py-2">{row.wait}</td>
@@ -617,7 +617,7 @@ const CallVerseDetails = () => {
                   src={clientImg}
                   alt="Customer space: accounts, card and messages"
                   caption="Customer: accounts, a conversation in progress, help."
-                  className="lg:col-span-2"
+                  className="lg:col-span-2 lg:mx-auto lg:max-w-3xl"
                 />
               </div>
               <p className="mt-3 text-sm text-gray-400">
