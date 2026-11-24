@@ -7,9 +7,15 @@ import awsImg from "../../assets/images/AI_AWS.jpg";
 import flogo from "../../assets/images/flogo.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
+import en from "../../content/news/aws.en";
+import fr from "../../content/news/aws.fr";
+import { pickContent } from "../../i18n/localeContent";
+
+// Long-form copy lives in src/content/news/aws.{en,fr}.js. The locale comes from the
+// URL and switching language reloads the page, so picking once at module level is safe.
+const c = pickContent({ en, fr });
 
 const NewsAWS = () => {
   // Animation Variants
@@ -51,7 +57,7 @@ const NewsAWS = () => {
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
+        
       </div>
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
@@ -66,12 +72,11 @@ const NewsAWS = () => {
               to="/news"
               className="text-[#81d4fa] hover:text-white transition-colors flex items-center gap-2"
             >
-              <FaArrowLeft /> Back to News
-            </Link>
+              <FaArrowLeft />{" "}{c.s001}</Link>
           </div>
           <img
             src={flogo}
-            alt="Fedi Hmida logo"
+            alt={c.s002}
             loading="lazy"
             decoding="async"
             className="h-8 w-auto opacity-80"
@@ -94,16 +99,9 @@ const NewsAWS = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff9900] rounded-full filter blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
 
               <motion.div {...floatAnimation} className="relative z-10">
-                <span className="inline-block py-1 px-3 rounded-full bg-[#ff9900]/30 border border-[#ff9900]/30 text-[#ff9900] text-xs font-bold uppercase tracking-widest mb-4">
-                  Certification
-                </span>
-                <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#ff9900]">
-                  AI Model Deployment on AWS
-                </h1>
-                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
-                  I'm pleased to share that I've earned the AI Model Deployment
-                  on AWS certification.
-                </p>
+                <span className="inline-block py-1 px-3 rounded-full bg-[#ff9900]/30 border border-[#ff9900]/30 text-[#ff9900] text-xs font-bold uppercase tracking-widest mb-4">{c.s003}</span>
+                <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#ff9900]">{c.s004}</h1>
+                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">{c.s005}</p>
               </motion.div>
             </motion.div>
 
@@ -113,17 +111,9 @@ const NewsAWS = () => {
               className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.1)] bg-[rgba(26,35,126,0.3)] backdrop-blur-[12px]"
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <SiAmazonaws className="text-[#ff9900]" /> Significance
-              </h3>
-              <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">
-                This milestone enhances my ability to deploy, scale, and manage
-                machine learning models in production using AWS cloud
-                technologies. It validates my expertise in bridging the gap
-                between model development and scalable production environments.
-              </p>
-              <p className="text-[#e3f2fd]/80 leading-relaxed">
-                Excited to take on more advanced cloud-AI challenges ahead.
-              </p>
+                <SiAmazonaws className="text-[#ff9900]" />{" "}{c.s006}</h3>
+              <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">{c.s007}</p>
+              <p className="text-[#e3f2fd]/80 leading-relaxed">{c.s008}</p>
 
               <div className="mt-8">
                 <a
@@ -132,8 +122,7 @@ const NewsAWS = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#ff9900] to-[#ffcc80] text-[#1a237e] font-bold shadow-lg hover:shadow-[#ff9900]/50 hover:-translate-y-1 transition-all duration-300"
                 >
-                  <FaAward /> View Certificate
-                </a>
+                  <FaAward />{" "}{c.s009}</a>
               </div>
             </motion.div>
           </div>
@@ -148,13 +137,13 @@ const NewsAWS = () => {
               <div className="relative overflow-hidden rounded-[20px] aspect-[4/3] group bg-white flex items-center justify-center">
                 <ExpandableImage
                   src={awsImg}
-                  alt="AWS Certification"
+                  alt={c.s010}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-contain p-4 transform transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e]/90 to-transparent flex items-end p-6 pointer-events-none">
-                  <p className="text-white font-medium">AWS Certified</p>
+                  <p className="text-white font-medium">{c.s011}</p>
                 </div>
               </div>
             </motion.div>
@@ -165,22 +154,19 @@ const NewsAWS = () => {
               className="p-6 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.6)] backdrop-blur-[16px]"
             >
               <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaUserTie className="text-[#81d4fa]" /> Quick Info
-              </h3>
+                <FaUserTie className="text-[#81d4fa]" />{" "}{c.s012}</h3>
               <ul className="space-y-4">
                 <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Date</span>
-                  <span className="text-white font-medium">30-11-2025</span>
+                  <span className="text-[#81d4fa]">{c.s013}</span>
+                  <span className="text-white font-medium">{c.s014}</span>
                 </li>
                 <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Author</span>
-                  <span className="text-white font-medium">Fedi Hmida</span>
+                  <span className="text-[#81d4fa]">{c.s015}</span>
+                  <span className="text-white font-medium">{c.s016}</span>
                 </li>
               </ul>
               <div className="mt-8 pt-6 border-t border-[rgba(79,195,247,0.2)] text-center">
-                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">
-                  Connect
-                </p>
+                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">{c.s017}</p>
                 <div className="flex justify-center gap-4">
                   <a
                     href="https://www.linkedin.com/in/fedi-hmida/"
