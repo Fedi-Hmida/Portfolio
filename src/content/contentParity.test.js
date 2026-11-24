@@ -22,6 +22,8 @@ import firmaaCaseEn from "./firmaa/caseStudy.en";
 import firmaaCaseFr from "./firmaa/caseStudy.fr";
 import sahitnaSafeCaseEn from "./sahitnaSafe/caseStudy.en";
 import sahitnaSafeCaseFr from "./sahitnaSafe/caseStudy.fr";
+import smartClaimCaseEn from "./smartClaim/caseStudy.en";
+import smartClaimCaseFr from "./smartClaim/caseStudy.fr";
 
 const pairs = {
   "callverse/caseStudy": [callVerseCaseEn, callVerseCaseFr],
@@ -33,6 +35,7 @@ const pairs = {
   "smartHrmAi/caseStudy": [smartHrmAiCaseEn, smartHrmAiCaseFr],
   "firmaa/caseStudy": [firmaaCaseEn, firmaaCaseFr],
   "sahitnaSafe/caseStudy": [sahitnaSafeCaseEn, sahitnaSafeCaseFr],
+  "smartClaim/caseStudy": [smartClaimCaseEn, smartClaimCaseFr],
 };
 
 const NBSP = String.fromCharCode(0xa0);

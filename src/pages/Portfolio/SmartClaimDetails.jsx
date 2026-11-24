@@ -26,193 +26,199 @@ import {
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 
 import smartClaimImg from "../../assets/images/Portfolio/New Logo SmartClaim.png";
 import dataVideo from "../../assets/videos/Smart_claim/Data Demo.mp4";
 import demoVideo from "../../assets/videos/Smart_claim/Demo_Mobile.mp4";
+import en from "../../content/smartClaim/caseStudy.en";
+import fr from "../../content/smartClaim/caseStudy.fr";
+import { pickContent } from "../../i18n/localeContent";
+
+// Long-form copy lives in src/content/smartClaim/caseStudy.{en,fr}.js. The locale comes from the
+// URL and switching language reloads the page, so picking once at module level is safe.
+const c = pickContent({ en, fr });
 
 const metricCards = [
-  { label: "Precision", value: "92.9%", detail: "YOLOv8 damage detection" },
-  { label: "Timeline", value: "2 months", detail: "Internship project" },
-  { label: "Platform", value: "Flutter", detail: "Mobile app with FastAPI backend" },
-  { label: "Domain", value: "Insurance", detail: "AI-assisted vehicle claim reporting" },
+  { label: c.s001, value: c.s002, detail: c.s003 },
+  { label: c.s004, value: c.s005, detail: c.s006 },
+  { label: c.s007, value: c.s008, detail: c.s009 },
+  { label: c.s010, value: c.s011, detail: c.s012 },
 ];
 
 const roleCards = [
   {
-    title: "Mobile Claim Flow",
-    area: "Flutter + Dart",
-    text: "Developed the SmartClaim Flutter mobile application for structured claim reporting.",
+    title: c.s013,
+    area: c.s014,
+    text: c.s015,
   },
   {
-    title: "Computer Vision Integration",
-    area: "YOLOv8 + OpenCV + PyTorch",
-    text: "Integrated YOLOv8 for real-time vehicle damage detection inside the claim workflow.",
+    title: c.s016,
+    area: c.s017,
+    text: c.s018,
   },
   {
-    title: "Backend Delivery",
-    area: "FastAPI + Docker",
-    text: "Built the FastAPI backend and containerized the solution with Docker for a clearer product demo.",
+    title: c.s019,
+    area: c.s020,
+    text: c.s021,
   },
   {
-    title: "Claim Data Workflow",
-    area: "OCR + MongoDB",
-    text: "Connected mobile capture, AI inference, OCR, and claim data handling into one reviewable process.",
+    title: c.s022,
+    area: c.s023,
+    text: c.s024,
   },
 ];
 
 const claimWorkflow = [
   {
-    title: "Capture",
-    label: "Flutter app",
-    text: "Flutter guides the user through claim reporting and vehicle damage photo capture.",
+    title: c.s025,
+    label: c.s026,
+    text: c.s027,
   },
   {
-    title: "Route",
-    label: "FastAPI",
-    text: "FastAPI receives claim data and routes images through the computer vision pipeline.",
+    title: c.s028,
+    label: c.s029,
+    text: c.s030,
   },
   {
-    title: "Detect",
-    label: "YOLOv8",
-    text: "YOLOv8, OpenCV, and PyTorch support damage detection and image processing.",
+    title: c.s031,
+    label: c.s032,
+    text: c.s033,
   },
   {
-    title: "Extract",
-    label: "OCR",
-    text: "OCR supports extraction of relevant claim and document data.",
+    title: c.s034,
+    label: c.s035,
+    text: c.s036,
   },
   {
-    title: "Store",
-    label: "MongoDB",
-    text: "MongoDB supports the project data layer for claim-related information.",
+    title: c.s037,
+    label: c.s038,
+    text: c.s039,
   },
   {
-    title: "Review",
-    label: "Claim support",
-    text: "The mobile workflow, AI inference, and claim data handling come together for a usable product demo.",
+    title: c.s040,
+    label: c.s041,
+    text: c.s042,
   },
 ];
 
 const featureGroups = [
   {
     icon: <FaMobileAlt />,
-    title: "Mobile Reporting",
-    items: ["Guided claim flow", "Vehicle image capture", "Structured mobile screens"],
+    title: c.s043,
+    items: [c.s044, c.s045, c.s046],
   },
   {
     icon: <FaBrain />,
-    title: "AI Damage Detection",
-    items: ["YOLOv8 inference", "92.9% reported precision", "OpenCV and PyTorch workflow"],
+    title: c.s047,
+    items: [c.s048, c.s049, c.s050],
   },
   {
     icon: <FaServer />,
-    title: "Backend Integration",
-    items: ["FastAPI inference API", "Dockerized delivery", "Mobile-to-model connection"],
+    title: c.s051,
+    items: [c.s052, c.s053, c.s054],
   },
   {
     icon: <FaFileAlt />,
-    title: "Claim Support Data",
-    items: ["OCR document extraction", "MongoDB data layer", "Claim information handling"],
+    title: c.s055,
+    items: [c.s056, c.s057, c.s058],
   },
 ];
 
 const visionPipeline = [
   {
-    title: "Detection Model",
-    value: "YOLOv8",
-    text: "Identifies car damage in the image pipeline for AI-assisted insurance reporting.",
+    title: c.s059,
+    value: c.s032,
+    text: c.s060,
   },
   {
-    title: "Image Workflow",
-    value: "OpenCV + PyTorch",
-    text: "Supports image processing and the model workflow behind the detection experience.",
+    title: c.s061,
+    value: c.s062,
+    text: c.s063,
   },
   {
-    title: "Reported Result",
-    value: "92.9%",
-    text: "Portfolio content reports 92.9% precision for real-time vehicle damage detection.",
+    title: c.s064,
+    value: c.s002,
+    text: c.s065,
   },
   {
-    title: "Document Layer",
-    value: "OCR",
-    text: "Extracts relevant document and claim data to support the digital reporting flow.",
+    title: c.s066,
+    value: c.s035,
+    text: c.s067,
   },
 ];
 
 const tradeoffCards = [
   {
-    title: "Capture Quality",
-    text: "Balancing mobile usability with the extra steps needed for accurate image capture.",
+    title: c.s068,
+    text: c.s069,
   },
   {
-    title: "AI Clarity",
-    text: "Keeping AI inference understandable to non-technical users inside the claim flow.",
+    title: c.s070,
+    text: c.s071,
   },
   {
-    title: "Integrated Demo",
-    text: "Connecting Flutter, FastAPI, Docker, and computer vision parts into one usable product demo.",
+    title: c.s072,
+    text: c.s073,
   },
 ];
 
 const learningCards = [
   {
-    title: "Mobile Product UX",
-    area: "Flutter",
-    text: "SmartClaim strengthened how I design a guided mobile flow around a real user task.",
+    title: c.s074,
+    area: c.s008,
+    text: c.s075,
   },
   {
-    title: "Computer Vision Delivery",
-    area: "YOLOv8 pipeline",
-    text: "It improved my ability to explain model inference, image processing, and detection results clearly.",
+    title: c.s076,
+    area: c.s077,
+    text: c.s078,
   },
   {
-    title: "Backend Integration",
-    area: "FastAPI + Docker",
-    text: "The project connected API delivery, containerization, and mobile workflows into one coherent demo.",
+    title: c.s051,
+    area: c.s020,
+    text: c.s079,
   },
   {
-    title: "Recruiter-Facing Story",
-    area: "Case study",
-    text: "It clarified how much engineering work depends on explaining the problem, role, architecture, and result.",
+    title: c.s080,
+    area: c.s081,
+    text: c.s082,
   },
 ];
 
 const stack = [
-  "Flutter",
-  "Dart",
-  "YOLOv8",
-  "OpenCV",
-  "PyTorch",
-  "FastAPI",
-  "Docker",
-  "MongoDB",
-  "OCR",
+  c.s008,
+  c.s083,
+  c.s032,
+  c.s084,
+  c.s085,
+  c.s029,
+  c.s086,
+  c.s038,
+  c.s035,
 ];
 
 const projectInfo = [
-  ["My Role", "Data & Mobile Developer Intern"],
-  ["Project Name", "SmartClaim"],
-  ["Category", "Mobile App - Computer Vision"],
-  ["Main Result", "92.9% detection precision"],
-  ["Duration", "2 Months (Internship)"],
+  [c.s087, c.s088],
+  [c.s089, c.s090],
+  [c.s091, c.s092],
+  [c.s093, c.s094],
+  [c.s095, c.s096],
 ];
 
 const demoVideos = [
   {
     key: "demo",
-    title: "Mobile App Workflow",
-    subtitle: "User claim reporting flow",
-    label: "Play SmartClaim mobile app workflow demo",
+    title: c.s097,
+    subtitle: c.s098,
+    label: c.s099,
     src: demoVideo,
   },
   {
     key: "data",
-    title: "Damage Detection",
-    subtitle: "AI computer vision workflow",
-    label: "Play SmartClaim damage detection AI demo",
+    title: c.s100,
+    subtitle: c.s101,
+    label: c.s102,
     src: dataVideo,
   },
 ];
@@ -255,7 +261,7 @@ const SmartClaimDetails = () => {
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
+        
       </div>
 
       <main className="relative z-10">
@@ -267,32 +273,24 @@ const SmartClaimDetails = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-gray-300">
-                <Link to="/" className="transition hover:text-[#6FB9CC]">Home</Link>
+                <Link to="/" className="transition hover:text-[#6FB9CC]">{c.s103}</Link>
                 <span>/</span>
-                <Link to="/portfolio" className="transition hover:text-[#6FB9CC]">Portfolio</Link>
+                <Link to="/portfolio" className="transition hover:text-[#6FB9CC]">{c.s104}</Link>
                 <span>/</span>
-                <span className="text-[#6FB9CC]">SmartClaim</span>
+                <span className="text-[#6FB9CC]">{c.s090}</span>
               </div>
 
               <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
                 <div>
                   <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#6FB9CC]/30 bg-[#6FB9CC]/10 px-4 py-2 text-sm font-semibold text-[#BDEFF7]">
-                    <FaShieldAlt aria-hidden="true" />
-                    AI insurance claim assistant
-                  </div>
-                  <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">
-                    SmartClaim
-                    <span className="block text-[#6FB9CC]">Vehicle Damage Detection App</span>
+                    <FaShieldAlt aria-hidden="true" />{c.s105}</div>
+                  <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">{c.s090}<span className="block text-[#6FB9CC]">{c.s106}</span>
                   </h1>
-                  <p className="mb-7 max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">
-                    AI-powered insurance claim assistant built with Flutter, YOLOv8, FastAPI, Docker, and a computer vision pipeline reaching 92.9% damage detection precision.
-                  </p>
-                  <p className="mb-8 max-w-3xl text-base leading-8 text-gray-300">
-                    SmartClaim is an AI-powered mobile application designed to make car insurance claim reporting faster and more structured. The user captures vehicle damage from the Flutter app, then the backend supports computer vision analysis with YOLOv8, OpenCV, PyTorch, OCR, and claim data handling.
-                  </p>
+                  <p className="mb-7 max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">{c.s107}</p>
+                  <p className="mb-8 max-w-3xl text-base leading-8 text-gray-300">{c.s108}</p>
 
                   <div className="mb-8 flex flex-wrap gap-3">
-                    {["Flutter", "YOLOv8", "FastAPI", "Docker", "MongoDB", "92.9% precision"].map((item) => (
+                    {[c.s008, c.s032, c.s029, c.s086, c.s038, c.s109].map((item) => (
                       <span key={item} className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-gray-200">
                         {item}
                       </span>
@@ -301,13 +299,9 @@ const SmartClaimDetails = () => {
 
                   <div className="flex flex-wrap gap-4">
                     <a href="#smartclaim-demo" className="inline-flex items-center gap-2 rounded-full bg-[#6FB9CC] px-6 py-3 font-semibold text-[#061429] shadow-lg shadow-[#6FB9CC]/25 transition hover:bg-[#8DDCEB]">
-                      <FaPlay aria-hidden="true" />
-                      Watch demos
-                    </a>
+                      <FaPlay aria-hidden="true" />{c.s110}</a>
                     <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 font-semibold text-white transition hover:border-[#6FB9CC]/60 hover:bg-[#6FB9CC]/10">
-                      <FaArrowLeft aria-hidden="true" />
-                      Back to Portfolio
-                    </Link>
+                      <FaArrowLeft aria-hidden="true" />{c.s111}</Link>
                   </div>
                 </div>
 
@@ -319,7 +313,7 @@ const SmartClaimDetails = () => {
                 >
                   <img
                     src={smartClaimImg}
-                    alt="SmartClaim project logo"
+                    alt={c.s112}
                     className="mx-auto w-full max-w-[400px] rounded-2xl object-contain drop-shadow-2xl"
                     loading="eager"
                     decoding="async"
@@ -354,36 +348,28 @@ const SmartClaimDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#6FB9CC]">
                     <FaShieldAlt className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Project Summary</h2>
+                    <h2 className="text-2xl font-black">{c.s113}</h2>
                   </div>
-                  <p className="leading-relaxed text-gray-200">
-                    SmartClaim turns a manual insurance reporting process into a guided mobile workflow backed by AI damage detection. The project combines mobile UX, backend APIs, containerized delivery, computer vision, OCR, and claim data handling into a reviewable internship product demo.
-                  </p>
+                  <p className="leading-relaxed text-gray-200">{c.s114}</p>
                 </section>
 
                 <section className="grid gap-5 md:grid-cols-2">
                   <div className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl">
-                    <h2 className="mb-4 text-2xl font-black text-white">The Challenge</h2>
-                    <p className="leading-relaxed text-gray-300">
-                      Traditional car insurance claims are slow, manual, and error-prone. Users often face long wait times for adjusters to inspect vehicles, while teams need more consistent damage information before a claim can move forward.
-                    </p>
+                    <h2 className="mb-4 text-2xl font-black text-white">{c.s115}</h2>
+                    <p className="leading-relaxed text-gray-300">{c.s116}</p>
                   </div>
                   <div className="rounded-3xl border border-[#6FB9CC]/30 bg-[#6FB9CC]/10 p-7 backdrop-blur-xl">
-                    <h2 className="mb-4 text-2xl font-black text-white">The Solution</h2>
-                    <p className="leading-relaxed text-gray-100">
-                      SmartClaim creates a guided mobile claim flow and connects it with AI-assisted damage detection. The project turns images and claim information into a clearer digital process for review.
-                    </p>
+                    <h2 className="mb-4 text-2xl font-black text-white">{c.s117}</h2>
+                    <p className="leading-relaxed text-gray-100">{c.s118}</p>
                   </div>
                 </section>
 
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#6FB9CC]">
                     <FaProjectDiagram className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">My Role</h2>
+                    <h2 className="text-2xl font-black">{c.s087}</h2>
                   </div>
-                  <p className="mb-5 leading-relaxed text-gray-200">
-                    As Data & Mobile Developer Intern, I worked across the mobile app, AI integration, backend API, and product demo story.
-                  </p>
+                  <p className="mb-5 leading-relaxed text-gray-200">{c.s119}</p>
                   <div className="grid gap-4 md:grid-cols-2">
                     {roleCards.map((role) => (
                       <div key={role.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5 transition-colors hover:border-[#6FB9CC]/40">
@@ -398,7 +384,7 @@ const SmartClaimDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#6FB9CC]">
                     <FaEye className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Key Features</h2>
+                    <h2 className="text-2xl font-black">{c.s120}</h2>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     {featureGroups.map((feature) => (
@@ -421,7 +407,7 @@ const SmartClaimDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#6FB9CC]">
                     <FaServer className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Architecture / Technical Approach</h2>
+                    <h2 className="text-2xl font-black">{c.s121}</h2>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                     {claimWorkflow.map((step, index) => (
@@ -439,19 +425,15 @@ const SmartClaimDetails = () => {
                       </div>
                     ))}
                   </div>
-                  <p className="mt-5 rounded-2xl border border-[#6FB9CC]/25 bg-[#6FB9CC]/10 p-4 font-mono text-sm text-[#BDEFF7]">
-                    Tech Stack: Flutter - Dart - YOLOv8 - OpenCV - PyTorch - FastAPI - Docker - MongoDB - OCR
-                  </p>
+                  <p className="mt-5 rounded-2xl border border-[#6FB9CC]/25 bg-[#6FB9CC]/10 p-4 font-mono text-sm text-[#BDEFF7]">{c.s122}</p>
                 </section>
 
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#6FB9CC]">
                     <FaBrain className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">AI Model and Computer Vision Pipeline</h2>
+                    <h2 className="text-2xl font-black">{c.s123}</h2>
                   </div>
-                  <p className="mb-5 leading-relaxed text-gray-200">
-                    The AI part stays visible as a computer vision pipeline: detection, image workflow, reported precision, and OCR support for claim documents.
-                  </p>
+                  <p className="mb-5 leading-relaxed text-gray-200">{c.s124}</p>
                   <div className="grid gap-4 md:grid-cols-2">
                     {visionPipeline.map((item) => (
                       <div key={item.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5">
@@ -466,7 +448,7 @@ const SmartClaimDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#6FB9CC]">
                     <FaDatabase className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Challenges and Tradeoffs</h2>
+                    <h2 className="text-2xl font-black">{c.s125}</h2>
                   </div>
                   <div className="grid gap-3 md:grid-cols-3">
                     {tradeoffCards.map((item) => (
@@ -481,7 +463,7 @@ const SmartClaimDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#6FB9CC]">
                     <FaMobileAlt className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">What I Learned</h2>
+                    <h2 className="text-2xl font-black">{c.s126}</h2>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     {learningCards.map((item) => (
@@ -497,7 +479,7 @@ const SmartClaimDetails = () => {
 
               <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-5 text-xl font-black">Project Info</h2>
+                  <h2 className="mb-5 text-xl font-black">{c.s127}</h2>
                   <div className="space-y-4 text-sm">
                     {projectInfo.map(([label, value]) => (
                       <div key={label}>
@@ -509,23 +491,23 @@ const SmartClaimDetails = () => {
                 </div>
 
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-4 text-xl font-black">Technologies</h2>
+                  <h2 className="mb-4 text-xl font-black">{c.s128}</h2>
                   <div className="space-y-3 text-sm">
-                    <p className="flex items-center gap-2 text-gray-200"><SiFlutter className="text-[#6FB9CC]" /> Flutter</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiDart className="text-[#6FB9CC]" /> Dart</p>
-                    <p className="flex items-center gap-2 text-gray-200"><FaBrain className="text-[#6FB9CC]" /> YOLOv8</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiOpencv className="text-[#6FB9CC]" /> OpenCV</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiPytorch className="text-[#6FB9CC]" /> PyTorch</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiFastapi className="text-[#6FB9CC]" /> FastAPI</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiDocker className="text-[#6FB9CC]" /> Docker</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiMongodb className="text-[#6FB9CC]" /> MongoDB</p>
-                    <p className="flex items-center gap-2 text-gray-200"><FaFileAlt className="text-[#6FB9CC]" /> OCR</p>
-                    <p className="flex items-center gap-2 text-gray-200"><FaPython className="text-[#6FB9CC]" /> Python</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiFlutter className="text-[#6FB9CC]" />{" "}{c.s008}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiDart className="text-[#6FB9CC]" />{" "}{c.s083}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><FaBrain className="text-[#6FB9CC]" />{" "}{c.s032}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiOpencv className="text-[#6FB9CC]" />{" "}{c.s084}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiPytorch className="text-[#6FB9CC]" />{" "}{c.s085}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiFastapi className="text-[#6FB9CC]" />{" "}{c.s029}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiDocker className="text-[#6FB9CC]" />{" "}{c.s086}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiMongodb className="text-[#6FB9CC]" />{" "}{c.s038}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><FaFileAlt className="text-[#6FB9CC]" />{" "}{c.s035}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><FaPython className="text-[#6FB9CC]" />{" "}{c.s129}</p>
                   </div>
                 </div>
 
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-4 text-xl font-black">Main Stack</h2>
+                  <h2 className="mb-4 text-xl font-black">{c.s130}</h2>
                   <div className="flex flex-wrap gap-2">
                     {stack.map((item) => (
                       <span key={item} className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-sm text-gray-200">
@@ -538,9 +520,7 @@ const SmartClaimDetails = () => {
                 <Link
                   to="/contact"
                   className="block rounded-2xl bg-[#6FB9CC] px-5 py-4 text-center font-bold text-[#061429] shadow-lg shadow-[#6FB9CC]/20 transition hover:-translate-y-1 hover:bg-[#8DDCEB]"
-                >
-                  Discuss this work
-                </Link>
+                >{c.s131}</Link>
               </aside>
             </div>
 
@@ -555,15 +535,9 @@ const SmartClaimDetails = () => {
             >
               <div className="mb-8">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#6FB9CC]/30 bg-[#6FB9CC]/10 px-4 py-2 text-sm font-semibold text-[#BDEFF7]">
-                  <FaPlay aria-hidden="true" />
-                  Product and AI demos
-                </div>
-                <h2 id="smartclaim-demo-title" className="text-2xl font-black text-white md:text-3xl">
-                  Demo Videos
-                </h2>
-                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-300 md:text-base">
-                  Two walkthroughs showing the mobile claim workflow and the AI damage detection pipeline.
-                </p>
+                  <FaPlay aria-hidden="true" />{c.s132}</div>
+                <h2 id="smartclaim-demo-title" className="text-2xl font-black text-white md:text-3xl">{c.s133}</h2>
+                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-300 md:text-base">{c.s134}</p>
               </div>
 
               <div className="grid gap-8 md:grid-cols-2">
@@ -611,20 +585,14 @@ const SmartClaimDetails = () => {
             <div className="mt-14 rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
               <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                 <div>
-                  <h2 className="mb-2 text-2xl font-black">Explore the project</h2>
-                  <p className="text-gray-300">Watch the demos, return to the project list, or start a conversation.</p>
+                  <h2 className="mb-2 text-2xl font-black">{c.s135}</h2>
+                  <p className="text-gray-300">{c.s136}</p>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <a href="#smartclaim-demo" className="inline-flex items-center gap-2 rounded-full bg-[#6FB9CC] px-5 py-3 font-semibold text-[#061429] transition hover:bg-[#8DDCEB]">
-                    <FaPlay aria-hidden="true" />
-                    Demos
-                  </a>
-                  <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#6FB9CC]/60 hover:bg-[#6FB9CC]/10">
-                    Portfolio
-                  </Link>
-                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#6FB9CC]/60 hover:bg-[#6FB9CC]/10">
-                    Contact Me
-                    <FaArrowRight aria-hidden="true" />
+                    <FaPlay aria-hidden="true" />{c.s137}</a>
+                  <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#6FB9CC]/60 hover:bg-[#6FB9CC]/10">{c.s104}</Link>
+                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#6FB9CC]/60 hover:bg-[#6FB9CC]/10">{c.s138}<FaArrowRight aria-hidden="true" />
                   </Link>
                 </div>
               </div>
@@ -642,15 +610,15 @@ const SmartClaimDetails = () => {
                   <FaArrowLeft />
                 </div>
                 <div>
-                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">Previous Project</span>
-                  <span className="text-lg font-semibold">SolarFlow</span>
+                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">{c.s139}</span>
+                  <span className="text-lg font-semibold">{c.s140}</span>
                 </div>
               </Link>
 
               <Link to="/portfolio" className="group flex items-center gap-3 text-right text-gray-400 transition-colors hover:text-white">
                 <div>
-                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">Next Project</span>
-                  <span className="text-lg font-semibold">Onboardify</span>
+                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">{c.s141}</span>
+                  <span className="text-lg font-semibold">{c.s142}</span>
                 </div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-all group-hover:border-[#6FB9CC] group-hover:bg-[#6FB9CC]">
                   <FaArrowRight />
