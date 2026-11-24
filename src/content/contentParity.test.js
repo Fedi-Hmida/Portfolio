@@ -20,6 +20,8 @@ import smartHrmAiCaseEn from "./smartHrmAi/caseStudy.en";
 import smartHrmAiCaseFr from "./smartHrmAi/caseStudy.fr";
 import firmaaCaseEn from "./firmaa/caseStudy.en";
 import firmaaCaseFr from "./firmaa/caseStudy.fr";
+import sahitnaSafeCaseEn from "./sahitnaSafe/caseStudy.en";
+import sahitnaSafeCaseFr from "./sahitnaSafe/caseStudy.fr";
 
 const pairs = {
   "callverse/caseStudy": [callVerseCaseEn, callVerseCaseFr],
@@ -30,6 +32,7 @@ const pairs = {
   "doubleDegree/news": [doubleDegreeNewsEn, doubleDegreeNewsFr],
   "smartHrmAi/caseStudy": [smartHrmAiCaseEn, smartHrmAiCaseFr],
   "firmaa/caseStudy": [firmaaCaseEn, firmaaCaseFr],
+  "sahitnaSafe/caseStudy": [sahitnaSafeCaseEn, sahitnaSafeCaseFr],
 };
 
 const NBSP = String.fromCharCode(0xa0);
