@@ -42,6 +42,8 @@ import newsGraduationEn from "./news/graduation.en";
 import newsGraduationFr from "./news/graduation.fr";
 import newsIastamEn from "./news/iastam.en";
 import newsIastamFr from "./news/iastam.fr";
+import newsIeeeSypEn from "./news/ieeeSyp.en";
+import newsIeeeSypFr from "./news/ieeeSyp.fr";
 import newsIeeeXtremeEn from "./news/ieeeXtreme.en";
 import newsIeeeXtremeFr from "./news/ieeeXtreme.fr";
 import newsIesCongressEn from "./news/iesCongress.en";
@@ -79,6 +81,7 @@ const pairs = {
   "news/firmaaLaunch": [newsFirmaaLaunchEn, newsFirmaaLaunchFr],
   "news/graduation": [newsGraduationEn, newsGraduationFr],
   "news/iastam": [newsIastamEn, newsIastamFr],
+  "news/ieeeSyp": [newsIeeeSypEn, newsIeeeSypFr],
   "news/ieeeXtreme": [newsIeeeXtremeEn, newsIeeeXtremeFr],
   "news/iesCongress": [newsIesCongressEn, newsIesCongressFr],
   "news/internshipStart": [newsInternshipStartEn, newsInternshipStartFr],
