@@ -13,9 +13,15 @@ import tsyp1 from "../../assets/images/new12/tsyp1.jpg";
 import tsyp2 from "../../assets/images/new12/tsyp2.jpg";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
+import en from "../../content/news/energyUtopia.en";
+import fr from "../../content/news/energyUtopia.fr";
+import { pickContent } from "../../i18n/localeContent";
+
+// Long-form copy lives in src/content/news/energyUtopia.{en,fr}.js. The locale comes from the
+// URL and switching language reloads the page, so picking once at module level is safe.
+const c = pickContent({ en, fr });
 
 const NewsEnergyUtopia = () => {
   // Animation Variants
@@ -57,7 +63,7 @@ const NewsEnergyUtopia = () => {
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
+        
       </div>
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
@@ -72,12 +78,11 @@ const NewsEnergyUtopia = () => {
               to="/news"
               className="text-[#81d4fa] hover:text-white transition-colors flex items-center gap-2"
             >
-              <FaArrowLeft /> Back to News
-            </Link>
+              <FaArrowLeft />{" "}{c.s001}</Link>
           </div>
           <img
             src={flogo}
-            alt="Fedi Hmida logo"
+            alt={c.s002}
             loading="lazy"
             decoding="async"
             className="h-8 w-auto opacity-80"
@@ -100,17 +105,9 @@ const NewsEnergyUtopia = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#00e676] rounded-full filter blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
 
               <motion.div {...floatAnimation} className="relative z-10">
-                <span className="inline-block py-1 px-3 rounded-full bg-[#00e676]/30 border border-[#00e676]/30 text-[#00e676] text-xs font-bold uppercase tracking-widest mb-4">
-                  Award
-                </span>
-                <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#00e676]">
-                  1st Place at Energy Utopia Challenge
-                </h1>
-                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
-                  Proud Achievement: Our team had the honor of winning 1st
-                  Place at the Energy Utopia Challenge: AI for a Smarter,
-                  Greener Future.
-                </p>
+                <span className="inline-block py-1 px-3 rounded-full bg-[#00e676]/30 border border-[#00e676]/30 text-[#00e676] text-xs font-bold uppercase tracking-widest mb-4">{c.s003}</span>
+                <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#00e676]">{c.s004}</h1>
+                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">{c.s005}</p>
               </motion.div>
             </motion.div>
 
@@ -120,41 +117,26 @@ const NewsEnergyUtopia = () => {
               className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.1)] bg-[rgba(26,35,126,0.3)] backdrop-blur-[12px]"
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaLeaf className="text-[#00e676]" /> A Smarter, Greener Future
-              </h3>
-              <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">
-                Proudly representing the{" "}
-                <strong>IEEE ESPRIT Student Branch</strong>, this achievement
-                reflects our team's commitment to innovation, sustainability,
-                and the impactful use of AI in energy systems.
-              </p>
-              <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">
-                We are grateful for the support, collaboration, and inspiring
-                environment provided by IEEE PES Tunisia Section, IEEE Young
-                Professionals Tunisia, and SPECTRA, during the{" "}
-                <strong>
-                  IEEE Tunisian Student and Young Professional TSYP Congress -
-                  December 2025
-                </strong>
+                <FaLeaf className="text-[#00e676]" />{" "}{c.s006}</h3>
+              <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">{c.s007}{" "}
+                <strong>{c.s008}</strong>{c.s009}</p>
+              <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">{c.s010}{" "}
+                <strong>{c.s011}</strong>
                 .
               </p>
 
               <div className="my-8 rounded-xl overflow-hidden border border-white/10 shadow-lg">
                 <ExpandableImage
                   src={tsyp2}
-                  alt="Team at TSYP Congress"
+                  alt={c.s012}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-cover"
                 />
-                <p className="p-3 bg-black/20 text-sm text-center text-gray-300">
-                  Energy Utopia Challenge Team
-                </p>
+                <p className="p-3 bg-black/20 text-sm text-center text-gray-300">{c.s013}</p>
               </div>
 
-              <p className="text-[#e3f2fd] font-semibold text-lg leading-relaxed">
-                Onward to more innovation and impact!
-              </p>
+              <p className="text-[#e3f2fd] font-semibold text-lg leading-relaxed">{c.s014}</p>
             </motion.div>
           </div>
 
@@ -168,15 +150,14 @@ const NewsEnergyUtopia = () => {
               <div className="relative overflow-hidden rounded-[20px] group bg-white flex items-center justify-center">
                 <ExpandableImage
                   src={tsyp1}
-                  alt="TSYP Award"
+                  alt={c.s015}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-contain transform transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e]/90 to-transparent flex items-end p-6 pointer-events-none">
                   <p className="text-white font-medium flex items-center gap-2">
-                    <FaTrophy className="text-yellow-400" /> 1st Place Winner
-                  </p>
+                    <FaTrophy className="text-yellow-400" />{" "}{c.s016}</p>
                 </div>
               </div>
             </motion.div>
@@ -187,28 +168,23 @@ const NewsEnergyUtopia = () => {
               className="p-6 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.6)] backdrop-blur-[16px]"
             >
               <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaUserTie className="text-[#81d4fa]" /> Quick Info
-              </h3>
+                <FaUserTie className="text-[#81d4fa]" />{" "}{c.s017}</h3>
               <ul className="space-y-4">
                 <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Event</span>
-                  <span className="text-white font-medium text-right w-1/2">
-                    IEEE TSYP Congress
-                  </span>
+                  <span className="text-[#81d4fa]">{c.s018}</span>
+                  <span className="text-white font-medium text-right w-1/2">{c.s019}</span>
                 </li>
                 <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Date</span>
-                  <span className="text-white font-medium">26-12-2025</span>
+                  <span className="text-[#81d4fa]">{c.s020}</span>
+                  <span className="text-white font-medium">{c.s021}</span>
                 </li>
                 <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Author</span>
-                  <span className="text-white font-medium">Fedi Hmida</span>
+                  <span className="text-[#81d4fa]">{c.s022}</span>
+                  <span className="text-white font-medium">{c.s023}</span>
                 </li>
               </ul>
               <div className="mt-8 pt-6 border-t border-[rgba(79,195,247,0.2)] text-center">
-                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">
-                  Connect
-                </p>
+                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">{c.s024}</p>
                 <div className="flex justify-center gap-4">
                   <a
                     href="https://www.linkedin.com/in/fedi-hmida/"

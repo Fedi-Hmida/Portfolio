@@ -32,6 +32,8 @@ import proLinkCaseEn from "./proLink/caseStudy.en";
 import proLinkCaseFr from "./proLink/caseStudy.fr";
 import newsBiatMasterclassEn from "./news/biatMasterclass.en";
 import newsBiatMasterclassFr from "./news/biatMasterclass.fr";
+import newsEnergyUtopiaEn from "./news/energyUtopia.en";
+import newsEnergyUtopiaFr from "./news/energyUtopia.fr";
 import newsFirmaaLaunchEn from "./news/firmaaLaunch.en";
 import newsFirmaaLaunchFr from "./news/firmaaLaunch.fr";
 import newsIastamEn from "./news/iastam.en";
@@ -60,6 +62,7 @@ const pairs = {
   "onboardify/caseStudy": [onboardifyCaseEn, onboardifyCaseFr],
   "proLink/caseStudy": [proLinkCaseEn, proLinkCaseFr],
   "news/biatMasterclass": [newsBiatMasterclassEn, newsBiatMasterclassFr],
+  "news/energyUtopia": [newsEnergyUtopiaEn, newsEnergyUtopiaFr],
   "news/firmaaLaunch": [newsFirmaaLaunchEn, newsFirmaaLaunchFr],
   "news/iastam": [newsIastamEn, newsIastamFr],
   "news/iesCongress": [newsIesCongressEn, newsIesCongressFr],
