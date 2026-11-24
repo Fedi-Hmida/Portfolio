@@ -53,6 +53,9 @@ const SmartHrmAiDetails = lazy(
 const CampusFlowDetails = lazy(
   () => import("./pages/Portfolio/CampusFlowDetails"),
 );
+const CallVerseDetails = lazy(
+  () => import("./pages/Portfolio/CallVerseDetails"),
+);
 const SahitnaSafeDetails = lazy(
   () => import("./pages/Portfolio/SahitnaSafeDetails"),
 );
@@ -116,6 +119,14 @@ const AppRoutes = () => {
             element={
               <AnimatedPage>
                 <CampusFlowDetails />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/portfolio/callverse"
+            element={
+              <AnimatedPage>
+                <CallVerseDetails />
               </AnimatedPage>
             }
           />
