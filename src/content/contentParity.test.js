@@ -30,6 +30,8 @@ import onboardifyCaseEn from "./onboardify/caseStudy.en";
 import onboardifyCaseFr from "./onboardify/caseStudy.fr";
 import proLinkCaseEn from "./proLink/caseStudy.en";
 import proLinkCaseFr from "./proLink/caseStudy.fr";
+import newsFirmaaLaunchEn from "./news/firmaaLaunch.en";
+import newsFirmaaLaunchFr from "./news/firmaaLaunch.fr";
 
 const pairs = {
   "callverse/caseStudy": [callVerseCaseEn, callVerseCaseFr],
@@ -45,6 +47,7 @@ const pairs = {
   "solarFlow/caseStudy": [solarFlowCaseEn, solarFlowCaseFr],
   "onboardify/caseStudy": [onboardifyCaseEn, onboardifyCaseFr],
   "proLink/caseStudy": [proLinkCaseEn, proLinkCaseFr],
+  "news/firmaaLaunch": [newsFirmaaLaunchEn, newsFirmaaLaunchFr],
 };
 
 const NBSP = String.fromCharCode(0xa0);
