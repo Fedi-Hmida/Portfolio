@@ -13,9 +13,15 @@ import flogo from "../../assets/images/flogo.png";
 import tsImg from "../../assets/images/ts.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
+import en from "../../content/news/tsyp.en";
+import fr from "../../content/news/tsyp.fr";
+import { pickContent } from "../../i18n/localeContent";
+
+// Long-form copy lives in src/content/news/tsyp.{en,fr}.js. The locale comes from the
+// URL and switching language reloads the page, so picking once at module level is safe.
+const c = pickContent({ en, fr });
 
 const NewsTSYP = () => {
   // Animation Variants
@@ -46,7 +52,7 @@ const NewsTSYP = () => {
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
+        
       </div>
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
@@ -61,12 +67,11 @@ const NewsTSYP = () => {
               to="/news"
               className="text-[#81d4fa] hover:text-white transition-colors flex items-center gap-2"
             >
-              <FaArrowLeft /> Back to News
-            </Link>
+              <FaArrowLeft />{" "}{c.s001}</Link>
           </div>
           <img
             src={flogo}
-            alt="Fedi Hmida logo"
+            alt={c.s002}
             loading="lazy"
             decoding="async"
             className="h-8 w-auto opacity-80"
@@ -87,17 +92,9 @@ const NewsTSYP = () => {
               className="p-10 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.6)] backdrop-blur-[16px] shadow-lg relative overflow-hidden"
             >
               <div className="relative z-10">
-                <span className="inline-block py-1 px-3 rounded-full bg-[#05608a]/30 border border-[#81d4fa]/30 text-[#81d4fa] text-xs font-bold uppercase tracking-widest mb-4">
-                  Congress
-                </span>
-                <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#81d4fa]">
-                  IEEE TSYP Congress Experience
-                </h1>
-                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
-                  I am excited to share my experience participating in the 12th
-                  edition of the IEEE Tunisian Student and Young Professional
-                  TSYP Congress (TSYP12).
-                </p>
+                <span className="inline-block py-1 px-3 rounded-full bg-[#05608a]/30 border border-[#81d4fa]/30 text-[#81d4fa] text-xs font-bold uppercase tracking-widest mb-4">{c.s003}</span>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#81d4fa]">{c.s004}</h1>
+                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">{c.s005}</p>
               </div>
             </motion.div>
 
@@ -108,35 +105,22 @@ const NewsTSYP = () => {
                   <div className="p-3 bg-[#05608a]/20 rounded-xl text-[#81d4fa]">
                     <FaCalendarCheck size={24} />
                   </div>
-                  <h2 className="text-2xl font-bold text-white">
-                    Event Overview
-                  </h2>
+                  <h2 className="text-2xl font-bold text-white">{c.s006}</h2>
                 </div>
-                <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">
-                  Being part of this incredible event allowed me to engage with
-                  passionate IEEE members, exchange valuable ideas, and delve
-                  into inspiring discussions about advancing innovation,
-                  diversity, and inclusion in engineering.
-                </p>
+                <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">{c.s007}</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
                   <div className="p-4 rounded-xl bg-[#1a237e]/40 border border-[#81d4fa]/10 flex flex-col items-center text-center">
                     <FaUsers className="text-[#81d4fa] text-2xl mb-3" />
-                    <span className="text-sm font-semibold text-white">
-                      Networking
-                    </span>
+                    <span className="text-sm font-semibold text-white">{c.s008}</span>
                   </div>
                   <div className="p-4 rounded-xl bg-[#1a237e]/40 border border-[#81d4fa]/10 flex flex-col items-center text-center">
                     <FaLightbulb className="text-[#81d4fa] text-2xl mb-3" />
-                    <span className="text-sm font-semibold text-white">
-                      Innovation
-                    </span>
+                    <span className="text-sm font-semibold text-white">{c.s009}</span>
                   </div>
                   <div className="p-4 rounded-xl bg-[#1a237e]/40 border border-[#81d4fa]/10 flex flex-col items-center text-center">
                     <FaHandshake className="text-[#81d4fa] text-2xl mb-3" />
-                    <span className="text-sm font-semibold text-white">
-                      Diversity
-                    </span>
+                    <span className="text-sm font-semibold text-white">{c.s010}</span>
                   </div>
                 </div>
               </div>
@@ -146,7 +130,7 @@ const NewsTSYP = () => {
                 <div className="rounded-[24px] overflow-hidden border border-[rgba(79,195,247,0.2)] shadow-lg h-64 md:h-80">
                   <ExpandableImage
                     src={tsImg}
-                    alt="IEEE TSYP Banner"
+                    alt={c.s011}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
@@ -155,7 +139,7 @@ const NewsTSYP = () => {
                 <div className="rounded-[24px] overflow-hidden border border-[rgba(79,195,247,0.2)] shadow-lg h-64 md:h-80">
                   <ExpandableImage
                     src={fediImg}
-                    alt="Fedi at TSYP"
+                    alt={c.s012}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
@@ -171,35 +155,23 @@ const NewsTSYP = () => {
               variants={fadeInUp}
               className="sticky top-32 p-8 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.8)] backdrop-blur-[20px] shadow-xl"
             >
-              <h3 className="text-xl font-bold text-white mb-6 border-l-4 border-[#05608a] pl-4">
-                Event Details
-              </h3>
+              <h3 className="text-xl font-bold text-white mb-6 border-l-4 border-[#05608a] pl-4">{c.s013}</h3>
               <ul className="space-y-6">
                 <li className="flex flex-col border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">
-                    Event
-                  </span>
-                  <span className="text-white font-medium">
-                    IEEE TSYP Congress
-                  </span>
+                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">{c.s014}</span>
+                  <span className="text-white font-medium">{c.s015}</span>
                 </li>
                 <li className="flex flex-col border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">
-                    Date
-                  </span>
-                  <span className="text-white font-medium">Dec 24, 2024</span>
+                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">{c.s016}</span>
+                  <span className="text-white font-medium">{c.s017}</span>
                 </li>
                 <li className="flex flex-col border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">
-                    Edition
-                  </span>
-                  <span className="text-white font-medium">12th (TSYP12)</span>
+                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">{c.s018}</span>
+                  <span className="text-white font-medium">{c.s019}</span>
                 </li>
                 <li className="flex flex-col border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">
-                    Location
-                  </span>
-                  <span className="text-white font-medium">Tunisia</span>
+                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">{c.s020}</span>
+                  <span className="text-white font-medium">{c.s021}</span>
                 </li>
               </ul>
             </motion.div>
