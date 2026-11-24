@@ -24,6 +24,8 @@ import sahitnaSafeCaseEn from "./sahitnaSafe/caseStudy.en";
 import sahitnaSafeCaseFr from "./sahitnaSafe/caseStudy.fr";
 import smartClaimCaseEn from "./smartClaim/caseStudy.en";
 import smartClaimCaseFr from "./smartClaim/caseStudy.fr";
+import solarFlowCaseEn from "./solarFlow/caseStudy.en";
+import solarFlowCaseFr from "./solarFlow/caseStudy.fr";
 
 const pairs = {
   "callverse/caseStudy": [callVerseCaseEn, callVerseCaseFr],
@@ -36,6 +38,7 @@ const pairs = {
   "firmaa/caseStudy": [firmaaCaseEn, firmaaCaseFr],
   "sahitnaSafe/caseStudy": [sahitnaSafeCaseEn, sahitnaSafeCaseFr],
   "smartClaim/caseStudy": [smartClaimCaseEn, smartClaimCaseFr],
+  "solarFlow/caseStudy": [solarFlowCaseEn, solarFlowCaseFr],
 };
 
 const NBSP = String.fromCharCode(0xa0);
