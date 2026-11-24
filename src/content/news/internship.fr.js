@@ -1,0 +1,31 @@
+// NewsInternship.jsx - français. Mêmes clés que internship.en.js.
+const content = {
+  s001: "Retour aux actualités",
+  s002: "Logo de Fedi Hmida",
+  s003: "Parcours professionnel",
+  s004: "Fin de mon stage - ADDINN Group",
+  s005: "J'ai le plaisir d'annoncer que j'ai terminé avec succès mon stage de 2 mois chez ADDINN Group\u00a0!",
+  s006: "Stage chez ADDINN",
+  s007: "Axes de travail",
+  s008: "Analyse de données",
+  s009: "Exploration et analyse des données.",
+  s010: "Développement mobile",
+  s011: "Développement mobile avec Flutter.",
+  s012: "Collaboration",
+  s013: "Travail en équipe transverse.",
+  s014: "Bilan",
+  s015: "Ce stage a été un parcours d'apprentissage remarquable\u00a0: j'ai pu approfondir mes connaissances dans le domaine de la donnée et renforcer mes compétences en développement Flutter, en travaillant sur de vrais projets aux côtés de professionnels expérimentés.",
+  s016: "Pendant ces 2 mois, j'ai pu contribuer à des projets qui comptent et mieux comprendre le métier. L'expérience a été à la fois exigeante et enrichissante, et m'a fait progresser sur le plan technique comme professionnel.",
+  s017: "Je suis reconnaissant d'avoir pu apprendre, progresser et contribuer aux côtés d'une équipe aussi inspirante chez ADDINN Group. Merci à toutes celles et ceux qui m'ont accompagné tout au long de ce parcours. J'ai hâte de mettre ces acquis en pratique dans mes prochains projets\u00a0!",
+  s018: "Détails",
+  s019: "Entreprise",
+  s020: "ADDINN Group",
+  s021: "Durée",
+  s022: "2 mois",
+  s023: "Rôle",
+  s024: "Stagiaire en génie logiciel",
+  s025: "Date de fin",
+  s026: "08 sept. 2025",
+};
+
+export default content;

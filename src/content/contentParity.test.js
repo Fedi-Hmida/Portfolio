@@ -48,6 +48,8 @@ import newsIeeeXtremeEn from "./news/ieeeXtreme.en";
 import newsIeeeXtremeFr from "./news/ieeeXtreme.fr";
 import newsIesCongressEn from "./news/iesCongress.en";
 import newsIesCongressFr from "./news/iesCongress.fr";
+import newsInternshipEn from "./news/internship.en";
+import newsInternshipFr from "./news/internship.fr";
 import newsInternshipStartEn from "./news/internshipStart.en";
 import newsInternshipStartFr from "./news/internshipStart.fr";
 import newsMaraTechHackathonEn from "./news/maraTechHackathon.en";
@@ -84,6 +86,7 @@ const pairs = {
   "news/ieeeSyp": [newsIeeeSypEn, newsIeeeSypFr],
   "news/ieeeXtreme": [newsIeeeXtremeEn, newsIeeeXtremeFr],
   "news/iesCongress": [newsIesCongressEn, newsIesCongressFr],
+  "news/internship": [newsInternshipEn, newsInternshipFr],
   "news/internshipStart": [newsInternshipStartEn, newsInternshipStartFr],
   "news/maraTechHackathon": [newsMaraTechHackathonEn, newsMaraTechHackathonFr],
   "news/nvidiaAnomalyDetection": [newsNvidiaAnomalyDetectionEn, newsNvidiaAnomalyDetectionFr],
