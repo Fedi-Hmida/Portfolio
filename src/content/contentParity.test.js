@@ -60,6 +60,8 @@ import newsNvidiaDliEn from "./news/nvidiaDli.en";
 import newsNvidiaDliFr from "./news/nvidiaDli.fr";
 import newsOnboardifyEn from "./news/onboardify.en";
 import newsOnboardifyFr from "./news/onboardify.fr";
+import newsRecognitionEn from "./news/recognition.en";
+import newsRecognitionFr from "./news/recognition.fr";
 import newsTsypEn from "./news/tsyp.en";
 import newsTsypFr from "./news/tsyp.fr";
 
@@ -92,6 +94,7 @@ const pairs = {
   "news/nvidiaAnomalyDetection": [newsNvidiaAnomalyDetectionEn, newsNvidiaAnomalyDetectionFr],
   "news/nvidiaDli": [newsNvidiaDliEn, newsNvidiaDliFr],
   "news/onboardify": [newsOnboardifyEn, newsOnboardifyFr],
+  "news/recognition": [newsRecognitionEn, newsRecognitionFr],
   "news/tsyp": [newsTsypEn, newsTsypFr],
 };
 
