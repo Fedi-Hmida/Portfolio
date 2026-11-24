@@ -12,9 +12,15 @@ import flogo from "../../assets/images/flogo.png";
 import nvidiaDliImg from "../../assets/images/news14/nvidea1.jpg";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
+import en from "../../content/news/nvidiaDli.en";
+import fr from "../../content/news/nvidiaDli.fr";
+import { pickContent } from "../../i18n/localeContent";
+
+// Long-form copy lives in src/content/news/nvidiaDli.{en,fr}.js. The locale comes from the
+// URL and switching language reloads the page, so picking once at module level is safe.
+const c = pickContent({ en, fr });
 
 const NewsNvidiaDLI = () => {
   const containerVariants = {
@@ -42,10 +48,10 @@ const NewsNvidiaDLI = () => {
   };
 
   const milestones = [
-    "Training and fine-tuning deep learning models",
-    "Working through practical accuracy challenges",
-    "Strengthening applied model development fundamentals",
-    "Preparing these skills for real-world AI projects",
+    c.s001,
+    c.s002,
+    c.s003,
+    c.s004,
   ];
 
   return (
@@ -59,7 +65,7 @@ const NewsNvidiaDLI = () => {
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
+        
       </div>
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
@@ -73,12 +79,11 @@ const NewsNvidiaDLI = () => {
               to="/news"
               className="text-[#81d4fa] hover:text-white transition-colors flex items-center gap-2"
             >
-              <FaArrowLeft /> Back to News
-            </Link>
+              <FaArrowLeft />{" "}{c.s005}</Link>
           </div>
           <img
             src={flogo}
-            alt="Fedi Hmida logo"
+            alt={c.s006}
             loading="lazy"
             decoding="async"
             className="h-8 w-auto opacity-80"
@@ -99,17 +104,9 @@ const NewsNvidiaDLI = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#76b900] rounded-full filter blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
 
               <motion.div {...floatAnimation} className="relative z-10">
-                <span className="inline-block py-1 px-3 rounded-full bg-[#76b900]/30 border border-[#76b900]/30 text-[#a8ff60] text-xs font-bold uppercase tracking-widest mb-4">
-                  Certification
-                </span>
-                <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#a8ff60]">
-                  NVIDIA DLI - Fundamentals of Deep Learning
-                </h1>
-                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
-                  Certified. I completed NVIDIA DLI - Fundamentals of Deep
-                  Learning, a practical milestone covering model training,
-                  fine-tuning, and real accuracy challenges.
-                </p>
+                <span className="inline-block py-1 px-3 rounded-full bg-[#76b900]/30 border border-[#76b900]/30 text-[#a8ff60] text-xs font-bold uppercase tracking-widest mb-4">{c.s007}</span>
+                <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#a8ff60]">{c.s008}</h1>
+                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">{c.s009}</p>
               </motion.div>
             </motion.div>
 
@@ -118,19 +115,9 @@ const NewsNvidiaDLI = () => {
               className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.1)] bg-[rgba(26,35,126,0.3)] backdrop-blur-[12px]"
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaAward className="text-[#a8ff60]" /> Practical AI Milestone
-              </h3>
-              <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">
-                From training and fine-tuning models to solving real accuracy
-                challenges, this certification strengthened my hands-on deep
-                learning workflow and gave me another practical base to apply in
-                AI projects.
-              </p>
-              <p className="text-[#e3f2fd]/80 leading-relaxed mb-8">
-                Looking forward to applying these skills to real-world projects,
-                especially where model quality, experimentation, and iteration
-                matter.
-              </p>
+                <FaAward className="text-[#a8ff60]" />{" "}{c.s010}</h3>
+              <p className="text-[#e3f2fd]/80 leading-relaxed mb-6">{c.s011}</p>
+              <p className="text-[#e3f2fd]/80 leading-relaxed mb-8">{c.s012}</p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {milestones.map((item) => (
@@ -156,13 +143,13 @@ const NewsNvidiaDLI = () => {
               <div className="relative overflow-hidden rounded-[20px] group bg-white flex items-center justify-center">
                 <ExpandableImage
                   src={nvidiaDliImg}
-                  alt="NVIDIA DLI Fundamentals of Deep Learning certification"
+                  alt={c.s013}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-contain transform transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e]/80 to-transparent flex items-end p-6 pointer-events-none">
-                  <p className="text-white font-medium">NVIDIA DLI Certified</p>
+                  <p className="text-white font-medium">{c.s014}</p>
                 </div>
               </div>
             </motion.div>
@@ -172,28 +159,23 @@ const NewsNvidiaDLI = () => {
               className="p-6 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.6)] backdrop-blur-[16px]"
             >
               <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaUserTie className="text-[#81d4fa]" /> Quick Info
-              </h3>
+                <FaUserTie className="text-[#81d4fa]" />{" "}{c.s015}</h3>
               <ul className="space-y-4">
                 <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Certification</span>
-                  <span className="text-white font-medium text-right">
-                    NVIDIA DLI Fundamentals of Deep Learning
-                  </span>
+                  <span className="text-[#81d4fa]">{c.s007}</span>
+                  <span className="text-white font-medium text-right">{c.s016}</span>
                 </li>
                 <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Date</span>
-                  <span className="text-white font-medium">February 2026</span>
+                  <span className="text-[#81d4fa]">{c.s017}</span>
+                  <span className="text-white font-medium">{c.s018}</span>
                 </li>
                 <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Author</span>
-                  <span className="text-white font-medium">Fedi Hmida</span>
+                  <span className="text-[#81d4fa]">{c.s019}</span>
+                  <span className="text-white font-medium">{c.s020}</span>
                 </li>
               </ul>
               <div className="mt-8 pt-6 border-t border-[rgba(79,195,247,0.2)] text-center">
-                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">
-                  Connect
-                </p>
+                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">{c.s021}</p>
                 <div className="flex justify-center gap-4">
                   <a
                     href="https://www.linkedin.com/in/fedi-hmida/"

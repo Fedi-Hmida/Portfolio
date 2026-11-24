@@ -40,6 +40,8 @@ import newsMaraTechHackathonEn from "./news/maraTechHackathon.en";
 import newsMaraTechHackathonFr from "./news/maraTechHackathon.fr";
 import newsNvidiaAnomalyDetectionEn from "./news/nvidiaAnomalyDetection.en";
 import newsNvidiaAnomalyDetectionFr from "./news/nvidiaAnomalyDetection.fr";
+import newsNvidiaDliEn from "./news/nvidiaDli.en";
+import newsNvidiaDliFr from "./news/nvidiaDli.fr";
 
 const pairs = {
   "callverse/caseStudy": [callVerseCaseEn, callVerseCaseFr],
@@ -60,6 +62,7 @@ const pairs = {
   "news/iastam": [newsIastamEn, newsIastamFr],
   "news/maraTechHackathon": [newsMaraTechHackathonEn, newsMaraTechHackathonFr],
   "news/nvidiaAnomalyDetection": [newsNvidiaAnomalyDetectionEn, newsNvidiaAnomalyDetectionFr],
+  "news/nvidiaDli": [newsNvidiaDliEn, newsNvidiaDliFr],
 };
 
 const NBSP = String.fromCharCode(0xa0);
