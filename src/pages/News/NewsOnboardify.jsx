@@ -12,9 +12,15 @@ import { Link } from "react-router-dom";
 import flogo from "../../assets/images/flogo.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
+import en from "../../content/news/onboardify.en";
+import fr from "../../content/news/onboardify.fr";
+import { pickContent } from "../../i18n/localeContent";
+
+// Long-form copy lives in src/content/news/onboardify.{en,fr}.js. The locale comes from the
+// URL and switching language reloads the page, so picking once at module level is safe.
+const c = pickContent({ en, fr });
 
 const NewsOnboardify = () => {
   // Animation Variants
@@ -56,7 +62,7 @@ const NewsOnboardify = () => {
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
+        
       </div>
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
@@ -71,12 +77,11 @@ const NewsOnboardify = () => {
               to="/news"
               className="text-[#81d4fa] hover:text-white transition-colors flex items-center gap-2"
             >
-              <FaArrowLeft /> Back to News
-            </Link>
+              <FaArrowLeft />{" "}{c.s001}</Link>
           </div>
           <img
             src={flogo}
-            alt="Fedi Hmida logo"
+            alt={c.s002}
             loading="lazy"
             decoding="async"
             className="h-8 w-auto opacity-80"
@@ -99,18 +104,10 @@ const NewsOnboardify = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#05608a] rounded-full filter blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
 
               <motion.div {...floatAnimation} className="relative z-10">
-                <span className="inline-block py-1 px-3 rounded-full bg-[#05608a]/30 border border-[#81d4fa]/30 text-[#81d4fa] text-xs font-bold uppercase tracking-widest mb-4">
-                  Official Launch
-                </span>
-                <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#81d4fa]">
-                  Meet Onboardify
-                </h1>
-                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
-                  We're proud to unveil Onboardify, a hybrid onboarding solution
-                  designed and developed by our team{" "}
-                  <span className="text-[#81d4fa] font-semibold">
-                    CodeRockers
-                  </span>
+                <span className="inline-block py-1 px-3 rounded-full bg-[#05608a]/30 border border-[#81d4fa]/30 text-[#81d4fa] text-xs font-bold uppercase tracking-widest mb-4">{c.s003}</span>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#81d4fa]">{c.s004}</h1>
+                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">{c.s005}{" "}
+                  <span className="text-[#81d4fa] font-semibold">{c.s006}</span>
                   .
                 </p>
               </motion.div>
@@ -118,9 +115,7 @@ const NewsOnboardify = () => {
 
             {/* Section 2: What is Onboardify? */}
             <motion.div variants={fadeInUp}>
-              <h2 className="text-2xl font-bold text-white mb-6 pl-4 border-l-4 border-[#05608a]">
-                What is Onboardify?
-              </h2>
+              <h2 className="text-2xl font-bold text-white mb-6 pl-4 border-l-4 border-[#05608a]">{c.s007}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Card 1 */}
                 <motion.div
@@ -130,12 +125,8 @@ const NewsOnboardify = () => {
                   <div className="w-16 h-16 rounded-full bg-[#05608a]/20 flex items-center justify-center mb-4 text-[#81d4fa]">
                     <FaDesktop className="text-3xl" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    Desktop Application
-                  </h3>
-                  <p className="text-sm text-[#e3f2fd]/70">
-                    JavaFX-based solution for secure internal environments.
-                  </p>
+                  <h3 className="text-xl font-bold text-white mb-2">{c.s008}</h3>
+                  <p className="text-sm text-[#e3f2fd]/70">{c.s009}</p>
                 </motion.div>
 
                 {/* Card 2 */}
@@ -146,12 +137,8 @@ const NewsOnboardify = () => {
                   <div className="w-16 h-16 rounded-full bg-[#05608a]/20 flex items-center justify-center mb-4 text-[#81d4fa]">
                     <FaGlobe className="text-3xl" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    Web Application
-                  </h3>
-                  <p className="text-sm text-[#e3f2fd]/70">
-                    Symfony-based platform for flexible, always-on access.
-                  </p>
+                  <h3 className="text-xl font-bold text-white mb-2">{c.s010}</h3>
+                  <p className="text-sm text-[#e3f2fd]/70">{c.s011}</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -161,21 +148,15 @@ const NewsOnboardify = () => {
               variants={fadeInUp}
               className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.6)] backdrop-blur-[16px]"
             >
-              <h2 className="text-2xl font-bold text-white mb-6 border-b border-[#05608a]/30 pb-4 inline-block">
-                Core Features
-              </h2>
+              <h2 className="text-2xl font-bold text-white mb-6 border-b border-[#05608a]/30 pb-4 inline-block">{c.s012}</h2>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
                   <div className="mt-1 p-2 rounded-lg bg-[#05608a]/20 text-[#81d4fa]">
                     <FaUserCheck />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white">
-                      Personalized Onboarding
-                    </h4>
-                    <p className="text-sm text-[#e3f2fd]/70">
-                      Tailored paths for every new hire.
-                    </p>
+                    <h4 className="text-lg font-semibold text-white">{c.s013}</h4>
+                    <p className="text-sm text-[#e3f2fd]/70">{c.s014}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -183,12 +164,8 @@ const NewsOnboardify = () => {
                     <FaGamepad />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white">
-                      Gamification
-                    </h4>
-                    <p className="text-sm text-[#e3f2fd]/70">
-                      Engaging elements to boost motivation and retention.
-                    </p>
+                    <h4 className="text-lg font-semibold text-white">{c.s015}</h4>
+                    <p className="text-sm text-[#e3f2fd]/70">{c.s016}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -196,12 +173,8 @@ const NewsOnboardify = () => {
                     <FaChartLine />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white">
-                      Real-time Analytics
-                    </h4>
-                    <p className="text-sm text-[#e3f2fd]/70">
-                      Dashboards for HR to track progress seamlessly.
-                    </p>
+                    <h4 className="text-lg font-semibold text-white">{c.s017}</h4>
+                    <p className="text-sm text-[#e3f2fd]/70">{c.s018}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -209,12 +182,8 @@ const NewsOnboardify = () => {
                     <FaComments />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white">
-                      Integrated Communication
-                    </h4>
-                    <p className="text-sm text-[#e3f2fd]/70">
-                      Tools to connect teams instantly.
-                    </p>
+                    <h4 className="text-lg font-semibold text-white">{c.s019}</h4>
+                    <p className="text-sm text-[#e3f2fd]/70">{c.s020}</p>
                   </div>
                 </li>
               </ul>
@@ -227,48 +196,28 @@ const NewsOnboardify = () => {
               variants={fadeInUp}
               className="sticky top-32 p-8 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.8)] backdrop-blur-[20px] shadow-xl"
             >
-              <h3 className="text-xl font-bold text-white mb-6 border-l-4 border-[#05608a] pl-4">
-                Project Details
-              </h3>
+              <h3 className="text-xl font-bold text-white mb-6 border-l-4 border-[#05608a] pl-4">{c.s021}</h3>
               <ul className="space-y-6">
                 <li className="flex flex-col border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">
-                    Client
-                  </span>
-                  <span className="text-white font-medium">ESPRIT</span>
+                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">{c.s022}</span>
+                  <span className="text-white font-medium">{c.s023}</span>
                 </li>
                 <li className="flex flex-col border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">
-                    Category
-                  </span>
-                  <span className="text-white font-medium">
-                    Software Development
-                  </span>
+                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">{c.s024}</span>
+                  <span className="text-white font-medium">{c.s025}</span>
                 </li>
                 <li className="flex flex-col border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">
-                    Technologies
-                  </span>
+                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">{c.s026}</span>
                   <div className="flex flex-wrap gap-2 mt-2">
-                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd]">
-                      JavaFX
-                    </span>
-                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd]">
-                      Symfony
-                    </span>
-                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd]">
-                      PHP
-                    </span>
-                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd]">
-                      MySQL
-                    </span>
+                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd]">{c.s027}</span>
+                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd]">{c.s028}</span>
+                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd]">{c.s029}</span>
+                    <span className="px-2 py-1 bg-[#05608a]/30 rounded text-xs text-[#e3f2fd]">{c.s030}</span>
                   </div>
                 </li>
                 <li className="flex flex-col border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">
-                    Team
-                  </span>
-                  <span className="text-white font-medium">CodeRockers</span>
+                  <span className="text-[#81d4fa] text-xs uppercase tracking-wider mb-1">{c.s031}</span>
+                  <span className="text-white font-medium">{c.s006}</span>
                 </li>
               </ul>
 
@@ -276,9 +225,7 @@ const NewsOnboardify = () => {
                 <Link
                   to="/portfolio/onboardify"
                   className="block w-full text-center py-3 rounded-xl bg-gradient-to-r from-[#05608a] to-[#0277bd] text-white font-bold shadow-lg hover:shadow-[#05608a]/40 transition-all transform hover:-translate-y-1"
-                >
-                  View Case Study
-                </Link>
+                >{c.s032}</Link>
               </div>
             </motion.div>
           </div>
