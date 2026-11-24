@@ -8,10 +8,16 @@ import callVerseCaseEn from "./callverse/caseStudy.en";
 import callVerseCaseFr from "./callverse/caseStudy.fr";
 import callVerseNewsEn from "./callverse/news.en";
 import callVerseNewsFr from "./callverse/news.fr";
+import bnsNewsEn from "./bns/news.en";
+import bnsNewsFr from "./bns/news.fr";
+import doubleDegreeNewsEn from "./doubleDegree/news.en";
+import doubleDegreeNewsFr from "./doubleDegree/news.fr";
 
 const pairs = {
   "callverse/caseStudy": [callVerseCaseEn, callVerseCaseFr],
   "callverse/news": [callVerseNewsEn, callVerseNewsFr],
+  "bns/news": [bnsNewsEn, bnsNewsFr],
+  "doubleDegree/news": [doubleDegreeNewsEn, doubleDegreeNewsFr],
 };
 
 const NBSP = String.fromCharCode(0xa0);
