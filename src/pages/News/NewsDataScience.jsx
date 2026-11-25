@@ -13,7 +13,6 @@ import flogo from "../../assets/images/flogo.png";
 import nivineImg from "../../assets/images/new9/nivine.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/news/dataScience.en";
 import fr from "../../content/news/dataScience.fr";
@@ -57,7 +56,6 @@ const NewsDataScience = () => {
 
       {/* Particles */}
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />

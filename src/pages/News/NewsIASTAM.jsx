@@ -16,7 +16,6 @@ import iastamImg3 from "../../assets/images/news16/3.jpg";
 import iastamImg4 from "../../assets/images/news16/4.jpg";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/news/iastam.en";
 import fr from "../../content/news/iastam.fr";
@@ -58,7 +57,6 @@ const NewsIASTAM = () => {
       <ScrollToTop />
       <div className="absolute inset-0 bg-gradient-to-br from-[#1a237e] to-[#283593] -z-20"></div>
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />

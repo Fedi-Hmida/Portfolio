@@ -7,7 +7,6 @@ import awsImg from "../../assets/images/AI_AWS.jpg";
 import flogo from "../../assets/images/flogo.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/news/aws.en";
 import fr from "../../content/news/aws.fr";
@@ -51,7 +50,6 @@ const NewsAWS = () => {
 
       {/* Particles */}
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />

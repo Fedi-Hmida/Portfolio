@@ -13,7 +13,6 @@ import graduationImg from "../../assets/images/pf1.png"; // pf1.png
 import graduationMomentsImg from "../../assets/images/pf2.png"; // pf2.png
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/news/graduation.en";
 import fr from "../../content/news/graduation.fr";
@@ -46,7 +45,6 @@ const NewsGraduation = () => {
 
       {/* Particles */}
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />

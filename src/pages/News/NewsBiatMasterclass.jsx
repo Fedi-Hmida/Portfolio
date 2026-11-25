@@ -14,7 +14,6 @@ import careerCenterImg from "../../assets/images/news18/biat-1.jpg";
 import masterclassImg from "../../assets/images/news18/biat-2.jpg";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/news/biatMasterclass.en";
 import fr from "../../content/news/biatMasterclass.fr";
@@ -49,7 +48,6 @@ const NewsBiatMasterclass = () => {
       <ScrollToTop />
       <div className="absolute inset-0 bg-gradient-to-br from-[#1a237e] to-[#283593] -z-20"></div>
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />

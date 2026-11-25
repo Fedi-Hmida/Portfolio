@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ProjectCard from "../../components/Portfolio/ProjectCard";
 import SectionTitle from "../../components/SectionTitle";
 import { getProjectCards, projectCategories } from "../../data/projects";
@@ -20,7 +19,6 @@ const Portfolio = () => {
 
   return (
     <div className="relative min-h-screen bg-[#070640]">
-      <ParticlesBackground />
       <Navbar />
 
       <main className="relative z-10 pt-32 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

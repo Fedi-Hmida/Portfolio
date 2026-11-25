@@ -21,7 +21,6 @@ import { Link } from "react-router-dom";
 
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import firmaaDemoVideo from "../../assets/videos/demo_firmaa.mp4";
 import firmaaLogo from "../../assets/images/Portfolio/Firmaa/logo_firmaa.png";
 import firmaaSolutionCover from "../../assets/images/Portfolio/Firmaa/cover_firmaa.png";
@@ -299,7 +298,6 @@ const FirmaaDetails = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#070640] text-white">
-      <ParticlesBackground />
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">

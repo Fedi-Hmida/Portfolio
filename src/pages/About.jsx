@@ -9,7 +9,6 @@ import { rich } from "../i18n/rich";
 import ServicesSection from "../components/About/ServicesSection";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import ParticlesBackground from "../components/ParticlesBackground";
 
 // Paired by index with the `about.recognition` entries in the locale files.
 const RECOMMENDATION_FILES = [
@@ -22,7 +21,6 @@ const About = () => {
 
   return (
     <div className="relative min-h-screen bg-deep-indigo">
-      <ParticlesBackground />
       <Navbar />
 
       <AboutHero />

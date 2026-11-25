@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { lazy, Suspense, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/social-icons.css";
 import Footer from "../components/Footer";
@@ -20,10 +20,6 @@ import { pickContent } from "../i18n/localeContent";
 
 // Asset Imports
 import heroImg from "../assets/images/slider/Fedi_Hmida.png";
-
-const ParticlesBackground = lazy(
-  () => import("../components/ParticlesBackground"),
-);
 
 const HERO_NAME = "Fedi Hmida";
 const heroNameLetters = Array.from(HERO_NAME);
@@ -44,11 +40,6 @@ const Home = () => {
 
   return (
     <div className="relative min-h-screen bg-deep-indigo text-white font-sans overflow-x-hidden">
-      <Suspense
-        fallback={<div className="absolute inset-0 bg-deep-indigo -z-10" />}
-      >
-        <ParticlesBackground />
-      </Suspense>
       <Navbar />
 
       {/* --- HERO SECTION --- */}

@@ -13,7 +13,6 @@ import flogo from "../../assets/images/flogo.png";
 import bnsCoverImg from "../../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.jpg";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/bns/news.en";
 import fr from "../../content/bns/news.fr";
@@ -40,7 +39,6 @@ const NewsBnsInternship = () => {
       <ScrollToTop />
       <div className="absolute inset-0 bg-gradient-to-br from-[#1a237e] to-[#283593] -z-20"></div>
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />

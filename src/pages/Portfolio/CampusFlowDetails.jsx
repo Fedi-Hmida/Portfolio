@@ -31,7 +31,6 @@ import campusFlowDemoVideo from "../../assets/videos/CampusFlow/campusflow-ai-de
 import ExpandableImage from "../../components/ExpandableImage";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import en from "../../content/campusflow/caseStudy.en";
 import fr from "../../content/campusflow/caseStudy.fr";
 import { pickContent } from "../../i18n/localeContent";
@@ -102,7 +101,6 @@ const CampusFlowDetails = () => {
   const c = pickContent({ en, fr });
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#070640] text-white">
-      <ParticlesBackground />
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">

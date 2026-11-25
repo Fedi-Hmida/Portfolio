@@ -1,0 +1,24 @@
+// Performance guards (action plan Step 2): the particle background cost a 49.6 kB gzip
+// chunk and a full-screen 30 fps canvas on 39 pages. Keep it out.
+import fs from "fs";
+import path from "path";
+
+const SRC = __dirname;
+const pkg = JSON.parse(fs.readFileSync(path.join(SRC, "..", "package.json"), "utf8"));
+
+const sourceFiles = (dir) =>
+  fs.readdirSync(dir, { withFileTypes: true }).flatMap((d) => {
+    const full = path.join(dir, d.name);
+    if (d.isDirectory()) return d.name === "assets" ? [] : sourceFiles(full);
+    return /\.(js|jsx)$/.test(d.name) && !/\.test\./.test(d.name) ? [full] : [];
+  });
+
+test("no particle library in the dependencies", () => {
+  const deps = { ...pkg.dependencies, ...pkg.devDependencies };
+  expect(Object.keys(deps).filter((name) => /particles/i.test(name))).toEqual([]);
+});
+
+test("no source file renders or imports a particle background", () => {
+  const hits = sourceFiles(SRC).filter((file) => /ParticlesBackground|tsparticles/.test(fs.readFileSync(file, "utf8")));
+  expect(hits.map((f) => path.relative(SRC, f))).toEqual([]);
+});

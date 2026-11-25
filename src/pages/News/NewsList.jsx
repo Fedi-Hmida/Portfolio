@@ -6,7 +6,6 @@ import { ReactTyped } from "react-typed";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import NewsCard from "../../components/News/NewsCard";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import { getNewsCards } from "../../data/news";
 
 const NewsList = () => {
@@ -37,7 +36,6 @@ const NewsList = () => {
 
   return (
     <div className="relative min-h-screen bg-deep-indigo text-white">
-      <ParticlesBackground />
       <Navbar />
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">

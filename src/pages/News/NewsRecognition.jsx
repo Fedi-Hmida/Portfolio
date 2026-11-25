@@ -13,7 +13,6 @@ import flogo from "../../assets/images/flogo.png";
 import houImg from "../../assets/images/new8/Hou.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/news/recognition.en";
 import fr from "../../content/news/recognition.fr";
@@ -57,7 +56,6 @@ const NewsRecognition = () => {
 
       {/* Particles */}
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />

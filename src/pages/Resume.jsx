@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import { ReactTyped } from "react-typed";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import ParticlesBackground from "../components/ParticlesBackground";
 import EducationCard from "../components/Resume/EducationCard";
 import ExperienceCard from "../components/Resume/ExperienceCard";
 import RecommendationCard from "../components/Resume/RecommendationCard";
@@ -20,7 +19,6 @@ const Resume = () => {
 
   return (
     <div className="relative min-h-screen">
-      <ParticlesBackground />
       <Navbar />
 
       <main className="relative z-10 pt-32 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

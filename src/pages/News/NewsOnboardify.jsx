@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 import flogo from "../../assets/images/flogo.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/news/onboardify.en";
 import fr from "../../content/news/onboardify.fr";
@@ -56,7 +55,6 @@ const NewsOnboardify = () => {
 
       {/* Particles (Optional layer for consistency with other pages, but can stay subtle) */}
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />

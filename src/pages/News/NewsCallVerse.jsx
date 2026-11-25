@@ -16,7 +16,6 @@ import flogo from "../../assets/images/flogo.png";
 import twinImg from "../../assets/images/Portfolio/CallVerse/screen-twin.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/callverse/news.en";
 import fr from "../../content/callverse/news.fr";
@@ -68,7 +67,6 @@ const NewsCallVerse = () => {
       <ScrollToTop />
       <div className="absolute inset-0 bg-gradient-to-br from-[#1a237e] to-[#283593] -z-20"></div>
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />

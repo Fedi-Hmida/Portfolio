@@ -13,7 +13,6 @@ import tsyp1 from "../../assets/images/new12/tsyp1.jpg";
 import tsyp2 from "../../assets/images/new12/tsyp2.jpg";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/news/energyUtopia.en";
 import fr from "../../content/news/energyUtopia.fr";
@@ -57,7 +56,6 @@ const NewsEnergyUtopia = () => {
 
       {/* Particles */}
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />

@@ -27,7 +27,6 @@ import clientImg from "../../assets/images/Portfolio/CallVerse/screen-client.png
 import ExpandableImage from "../../components/ExpandableImage";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import en from "../../content/callverse/caseStudy.en";
 import fr from "../../content/callverse/caseStudy.fr";
 import { pickContent } from "../../i18n/localeContent";
@@ -112,7 +111,6 @@ const CallVerseDetails = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#070640] text-white">
-      <ParticlesBackground />
       <Navbar />
 
       {/* Same top spacing as the sibling case studies. */}

@@ -25,7 +25,6 @@ import {
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 
 import onboardifyLogo from "../../assets/images/logo3.png";
 import programVideo from "../../assets/videos/program.mp4";
@@ -271,7 +270,6 @@ const OnboardifyDetails = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#070640] text-white">
-      <ParticlesBackground />
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">

@@ -11,7 +11,6 @@ import flogo from "../../assets/images/flogo.png";
 import tesaImg from "../../assets/images/new10/tesa.jpg";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/news/smartClaim.en";
 import fr from "../../content/news/smartClaim.fr";
@@ -55,7 +54,6 @@ const NewsSmartClaim = () => {
 
       {/* Particles */}
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />

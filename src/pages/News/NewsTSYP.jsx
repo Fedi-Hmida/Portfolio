@@ -13,7 +13,6 @@ import flogo from "../../assets/images/flogo.png";
 import tsImg from "../../assets/images/ts.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/news/tsyp.en";
 import fr from "../../content/news/tsyp.fr";
@@ -46,7 +45,6 @@ const NewsTSYP = () => {
 
       {/* Particles */}
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />

@@ -13,7 +13,6 @@ import addinnImg from "../../assets/images/addinn/ADDINN.png";
 import flogo from "../../assets/images/flogo.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
 import en from "../../content/news/internshipStart.en";
 import fr from "../../content/news/internshipStart.fr";
@@ -57,7 +56,6 @@ const NewsInternshipStart = () => {
 
       {/* Particles */}
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />
