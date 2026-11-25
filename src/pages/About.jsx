@@ -128,7 +128,7 @@ const About = () => {
                           }}
                           className="text-xs text-primary-pink flex items-center gap-2 overflow-hidden"
                         >
-                          <FaDownload className="animate-bounce" aria-hidden="true" />{" "}
+                          <FaDownload aria-hidden="true" />{" "}
                           {t("about.downloadHint")}
                         </motion.div>
                       </div>

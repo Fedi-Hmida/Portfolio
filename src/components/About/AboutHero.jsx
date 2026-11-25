@@ -49,9 +49,9 @@ const AboutHero = () => {
         </motion.h1>
       </div>
 
-      {/* Floating Shapes */}
+      {/* Decorative shapes: static (they used to float and rotate forever) */}
       {shapes.map((shape, index) => (
-        <motion.img
+        <img
           key={index}
           src={shape.src}
           alt=""
@@ -59,15 +59,6 @@ const AboutHero = () => {
           loading="lazy"
           decoding="async"
           className={`absolute ${shape.className} opacity-60 hidden md:block`}
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 10, -10, 0],
-          }}
-          transition={{
-            duration: 3 + index, // vary duration for each
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
         />
       ))}
     </section>

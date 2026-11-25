@@ -44,8 +44,11 @@ test("no animated blur filter (non-composited, repainted every frame)", () => {
   expect(hits.map(rel)).toEqual([]);
 });
 
-test("no always-on CSS animation classes (bounce, ping, pulse, spin)", () => {
-  const hits = sourceFiles(SRC).filter((f) => /(?<![:\w-])animate-(bounce|ping|pulse|spin)\b/.test(read(f)));
+// animate-spin is allowed: it is the loading indicator shown only while an action runs
+// (e.g. the contact form while sending). Hover variants (group-hover:animate-bounce) are
+// user-triggered and also allowed.
+test("no always-on decorative CSS animation classes (bounce, ping, pulse)", () => {
+  const hits = sourceFiles(SRC).filter((f) => /(?<![:\w-])animate-(bounce|ping|pulse)\b/.test(read(f)));
   expect(hits.map(rel)).toEqual([]);
 });
 

@@ -36,16 +36,6 @@ const NewsNvidiaAnomalyDetection = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  const floatAnimation = {
-    animate: {
-      y: [0, -20, 0],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
 
   const skills = [
     c.s001,
@@ -102,7 +92,7 @@ const NewsNvidiaAnomalyDetection = () => {
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#76b900] rounded-full filter blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
 
-              <motion.div {...floatAnimation} className="relative z-10">
+              <motion.div className="relative z-10">
                 <span className="inline-block py-1 px-3 rounded-full bg-[#76b900]/30 border border-[#76b900]/30 text-[#a8ff60] text-xs font-bold uppercase tracking-widest mb-4">{c.s007}</span>
                 <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#a8ff60]">{c.s008}</h1>
                 <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">{c.s009}</p>

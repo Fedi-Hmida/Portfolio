@@ -46,17 +46,7 @@ const ProjectCard = ({ project }) => {
             )}
           </div>
         )}
-        <motion.div
-          className="w-full h-full flex items-center justify-center"
-          animate={{
-            y: [0, -5, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
+        <div className="w-full h-full flex items-center justify-center">
           <img
             src={project.image}
             alt={project.title}
@@ -67,7 +57,7 @@ const ProjectCard = ({ project }) => {
               transform: project.scale ? `scale(${project.scale})` : "scale(1)",
             }}
           />
-        </motion.div>
+        </div>
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 z-10">

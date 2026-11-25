@@ -39,12 +39,7 @@ const Resume = () => {
               className="group relative px-8 py-4 bg-gradient-to-r from-primary-pink to-secondary-pink rounded-full text-white font-bold text-lg shadow-lg hover:shadow-primary-pink/50 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3 overflow-hidden"
             >
               <span className="relative z-10">{t("resume.downloadPdf")}</span>
-              <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-              >
-                <Download className="relative z-10" size={24} />
-              </motion.div>
+              <Download className="relative z-10" size={24} aria-hidden="true" />
             </a>
           </motion.div>
         </div>

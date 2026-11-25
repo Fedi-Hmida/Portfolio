@@ -22,7 +22,6 @@ import { pickContent } from "../i18n/localeContent";
 import heroImg from "../assets/images/slider/Fedi_Hmida.png";
 
 const HERO_NAME = "Fedi Hmida";
-const heroNameLetters = Array.from(HERO_NAME);
 
 const Home = () => {
   const { t } = useTranslation();
@@ -53,47 +52,13 @@ const Home = () => {
               transition={{ duration: 0.8, staggerChildren: 0.2 }}
               className="z-10 order-2 mx-auto flex w-full max-w-xl flex-col items-center text-center lg:order-1 lg:mx-0 lg:items-start lg:text-left"
             >
-              <motion.h1
-                aria-label={HERO_NAME}
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  hidden: {},
-                  visible: {
-                    transition: {
-                      staggerChildren: 0.045,
-                      delayChildren: 0.16,
-                    },
-                  },
-                }}
-                className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl"
-              >
-                {heroNameLetters.map((letter, index) => (
-                  <motion.span
-                    key={`${letter}-${index}`}
-                    aria-hidden="true"
-                    className="inline-block"
-                    variants={{
-                      hidden: { opacity: 0, y: 24, rotateX: -35 },
-                      visible: {
-                        opacity: 1,
-                        y: 0,
-                        rotateX: 0,
-                        transition: {
-                          duration: 0.55,
-                          ease: [0.22, 1, 0.36, 1],
-                        },
-                      },
-                    }}
-                  >
-                    {letter === " " ? "\u00A0" : letter}
-                  </motion.span>
-                ))}
-              </motion.h1>
+              <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
+                {HERO_NAME}
+              </h1>
 
               <motion.div
-                initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.72, duration: 0.55, ease: "easeOut" }}
                 className="relative mt-3 flex flex-col items-center gap-1 text-center lg:items-start lg:text-left"
               >
@@ -183,42 +148,25 @@ const Home = () => {
               transition={{ duration: 0.5 }}
               className="relative order-1 flex items-end justify-center lg:order-2 lg:items-center lg:justify-end"
             >
-              {/* Background Glow Pulse */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.6, 0.3],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute left-1/2 top-1/2 -z-10 h-[270px] w-[270px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-pink/25 blur-[95px] sm:h-[340px] sm:w-[340px] md:h-[420px] md:w-[420px] lg:h-[520px] lg:w-[520px]"
+              {/* Background glow: static (a pulsing blur was repainted every frame) */}
+              <div
+                aria-hidden="true"
+                className="absolute left-1/2 top-1/2 -z-10 h-[270px] w-[270px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-pink/25 opacity-50 blur-[95px] sm:h-[340px] sm:w-[340px] md:h-[420px] md:w-[420px] lg:h-[520px] lg:w-[520px]"
               />
 
-              {/* Floating Image Animation */}
               <div className="relative flex w-full justify-center lg:-mt-20 lg:justify-end xl:-mt-16">
-                <motion.div
-                  animate={{ y: [0, -20, 0] }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="relative flex w-full justify-center lg:justify-end"
-                >
+                <div className="relative flex w-full justify-center lg:justify-end">
                   <img
                     width="620"
                     height="620"
                     src={heroImg}
                     alt="Fedi Hmida"
-                    fetchPriority="high"
+                    fetchpriority="high"
                     loading="eager"
                     decoding="async"
                     className="z-10 w-[min(72vw,285px)] object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-[1.03] sm:w-[330px] md:w-[400px] lg:w-[500px] xl:w-[560px]"
                   />
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           </div>

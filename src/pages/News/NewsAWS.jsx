@@ -31,16 +31,6 @@ const NewsAWS = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  const floatAnimation = {
-    animate: {
-      y: [0, -20, 0],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
 
   return (
     <div className="relative min-h-screen font-sans text-[#e3f2fd] overflow-x-hidden">
@@ -96,7 +86,7 @@ const NewsAWS = () => {
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff9900] rounded-full filter blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
 
-              <motion.div {...floatAnimation} className="relative z-10">
+              <motion.div className="relative z-10">
                 <span className="inline-block py-1 px-3 rounded-full bg-[#ff9900]/30 border border-[#ff9900]/30 text-[#ff9900] text-xs font-bold uppercase tracking-widest mb-4">{c.s003}</span>
                 <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#ff9900]">{c.s004}</h1>
                 <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">{c.s005}</p>
