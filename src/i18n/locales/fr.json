@@ -60,11 +60,7 @@
   },
   "about": {
     "heroTitle": "À propos de moi",
-    "typed": [
-      "Qui suis-je\u00a0?",
-      "Mon parcours",
-      "À propos"
-    ],
+    "bioTitle": "Mon parcours",
     "bio1": "Je suis <b>étudiant ingénieur en informatique</b> dans un <b>Cycle Ingénieur en double diplôme</b> entre <b>3iL Ingénieurs</b> à Limoges et <b>ESPRIT</b> à Tunis, actuellement en deuxième année, spécialisé en <b>Data Science & Intelligence Artificielle</b>.",
     "bio2": "Je conçois des <b>systèmes LLM multi-agents</b> avec <b>LangGraph</b>, <b>RAG</b> et <b>MCP</b>, ainsi que des <b>pipelines de vision par ordinateur</b> avec <b>YOLO</b> et <b>PyTorch</b>. Je développe aussi des systèmes destinés à la production\u00a0: j'ai co-piloté le développement full-stack d'une <b>plateforme RH à 8 stagiaires</b> reposant sur <b>Spring Boot</b>, <b>OAuth2 / Keycloak</b> et <b>React / TypeScript</b>, couvrant <b>102 endpoints REST</b>.",
     "bio3": "Mes projets vont d'une <b>plateforme agricole autonome multi-agents</b> et d'un <b>pipeline ML de diagnostic à 98,83\u00a0% de précision</b> jusqu'à l'<b>automatisation de déclarations de sinistres</b> - toujours avec la même exigence\u00a0: des systèmes concrets qui allient IA appliquée et bases solides d'ingénierie.",
@@ -113,11 +109,7 @@
     }
   },
   "resume": {
-    "typed": [
-      "Parcours",
-      "Curriculum Vitae",
-      "Mon parcours"
-    ],
+    "title": "Parcours",
     "downloadPdf": "Télécharger le CV en PDF",
     "experienceTitle": "Expérience professionnelle",
     "skillsTitle": "Compétences techniques",
@@ -194,11 +186,7 @@
       "IA / Génie logiciel",
       "Basé en France"
     ],
-    "connectTyped": [
-      "À l'écoute des recruteurs",
-      "Réponse rapide",
-      "Prochaine étape claire"
-    ],
+    "connectTitle": "Me joindre directement",
     "connectIntro": "Envoyez-moi une offre, un brief projet ou une idée de collaboration. Pour une lecture technique, commencez par SMART HRM AI et Firmaa, puis contactez-moi sur LinkedIn ou par e-mail.",
     "mapTitle": "Carte de Limoges, France",
     "locationLabel": "Localisation",
@@ -507,11 +495,7 @@
     }
   },
   "newsList": {
-    "typed": [
-      "Dernières actualités",
-      "Mon blog",
-      "Mises à jour"
-    ],
+    "title": "Dernières actualités",
     "prevPage": "Page précédente",
     "nextPage": "Page suivante"
   }

@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import { ReactTyped } from "react-typed";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import NewsCard from "../../components/News/NewsCard";
@@ -45,12 +44,7 @@ const NewsList = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <ReactTyped
-              strings={t("newsList.typed", { returnObjects: true })}
-              typeSpeed={50}
-              backSpeed={30}
-              loop
-            />
+            {t("newsList.title")}
           </h1>
           <div className="w-24 h-1 bg-primary-pink mx-auto rounded-full" />
         </motion.div>

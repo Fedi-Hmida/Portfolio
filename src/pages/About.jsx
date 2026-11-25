@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { FaBriefcase, FaDownload } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { ReactTyped } from "react-typed";
 import fediImg from "../assets/images/slider/Fedi_Hmida.png";
 import AboutHero from "../components/About/AboutHero";
 import { rich } from "../i18n/rich";
@@ -54,14 +53,8 @@ const About = () => {
               viewport={{ once: true }}
               className="lg:col-span-6 text-white space-y-6"
             >
-              <h2 className="text-4xl font-bold mb-4">
-                <ReactTyped
-                  strings={t("about.typed", { returnObjects: true })}
-                  typeSpeed={80}
-                  backSpeed={50}
-                  loop
-                  className="text-white"
-                />
+              <h2 className="text-4xl font-bold mb-4 text-white">
+                {t("about.bioTitle")}
               </h2>
 
               <div className="space-y-4 text-gray-300 leading-relaxed text-lg text-justify">

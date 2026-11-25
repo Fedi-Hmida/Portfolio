@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import { ReactTyped } from "react-typed";
 import SocialIconLink from "../SocialIconLink";
 import { contactActions, contactInfo, socialLinks } from "../../data/socialLinks";
 
@@ -12,12 +11,7 @@ const ConnectSection = () => {
     <div className="mt-20">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-          <ReactTyped
-            strings={t("contact.connectTyped", { returnObjects: true })}
-            typeSpeed={100}
-            backSpeed={50}
-            loop
-          />
+          {t("contact.connectTitle")}
         </h2>
         <div className="w-16 h-1 bg-primary-pink mx-auto rounded"></div>
         <p className="mx-auto mt-4 max-w-2xl text-gray-300">

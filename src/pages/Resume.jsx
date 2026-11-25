@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { ReactTyped } from "react-typed";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import EducationCard from "../components/Resume/EducationCard";
@@ -25,12 +24,7 @@ const Resume = () => {
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            <ReactTyped
-              strings={t("resume.typed", { returnObjects: true })}
-              typeSpeed={100}
-              backSpeed={50}
-              loop
-            />
+            {t("resume.title")}
           </h1>
 
           <motion.div

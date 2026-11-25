@@ -60,11 +60,7 @@
   },
   "about": {
     "heroTitle": "About Me",
-    "typed": [
-      "Who Am I?",
-      "My Background",
-      "About Me"
-    ],
+    "bioTitle": "My Background",
     "bio1": "I'm a <b>Software Engineering student</b> in a <b>double-degree Engineering Cycle</b> between <b>3iL Ingénieurs</b> in Limoges, France and <b>ESPRIT</b> in Tunis, currently in my second year, specializing in <b>Data Science & Artificial Intelligence</b>.",
     "bio2": "I build <b>multi-agent LLM systems</b> with <b>LangGraph</b>, <b>RAG</b> and <b>MCP</b>, and <b>computer-vision pipelines</b> with <b>YOLO</b> and <b>PyTorch</b>. I also ship production systems: I co-led the full-stack development of an <b>8-person HR platform</b> built on <b>Spring Boot</b>, <b>OAuth2 / Keycloak</b> and <b>React / TypeScript</b>, spanning <b>102 REST endpoints</b>.",
     "bio3": "My work ranges from an <b>autonomous multi-agent farming platform</b> and a <b>98.83%-accuracy diagnostic ML pipeline</b> to <b>insurance claim automation</b> - always with the same focus: practical systems that pair applied AI with solid engineering foundations.",
@@ -113,11 +109,7 @@
     }
   },
   "resume": {
-    "typed": [
-      "Resume",
-      "Curriculum Vitae",
-      "My Journey"
-    ],
+    "title": "Resume",
     "downloadPdf": "Download PDF Version",
     "experienceTitle": "Professional Experience",
     "skillsTitle": "Technical Skills",
@@ -194,11 +186,7 @@
       "AI / Software Engineering",
       "Based in France"
     ],
-    "connectTyped": [
-      "Recruiter Friendly",
-      "Quick Response",
-      "Clear Next Step"
-    ],
+    "connectTitle": "Reach me directly",
     "connectIntro": "Send a role, project brief, or collaboration idea. For technical review, start with SMART HRM AI and Firmaa, then reach out through LinkedIn or email.",
     "mapTitle": "Map showing Limoges, France",
     "locationLabel": "Location",
@@ -507,11 +495,7 @@
     }
   },
   "newsList": {
-    "typed": [
-      "Latest News",
-      "My Blog",
-      "Updates"
-    ],
+    "title": "Latest News",
     "prevPage": "Previous Page",
     "nextPage": "Next Page"
   }

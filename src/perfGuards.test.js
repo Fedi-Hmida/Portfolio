@@ -22,3 +22,33 @@ test("no source file renders or imports a particle background", () => {
   const hits = sourceFiles(SRC).filter((file) => /ParticlesBackground|tsparticles/.test(fs.readFileSync(file, "utf8")));
   expect(hits.map((f) => path.relative(SRC, f))).toEqual([]);
 });
+
+// Step 3 guards: no decorative animation may run forever or rewrite the page on its own.
+const read = (file) => fs.readFileSync(file, "utf8");
+const rel = (file) => path.relative(SRC, file);
+
+test("no animation repeats forever", () => {
+  const hits = sourceFiles(SRC).filter((f) => /repeat:\s*Infinity/.test(read(f)));
+  expect(hits.map(rel)).toEqual([]);
+});
+
+test("no typing-effect headings (react-typed)", () => {
+  const deps = { ...pkg.dependencies, ...pkg.devDependencies };
+  expect(Object.keys(deps).filter((name) => name === "react-typed")).toEqual([]);
+  const hits = sourceFiles(SRC).filter((f) => /react-typed|ReactTyped/.test(read(f)));
+  expect(hits.map(rel)).toEqual([]);
+});
+
+test("no animated blur filter (non-composited, repainted every frame)", () => {
+  const hits = sourceFiles(SRC).filter((f) => /(initial|animate)=\{\{[^}]*filter:\s*["'`]blur/.test(read(f)));
+  expect(hits.map(rel)).toEqual([]);
+});
+
+test("no always-on CSS animation classes (bounce, ping, pulse, spin)", () => {
+  const hits = sourceFiles(SRC).filter((f) => /(?<![:\w-])animate-(bounce|ping|pulse|spin)\b/.test(read(f)));
+  expect(hits.map(rel)).toEqual([]);
+});
+
+test("the app honours the visitor's reduced-motion setting", () => {
+  expect(read(path.join(SRC, "App.js"))).toMatch(/<MotionConfig reducedMotion="user">/);
+});
