@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -46,7 +46,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
           <div className="grid grid-cols-1 items-center gap-8 md:gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(380px,1fr)] lg:gap-14 xl:gap-20">
             {/* Left Content */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, staggerChildren: 0.2 }}
@@ -56,7 +56,7 @@ const Home = () => {
                 {HERO_NAME}
               </h1>
 
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.72, duration: 0.55, ease: "easeOut" }}
@@ -75,25 +75,25 @@ const Home = () => {
                   />
                   {t("home.location")}
                 </span>
-                <motion.span
+                <m.span
                   aria-hidden="true"
                   className="absolute -bottom-2 left-0 h-[2px] w-full origin-left rounded-full bg-primary-pink/70"
                   initial={{ scaleX: 0, opacity: 0 }}
                   animate={{ scaleX: 1, opacity: 1 }}
                   transition={{ delay: 0.98, duration: 0.5, ease: "easeOut" }}
                 />
-              </motion.div>
+              </m.div>
 
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.5 }}
                 className="mt-7 flex w-full justify-center lg:justify-start"
               >
                 <Availability hero={content.hero} />
-              </motion.div>
+              </m.div>
 
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.65, duration: 0.5 }}
@@ -119,10 +119,10 @@ const Home = () => {
                 >
                   {t("home.aboutMe")}
                 </Link>
-              </motion.div>
+              </m.div>
 
               {/* Social Icons */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.76, duration: 0.5 }}
@@ -138,11 +138,11 @@ const Home = () => {
                     />
                   );
                 })}
-              </motion.div>
-            </motion.div>
+              </m.div>
+            </m.div>
 
             {/* Right Image */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
@@ -168,7 +168,7 @@ const Home = () => {
                   />
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -178,21 +178,21 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
                 <h2 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white inline-block relative pb-2">
                   {t("home.myWork")}
-                  <motion.div
+                  <m.div
                     className="absolute bottom-0 left-0 h-1 bg-primary-pink rounded-full"
                     initial={{ width: 0 }}
                     whileInView={{ width: "100%" }}
                     transition={{ duration: 1, delay: 0.5 }}
                   />
                 </h2>
-              </motion.div>
+              </m.div>
             </div>
             <Link
               to="/portfolio"
@@ -203,7 +203,7 @@ const Home = () => {
           </div>
 
           <AnimatePresence mode="wait">
-            <motion.div
+            <m.div
               key={workPage}
               className="grid grid-cols-1 md:grid-cols-2 gap-8"
               initial={{ opacity: 0, y: 18 }}
@@ -214,7 +214,7 @@ const Home = () => {
               {paginatedProjects.map((project, idx) => (
                 <ProjectCard key={project.id} project={project} index={idx} />
               ))}
-            </motion.div>
+            </m.div>
           </AnimatePresence>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <button
@@ -274,7 +274,7 @@ const Home = () => {
             <span className="text-primary-pink font-bold tracking-wider uppercase text-sm">
               Blog & Updates
             </span>
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -282,14 +282,14 @@ const Home = () => {
             >
               <h2 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white inline-block relative pb-2">
                 {t("home.latestNews")}
-                <motion.div
+                <m.div
                   className="absolute bottom-0 left-0 h-1 bg-primary-pink rounded-full"
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
                   transition={{ duration: 1, delay: 0.5 }}
                 />
               </h2>
-            </motion.div>
+            </m.div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

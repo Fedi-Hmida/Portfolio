@@ -1,4 +1,4 @@
-import { AnimatePresence, MotionConfig } from "framer-motion";
+import { AnimatePresence, LazyMotion, MotionConfig } from "framer-motion";
 import { lazy, Suspense } from "react";
 import {
   Route,
@@ -68,6 +68,8 @@ const SolarFlowDetails = lazy(
 );
 const Resume = lazy(() => import("./pages/Resume"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+
+const loadMotionFeatures = () => import("./motionFeatures").then((mod) => mod.default);
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -402,16 +404,21 @@ function App() {
 
   // reducedMotion="user": visitors who ask their device for reduced motion get no
   // transform or layout animations from framer-motion.
+  // LazyMotion: the first-paint modules use the light `m` components; the animation
+  // features arrive in a separate chunk after the first render (nothing animates on
+  // first load anyway, see AnimatePresence initial={false}).
   return (
-    <MotionConfig reducedMotion="user">
-      <Router basename={basenameFor(locale)}>
-        <LocaleHead />
-        <ScrollToTop />
-        <div className="App">
-          <AppRoutes />
-        </div>
-      </Router>
-    </MotionConfig>
+    <LazyMotion features={loadMotionFeatures}>
+      <MotionConfig reducedMotion="user">
+        <Router basename={basenameFor(locale)}>
+          <LocaleHead />
+          <ScrollToTop />
+          <div className="App">
+            <AppRoutes />
+          </div>
+        </Router>
+      </MotionConfig>
+    </LazyMotion>
   );
 }
 

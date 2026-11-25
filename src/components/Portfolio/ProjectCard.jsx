@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <motion.div
+    <m.div
       layout
       variants={cardVariants}
       whileHover={{
@@ -123,7 +123,7 @@ const ProjectCard = ({ project }) => {
           <ArrowRight size={16} aria-hidden="true" />
         </Link>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

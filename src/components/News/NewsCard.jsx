@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Calendar, User } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -11,7 +11,7 @@ const NewsCard = ({ date, author, image, title, description, link, index }) => {
   };
 
   return (
-    <motion.div
+    <m.div
       variants={cardVariants}
       whileHover={{
         y: -10,
@@ -64,7 +64,7 @@ const NewsCard = ({ date, author, image, title, description, link, index }) => {
           </span>
         </Link>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

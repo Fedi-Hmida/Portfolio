@@ -1,10 +1,10 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 const AnimatedPage = ({ children }) => {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <motion.div
+    <m.div
       initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -20 }}
@@ -12,7 +12,7 @@ const AnimatedPage = ({ children }) => {
       className="w-full"
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 };
 
