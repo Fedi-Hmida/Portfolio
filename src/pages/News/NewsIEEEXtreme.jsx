@@ -6,8 +6,8 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import certifImg from "../../assets/images/certif.png";
-import flogo from "../../assets/images/flogo.png";
+import certifImg from "../../assets/images/certif.webp";
+import flogo from "../../assets/images/flogo.logo.webp";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";

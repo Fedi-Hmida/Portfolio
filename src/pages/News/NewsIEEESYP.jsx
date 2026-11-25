@@ -8,8 +8,8 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import flogo from "../../assets/images/flogo.png";
-import ieeeImg from "../../assets/images/news6/me 2.jpg";
+import flogo from "../../assets/images/flogo.logo.webp";
+import ieeeImg from "../../assets/images/news6/me 2.webp";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";

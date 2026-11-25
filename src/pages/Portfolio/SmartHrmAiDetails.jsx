@@ -12,7 +12,7 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import smartHrmAiVisual from "../../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.jpg";
+import smartHrmAiVisual from "../../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.webp";
 import smartHrmAiDemoVideo from "../../assets/videos/SmartHrmAi/smart-hrm-ai-demo.mp4";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";

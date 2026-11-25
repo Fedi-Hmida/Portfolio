@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import shape3 from "../../assets/images/shape/shape-3.png";
-import shape4 from "../../assets/images/shape/shape-4.png";
-import shape5 from "../../assets/images/shape/shape-5.png";
-import shape6 from "../../assets/images/shape/shape-6.png";
-import shape7 from "../../assets/images/shape/shape-7.png";
-import shape8 from "../../assets/images/shape/shape-8.png";
+import shape3 from "../../assets/images/shape/shape-3.webp";
+import shape4 from "../../assets/images/shape/shape-4.webp";
+import shape5 from "../../assets/images/shape/shape-5.webp";
+import shape6 from "../../assets/images/shape/shape-6.webp";
+import shape7 from "../../assets/images/shape/shape-7.webp";
+import shape8 from "../../assets/images/shape/shape-8.webp";
 
 const AboutHero = () => {
   const { t } = useTranslation();

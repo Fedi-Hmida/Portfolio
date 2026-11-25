@@ -11,8 +11,8 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import flogo from "../../assets/images/flogo.png";
-import maratechHackImg from "../../assets/images/news15/hack.jpg";
+import flogo from "../../assets/images/flogo.logo.webp";
+import maratechHackImg from "../../assets/images/news15/hack.webp";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";

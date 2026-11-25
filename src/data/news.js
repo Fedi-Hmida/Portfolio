@@ -1,25 +1,25 @@
-import addinnImg from "../assets/images/addinn/ADDINN.png";
-import awsImg from "../assets/images/AI_AWS.jpg";
-import certifImg from "../assets/images/certif.png";
-import fediImg from "../assets/images/Fedi.jpg";
-import onboardifyImg from "../assets/images/logo3.png";
-import tesaImg from "../assets/images/new10/tesa.jpg";
-import tsypImg from "../assets/images/new12/tsyp1.jpg";
-import iesImg from "../assets/images/new13/ies.jpg";
-import nvidiaDliImg from "../assets/images/news14/nvidea1.jpg";
-import maratechHackImg from "../assets/images/news15/hack.jpg";
-import iastamMainImg from "../assets/images/news16/2.jpg";
-import nvidiaAnomalyImg from "../assets/images/news17/nvidea2.jpg";
-import biatMasterclassImg from "../assets/images/news18/biat-1.jpg";
-import firmaaLaunchImg from "../assets/images/news19/firmaa-poster.jpg";
-import doubleDegreeImg from "../assets/images/news20/3il-campus.jpg";
-import bnsInternshipImg from "../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.jpg";
-import campusFlowNewsImg from "../assets/images/Portfolio/CampusFlow/campusflow-cover.jpg";
-import callVerseNewsImg from "../assets/images/Portfolio/CallVerse/callverse-cover.jpg";
-import houImg from "../assets/images/new8/Hou.png";
-import nivineImg from "../assets/images/new9/nivine.png";
-import ieeeImg from "../assets/images/news6/me 2.jpg";
-import graduationImg from "../assets/images/pf1.png";
+import addinnImg from "../assets/images/addinn/ADDINN.card.webp";
+import awsImg from "../assets/images/AI_AWS.card.webp";
+import certifImg from "../assets/images/certif.card.webp";
+import fediImg from "../assets/images/Fedi.card.webp";
+import onboardifyImg from "../assets/images/logo3.card.webp";
+import tesaImg from "../assets/images/new10/tesa.card.webp";
+import tsypImg from "../assets/images/new12/tsyp1.card.webp";
+import iesImg from "../assets/images/new13/ies.card.webp";
+import nvidiaDliImg from "../assets/images/news14/nvidea1.card.webp";
+import maratechHackImg from "../assets/images/news15/hack.card.webp";
+import iastamMainImg from "../assets/images/news16/2.card.webp";
+import nvidiaAnomalyImg from "../assets/images/news17/nvidea2.card.webp";
+import biatMasterclassImg from "../assets/images/news18/biat-1.card.webp";
+import firmaaLaunchImg from "../assets/images/news19/firmaa-poster.card.webp";
+import doubleDegreeImg from "../assets/images/news20/3il-campus.card.webp";
+import bnsInternshipImg from "../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.card.webp";
+import campusFlowNewsImg from "../assets/images/Portfolio/CampusFlow/campusflow-cover.card.webp";
+import callVerseNewsImg from "../assets/images/Portfolio/CallVerse/callverse-cover.card.webp";
+import houImg from "../assets/images/new8/Hou.card.webp";
+import nivineImg from "../assets/images/new9/nivine.card.webp";
+import ieeeImg from "../assets/images/news6/me 2.card.webp";
+import graduationImg from "../assets/images/pf1.card.webp";
 
 export const newsItems = [
   {

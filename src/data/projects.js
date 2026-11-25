@@ -1,16 +1,16 @@
-import proLinkImg from "../assets/images/FlutterFlow.png";
-import proLinkPreviewImg from "../assets/images/FlutterFlow2.png";
-import smartClaimImg from "../assets/images/Portfolio/New Logo SmartClaim.png";
-import smartClaimPreviewImg from "../assets/images/Portfolio/New Logo SmartClaim2.png";
-import sahitnaSafeImg from "../assets/images/Portfolio/ML2.png";
-import firmaaCoverImg from "../assets/images/Portfolio/Firmaa/logo_firmaa.png";
-import campusFlowImg from "../assets/images/Portfolio/CampusFlow/campusflow-card.png";
-import callVerseImg from "../assets/images/Portfolio/CallVerse/callverse-card.png";
-import smartHrmAiImg from "../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.jpg";
-import onboardifyImg from "../assets/images/logo3.png";
-import onboardifyPreviewImg from "../assets/images/logo31.png";
-import solarFlowImg from "../assets/images/logo_1555.png";
-import solarFlowPreviewImg from "../assets/images/logo_15553.png";
+import proLinkImg from "../assets/images/FlutterFlow.card.webp";
+import proLinkPreviewImg from "../assets/images/FlutterFlow2.card.webp";
+import smartClaimImg from "../assets/images/Portfolio/New Logo SmartClaim.card.webp";
+import smartClaimPreviewImg from "../assets/images/Portfolio/New Logo SmartClaim2.card.webp";
+import sahitnaSafeImg from "../assets/images/Portfolio/ML2.card.webp";
+import firmaaCoverImg from "../assets/images/Portfolio/Firmaa/logo_firmaa.card.webp";
+import campusFlowImg from "../assets/images/Portfolio/CampusFlow/campusflow-card.card.webp";
+import callVerseImg from "../assets/images/Portfolio/CallVerse/callverse-card.card.webp";
+import smartHrmAiImg from "../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.card.webp";
+import onboardifyImg from "../assets/images/logo3.card.webp";
+import onboardifyPreviewImg from "../assets/images/logo31.card.webp";
+import solarFlowImg from "../assets/images/logo_1555.card.webp";
+import solarFlowPreviewImg from "../assets/images/logo_15553.card.webp";
 
 export const projectCategories = [
   { id: "all" },

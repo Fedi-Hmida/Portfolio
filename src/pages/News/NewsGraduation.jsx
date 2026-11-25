@@ -8,9 +8,9 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import flogo from "../../assets/images/flogo.png";
-import graduationImg from "../../assets/images/pf1.png"; // pf1.png
-import graduationMomentsImg from "../../assets/images/pf2.png"; // pf2.png
+import flogo from "../../assets/images/flogo.logo.webp";
+import graduationImg from "../../assets/images/pf1.webp"; // pf1.png
+import graduationMomentsImg from "../../assets/images/pf2.webp"; // pf2.png
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";

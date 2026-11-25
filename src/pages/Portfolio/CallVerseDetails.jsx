@@ -19,11 +19,11 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import callVerseCover from "../../assets/images/Portfolio/CallVerse/callverse-cover.jpg";
-import supervisorImg from "../../assets/images/Portfolio/CallVerse/screen-supervisor.png";
-import twinImg from "../../assets/images/Portfolio/CallVerse/screen-twin.png";
-import advisorImg from "../../assets/images/Portfolio/CallVerse/screen-advisor.png";
-import clientImg from "../../assets/images/Portfolio/CallVerse/screen-client.png";
+import callVerseCover from "../../assets/images/Portfolio/CallVerse/callverse-cover.webp";
+import supervisorImg from "../../assets/images/Portfolio/CallVerse/screen-supervisor.webp";
+import twinImg from "../../assets/images/Portfolio/CallVerse/screen-twin.webp";
+import advisorImg from "../../assets/images/Portfolio/CallVerse/screen-advisor.webp";
+import clientImg from "../../assets/images/Portfolio/CallVerse/screen-client.webp";
 import ExpandableImage from "../../components/ExpandableImage";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";

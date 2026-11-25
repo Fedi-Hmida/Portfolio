@@ -8,9 +8,9 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import flogo from "../../assets/images/flogo.png";
-import campusImg from "../../assets/images/news20/3il-campus.jpg";
-import cohortImg from "../../assets/images/news20/3il-cohort.jpg";
+import flogo from "../../assets/images/flogo.logo.webp";
+import campusImg from "../../assets/images/news20/3il-campus.webp";
+import cohortImg from "../../assets/images/news20/3il-cohort.webp";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";

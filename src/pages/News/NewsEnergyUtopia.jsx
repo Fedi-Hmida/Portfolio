@@ -8,9 +8,9 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import flogo from "../../assets/images/flogo.png";
-import tsyp1 from "../../assets/images/new12/tsyp1.jpg";
-import tsyp2 from "../../assets/images/new12/tsyp2.jpg";
+import flogo from "../../assets/images/flogo.logo.webp";
+import tsyp1 from "../../assets/images/new12/tsyp1.webp";
+import tsyp2 from "../../assets/images/new12/tsyp2.webp";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";

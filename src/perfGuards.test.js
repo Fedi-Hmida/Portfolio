@@ -55,3 +55,16 @@ test("no always-on decorative CSS animation classes (bounce, ping, pulse)", () =
 test("the app honours the visitor's reduced-motion setting", () => {
   expect(read(path.join(SRC, "App.js"))).toMatch(/<MotionConfig reducedMotion="user">/);
 });
+
+// Step 5 guard: images ship as WebP sized for their use, never heavier than 200 KB.
+test("every image the app imports is WebP and at most 200 KB", () => {
+  const problems = [];
+  sourceFiles(SRC).forEach((file) => {
+    for (const m of read(file).matchAll(/import\s+\w+\s+from\s+["']([^"']+\.(png|jpe?g|webp|gif))["']/gi)) {
+      const abs = path.resolve(path.dirname(file), m[1]);
+      if (!/\.webp$/i.test(m[1])) problems.push(`${rel(file)}: ${m[1]} is not WebP`);
+      else if (fs.statSync(abs).size > 200 * 1024) problems.push(`${rel(file)}: ${m[1]} is over 200 KB`);
+    }
+  });
+  expect(problems).toEqual([]);
+});

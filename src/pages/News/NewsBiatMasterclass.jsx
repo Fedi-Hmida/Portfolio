@@ -9,9 +9,9 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import flogo from "../../assets/images/flogo.png";
-import careerCenterImg from "../../assets/images/news18/biat-1.jpg";
-import masterclassImg from "../../assets/images/news18/biat-2.jpg";
+import flogo from "../../assets/images/flogo.logo.webp";
+import careerCenterImg from "../../assets/images/news18/biat-1.webp";
+import masterclassImg from "../../assets/images/news18/biat-2.webp";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";

@@ -9,8 +9,8 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import flogo from "../../assets/images/flogo.png";
-import bnsCoverImg from "../../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.jpg";
+import flogo from "../../assets/images/flogo.logo.webp";
+import bnsCoverImg from "../../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.webp";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";

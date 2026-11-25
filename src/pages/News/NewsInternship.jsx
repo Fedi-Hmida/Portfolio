@@ -9,8 +9,8 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import addinnImg from "../../assets/images/addinn/ADDINN.png";
-import flogo from "../../assets/images/flogo.png";
+import addinnImg from "../../assets/images/addinn/ADDINN.webp";
+import flogo from "../../assets/images/flogo.logo.webp";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";

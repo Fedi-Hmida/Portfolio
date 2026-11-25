@@ -9,8 +9,8 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import flogo from "../../assets/images/flogo.png";
-import nvidiaAnomalyImg from "../../assets/images/news17/nvidea2.jpg";
+import flogo from "../../assets/images/flogo.logo.webp";
+import nvidiaAnomalyImg from "../../assets/images/news17/nvidea2.webp";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";

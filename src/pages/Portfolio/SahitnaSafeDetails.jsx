@@ -20,7 +20,7 @@ import {
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import sahitnaSafeVisual from "../../assets/images/Portfolio/ML2.png";
+import sahitnaSafeVisual from "../../assets/images/Portfolio/ML2.webp";
 import sahitnaSafeDemoVideo from "../../assets/videos/SahitnaSafe/sahitna-safe-demo.mp4";
 import en from "../../content/sahitnaSafe/caseStudy.en";
 import fr from "../../content/sahitnaSafe/caseStudy.fr";

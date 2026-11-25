@@ -27,7 +27,7 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
-import smartClaimImg from "../../assets/images/Portfolio/New Logo SmartClaim.png";
+import smartClaimImg from "../../assets/images/Portfolio/New Logo SmartClaim.webp";
 import dataVideo from "../../assets/videos/Smart_claim/Data Demo.mp4";
 import demoVideo from "../../assets/videos/Smart_claim/Demo_Mobile.mp4";
 import en from "../../content/smartClaim/caseStudy.en";

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { FaBriefcase, FaDownload } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import fediImg from "../assets/images/slider/Fedi_Hmida.png";
+import fediImg from "../assets/images/slider/Fedi_Hmida.webp";
 import AboutHero from "../components/About/AboutHero";
 import { rich } from "../i18n/rich";
 import ServicesSection from "../components/About/ServicesSection";

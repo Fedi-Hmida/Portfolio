@@ -26,7 +26,7 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
-import onboardifyLogo from "../../assets/images/logo3.png";
+import onboardifyLogo from "../../assets/images/logo3.webp";
 import programVideo from "../../assets/videos/program.mp4";
 import projectVideo from "../../assets/videos/Projet.mp4";
 import quizVideo from "../../assets/videos/quiz.mp4";

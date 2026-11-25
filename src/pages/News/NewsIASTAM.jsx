@@ -9,11 +9,11 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import flogo from "../../assets/images/flogo.png";
-import iastamImg1 from "../../assets/images/news16/1.jpg";
-import iastamImg2 from "../../assets/images/news16/2.jpg";
-import iastamImg3 from "../../assets/images/news16/3.jpg";
-import iastamImg4 from "../../assets/images/news16/4.jpg";
+import flogo from "../../assets/images/flogo.logo.webp";
+import iastamImg1 from "../../assets/images/news16/1.webp";
+import iastamImg2 from "../../assets/images/news16/2.webp";
+import iastamImg3 from "../../assets/images/news16/3.webp";
+import iastamImg4 from "../../assets/images/news16/4.webp";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";

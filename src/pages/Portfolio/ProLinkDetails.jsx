@@ -22,8 +22,8 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
-import proLinkLogo from "../../assets/images/FlutterFlow.png";
-import proLinkPreview from "../../assets/images/FlutterFlow2.png";
+import proLinkLogo from "../../assets/images/FlutterFlow.webp";
+import proLinkPreview from "../../assets/images/FlutterFlow2.webp";
 import en from "../../content/proLink/caseStudy.en";
 import fr from "../../content/proLink/caseStudy.fr";
 import { pickContent } from "../../i18n/localeContent";

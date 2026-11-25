@@ -11,12 +11,12 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import flogo from "../../assets/images/flogo.png";
-import posterImg from "../../assets/images/news19/firmaa-poster.jpg";
-import stackImg from "../../assets/images/news19/firmaa-stack.jpg";
-import analyticsImg from "../../assets/images/news19/firmaa-analytics.jpg";
-import landingImg from "../../assets/images/news19/firmaa-landing.jpg";
-import mobileImg from "../../assets/images/news19/firmaa-mobile.jpg";
+import flogo from "../../assets/images/flogo.logo.webp";
+import posterImg from "../../assets/images/news19/firmaa-poster.webp";
+import stackImg from "../../assets/images/news19/firmaa-stack.webp";
+import analyticsImg from "../../assets/images/news19/firmaa-analytics.webp";
+import landingImg from "../../assets/images/news19/firmaa-landing.webp";
+import mobileImg from "../../assets/images/news19/firmaa-mobile.webp";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ScrollToTop from "../../components/ScrollToTop";

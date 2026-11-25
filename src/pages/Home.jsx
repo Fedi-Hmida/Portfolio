@@ -19,7 +19,7 @@ import { socialLinks } from "../data/socialLinks";
 import { pickContent } from "../i18n/localeContent";
 
 // Asset Imports
-import heroImg from "../assets/images/slider/Fedi_Hmida.png";
+import heroImg from "../assets/images/slider/Fedi_Hmida.webp";
 
 const HERO_NAME = "Fedi Hmida";
 

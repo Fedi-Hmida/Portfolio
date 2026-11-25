@@ -19,14 +19,14 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import campusFlowCover from "../../assets/images/Portfolio/CampusFlow/campusflow-cover.jpg";
-import orchestratorImg from "../../assets/images/Portfolio/CampusFlow/n8n-orchestrator.png";
-import workflowsMapImg from "../../assets/images/Portfolio/CampusFlow/workflows-map-top.png";
-import qdrantImg from "../../assets/images/Portfolio/CampusFlow/qdrant-collections.png";
-import convocationImg from "../../assets/images/Portfolio/CampusFlow/test-photo-convocation.jpg";
-import injectionPhotoImg from "../../assets/images/Portfolio/CampusFlow/test-photo-injection.jpg";
-import injectionReplyImg from "../../assets/images/Portfolio/CampusFlow/frame-injection-ignored.jpg";
-import videoPoster from "../../assets/images/Portfolio/CampusFlow/video-poster.jpg";
+import campusFlowCover from "../../assets/images/Portfolio/CampusFlow/campusflow-cover.webp";
+import orchestratorImg from "../../assets/images/Portfolio/CampusFlow/n8n-orchestrator.webp";
+import workflowsMapImg from "../../assets/images/Portfolio/CampusFlow/workflows-map-top.webp";
+import qdrantImg from "../../assets/images/Portfolio/CampusFlow/qdrant-collections.webp";
+import convocationImg from "../../assets/images/Portfolio/CampusFlow/test-photo-convocation.webp";
+import injectionPhotoImg from "../../assets/images/Portfolio/CampusFlow/test-photo-injection.webp";
+import injectionReplyImg from "../../assets/images/Portfolio/CampusFlow/frame-injection-ignored.webp";
+import videoPoster from "../../assets/images/Portfolio/CampusFlow/video-poster.webp";
 import campusFlowDemoVideo from "../../assets/videos/CampusFlow/campusflow-ai-demo.mp4";
 import ExpandableImage from "../../components/ExpandableImage";
 import Footer from "../../components/Footer";

@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
-import solarLogo from "../../assets/images/logo_1555.png";
+import solarLogo from "../../assets/images/logo_1555.webp";
 import maintenanceVideo from "../../assets/videos/Maintennace2.0.mp4";
 import adminVideo from "../../assets/videos/admin2.0.mp4";
 import userVideo from "../../assets/videos/user2.0.mp4";

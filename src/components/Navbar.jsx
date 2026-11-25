@@ -3,7 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/images/flogo.png";
+import logo from "../assets/images/flogo.logo.webp";
 import { navLinks } from "../data/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 
