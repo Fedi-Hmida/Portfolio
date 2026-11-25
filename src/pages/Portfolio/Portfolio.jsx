@@ -24,7 +24,7 @@ const Portfolio = () => {
       <main className="relative z-10 pt-32 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero & Title */}
         <div className="text-center mb-16 px-4">
-          <SectionTitle title={t("portfolio.title")} />
+          <SectionTitle as="h1" title={t("portfolio.title")} />
           <p className="text-gray-300 max-w-2xl mx-auto mt-4">
             {t("portfolio.intro")}
           </p>
