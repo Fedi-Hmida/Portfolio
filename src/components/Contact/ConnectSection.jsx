@@ -3,7 +3,8 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import SocialIconLink from "../SocialIconLink";
 import MapFacade from "./MapFacade";
-import { contactActions, contactInfo, socialLinks } from "../../data/socialLinks";
+import { contactActions } from "../../data/contactActions";
+import { contactInfo, socialLinks } from "../../data/socialLinks";
 
 const ConnectSection = () => {
   const { t } = useTranslation();

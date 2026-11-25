@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -82,9 +82,9 @@ const Navbar = () => {
               aria-controls="mobile-navigation"
             >
               {isOpen ? (
-                <FaTimes size={24} aria-hidden="true" />
+                <X size={24} aria-hidden="true" />
               ) : (
-                <FaBars size={24} aria-hidden="true" />
+                <Menu size={24} aria-hidden="true" />
               )}
             </button>
           </div>
