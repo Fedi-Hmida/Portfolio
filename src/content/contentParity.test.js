@@ -14,6 +14,8 @@ import campusFlowNewsEn from "./campusflow/news.en";
 import campusFlowNewsFr from "./campusflow/news.fr";
 import bnsNewsEn from "./bns/news.en";
 import bnsNewsFr from "./bns/news.fr";
+import homeEn from "./home/home.en";
+import homeFr from "./home/home.fr";
 import doubleDegreeNewsEn from "./doubleDegree/news.en";
 import doubleDegreeNewsFr from "./doubleDegree/news.fr";
 import smartHrmAiCaseEn from "./smartHrmAi/caseStudy.en";
@@ -76,6 +78,7 @@ const pairs = {
   "campusflow/news": [campusFlowNewsEn, campusFlowNewsFr],
   "bns/news": [bnsNewsEn, bnsNewsFr],
   "doubleDegree/news": [doubleDegreeNewsEn, doubleDegreeNewsFr],
+  "home/home": [homeEn, homeFr],
   "smartHrmAi/caseStudy": [smartHrmAiCaseEn, smartHrmAiCaseFr],
   "firmaa/caseStudy": [firmaaCaseEn, firmaaCaseFr],
   "sahitnaSafe/caseStudy": [sahitnaSafeCaseEn, sahitnaSafeCaseFr],

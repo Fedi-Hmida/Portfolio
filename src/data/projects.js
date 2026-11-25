@@ -29,6 +29,7 @@ export const projects = [
     image: callVerseImg,
     homeImage: callVerseImg,
     link: "/portfolio/callverse",
+    githubUrl: "https://github.com/Fedi-Hmida/callverse-backend",
     accentColor: "#C9A36A",
     accentText: "#E2C690",
     accentSoft: "rgba(201, 163, 106, 0.14)",
@@ -45,6 +46,7 @@ export const projects = [
     image: campusFlowImg,
     homeImage: campusFlowImg,
     link: "/portfolio/campusflow-ai",
+    githubUrl: "https://github.com/Fedi-Hmida/CampusFlow_AI",
     accentColor: "#FE3E57",
     accentText: "#FF8A9B",
     accentSoft: "rgba(254, 62, 87, 0.14)",
@@ -101,6 +103,7 @@ export const projects = [
     image: sahitnaSafeImg,
     homeImage: sahitnaSafeImg,
     link: "/portfolio/sahitna-safe",
+    githubUrl: "https://github.com/Fedi-Hmida/MLProject_Fedi",
     scale: 1.35,
     accentColor: "#00C2F0",
     accentText: "#41DFFF",
@@ -175,6 +178,26 @@ export const projects = [
     accentForeground: "#ffffff",
   },
 ];
+
+export const projectsById = Object.fromEntries(projects.map((p) => [p.id, p]));
+
+/**
+ * Merges the Home content items ({ id, role, meta, ... } from
+ * src/content/home/home.*.js) with the structural data above, in content order.
+ */
+export const getHomeProjects = (items) =>
+  items.map((item) => {
+    const project = projectsById[item.id];
+    if (!project) throw new Error(`Unknown project id ${item.id}`);
+    return {
+      ...item,
+      title: project.title,
+      link: project.link,
+      githubUrl: project.githubUrl,
+      accentColor: project.accentColor,
+      tech: project.homeTech || project.tech,
+    };
+  });
 
 /**
  * Merges the structural project data above with the translated copy held in
