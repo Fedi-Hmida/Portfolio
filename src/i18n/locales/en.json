@@ -189,6 +189,11 @@
     "connectTitle": "Reach me directly",
     "connectIntro": "Send a role, project brief, or collaboration idea. For technical review, start with SMART HRM AI and Firmaa, then reach out through LinkedIn or email.",
     "mapTitle": "Map showing Limoges, France",
+    "map": {
+      "show": "Show the map",
+      "open": "Open in Google Maps",
+      "note": "The map is loaded from Google Maps."
+    },
     "locationLabel": "Location",
     "emailLabel": "Email",
     "phoneLabel": "Phone",

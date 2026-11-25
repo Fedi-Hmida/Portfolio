@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import SocialIconLink from "../SocialIconLink";
+import MapFacade from "./MapFacade";
 import { contactActions, contactInfo, socialLinks } from "../../data/socialLinks";
 
 const ConnectSection = () => {
@@ -26,14 +27,7 @@ const ConnectSection = () => {
         viewport={{ once: true }}
         className="w-full h-80 rounded-2xl overflow-hidden shadow-2xl border border-white/10 mb-12"
       >
-        <iframe
-          title={t("contact.mapTitle")}
-          src="https://maps.google.com/maps?q=Limoges%2C%20France&t=&z=12&ie=UTF8&iwloc=&output=embed"
-          className="w-full h-full border-0 filter grayscale invert contrast-125 opacity-80 hover:opacity-100 transition-opacity duration-500"
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <MapFacade />
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

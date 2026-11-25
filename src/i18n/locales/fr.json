@@ -189,6 +189,11 @@
     "connectTitle": "Me joindre directement",
     "connectIntro": "Envoyez-moi une offre, un brief projet ou une idée de collaboration. Pour une lecture technique, commencez par SMART HRM AI et Firmaa, puis contactez-moi sur LinkedIn ou par e-mail.",
     "mapTitle": "Carte de Limoges, France",
+    "map": {
+      "show": "Afficher la carte",
+      "open": "Ouvrir dans Google Maps",
+      "note": "La carte est chargée depuis Google Maps."
+    },
     "locationLabel": "Localisation",
     "emailLabel": "E-mail",
     "phoneLabel": "Téléphone",
