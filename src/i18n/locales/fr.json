@@ -32,7 +32,19 @@
     "download": "Télécharger",
     "viewCaseStudy": "Voir l'étude de cas",
     "closePreview": "Fermer l'aperçu de l'image",
-    "close": "Fermer"
+    "close": "Fermer",
+    "logoAlt": "Fedi Hmida, retour à l'accueil",
+    "image": "Image",
+    "viewLarger": "Agrandir l'image : {{alt}}",
+    "previewOf": "Aperçu : {{alt}}"
+  },
+  "social": {
+    "email": "Écrire à Fedi Hmida",
+    "linkedin": "Ouvrir le profil LinkedIn de Fedi Hmida",
+    "github": "Ouvrir le profil GitHub de Fedi Hmida",
+    "phone": "Afficher le numéro de téléphone de Fedi Hmida",
+    "open": "Ouvrir {{name}}",
+    "copy": "Copier {{name}}"
   },
   "home": {
     "role": "Étudiant ingénieur en informatique",
@@ -118,6 +130,7 @@
     "skillsTitle": "Compétences techniques",
     "educationTitle": "Formation",
     "recommendationsTitle": "Lettres de recommandation",
+    "openLinkedin": "Ouvrir le profil LinkedIn de {{name}}",
     "experiences": [
       {
         "role": "Stagiaire ingénierie full-stack - Co-responsable",

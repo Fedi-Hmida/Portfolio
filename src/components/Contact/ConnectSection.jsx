@@ -54,7 +54,6 @@ const ConnectSection = () => {
                 href={action.href}
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noreferrer" : undefined}
-                aria-label={`Open ${action.name}`}
                 className={`glass-card p-6 rounded-xl flex items-center justify-between group hover:bg-white/5 transition-all duration-300 border-l-4 border-transparent ${action.borderColor}`}
               >
                 <span>

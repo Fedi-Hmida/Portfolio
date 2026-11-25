@@ -19,7 +19,7 @@ const Footer = () => {
               <img
                 className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 src={logo}
-                alt="Fedi Hmida portfolio home"
+                alt={t("common.logoAlt")}
                 loading="lazy"
                 decoding="async"
               />

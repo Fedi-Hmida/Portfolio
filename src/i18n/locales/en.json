@@ -32,7 +32,19 @@
     "download": "Download",
     "viewCaseStudy": "View case study",
     "closePreview": "Close image preview",
-    "close": "Close"
+    "close": "Close",
+    "logoAlt": "Fedi Hmida, back to home",
+    "image": "Image",
+    "viewLarger": "View larger: {{alt}}",
+    "previewOf": "Preview: {{alt}}"
+  },
+  "social": {
+    "email": "Email Fedi Hmida",
+    "linkedin": "Open Fedi Hmida's LinkedIn profile",
+    "github": "Open Fedi Hmida's GitHub profile",
+    "phone": "Show Fedi Hmida's phone number",
+    "open": "Open {{name}}",
+    "copy": "Copy {{name}}"
   },
   "home": {
     "role": "Software Engineering Student",
@@ -118,6 +130,7 @@
     "skillsTitle": "Technical Skills",
     "educationTitle": "Education",
     "recommendationsTitle": "Recommendation Letters",
+    "openLinkedin": "Open {{name}}'s LinkedIn profile",
     "experiences": [
       {
         "role": "Full-Stack Engineering Intern - Co-Lead",

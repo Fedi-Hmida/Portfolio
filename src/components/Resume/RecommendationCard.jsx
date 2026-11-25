@@ -14,7 +14,7 @@ const RecommendationCard = ({ name, role, linkedinUrl, pdfLink }) => {
           href={linkedinUrl}
           target="_blank"
           rel="noreferrer"
-          aria-label={`Open ${name} LinkedIn profile`}
+          aria-label={t("resume.openLinkedin", { name })}
           className="text-linkedin-blue hover:text-white transition-colors"
         >
           <Linkedin size={24} aria-hidden="true" />

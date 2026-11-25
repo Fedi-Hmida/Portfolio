@@ -108,7 +108,7 @@ const SocialIconLink = ({
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noreferrer" : undefined}
         className={className}
-        aria-label={social.ariaLabel || `Open ${social.name}`}
+        aria-label={t(social.ariaLabelKey, t("social.open", { name: social.name }))}
       >
         <SocialIcon
           aria-hidden="true"
@@ -130,7 +130,7 @@ const SocialIconLink = ({
           : {})}
         type="button"
         className={`${className} cursor-pointer bg-transparent`}
-        aria-label={social.ariaLabel || `Copy ${social.name}`}
+        aria-label={t(social.ariaLabelKey, t("social.copy", { name: social.name }))}
         aria-expanded={isOpen}
         onClick={() => {
           setCopyStatus("idle");

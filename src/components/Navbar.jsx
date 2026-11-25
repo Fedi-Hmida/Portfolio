@@ -36,7 +36,7 @@ const Navbar = () => {
                 className="w-16 h-16 object-contain"
                 width="64"
                 height="64"
-                alt="Fedi Hmida portfolio home"
+                alt={t("common.logoAlt")}
                 decoding="async"
               />
             </Link>
