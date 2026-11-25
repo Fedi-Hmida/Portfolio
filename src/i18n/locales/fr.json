@@ -53,13 +53,6 @@
     "viewProjects": "Voir les projets",
     "viewCv": "Voir le CV",
     "aboutMe": "À propos",
-    "aboutTitle": "À propos de moi",
-    "tabs": {
-      "soft skills": "Savoir-être",
-      "hard skills": "Compétences techniques",
-      "services": "Services",
-      "project methodologies": "Méthodologies"
-    },
     "myWork": "Mes réalisations",
     "viewAllProjects": "Voir tous les projets",
     "latestNews": "Dernières actualités",
@@ -337,76 +330,6 @@
     }
   },
   "skills": {
-    "soft": {
-      "communication": {
-        "title": "Communication",
-        "desc": "Communication orale et écrite efficace"
-      },
-      "project_management": {
-        "title": "Gestion de projet",
-        "desc": "Organisation et pilotage efficaces"
-      },
-      "team_collaboration": {
-        "title": "Travail en équipe",
-        "desc": "Esprit collaboratif et sens du collectif"
-      },
-      "analytical": {
-        "title": "Esprit d'analyse",
-        "desc": "Décisions fondées sur les données"
-      },
-      "organization": {
-        "title": "Organisation",
-        "desc": "Approche structurée et méthodique"
-      },
-      "creativity": {
-        "title": "Créativité",
-        "desc": "Idées et solutions innovantes"
-      }
-    },
-    "hard": {
-      "langgraph": "Workflows d'IA agentique",
-      "langchain": "Orchestration de LLM et de RAG",
-      "rag_chatbots": "Assistants a génération augmentée",
-      "chromadb": "Base vectorielle pour le RAG",
-      "llm_reasoning": "Décisions IA sensibles au contexte",
-      "tool_assisted_agents": "Appels d'outils et workflows d'agents",
-      "react": "Bibliothèque front-end pour l'UI",
-      "next_js": "Framework React pour la production",
-      "typescript": "Interfaces typées pour tableaux de bord",
-      "node_js": "Environnement d'exécution JavaScript",
-      "nestjs": "Framework Node.js performant",
-      "fastapi": "APIs REST pour l'inférence de modèles",
-      "java_17": "Développement back-end d'entreprise",
-      "spring_boot": "API REST et couche service",
-      "spring_security": "Autorisation et contrôle d'accès",
-      "keycloak": "Gestion des identités et des accès",
-      "oauth2_oidc": "Flux d'authentification délégués",
-      "postgresql": "Donnees relationnelles et migrations",
-      "minio_s3": "Stockage objet pour les documents",
-      "mlflow": "Suivi des expériences et des modèles",
-      "mcp": "Outillage Model Context Protocol",
-      "playwright": "Automatisation des tests de bout en bout",
-      "gitlab_ci_cd": "Pipelines et livraison automatisée",
-      "docker": "Déploiement conteneurisé",
-      "tailwind_css": "Mise en forme optimisée de l'UI",
-      "three_js": "Interfaces de jumeau numérique 3D",
-      "rest_apis": "Intégration de services et de modèles",
-      "mongodb": "Gestion de bases NoSQL",
-      "firebase": "Flux de données mobiles en temps réel",
-      "mysql": "Modélisation de données relationnelles",
-      "git": "Gestion de versions et collaboration",
-      "yolov8": "Détection d'objets et de dommages",
-      "opencv": "Prétraitement en vision par ordinateur",
-      "pytorch": "Entraînement et expérimentation de modèles",
-      "python": "Pipelines ML et evaluation",
-      "scikit_learn": "Modèles de machine learning",
-      "xgboost": "Gradient boosting",
-      "shap": "Modèles d'IA explicable",
-      "model_evaluation": "ROC-AUC, rappel, precision",
-      "tensorflow": "Développement de modèles deep learning",
-      "flutter": "Développement mobile multiplateforme",
-      "dart": "Développement d'applications Flutter"
-    },
     "services": {
       "ai_agents_agentic_ai": {
         "title": "Agents IA / IA agentique",

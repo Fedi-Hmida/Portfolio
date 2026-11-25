@@ -53,13 +53,6 @@
     "viewProjects": "View Projects",
     "viewCv": "View CV",
     "aboutMe": "About Me",
-    "aboutTitle": "About Me",
-    "tabs": {
-      "soft skills": "Soft Skills",
-      "hard skills": "Hard Skills",
-      "services": "Services",
-      "project methodologies": "Methodologies"
-    },
     "myWork": "My Work",
     "viewAllProjects": "View All Projects",
     "latestNews": "Latest News",
@@ -337,76 +330,6 @@
     }
   },
   "skills": {
-    "soft": {
-      "communication": {
-        "title": "Communication",
-        "desc": "Effective verbal and written communication skills"
-      },
-      "project_management": {
-        "title": "Project Management",
-        "desc": "Organized and efficient project handling"
-      },
-      "team_collaboration": {
-        "title": "Team Collaboration",
-        "desc": "Strong team player with collaborative mindset"
-      },
-      "analytical": {
-        "title": "Analytical",
-        "desc": "Data-driven decision making"
-      },
-      "organization": {
-        "title": "Organization",
-        "desc": "Structured and methodical approach"
-      },
-      "creativity": {
-        "title": "Creativity",
-        "desc": "Innovative thinking and solutions"
-      }
-    },
-    "hard": {
-      "langgraph": "Agentic AI workflows",
-      "langchain": "LLM and RAG orchestration",
-      "rag_chatbots": "Retrieval-augmented assistants",
-      "chromadb": "Vector database for RAG",
-      "llm_reasoning": "Context-aware AI decisions",
-      "tool_assisted_agents": "Agent tool calls and workflows",
-      "react": "Frontend library for UI",
-      "next_js": "React framework for production",
-      "typescript": "Typed dashboard interfaces",
-      "node_js": "JavaScript runtime",
-      "nestjs": "Efficient Node.js framework",
-      "fastapi": "REST APIs for model inference",
-      "java_17": "Enterprise back-end development",
-      "spring_boot": "REST API and service layer",
-      "spring_security": "Authorization and access control",
-      "keycloak": "Identity and access management",
-      "oauth2_oidc": "Delegated authentication flows",
-      "postgresql": "Relational data and migrations",
-      "minio_s3": "Object storage for documents",
-      "mlflow": "Experiment and model tracking",
-      "mcp": "Model Context Protocol tooling",
-      "playwright": "End-to-end test automation",
-      "gitlab_ci_cd": "Pipelines and automated delivery",
-      "docker": "Containerized deployment",
-      "tailwind_css": "Optimized UI styling",
-      "three_js": "3D digital twin interfaces",
-      "rest_apis": "Service and model integration",
-      "mongodb": "NoSQL database management",
-      "firebase": "Realtime mobile data flows",
-      "mysql": "Relational data modeling",
-      "git": "Version control and collaboration",
-      "yolov8": "Object and damage detection",
-      "opencv": "Computer vision preprocessing",
-      "pytorch": "Model training and experimentation",
-      "python": "ML pipelines and evaluation",
-      "scikit_learn": "Machine Learning models",
-      "xgboost": "Gradient boosting capabilities",
-      "shap": "Explainable AI models",
-      "model_evaluation": "ROC-AUC, recall, precision",
-      "tensorflow": "Deep learning model development",
-      "flutter": "Cross-platform mobile development",
-      "dart": "Flutter app development"
-    },
     "services": {
       "ai_agents_agentic_ai": {
         "title": "AI Agents / Agentic AI",
