@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, MotionConfig } from "framer-motion";
 import { lazy, Suspense } from "react";
 import {
   Route,
@@ -400,14 +400,18 @@ const AppRoutes = () => {
 function App() {
   const locale = detectLocale();
 
+  // reducedMotion="user": visitors who ask their device for reduced motion get no
+  // transform or layout animations from framer-motion.
   return (
-    <Router basename={basenameFor(locale)}>
-      <LocaleHead />
-      <ScrollToTop />
-      <div className="App">
-        <AppRoutes />
-      </div>
-    </Router>
+    <MotionConfig reducedMotion="user">
+      <Router basename={basenameFor(locale)}>
+        <LocaleHead />
+        <ScrollToTop />
+        <div className="App">
+          <AppRoutes />
+        </div>
+      </Router>
+    </MotionConfig>
   );
 }
 
