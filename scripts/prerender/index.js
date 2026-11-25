@@ -11,6 +11,7 @@ const path = require("path");
 const { JSDOM, ResourceLoader, VirtualConsole } = require("jsdom");
 const { routesFromApp, pagesToRender } = require("./routes");
 const { checkRenderedHtml } = require("./validate");
+const { addHydrationMarkers } = require("./hydration");
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const BUILD = path.resolve(ROOT, process.env.BUILD_PATH || "build");
@@ -20,9 +21,15 @@ const TIMEOUT_MS = 10000;
 // Serves our own JavaScript and CSS from the build folder (webpack waits for a lazy page's
 // CSS chunk before running it); skips images, fonts and third parties.
 class BuildLoader extends ResourceLoader {
+  constructor() {
+    super();
+    this.requested = []; // every JS/CSS path this page loaded, in order
+  }
+
   fetch(url) {
     const { origin, pathname } = new URL(url);
     if (origin !== SITE || !/\.(js|css)$/.test(pathname)) return null;
+    this.requested.push(pathname);
     return Promise.resolve(fs.readFileSync(path.join(BUILD, decodeURIComponent(pathname))));
   }
 }
@@ -54,6 +61,7 @@ const waitFor = (predicate, ms) =>
 
 const renderPage = async (shell, page) => {
   const errors = [];
+  const loader = new BuildLoader();
   const virtualConsole = new VirtualConsole();
   // jsdom cannot parse some modern CSS; that does not affect the HTML we save.
   virtualConsole.on("jsdomError", (e) => {
@@ -62,7 +70,7 @@ const renderPage = async (shell, page) => {
   const dom = new JSDOM(shell, {
     url: SITE + page.url,
     runScripts: "dangerously",
-    resources: new BuildLoader(),
+    resources: loader,
     pretendToBeVisual: true,
     virtualConsole,
     beforeParse: stubBrowserApis,
@@ -75,18 +83,21 @@ const renderPage = async (shell, page) => {
     await waitFor(() => document.documentElement.lang === page.locale && document.title, TIMEOUT_MS);
     await new Promise((r) => setTimeout(r, 100));
 
-    // Lazy chunks webpack appended while rendering: keep them as preload hints so the
-    // browser fetches the page's code early, without changing the script execution order.
-    const original = new Set([...new JSDOM(shell).window.document.scripts].map((s) => s.getAttribute("src")));
-    [...document.querySelectorAll("script[src]")]
-      .filter((s) => !original.has(s.getAttribute("src")))
-      .forEach((s) => {
+    // The page's own lazy chunks (not in the shell): add preload hints so the browser
+    // fetches them alongside main.js and hydration does not wait for an extra round trip.
+    // Webpack still inserts and runs them itself, so the execution order is unchanged.
+    const inShell = new Set([...shell.matchAll(/(?:src|href)="([^"]+)"/g)].map((m) => m[1]));
+    [...new Set(loader.requested)]
+      .filter((href) => !inShell.has(href))
+      .forEach((href) => {
+        // setAttribute: jsdom does not reflect the `as` property to the attribute.
         const link = document.createElement("link");
-        link.rel = "preload";
-        link.as = "script";
-        link.href = s.getAttribute("src");
-        s.replaceWith(link);
+        link.setAttribute("rel", "preload");
+        link.setAttribute("as", href.endsWith(".css") ? "style" : "script");
+        link.setAttribute("href", href);
+        document.head.appendChild(link);
       });
+    addHydrationMarkers(document);
     return dom.serialize();
   } finally {
     dom.window.close();
