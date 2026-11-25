@@ -96,7 +96,7 @@
     ],
     "downloadHint": "Cliquez pour télécharger la recommandation",
     "careerFocusTitle": "Objectif professionnel",
-    "careerFocus": "Je recherche un <b>stage de 4 mois à partir d'avril 2027</b> ainsi qu'une <b>alternance en IA / génie logiciel à partir de septembre 2027</b>, en France. Je souhaite rejoindre une équipe qui construit des <b>systèmes d'IA agentique</b>, des <b>produits ML</b> ou des <b>plateformes back-end en production</b>, où je pourrai livrer des systèmes de bout en bout.",
+    "careerFocus": "Je recherche un <b>stage de 4 à 6 mois à partir d'avril 2027</b> ainsi qu'une <b>alternance en IA / génie logiciel à partir de septembre 2027</b>, en France. Je souhaite rejoindre une équipe qui construit des <b>systèmes d'IA agentique</b>, des <b>produits ML</b> ou des <b>plateformes back-end en production</b>, où je pourrai livrer des systèmes de bout en bout.",
     "downloadCv": "Télécharger le CV",
     "viewPortfolio": "Voir le portfolio",
     "whatIOffer": "Ce que je propose"
@@ -187,7 +187,7 @@
   "contact": {
     "heroTitle": "Travaillons",
     "heroTitleAccent": "ensemble",
-    "heroIntro": "Basé à Limoges. Je recherche un stage de 4 mois à partir d'avril 2027 et une alternance en IA / génie logiciel à partir de septembre 2027, au sein d'équipes qui construisent des systèmes d'IA agentique, des produits ML ou des plateformes back-end en production.",
+    "heroIntro": "Basé à Limoges. Je recherche un stage de 4 à 6 mois à partir d'avril 2027 et une alternance en IA / génie logiciel à partir de septembre 2027, au sein d'équipes qui construisent des systèmes d'IA agentique, des produits ML ou des plateformes back-end en production.",
     "pills": [
       "Stage - avril 2027",
       "Alternance - septembre 2027",

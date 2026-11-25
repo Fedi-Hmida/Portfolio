@@ -13,7 +13,7 @@ const home = {
     lead: "Multi-agent LLM systems, Spring Boot and FastAPI services, and the tests around them. Every number here says how it was measured.",
     availabilityTitle: "Available for",
     availability: [
-      { label: "Internship", detail: "4 months, from April 2027" },
+      { label: "Internship", detail: "4 to 6 months, from April 2027" },
       { label: "Alternance", detail: "AI / software engineering, from September 2027" },
     ],
     languages: {
@@ -123,7 +123,7 @@ const home = {
   news: { title: "Recent news", more: "All news" },
   contact: {
     title: "Building agentic AI, ML products or back-end platforms?",
-    body: "I'm looking for a 4-month internship from April 2027 and an alternance from September 2027, in France.",
+    body: "I'm looking for a 4- to 6-month internship from April 2027 and an alternance from September 2027, in France.",
     email: "Email me",
     cv: "Download CV (PDF)",
   },

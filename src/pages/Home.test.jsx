@@ -21,7 +21,7 @@ test("Home no longer has the About Me tabs section", () => {
 
 test("Home shows the availability in the hero", () => {
   renderHome();
-  expect(screen.getByText("4 months, from April 2027")).toBeInTheDocument();
+  expect(screen.getByText("4 to 6 months, from April 2027")).toBeInTheDocument();
   expect(screen.getByText("AI / software engineering, from September 2027")).toBeInTheDocument();
   expect(screen.getByText("English B2, French B2")).toBeInTheDocument();
 });

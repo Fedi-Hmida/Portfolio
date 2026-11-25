@@ -96,7 +96,7 @@
     ],
     "downloadHint": "Click to download certification",
     "careerFocusTitle": "Career Focus",
-    "careerFocus": "Seeking a <b>4-month internship from April 2027</b> and an <b>alternance in AI / Software Engineering from September 2027</b>, based in France. Most interested in teams building <b>agentic AI systems</b>, <b>ML products</b>, or <b>production back-end platforms</b> where I can deliver production-ready systems end to end.",
+    "careerFocus": "Seeking a <b>4- to 6-month internship from April 2027</b> and an <b>alternance in AI / Software Engineering from September 2027</b>, based in France. Most interested in teams building <b>agentic AI systems</b>, <b>ML products</b>, or <b>production back-end platforms</b> where I can deliver production-ready systems end to end.",
     "downloadCv": "Download CV",
     "viewPortfolio": "View Portfolio",
     "whatIOffer": "What I Offer"
@@ -187,7 +187,7 @@
   "contact": {
     "heroTitle": "Let's Work",
     "heroTitleAccent": "Together",
-    "heroIntro": "Based in Limoges, France. Looking for a 4-month internship from April 2027 and an alternance in AI / Software Engineering from September 2027, with teams building agentic AI systems, ML products, or production back-end platforms.",
+    "heroIntro": "Based in Limoges, France. Looking for a 4- to 6-month internship from April 2027 and an alternance in AI / Software Engineering from September 2027, with teams building agentic AI systems, ML products, or production back-end platforms.",
     "pills": [
       "Internship - April 2027",
       "Alternance - September 2027",

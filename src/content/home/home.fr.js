@@ -8,7 +8,7 @@ const home = {
     lead: "Systèmes LLM multi-agents, services Spring Boot et FastAPI, et les tests qui les entourent. Chaque chiffre ici précise comment il a été mesuré.",
     availabilityTitle: "Disponible pour",
     availability: [
-      { label: "Stage", detail: "4 mois, dès avril 2027" },
+      { label: "Stage", detail: "4 à 6 mois, dès avril 2027" },
       { label: "Alternance", detail: "IA / génie logiciel, dès septembre 2027" },
     ],
     languages: {
@@ -118,7 +118,7 @@ const home = {
   news: { title: "Actualités récentes", more: "Toutes les actualités" },
   contact: {
     title: "Vous construisez de l'IA agentique, des produits ML ou des plateformes back-end\u00a0?",
-    body: "Je recherche un stage de 4 mois dès avril 2027 et une alternance dès septembre 2027, en France.",
+    body: "Je recherche un stage de 4 à 6 mois dès avril 2027 et une alternance dès septembre 2027, en France.",
     email: "M'écrire",
     cv: "Télécharger le CV (PDF)",
   },
