@@ -39,7 +39,9 @@ const About = () => {
                 <img
                   src={fediImg}
                   alt="Fedi Hmida"
-                  loading="lazy"
+                  width="500"
+                  height="500"
+                  loading="eager"
                   decoding="async"
                   className="w-full h-auto shadow-lg filter saturate-120 hover:saturate-100 transition-all duration-300"
                 />
