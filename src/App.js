@@ -72,7 +72,11 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const AppRoutes = () => {
   const location = useLocation();
   return (
-    <AnimatePresence mode="wait">
+    // initial={false}: on the first load every motion element starts in its final,
+    // visible state. Content that fades in from opacity 0 is invisible to Chrome's
+    // LCP (the navbar logo became the LCP element; /news/23 had none). Later route
+    // changes still animate.
+    <AnimatePresence mode="wait" initial={false}>
       <Suspense fallback={<div className="min-h-screen bg-deep-indigo" />}>
         <Routes location={location} key={location.pathname}>
           <Route

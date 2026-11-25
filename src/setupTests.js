@@ -19,6 +19,9 @@ if (!window.matchMedia) {
   });
 }
 
+// ScrollToTop calls window.scrollTo, which jsdom does not implement.
+window.scrollTo = () => {};
+
 // framer-motion's whileInView needs IntersectionObserver, which jsdom lacks.
 // A no-op stub is enough: tests assert on content, not on scroll animations.
 if (!global.IntersectionObserver) {
