@@ -176,7 +176,7 @@ const Home = () => {
       {/* --- PORTFOLIO PREVIEW --- */}
       <section className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+          <div className="flex flex-col items-center text-center md:flex-row md:justify-between md:items-end md:text-left mb-12">
             <div>
               <m.div
                 initial={{ opacity: 0, y: -20 }}
