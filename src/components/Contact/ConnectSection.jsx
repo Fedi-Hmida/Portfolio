@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import { ReactTyped } from "react-typed";
 import SocialIconLink from "../SocialIconLink";
-import { contactActions, contactInfo, socialLinks } from "../../data/socialLinks";
+import MapFacade from "./MapFacade";
+import { contactActions } from "../../data/contactActions";
+import { contactInfo, socialLinks } from "../../data/socialLinks";
 
 const ConnectSection = () => {
   const { t } = useTranslation();
@@ -12,12 +13,7 @@ const ConnectSection = () => {
     <div className="mt-20">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-          <ReactTyped
-            strings={t("contact.connectTyped", { returnObjects: true })}
-            typeSpeed={100}
-            backSpeed={50}
-            loop
-          />
+          {t("contact.connectTitle")}
         </h2>
         <div className="w-16 h-1 bg-primary-pink mx-auto rounded"></div>
         <p className="mx-auto mt-4 max-w-2xl text-gray-300">
@@ -32,14 +28,7 @@ const ConnectSection = () => {
         viewport={{ once: true }}
         className="w-full h-80 rounded-2xl overflow-hidden shadow-2xl border border-white/10 mb-12"
       >
-        <iframe
-          title={t("contact.mapTitle")}
-          src="https://maps.google.com/maps?q=Limoges%2C%20France&t=&z=12&ie=UTF8&iwloc=&output=embed"
-          className="w-full h-full border-0 filter grayscale invert contrast-125 opacity-80 hover:opacity-100 transition-opacity duration-500"
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <MapFacade />
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -54,7 +43,6 @@ const ConnectSection = () => {
                 href={action.href}
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noreferrer" : undefined}
-                aria-label={`Open ${action.name}`}
                 className={`glass-card p-6 rounded-xl flex items-center justify-between group hover:bg-white/5 transition-all duration-300 border-l-4 border-transparent ${action.borderColor}`}
               >
                 <span>

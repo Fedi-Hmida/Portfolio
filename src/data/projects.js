@@ -1,14 +1,16 @@
-import proLinkImg from "../assets/images/FlutterFlow.png";
-import proLinkPreviewImg from "../assets/images/FlutterFlow2.png";
-import smartClaimImg from "../assets/images/Portfolio/New Logo SmartClaim.png";
-import smartClaimPreviewImg from "../assets/images/Portfolio/New Logo SmartClaim2.png";
-import sahitnaSafeImg from "../assets/images/Portfolio/ML2.png";
-import firmaaCoverImg from "../assets/images/Portfolio/Firmaa/logo_firmaa.png";
-import smartHrmAiImg from "../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.jpg";
-import onboardifyImg from "../assets/images/logo3.png";
-import onboardifyPreviewImg from "../assets/images/logo31.png";
-import solarFlowImg from "../assets/images/logo_1555.png";
-import solarFlowPreviewImg from "../assets/images/logo_15553.png";
+import proLinkImg from "../assets/images/FlutterFlow.card.webp";
+import proLinkPreviewImg from "../assets/images/FlutterFlow2.card.webp";
+import smartClaimImg from "../assets/images/Portfolio/New Logo SmartClaim.card.webp";
+import smartClaimPreviewImg from "../assets/images/Portfolio/New Logo SmartClaim2.card.webp";
+import sahitnaSafeImg from "../assets/images/Portfolio/ML2.card.webp";
+import firmaaCoverImg from "../assets/images/Portfolio/Firmaa/logo_firmaa.card.webp";
+import campusFlowImg from "../assets/images/Portfolio/CampusFlow/campusflow-card.card.webp";
+import callVerseImg from "../assets/images/Portfolio/CallVerse/callverse-card.card.webp";
+import smartHrmAiImg from "../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.card.webp";
+import onboardifyImg from "../assets/images/logo3.card.webp";
+import onboardifyPreviewImg from "../assets/images/logo31.card.webp";
+import solarFlowImg from "../assets/images/logo_1555.card.webp";
+import solarFlowPreviewImg from "../assets/images/logo_15553.card.webp";
 
 export const projectCategories = [
   { id: "all" },
@@ -18,6 +20,40 @@ export const projectCategories = [
 ];
 
 export const projects = [
+  {
+    id: 9,
+    title: "CallVerse",
+    category: ["ia", "web"],
+    tech: ["LangGraph", "PPO (RL)", "Spring Boot", "Next.js", "PostgreSQL", "FastAPI"],
+    homeTech: ["LangGraph", "PPO", "Spring Boot"],
+    image: callVerseImg,
+    homeImage: callVerseImg,
+    link: "/portfolio/callverse",
+    githubUrl: "https://github.com/Fedi-Hmida/callverse-backend",
+    accentColor: "#C9A36A",
+    accentText: "#E2C690",
+    accentSoft: "rgba(201, 163, 106, 0.14)",
+    accentBorder: "rgba(201, 163, 106, 0.45)",
+    accentShadow: "rgba(201, 163, 106, 0.22)",
+    accentForeground: "#1A1206",
+  },
+  {
+    id: 8,
+    title: "CampusFlow AI",
+    category: ["ia"],
+    tech: ["n8n", "RAG", "Qdrant", "Ollama", "Gemini", "Docker"],
+    homeTech: ["n8n", "RAG", "Qdrant"],
+    image: campusFlowImg,
+    homeImage: campusFlowImg,
+    link: "/portfolio/campusflow-ai",
+    githubUrl: "https://github.com/Fedi-Hmida/CampusFlow_AI",
+    accentColor: "#FE3E57",
+    accentText: "#FF8A9B",
+    accentSoft: "rgba(254, 62, 87, 0.14)",
+    accentBorder: "rgba(254, 62, 87, 0.45)",
+    accentShadow: "rgba(254, 62, 87, 0.22)",
+    accentForeground: "#ffffff",
+  },
   {
     id: 7,
     title: "SMART HRM AI",
@@ -67,6 +103,7 @@ export const projects = [
     image: sahitnaSafeImg,
     homeImage: sahitnaSafeImg,
     link: "/portfolio/sahitna-safe",
+    githubUrl: "https://github.com/Fedi-Hmida/MLProject_Fedi",
     scale: 1.35,
     accentColor: "#00C2F0",
     accentText: "#41DFFF",
@@ -141,6 +178,26 @@ export const projects = [
     accentForeground: "#ffffff",
   },
 ];
+
+export const projectsById = Object.fromEntries(projects.map((p) => [p.id, p]));
+
+/**
+ * Merges the Home content items ({ id, role, meta, ... } from
+ * src/content/home/home.*.js) with the structural data above, in content order.
+ */
+export const getHomeProjects = (items) =>
+  items.map((item) => {
+    const project = projectsById[item.id];
+    if (!project) throw new Error(`Unknown project id ${item.id}`);
+    return {
+      ...item,
+      title: project.title,
+      link: project.link,
+      githubUrl: project.githubUrl,
+      accentColor: project.accentColor,
+      tech: project.homeTech || project.tech,
+    };
+  });
 
 /**
  * Merges the structural project data above with the translated copy held in

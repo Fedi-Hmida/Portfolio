@@ -3,12 +3,10 @@ import ContactForm from "../components/Contact/ContactForm";
 import ContactHero from "../components/Contact/ContactHero";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import ParticlesBackground from "../components/ParticlesBackground";
 
 const Contact = () => {
   return (
     <div className="relative min-h-screen">
-      <ParticlesBackground />
       <Navbar />
 
       <main className="relative z-10 pb-20">

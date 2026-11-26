@@ -3,37 +3,27 @@ import {
   FaArrowLeft,
   FaGraduationCap,
   FaLinkedin,
-  FaMapMarkerAlt,
   FaPlaneDeparture,
   FaUserTie,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ExpandableImage from "../../components/ExpandableImage";
-import flogo from "../../assets/images/flogo.png";
-import campusImg from "../../assets/images/news20/3il-campus.jpg";
-import cohortImg from "../../assets/images/news20/3il-cohort.jpg";
+import flogo from "../../assets/images/flogo.logo.webp";
+import campusImg from "../../assets/images/news20/3il-campus.webp";
+import cohortImg from "../../assets/images/news20/3il-cohort.webp";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
-import ParticlesBackground from "../../components/ParticlesBackground";
 import ScrollToTop from "../../components/ScrollToTop";
+import en from "../../content/doubleDegree/news.en";
+import fr from "../../content/doubleDegree/news.fr";
+import { pickContent } from "../../i18n/localeContent";
 
 const ACCENT = "#FF7A45";
 
-const timeline = [
-  {
-    when: "September 2024",
-    what: "First class in Tunis",
-    detail: "Start of the engineering cycle at ESPRIT.",
-  },
-  {
-    when: "September 2026",
-    what: "First class in France",
-    detail: "Arrival at 3iL Ingénieurs in Limoges.",
-  },
-];
-
 const NewsDoubleDegree = () => {
+  // Long-form copy lives in src/content/doubleDegree/news.{en,fr}.js; /fr shows the French post.
+  const c = pickContent({ en, fr });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
@@ -49,14 +39,12 @@ const NewsDoubleDegree = () => {
       <ScrollToTop />
       <div className="absolute inset-0 bg-gradient-to-br from-[#1a237e] to-[#283593] -z-20"></div>
       <div className="absolute inset-0 -z-10 opacity-30">
-        <ParticlesBackground />
       </div>
 
       <Navbar />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
-      </div>
+      {/* Same top spacing as the sibling news pages. */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20" />
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -69,16 +57,10 @@ const NewsDoubleDegree = () => {
               to="/news"
               className="text-[#81d4fa] hover:text-white transition-colors flex items-center gap-2"
             >
-              <FaArrowLeft /> Back to News
+              <FaArrowLeft /> {c.back}
             </Link>
           </div>
-          <img
-            src={flogo}
-            alt="Fedi Hmida logo"
-            loading="lazy"
-            decoding="async"
-            className="h-8 w-auto opacity-80"
-          />
+          <img src={flogo} alt={c.logoAlt} loading="lazy" decoding="async" className="h-8 w-auto opacity-80" />
         </motion.div>
 
         <motion.div
@@ -106,22 +88,16 @@ const NewsDoubleDegree = () => {
                     backgroundColor: "rgba(255, 122, 69, 0.18)",
                   }}
                 >
-                  Milestone
+                  {c.badge}
                 </span>
                 <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6">
-                  A New Chapter
+                  {c.title}
                   <span className="block" style={{ color: ACCENT }}>
-                    Double Degree Between ESPRIT and 3iL Ingénieurs
+                    {c.accent}
                   </span>
                 </h1>
-                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">
-                  September 2024, first class in Tunis. September 2026, first
-                  class in France. I am continuing my engineering cycle as a
-                  double degree between ESPRIT and 3iL Ingénieurs in Limoges.
-                </p>
-                <p className="mt-5 text-xl md:text-2xl font-bold italic text-white">
-                  The programme doesn&apos;t restart. It continues, elsewhere.
-                </p>
+                <p className="text-lg md:text-xl leading-relaxed text-[#e3f2fd]/90">{c.lead}</p>
+                <p className="mt-5 text-xl md:text-2xl font-bold italic text-white">{c.hook}</p>
               </div>
             </motion.div>
 
@@ -130,69 +106,31 @@ const NewsDoubleDegree = () => {
               className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.1)] bg-[rgba(26,35,126,0.3)] backdrop-blur-[12px]"
             >
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaPlaneDeparture style={{ color: ACCENT }} /> Two First Days,
-                Two Countries
+                <FaPlaneDeparture style={{ color: ACCENT }} /> {c.journeyTitle}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {timeline.map((item) => (
-                  <div
-                    key={item.when}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-5"
-                  >
-                    <p
-                      className="text-xs font-bold uppercase tracking-widest mb-2"
-                      style={{ color: ACCENT }}
-                    >
+                {c.timeline.map((item) => (
+                  <div key={item.when} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT }}>
                       {item.when}
                     </p>
                     <p className="text-white font-semibold mb-1">{item.what}</p>
-                    <p className="text-sm text-[#e3f2fd]/75 leading-relaxed">
-                      {item.detail}
-                    </p>
+                    <p className="text-sm text-[#e3f2fd]/75 leading-relaxed">{item.detail}</p>
                   </div>
                 ))}
               </div>
               <p className="mt-6 text-[#e3f2fd]/80 leading-relaxed">
-                Thank you to <span className="text-white font-medium">ESPRIT</span>{" "}
-                for making this mobility possible, and to{" "}
-                <span className="text-white font-medium">3iL Ingénieurs</span> for
-                a welcome that turned an arrival into belonging.
+                {c.thanks.map((part) =>
+                  part.strong ? (
+                    <span key={part.text} className="text-white font-medium">
+                      {part.text}
+                    </span>
+                  ) : (
+                    part.text
+                  ),
+                )}
               </p>
-              <p className="mt-4 text-lg font-bold text-white">
-                The next chapter is written in France.
-              </p>
-            </motion.div>
-
-            {/* The original post was published bilingually; the French is kept as written. */}
-            <motion.div
-              variants={fadeInUp}
-              lang="fr"
-              className="p-8 rounded-[24px] border border-[rgba(79,195,247,0.1)] bg-[rgba(26,35,126,0.3)] backdrop-blur-[12px]"
-            >
-              <h3 className="text-xl font-bold text-white mb-5 flex items-center gap-2">
-                <FaMapMarkerAlt style={{ color: ACCENT }} /> Version française
-              </h3>
-              <div className="space-y-3 text-[#e3f2fd]/85 leading-relaxed">
-                <p>
-                  Septembre 2024, premier cours à Tunis. Septembre 2026, premier
-                  cours en France.
-                </p>
-                <p>
-                  Une nouvelle étape s&apos;ouvre : je poursuis mon cycle
-                  ingénieur en double diplôme entre ESPRIT et 3iL Ingénieurs.
-                </p>
-                <p className="italic text-white font-semibold">
-                  Le cursus ne recommence pas. Il continue, ailleurs.
-                </p>
-                <p>
-                  Merci à ESPRIT d&apos;avoir rendu cette mobilité possible, et à
-                  3iL Ingénieurs pour un accueil qui a transformé une arrivée en
-                  intégration.
-                </p>
-                <p className="font-bold text-white">
-                  La suite s&apos;écrit en France.
-                </p>
-              </div>
+              <p className="mt-4 text-lg font-bold text-white">{c.closing}</p>
             </motion.div>
 
             <motion.div
@@ -201,7 +139,7 @@ const NewsDoubleDegree = () => {
             >
               <ExpandableImage
                 src={campusImg}
-                alt="3iL Groupe signage at the school entrance in Limoges"
+                alt={c.campusAlt}
                 loading="lazy"
                 decoding="async"
                 className="w-full h-auto rounded-[20px] object-cover"
@@ -217,15 +155,14 @@ const NewsDoubleDegree = () => {
               <div className="relative overflow-hidden rounded-[20px] group">
                 <ExpandableImage
                   src={cohortImg}
-                  alt="Group photo of the 3iL Ingénieurs student cohort in Limoges"
+                  alt={c.cohortAlt}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a237e]/80 to-transparent flex items-end p-6 pointer-events-none">
                   <p className="text-white font-medium flex items-center gap-2">
-                    <FaGraduationCap style={{ color: ACCENT }} /> 3iL Ingénieurs,
-                    Limoges
+                    <FaGraduationCap style={{ color: ACCENT }} /> {c.cohortCaption}
                   </p>
                 </div>
               </div>
@@ -236,45 +173,25 @@ const NewsDoubleDegree = () => {
               className="p-6 rounded-[24px] border border-[rgba(79,195,247,0.2)] bg-[rgba(26,35,126,0.6)] backdrop-blur-[16px]"
             >
               <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <FaUserTie className="text-[#81d4fa]" /> Quick Info
+                <FaUserTie className="text-[#81d4fa]" /> {c.quickInfo.title}
               </h3>
               <ul className="space-y-4">
-                <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Programme</span>
-                  <span className="text-white font-medium text-right">
-                    Engineering cycle, double degree
-                  </span>
-                </li>
-                <li className="flex justify-between items-center gap-4 text-sm">
-                  <span className="text-[#81d4fa]">Schools</span>
-                  <span className="text-white font-medium text-right">
-                    ESPRIT &amp; 3iL Ingénieurs
-                  </span>
-                </li>
-                <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Location</span>
-                  <span className="text-white font-medium">Limoges, France</span>
-                </li>
-                <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Date</span>
-                  <span className="text-white font-medium">September 2026</span>
-                </li>
-                <li className="flex justify-between items-center text-sm">
-                  <span className="text-[#81d4fa]">Author</span>
-                  <span className="text-white font-medium">Fedi Hmida</span>
-                </li>
+                {c.quickInfo.rows.map((row) => (
+                  <li key={row.label} className="flex justify-between items-center gap-4 text-sm">
+                    <span className="text-[#81d4fa]">{row.label}</span>
+                    <span className="text-white font-medium text-right">{row.value}</span>
+                  </li>
+                ))}
               </ul>
               <div className="mt-8 pt-6 border-t border-[rgba(79,195,247,0.2)] text-center">
-                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">
-                  Connect
-                </p>
+                <p className="text-[#81d4fa] text-xs mb-2 uppercase tracking-widest">{c.connect}</p>
                 <div className="flex justify-center gap-4">
                   <a
                     href="https://www.linkedin.com/in/fedi-hmida/"
                     target="_blank"
                     rel="noreferrer"
                     className="text-white hover:text-[#0077b5] transition-colors text-2xl"
-                    aria-label="Open Fedi Hmida LinkedIn profile"
+                    aria-label={c.linkedinAria}
                   >
                     <FaLinkedin />
                   </a>

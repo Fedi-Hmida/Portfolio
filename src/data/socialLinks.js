@@ -1,5 +1,4 @@
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
 
 export const contactInfo = {
   location: "Limoges, France",
@@ -15,60 +14,30 @@ export const socialLinks = [
     href: `mailto:${contactInfo.email}`,
     icon: Mail,
     heroClassName: "hero-social email",
-    ariaLabel: "Email Fedi Hmida",
+    ariaLabelKey: "social.email",
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/fedi-hmida/",
     icon: Linkedin,
     heroClassName: "hero-social linkedin",
-    ariaLabel: "Open Fedi Hmida LinkedIn profile",
+    ariaLabelKey: "social.linkedin",
   },
   {
     name: "GitHub",
     href: "https://github.com/Fedi-Hmida",
     icon: Github,
     heroClassName: "hero-social github",
-    ariaLabel: "Open Fedi Hmida GitHub profile",
+    ariaLabelKey: "social.github",
   },
   {
     name: "Phone",
     href: contactInfo.phoneHref,
     icon: Phone,
     heroClassName: "hero-social phone",
-    ariaLabel: "Show Fedi Hmida phone number",
+    ariaLabelKey: "social.phone",
     action: "copy",
     displayValue: contactInfo.phone,
     copyValue: contactInfo.phoneCopy,
-  },
-];
-
-export const contactActions = [
-  {
-    icon: FaWhatsapp,
-    iconClassName: "text-3xl",
-    name: "WhatsApp",
-    key: "whatsapp",
-    href: "https://wa.me/33602753287",
-    color: "group-hover:text-whatsapp-green",
-    borderColor: "group-hover:border-whatsapp-green",
-  },
-  {
-    icon: Linkedin,
-    iconClassName: "h-7 w-7",
-    name: "LinkedIn",
-    key: "linkedin",
-    href: "https://www.linkedin.com/in/fedi-hmida/",
-    color: "group-hover:text-linkedin-blue",
-    borderColor: "group-hover:border-linkedin-blue",
-  },
-  {
-    icon: Mail,
-    iconClassName: "h-7 w-7",
-    name: "Email",
-    key: "email",
-    href: `mailto:${contactInfo.email}`,
-    color: "group-hover:text-primary-pink",
-    borderColor: "group-hover:border-primary-pink",
   },
 ];

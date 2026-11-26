@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import shape3 from "../../assets/images/shape/shape-3.png";
-import shape4 from "../../assets/images/shape/shape-4.png";
-import shape5 from "../../assets/images/shape/shape-5.png";
-import shape6 from "../../assets/images/shape/shape-6.png";
-import shape7 from "../../assets/images/shape/shape-7.png";
-import shape8 from "../../assets/images/shape/shape-8.png";
+import shape3 from "../../assets/images/shape/shape-3.webp";
+import shape4 from "../../assets/images/shape/shape-4.webp";
+import shape5 from "../../assets/images/shape/shape-5.webp";
+import shape6 from "../../assets/images/shape/shape-6.webp";
+import shape7 from "../../assets/images/shape/shape-7.webp";
+import shape8 from "../../assets/images/shape/shape-8.webp";
 
 const AboutHero = () => {
   const { t } = useTranslation();
@@ -49,9 +49,9 @@ const AboutHero = () => {
         </motion.h1>
       </div>
 
-      {/* Floating Shapes */}
+      {/* Decorative shapes: static (they used to float and rotate forever) */}
       {shapes.map((shape, index) => (
-        <motion.img
+        <img
           key={index}
           src={shape.src}
           alt=""
@@ -59,15 +59,6 @@ const AboutHero = () => {
           loading="lazy"
           decoding="async"
           className={`absolute ${shape.className} opacity-60 hidden md:block`}
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 10, -10, 0],
-          }}
-          transition={{
-            duration: 3 + index, // vary duration for each
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
         />
       ))}
     </section>

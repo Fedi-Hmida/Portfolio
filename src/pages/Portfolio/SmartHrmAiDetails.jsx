@@ -12,165 +12,170 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import smartHrmAiVisual from "../../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.jpg";
+import smartHrmAiVisual from "../../assets/images/Portfolio/SmartHrmAi/smart-hrm-ai-cover.webp";
 import smartHrmAiDemoVideo from "../../assets/videos/SmartHrmAi/smart-hrm-ai-demo.mp4";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
-import ParticlesBackground from "../../components/ParticlesBackground";
+import en from "../../content/smartHrmAi/caseStudy.en";
+import fr from "../../content/smartHrmAi/caseStudy.fr";
+import { pickContent } from "../../i18n/localeContent";
+
+// Long-form copy lives in src/content/smartHrmAi/caseStudy.{en,fr}.js. The locale comes from the
+// URL and switching language reloads the page, so picking once at module level is safe.
+const c = pickContent({ en, fr });
 
 const ACCENT = "#1E8AF0";
 
 const metricCards = [
-  { label: "REST endpoints", value: "102", detail: "Across 14 controllers, over PostgreSQL with 32 Flyway migrations." },
-  { label: "Authorization gates", value: "104", detail: "Enforcing a 4-role model with deliberate, non-linear exceptions." },
-  { label: "Automated tests", value: "2,072", detail: "JUnit on the API, Vitest and Playwright on the client." },
-  { label: "Clean Architecture modules", value: "11", detail: "Delivered by an 8-intern team across two months." },
+  { label: c.s001, value: c.s002, detail: c.s003 },
+  { label: c.s004, value: c.s005, detail: c.s006 },
+  { label: c.s007, value: c.s008, detail: c.s009 },
+  { label: c.s010, value: c.s011, detail: c.s012 },
 ];
 
 const heroChips = [
-  "July - August 2026",
-  "BNS Engineering, Tunis",
-  "Java 17 / Spring Boot",
-  "React 19 / TypeScript",
-  "OAuth2 / Keycloak",
+  c.s013,
+  c.s014,
+  c.s015,
+  c.s016,
+  c.s017,
 ];
 
 const modules = [
   {
-    fr: "Gestion des collaborateurs",
-    en: "Employees & IAM",
+    fr: c.s018,
+    en: c.s019,
     detail:
-      "Create, update, offboard and rehire-by-CIN, with role changes, account blocking, a per-employee identity audit trail and drift detection against Keycloak.",
+      c.s020,
   },
   {
-    fr: "Gestion des conges",
-    en: "Leave",
+    fr: c.s021,
+    en: c.s022,
     detail:
-      "Request, approve, reject and cancel, with working-day balance calculation, half-day units, carryover and per-type policy.",
+      c.s023,
   },
   {
-    fr: "Gestion du materiel",
-    en: "Equipment",
+    fr: c.s024,
+    en: c.s025,
     detail:
-      "Full assignment lifecycle with category, condition and status tracking across the inventory.",
+      c.s026,
   },
   {
-    fr: "Gestion des dossiers administratifs",
-    en: "Documents",
+    fr: c.s027,
+    en: c.s028,
     detail:
-      "Upload, download, delete and restore against MinIO object storage, with retention classes and sensitivity tiers.",
+      c.s029,
   },
   {
-    fr: "Tableau de bord RH",
-    en: "Dashboard",
+    fr: c.s030,
+    en: c.s031,
     detail:
-      "One role-adaptive aggregate: self for everyone, team for managers, organization for HR and IT admins - all computed server-side.",
+      c.s032,
   },
 ];
 
 const architectureLayers = [
   {
-    name: "Core / Domain",
+    name: c.s033,
     detail:
-      "32 entities and 22 enums carrying the business rules - leave accrual modes, retention classes, equipment condition, role precedence. No framework imports.",
+      c.s034,
   },
   {
-    name: "Core / Application",
+    name: c.s035,
     detail:
-      "11 feature modules, each split into Commands and Queries, plus cross-cutting auditing and a single exception contract. Module names mirror the organisation's own French vocabulary so both poles discuss the same word.",
+      c.s036,
   },
   {
-    name: "Host",
+    name: c.s037,
     detail:
-      "14 REST controllers, Spring Security configuration, and the Keycloak JWT converter. The only layer that knows HTTP exists.",
+      c.s038,
   },
 ];
 
 const securityPoints = [
   {
-    title: "Identity delegated, never reimplemented",
+    title: c.s039,
     detail:
-      "OAuth2 / OpenID Connect against a Keycloak realm. The API is a pure resource server - it validates tokens and provisions users through the Admin API, but never stores a password.",
+      c.s040,
   },
   {
-    title: "Roles that are not a straight line",
+    title: c.s041,
     detail:
-      "EMPLOYEE < MANAGER < HRADMIN < ITADMIN, with intentional asymmetries: ITADMIN is denied another employee's private info despite outranking HRADMIN elsewhere, and a manager sees a report's leave but never their documents. Each data tier carries its own rule instead of inheriting from rank.",
+      c.s042,
   },
   {
-    title: "104 gates, and ownership checked in-body",
+    title: c.s043,
     detail:
-      "Role annotations handle the coarse cut; ownership and hierarchy rules run inside the use-case, because 'is this your own record' is not something an annotation can answer.",
+      c.s044,
   },
   {
-    title: "Encryption at rest for the sensitive tier",
+    title: c.s045,
     detail:
-      "AES-256-GCM for salary and bank details. Profile photos are re-encoded server-side so no EXIF - and therefore no GPS from a phone camera - survives upload.",
+      c.s046,
   },
   {
-    title: "Five-minute access tokens",
+    title: c.s047,
     detail:
-      "Short-lived by design, which makes refresh handling load-bearing infrastructure on the client rather than a polish item. Every non-2xx response uses one fixed error envelope.",
+      c.s048,
   },
 ];
 
 const aiWorkstreams = [
   {
-    title: "OCR document extraction - authorization contract",
-    status: "Contract delivered",
+    title: c.s049,
+    status: c.s050,
     detail:
-      "I wrote the integration contract between the back-end and the AI pole for extracting data from CIN and passport documents. Its central decision: the AI service calls the REST API with its own service account and is never given direct MinIO credentials. The Documents module rests on one rule - PostgreSQL is the source of truth for permission, MinIO only stores bytes - and handing a second system bucket access would have created an unaudited path to the most sensitive data in the company.",
+      c.s051,
   },
   {
-    title: "RAG conversational assistant",
-    status: "Designed",
+    title: c.s052,
+    status: c.s053,
     detail:
-      "Specified a retrieval-augmented assistant over HR policy and the employee's own records, scoped so that retrieval inherits the same authorization rules as the REST API rather than bypassing them.",
+      c.s054,
   },
   {
-    title: "Absence and turnover prediction",
-    status: "Designed",
+    title: c.s055,
+    status: c.s053,
     detail:
-      "Modelled predictive workstreams for absence and staff turnover on top of the attendance and leave history the platform already records.",
+      c.s056,
   },
 ];
 
 const practices = [
   {
-    title: "Tests as the contract",
+    title: c.s057,
     detail:
-      "2,072 automated tests across JUnit, Vitest and Playwright. Authorization rules in particular are proven structurally - one test exists purely to prove the dashboard performs no audited read.",
+      c.s058,
   },
   {
-    title: "Migrations, never ad-hoc schema",
+    title: c.s059,
     detail:
-      "32 Flyway migrations applied on startup. Schema change is reviewable history, not a manual step someone forgets on another environment.",
+      c.s060,
   },
   {
-    title: "Generated client types",
+    title: c.s061,
     detail:
-      "The React client generates its TypeScript types from the API's own OpenAPI document, so a contract change breaks the build instead of reaching production.",
+      c.s062,
   },
   {
-    title: "Two poles, one vocabulary",
+    title: c.s063,
     detail:
-      "Feature slices, module names and terminology track the domain 1:1 across both repositories, which is what let an 8-intern team move without constant translation.",
+      c.s064,
   },
 ];
 
 const learnings = [
-  "The server is the only source of authorization truth. Every UI permission check is a convenience - hiding a button, explaining a 403 - never a substitute for the gate behind it. Drift between the two is a defect, not a UI choice.",
-  "Some things are better left unbuilt than guessed. We deliberately shipped no absence-rate widget, because nobody could answer what the denominator should be, and a plausible percentage with an undocumented definition is worse than an empty space.",
-  "Co-leading two poles is mostly interface design between people. The contracts that mattered most - the error envelope, the role matrix, the OCR service account - were the ones written down before anyone implemented against them.",
+  c.s065,
+  c.s066,
+  c.s067,
 ];
 
 const stack = [
-  { group: "Back-end", items: ["Java 17", "Spring Boot", "Spring Security", "Spring Data JPA", "Clean Architecture"] },
-  { group: "Data & storage", items: ["PostgreSQL", "Flyway", "MinIO / S3"] },
-  { group: "Identity", items: ["Keycloak", "OAuth2 / OIDC", "JWT", "RBAC"] },
-  { group: "Front-end", items: ["React 19", "TypeScript", "Vite", "MUI / MUI X", "TanStack Query", "Zustand", "React Hook Form + Zod", "i18next"] },
-  { group: "Quality", items: ["JUnit", "Vitest", "Playwright", "OpenAPI codegen", "Docker"] },
+  { group: c.s068, items: [c.s069, c.s070, c.s071, c.s072, c.s073] },
+  { group: c.s074, items: [c.s075, c.s076, c.s077] },
+  { group: c.s078, items: [c.s079, c.s080, c.s081, c.s082] },
+  { group: c.s083, items: [c.s084, c.s085, c.s086, c.s087, c.s088, c.s089, c.s090, c.s091] },
+  { group: c.s092, items: [c.s093, c.s094, c.s095, c.s096, c.s097] },
 ];
 
 const Section = ({ id, icon: Icon, title, intro, children }) => (
@@ -200,11 +205,10 @@ const Section = ({ id, icon: Icon, title, intro, children }) => (
 const SmartHrmAiDetails = () => {
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#070640] text-white">
-      <ParticlesBackground />
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
+        
       </div>
 
       <main className="relative z-10">
@@ -217,37 +221,22 @@ const SmartHrmAiDetails = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-gray-300">
-                <Link to="/" className="transition hover:text-[#1E8AF0]">
-                  Home
-                </Link>
+                <Link to="/" className="transition hover:text-[#1E8AF0]">{c.s098}</Link>
                 <span>/</span>
-                <Link to="/portfolio" className="transition hover:text-[#1E8AF0]">
-                  Portfolio
-                </Link>
+                <Link to="/portfolio" className="transition hover:text-[#1E8AF0]">{c.s099}</Link>
                 <span>/</span>
-                <span className="text-[#1E8AF0]">SMART HRM AI</span>
+                <span className="text-[#1E8AF0]">{c.s100}</span>
               </div>
 
               <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
                 <div>
                   <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#1E8AF0]/30 bg-[#1E8AF0]/10 px-4 py-2 text-sm font-semibold text-[#BBDDFF]">
-                    <FaBuilding aria-hidden="true" />
-                    Enterprise HR platform
-                  </div>
+                    <FaBuilding aria-hidden="true" />{c.s101}</div>
 
-                  <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">
-                    SMART HRM AI
-                    <span className="block text-[#1E8AF0]">
-                      Back-End &amp; Front-End Co-Lead
-                    </span>
+                  <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">{c.s100}<span className="block text-[#1E8AF0]">{c.s102}</span>
                   </h1>
 
-                  <p className="mb-8 max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">
-                    An internal HR platform built by an 8-intern team at BNS
-                    Engineering, pairing a Java 17 / Spring Boot API with a
-                    React 19 / TypeScript client, OAuth2 / Keycloak security,
-                    and three AI workstreams.
-                  </p>
+                  <p className="mb-8 max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">{c.s103}</p>
 
                   <div className="mb-8 flex flex-wrap gap-3">
                     {heroChips.map((item) => (
@@ -265,9 +254,7 @@ const SmartHrmAiDetails = () => {
                       to="/portfolio"
                       className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 font-semibold text-white transition hover:border-[#1E8AF0]/60 hover:bg-[#1E8AF0]/10"
                     >
-                      <FaArrowLeft aria-hidden="true" />
-                      Back to Portfolio
-                    </Link>
+                      <FaArrowLeft aria-hidden="true" />{c.s104}</Link>
                   </div>
                 </div>
 
@@ -279,7 +266,7 @@ const SmartHrmAiDetails = () => {
                 >
                   <img
                     src={smartHrmAiVisual}
-                    alt="SMART HRM AI platform branding"
+                    alt={c.s105}
                     className="w-full rounded-2xl"
                     loading="eager"
                     decoding="async"
@@ -332,20 +319,12 @@ const SmartHrmAiDetails = () => {
             >
               <div className="mb-5">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#1E8AF0]/30 bg-[#1E8AF0]/10 px-4 py-2 text-sm font-semibold text-[#BBDDFF]">
-                  <FaPlay aria-hidden="true" />
-                  Platform walkthrough
-                </div>
+                  <FaPlay aria-hidden="true" />{c.s106}</div>
                 <h2
                   id="smart-hrm-demo-title"
                   className="text-2xl font-black text-white md:text-3xl"
-                >
-                  Demo Video
-                </h2>
-                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-300 md:text-base">
-                  A walkthrough of the SMART HRM AI platform: the role-adaptive
-                  dashboard, leave requests and approvals, documents, equipment
-                  and exit authorizations.
-                </p>
+                >{c.s107}</h2>
+                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-300 md:text-base">{c.s108}</p>
               </div>
 
               <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#08073d]/80 shadow-2xl shadow-black/30">
@@ -353,43 +332,34 @@ const SmartHrmAiDetails = () => {
                   className="aspect-video w-full bg-black object-contain"
                   controls
                   preload="metadata"
-                  aria-label="SMART HRM AI internal HR platform demo video"
+                  aria-label={c.s109}
                 >
-                  <source src={smartHrmAiDemoVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                  <source src={smartHrmAiDemoVideo} type="video/mp4" />{c.s110}</video>
               </div>
             </motion.section>
 
             <Section
               id="context"
               icon={FaBuilding}
-              title="Context & Objective"
-              intro="BNS Engineering ran its HR operations across spreadsheets and manual process. SMART HRM AI was the internal platform meant to replace that - built over two months by an 8-intern team split into a back-end pole and a front-end pole under an encadrant."
+              title={c.s111}
+              intro={c.s112}
             >
-              <p className="max-w-4xl text-base leading-relaxed text-gray-300">
-                The brief was operational rather than experimental: HR and IT
-                staff had to be able to run real personnel work against the tool
-                on day one - hiring, leave, documents, equipment - with the
-                server as the single source of authorization truth. Five modules
-                shipped, carrying the organisation's own French naming so the
-                product and the codebase never drifted apart.
-              </p>
+              <p className="max-w-4xl text-base leading-relaxed text-gray-300">{c.s113}</p>
             </Section>
 
             <Section
               id="role"
               icon={FaPenFancy}
-              title="My Role"
-              intro="I co-led both poles - the Java 17 / Spring Boot API and the React 19 / TypeScript client - which in practice meant owning the contract between them."
+              title={c.s114}
+              intro={c.s115}
             >
               <ul className="space-y-3">
                 {[
-                  "Designed and built the platform's security model end to end: the Keycloak integration, the role matrix, and the ownership rules that role annotations cannot express.",
-                  "Shaped the Clean Architecture module layout and kept the front-end feature slices aligned to it one-for-one.",
-                  "Owned the API contract the client generates its types from, so a breaking change surfaced at build time rather than in production.",
-                  "Led the three AI workstreams, including the integration contract between the back-end and the AI pole.",
-                  "Coordinated the work of an 8-intern team across two repositories.",
+                  c.s116,
+                  c.s117,
+                  c.s118,
+                  c.s119,
+                  c.s120,
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-base leading-relaxed text-gray-300">
                     <span
@@ -405,8 +375,8 @@ const SmartHrmAiDetails = () => {
             <Section
               id="modules"
               icon={FaUsers}
-              title="Modules Delivered"
-              intro="Five operational modules, named in the organisation's own vocabulary."
+              title={c.s121}
+              intro={c.s122}
             >
               <div className="grid gap-4 md:grid-cols-2">
                 {modules.map((m) => (
@@ -427,8 +397,8 @@ const SmartHrmAiDetails = () => {
             <Section
               id="architecture"
               icon={FaLayerGroup}
-              title="Architecture"
-              intro="Three layers, with dependencies pointing inward. The domain knows nothing about Spring, and only one layer knows HTTP exists."
+              title={c.s123}
+              intro={c.s124}
             >
               <div className="space-y-4">
                 {architectureLayers.map((layer) => (
@@ -451,8 +421,8 @@ const SmartHrmAiDetails = () => {
             <Section
               id="security"
               icon={FaShieldAlt}
-              title="Security Model"
-              intro="The part of this project I would defend line by line. HR data is the most sensitive data a company holds about its own people, and the authorization model was treated as the product, not as plumbing."
+              title={c.s125}
+              intro={c.s126}
             >
               <div className="space-y-4">
                 {securityPoints.map((p) => (
@@ -467,8 +437,8 @@ const SmartHrmAiDetails = () => {
             <Section
               id="ai"
               icon={FaBrain}
-              title="AI Integration"
-              intro="Three AI workstreams sat under my ownership. One shipped as a delivered contract; the other two were specified and scoped but not implemented before the internship ended - stated here as designed rather than built."
+              title={c.s127}
+              intro={c.s128}
             >
               <div className="space-y-4">
                 {aiWorkstreams.map((w) => (
@@ -495,8 +465,8 @@ const SmartHrmAiDetails = () => {
             <Section
               id="practices"
               icon={FaFlask}
-              title="Engineering Practices"
-              intro="What kept an 8-person team from stepping on each other."
+              title={c.s129}
+              intro={c.s130}
             >
               <div className="grid gap-4 md:grid-cols-2">
                 {practices.map((p) => (
@@ -508,7 +478,7 @@ const SmartHrmAiDetails = () => {
               </div>
             </Section>
 
-            <Section id="learnings" icon={FaPenFancy} title="What I Took Away">
+            <Section id="learnings" icon={FaPenFancy} title={c.s131}>
               <ul className="space-y-4">
                 {learnings.map((item) => (
                   <li
@@ -521,7 +491,7 @@ const SmartHrmAiDetails = () => {
               </ul>
             </Section>
 
-            <Section id="stack" icon={FaCubes} title="Stack">
+            <Section id="stack" icon={FaCubes} title={c.s132}>
               <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {stack.map((s) => (
                   <div key={s.group} className="rounded-2xl border border-white/10 bg-white/5 p-5">

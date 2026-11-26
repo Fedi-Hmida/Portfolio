@@ -1,9 +1,9 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { AnimatePresence, m } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/images/flogo.png";
+import logo from "../assets/images/flogo.logo.webp";
 import { navLinks } from "../data/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -36,7 +36,7 @@ const Navbar = () => {
                 className="w-16 h-16 object-contain"
                 width="64"
                 height="64"
-                alt="Fedi Hmida portfolio home"
+                alt={t("common.logoAlt")}
                 decoding="async"
               />
             </Link>
@@ -82,9 +82,9 @@ const Navbar = () => {
               aria-controls="mobile-navigation"
             >
               {isOpen ? (
-                <FaTimes size={24} aria-hidden="true" />
+                <X size={24} aria-hidden="true" />
               ) : (
-                <FaBars size={24} aria-hidden="true" />
+                <Menu size={24} aria-hidden="true" />
               )}
             </button>
           </div>
@@ -94,7 +94,7 @@ const Navbar = () => {
       {/* Mobile Drawer */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             id="mobile-navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
@@ -117,7 +117,7 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </nav>

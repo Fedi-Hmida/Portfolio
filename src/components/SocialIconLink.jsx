@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -53,8 +53,8 @@ const SocialIconLink = ({
   const SocialIcon = social.icon;
   const isExternal = social.href.startsWith("http");
   const isCopyAction = social.action === "copy";
-  const IconButton = animated ? motion.button : "button";
-  const IconLink = animated ? motion.a : "a";
+  const IconButton = animated ? m.button : "button";
+  const IconLink = animated ? m.a : "a";
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -108,7 +108,7 @@ const SocialIconLink = ({
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noreferrer" : undefined}
         className={className}
-        aria-label={social.ariaLabel || `Open ${social.name}`}
+        aria-label={t(social.ariaLabelKey, t("social.open", { name: social.name }))}
       >
         <SocialIcon
           aria-hidden="true"
@@ -130,7 +130,7 @@ const SocialIconLink = ({
           : {})}
         type="button"
         className={`${className} cursor-pointer bg-transparent`}
-        aria-label={social.ariaLabel || `Copy ${social.name}`}
+        aria-label={t(social.ariaLabelKey, t("social.copy", { name: social.name }))}
         aria-expanded={isOpen}
         onClick={() => {
           setCopyStatus("idle");
@@ -146,7 +146,7 @@ const SocialIconLink = ({
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -154,7 +154,7 @@ const SocialIconLink = ({
             className="fixed inset-0 z-[100] flex items-center justify-center bg-deep-indigo/70 px-4 backdrop-blur-md"
             onClick={() => setIsOpen(false)}
           >
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.92, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.92, y: 20 }}
@@ -201,8 +201,8 @@ const SocialIconLink = ({
                   {t("common.close")}
                 </button>
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
     </span>

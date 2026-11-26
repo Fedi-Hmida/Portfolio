@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import ParticlesBackground from "../components/ParticlesBackground";
 
 const NotFound = () => {
   const { t } = useTranslation();
 
   return (
     <div className="relative min-h-screen bg-[#070640] flex items-center justify-center overflow-hidden">
-      <ParticlesBackground />
 
       <div className="relative z-10 text-center px-4">
         <motion.h1

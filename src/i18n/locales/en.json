@@ -32,7 +32,19 @@
     "download": "Download",
     "viewCaseStudy": "View case study",
     "closePreview": "Close image preview",
-    "close": "Close"
+    "close": "Close",
+    "logoAlt": "Fedi Hmida, back to home",
+    "image": "Image",
+    "viewLarger": "View larger: {{alt}}",
+    "previewOf": "Preview: {{alt}}"
+  },
+  "social": {
+    "email": "Email Fedi Hmida",
+    "linkedin": "Open Fedi Hmida's LinkedIn profile",
+    "github": "Open Fedi Hmida's GitHub profile",
+    "phone": "Show Fedi Hmida's phone number",
+    "open": "Open {{name}}",
+    "copy": "Copy {{name}}"
   },
   "home": {
     "role": "Software Engineering Student",
@@ -41,13 +53,6 @@
     "viewProjects": "View Projects",
     "viewCv": "View CV",
     "aboutMe": "About Me",
-    "aboutTitle": "About Me",
-    "tabs": {
-      "soft skills": "Soft Skills",
-      "hard skills": "Hard Skills",
-      "services": "Services",
-      "project methodologies": "Methodologies"
-    },
     "myWork": "My Work",
     "viewAllProjects": "View All Projects",
     "latestNews": "Latest News",
@@ -55,11 +60,7 @@
   },
   "about": {
     "heroTitle": "About Me",
-    "typed": [
-      "Who Am I?",
-      "My Background",
-      "About Me"
-    ],
+    "bioTitle": "My Background",
     "bio1": "I'm a <b>Software Engineering student</b> in a <b>double-degree Engineering Cycle</b> between <b>3iL Ingénieurs</b> in Limoges, France and <b>ESPRIT</b> in Tunis, currently in my second year, specializing in <b>Data Science & Artificial Intelligence</b>.",
     "bio2": "I build <b>multi-agent LLM systems</b> with <b>LangGraph</b>, <b>RAG</b> and <b>MCP</b>, and <b>computer-vision pipelines</b> with <b>YOLO</b> and <b>PyTorch</b>. I also ship production systems: I co-led the full-stack development of an <b>8-person HR platform</b> built on <b>Spring Boot</b>, <b>OAuth2 / Keycloak</b> and <b>React / TypeScript</b>, spanning <b>102 REST endpoints</b>.",
     "bio3": "My work ranges from an <b>autonomous multi-agent farming platform</b> and a <b>98.83%-accuracy diagnostic ML pipeline</b> to <b>insurance claim automation</b> - always with the same focus: practical systems that pair applied AI with solid engineering foundations.",
@@ -91,7 +92,7 @@
     ],
     "downloadHint": "Click to download certification",
     "careerFocusTitle": "Career Focus",
-    "careerFocus": "Seeking a <b>4-month internship from April 2027</b> and an <b>alternance in AI / Software Engineering from September 2027</b>, based in France. Most interested in teams building <b>agentic AI systems</b>, <b>ML products</b>, or <b>production back-end platforms</b> where I can deliver production-ready systems end to end.",
+    "careerFocus": "Seeking a <b>4- to 6-month internship from April 2027</b> and an <b>alternance in AI / Software Engineering from September 2027</b>, based in France. Most interested in teams building <b>agentic AI systems</b>, <b>ML products</b>, or <b>production back-end platforms</b> where I can deliver production-ready systems end to end.",
     "downloadCv": "Download CV",
     "viewPortfolio": "View Portfolio",
     "whatIOffer": "What I Offer"
@@ -108,16 +109,13 @@
     }
   },
   "resume": {
-    "typed": [
-      "Resume",
-      "Curriculum Vitae",
-      "My Journey"
-    ],
+    "title": "Resume",
     "downloadPdf": "Download PDF Version",
     "experienceTitle": "Professional Experience",
     "skillsTitle": "Technical Skills",
     "educationTitle": "Education",
     "recommendationsTitle": "Recommendation Letters",
+    "openLinkedin": "Open {{name}}'s LinkedIn profile",
     "experiences": [
       {
         "role": "Full-Stack Engineering Intern - Co-Lead",
@@ -181,20 +179,21 @@
   "contact": {
     "heroTitle": "Let's Work",
     "heroTitleAccent": "Together",
-    "heroIntro": "Based in Limoges, France. Looking for a 4-month internship from April 2027 and an alternance in AI / Software Engineering from September 2027, with teams building agentic AI systems, ML products, or production back-end platforms.",
+    "heroIntro": "Based in Limoges, France. Looking for a 4- to 6-month internship from April 2027 and an alternance in AI / Software Engineering from September 2027, with teams building agentic AI systems, ML products, or production back-end platforms.",
     "pills": [
       "Internship - April 2027",
       "Alternance - September 2027",
       "AI / Software Engineering",
       "Based in France"
     ],
-    "connectTyped": [
-      "Recruiter Friendly",
-      "Quick Response",
-      "Clear Next Step"
-    ],
+    "connectTitle": "Reach me directly",
     "connectIntro": "Send a role, project brief, or collaboration idea. For technical review, start with SMART HRM AI and Firmaa, then reach out through LinkedIn or email.",
     "mapTitle": "Map showing Limoges, France",
+    "map": {
+      "show": "Show the map",
+      "open": "Open in Google Maps",
+      "note": "The map is loaded from Google Maps."
+    },
     "locationLabel": "Location",
     "emailLabel": "Email",
     "phoneLabel": "Phone",
@@ -232,6 +231,26 @@
     "back": "Back to Home"
   },
   "projects": {
+    "9": {
+      "type": "Multi-agent digital twin",
+      "status": "Double-degree project, 3iL × ESPRIT",
+      "role": "Backend Owner & AI Architect",
+      "impact": "Four AI agents on a Spring Boot platform with 610 passing tests; in the twin, the PPO staffing policy lifts SLA from 0.31 to 0.43 at medium load, at the cost of more abandoned contacts (12.9% → 18.9%).",
+      "homeImpact": "A bank contact centre where four AI agents work - and staffing strategies are tested in a twin.",
+      "description": "Digital twin of a retail bank's customer relation centre, built by a team of five: a LangGraph advisor answering with RAG and banking tools, a customer simulator, a reinforcement-learning workforce manager and an LLM quality judge, on a Clean Architecture Spring Boot backend I owned, with a Next.js interface for four roles.",
+      "homeDescription": "Multi-agent digital twin: LangGraph advisor with RAG, PPO staffing policy, LLM quality judge, Spring Boot backend and live Next.js workspaces.",
+      "cta": "View case study"
+    },
+    "8": {
+      "type": "Multi-agent AI assistant",
+      "status": "ESPRIT course project",
+      "role": "Technical Lead - Architecture & Integration",
+      "impact": "Hit@5 of 1.00 on 22 answerable questions with article-level RAG, a 53-question end-to-end benchmark, and 6/6 adversarial cases including a prompt injection hidden in a photo.",
+      "homeImpact": "Multi-agent Telegram assistant: cited answers, exact lookups, measured RAG.",
+      "description": "Telegram assistant for ESPRIT students built by a team of three: an n8n orchestrator routes each question to vision, regulations RAG, calendar or admin agents, code checks every citation, date and e-mail, and a hybrid of local Qwen3 and Gemini Flash-Lite answers within the latency budget.",
+      "homeDescription": "Multi-agent Telegram assistant on n8n: RAG with citations over Qdrant, exact lookups for dates and contacts, photo reading, self-correction.",
+      "cta": "View case study"
+    },
     "7": {
       "type": "Enterprise HR platform",
       "status": "BNS Engineering internship",
@@ -304,76 +323,6 @@
     }
   },
   "skills": {
-    "soft": {
-      "communication": {
-        "title": "Communication",
-        "desc": "Effective verbal and written communication skills"
-      },
-      "project_management": {
-        "title": "Project Management",
-        "desc": "Organized and efficient project handling"
-      },
-      "team_collaboration": {
-        "title": "Team Collaboration",
-        "desc": "Strong team player with collaborative mindset"
-      },
-      "analytical": {
-        "title": "Analytical",
-        "desc": "Data-driven decision making"
-      },
-      "organization": {
-        "title": "Organization",
-        "desc": "Structured and methodical approach"
-      },
-      "creativity": {
-        "title": "Creativity",
-        "desc": "Innovative thinking and solutions"
-      }
-    },
-    "hard": {
-      "langgraph": "Agentic AI workflows",
-      "langchain": "LLM and RAG orchestration",
-      "rag_chatbots": "Retrieval-augmented assistants",
-      "chromadb": "Vector database for RAG",
-      "llm_reasoning": "Context-aware AI decisions",
-      "tool_assisted_agents": "Agent tool calls and workflows",
-      "react": "Frontend library for UI",
-      "next_js": "React framework for production",
-      "typescript": "Typed dashboard interfaces",
-      "node_js": "JavaScript runtime",
-      "nestjs": "Efficient Node.js framework",
-      "fastapi": "REST APIs for model inference",
-      "java_17": "Enterprise back-end development",
-      "spring_boot": "REST API and service layer",
-      "spring_security": "Authorization and access control",
-      "keycloak": "Identity and access management",
-      "oauth2_oidc": "Delegated authentication flows",
-      "postgresql": "Relational data and migrations",
-      "minio_s3": "Object storage for documents",
-      "mlflow": "Experiment and model tracking",
-      "mcp": "Model Context Protocol tooling",
-      "playwright": "End-to-end test automation",
-      "gitlab_ci_cd": "Pipelines and automated delivery",
-      "docker": "Containerized deployment",
-      "tailwind_css": "Optimized UI styling",
-      "three_js": "3D digital twin interfaces",
-      "rest_apis": "Service and model integration",
-      "mongodb": "NoSQL database management",
-      "firebase": "Realtime mobile data flows",
-      "mysql": "Relational data modeling",
-      "git": "Version control and collaboration",
-      "yolov8": "Object and damage detection",
-      "opencv": "Computer vision preprocessing",
-      "pytorch": "Model training and experimentation",
-      "python": "ML pipelines and evaluation",
-      "scikit_learn": "Machine Learning models",
-      "xgboost": "Gradient boosting capabilities",
-      "shap": "Explainable AI models",
-      "model_evaluation": "ROC-AUC, recall, precision",
-      "tensorflow": "Deep learning model development",
-      "flutter": "Cross-platform mobile development",
-      "dart": "Flutter app development"
-    },
     "services": {
       "ai_agents_agentic_ai": {
         "title": "AI Agents / Agentic AI",
@@ -410,6 +359,20 @@
     "selectNumber": "Select Number"
   },
   "news": {
+    "23": {
+      "title": "CallVerse - Four AI Agents in a Bank's Contact Centre, Tested in a Digital Twin",
+      "date": "November 24, 2026",
+      "description": "For our double-degree project between 3iL and ESPRIT, our team of five built CallVerse: a working contact-centre platform for a fictional retail bank, where four AI agents operate, and where a reinforcement-learning staffing policy is measured in a digital twin before it would ever reach real customers.",
+      "homeTitle": "CallVerse Multi-Agent Digital Twin",
+      "homeDescription": "A multi-agent digital twin of a bank's contact centre: LangGraph advisor, PPO staffing policy, LLM quality judge and a Spring Boot backend."
+    },
+    "22": {
+      "title": "CampusFlow AI - A Multi-Agent Assistant That Cites Its Sources",
+      "date": "November 19, 2026",
+      "description": "With my team, we built CampusFlow AI for our Advanced Deep Learning course at ESPRIT: a Telegram assistant where an n8n orchestrator routes each question to specialised agents, every rule is cited to its article, and dates and contacts never come from the LLM.",
+      "homeTitle": "CampusFlow AI Multi-Agent Assistant",
+      "homeDescription": "A multi-agent Telegram assistant on n8n with cited RAG answers, exact lookups and a measured evaluation."
+    },
     "21": {
       "title": "Two Summer Months at BNS Engineering - SMART HRM AI Delivered",
       "date": "September 2026",
@@ -537,11 +500,7 @@
     }
   },
   "newsList": {
-    "typed": [
-      "Latest News",
-      "My Blog",
-      "Updates"
-    ],
+    "title": "Latest News",
     "prevPage": "Previous Page",
     "nextPage": "Next Page"
   }

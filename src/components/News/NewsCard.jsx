@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { FaCalendar, FaUser } from "react-icons/fa";
+import { m } from "framer-motion";
+import { Calendar, User } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const NewsCard = ({ date, author, image, title, description, link, index }) => {
   };
 
   return (
-    <motion.div
+    <m.div
       variants={cardVariants}
       whileHover={{
         y: -10,
@@ -34,11 +34,11 @@ const NewsCard = ({ date, author, image, title, description, link, index }) => {
       <div className="p-6 flex flex-col flex-grow">
         <div className="flex items-center gap-4 text-sm mb-4">
           <div className="flex items-center gap-2 text-[#3c7dd9]">
-            <FaUser aria-hidden="true" />
+            <User className="h-4 w-4" aria-hidden="true" />
             <span>{author}</span>
           </div>
           <div className="flex items-center gap-2 text-[#c7c6c6]">
-            <FaCalendar aria-hidden="true" />
+            <Calendar className="h-4 w-4" aria-hidden="true" />
             <span>{date}</span>
           </div>
         </div>
@@ -64,7 +64,7 @@ const NewsCard = ({ date, author, image, title, description, link, index }) => {
           </span>
         </Link>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

@@ -3,8 +3,9 @@ import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { FaTimes } from "react-icons/fa";
 
-const ExpandableImage = ({ alt = "Image", className = "", src, ...props }) => {
+const ExpandableImage = ({ alt: altProp, className = "", src, ...props }) => {
   const { t } = useTranslation();
+  const alt = altProp || t("common.image");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -44,7 +45,7 @@ const ExpandableImage = ({ alt = "Image", className = "", src, ...props }) => {
           }
         }}
         className={`${className} cursor-zoom-in`}
-        aria-label={`View ${alt} larger`}
+        aria-label={t("common.viewLarger", { alt })}
       />
 
       {isOpen &&
@@ -53,7 +54,7 @@ const ExpandableImage = ({ alt = "Image", className = "", src, ...props }) => {
             className="fixed inset-0 z-[90] flex items-center justify-center bg-black/85 px-4 py-6 backdrop-blur-sm"
             role="dialog"
             aria-modal="true"
-            aria-label={`${alt} preview`}
+            aria-label={t("common.previewOf", { alt })}
             onClick={() => setIsOpen(false)}
           >
             <div

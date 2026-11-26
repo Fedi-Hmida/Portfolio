@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/flogo.png";
+import logo from "../assets/images/flogo.logo.webp";
 import { footerLinks } from "../data/navigation";
 import { socialLinks } from "../data/socialLinks";
 import SocialIconLink from "./SocialIconLink";
@@ -19,7 +19,7 @@ const Footer = () => {
               <img
                 className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 src={logo}
-                alt="Fedi Hmida portfolio home"
+                alt={t("common.logoAlt")}
                 loading="lazy"
                 decoding="async"
               />

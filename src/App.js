@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, LazyMotion, MotionConfig } from "framer-motion";
 import { lazy, Suspense } from "react";
 import {
   Route,
@@ -27,6 +27,8 @@ const NewsInternshipStart = lazy(
 );
 const NewsList = lazy(() => import("./pages/News/NewsList"));
 const NewsNvidiaAnomalyDetection = lazy(() => import("./pages/News/NewsNvidiaAnomalyDetection"));
+const NewsCallVerse = lazy(() => import("./pages/News/NewsCallVerse"));
+const NewsCampusFlow = lazy(() => import("./pages/News/NewsCampusFlow"));
 const NewsBnsInternship = lazy(() => import("./pages/News/NewsBnsInternship"));
 const NewsDoubleDegree = lazy(() => import("./pages/News/NewsDoubleDegree"));
 const NewsFirmaaLaunch = lazy(() => import("./pages/News/NewsFirmaaLaunch"));
@@ -49,6 +51,12 @@ const SmartClaimDetails = lazy(
 const SmartHrmAiDetails = lazy(
   () => import("./pages/Portfolio/SmartHrmAiDetails"),
 );
+const CampusFlowDetails = lazy(
+  () => import("./pages/Portfolio/CampusFlowDetails"),
+);
+const CallVerseDetails = lazy(
+  () => import("./pages/Portfolio/CallVerseDetails"),
+);
 const SahitnaSafeDetails = lazy(
   () => import("./pages/Portfolio/SahitnaSafeDetails"),
 );
@@ -61,10 +69,16 @@ const SolarFlowDetails = lazy(
 const Resume = lazy(() => import("./pages/Resume"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+const loadMotionFeatures = () => import("./motionFeatures").then((mod) => mod.default);
+
 const AppRoutes = () => {
   const location = useLocation();
   return (
-    <AnimatePresence mode="wait">
+    // initial={false}: on the first load every motion element starts in its final,
+    // visible state. Content that fades in from opacity 0 is invisible to Chrome's
+    // LCP (the navbar logo became the LCP element; /news/23 had none). Later route
+    // changes still animate.
+    <AnimatePresence mode="wait" initial={false}>
       <Suspense fallback={<div className="min-h-screen bg-deep-indigo" />}>
         <Routes location={location} key={location.pathname}>
           <Route
@@ -104,6 +118,22 @@ const AppRoutes = () => {
             element={
               <AnimatedPage>
                 <SmartHrmAiDetails />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/portfolio/campusflow-ai"
+            element={
+              <AnimatedPage>
+                <CampusFlowDetails />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/portfolio/callverse"
+            element={
+              <AnimatedPage>
+                <CallVerseDetails />
               </AnimatedPage>
             }
           />
@@ -160,6 +190,22 @@ const AppRoutes = () => {
             element={
               <AnimatedPage>
                 <NewsList />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/23"
+            element={
+              <AnimatedPage>
+                <NewsCallVerse />
+              </AnimatedPage>
+            }
+          />
+          <Route
+            path="/news/22"
+            element={
+              <AnimatedPage>
+                <NewsCampusFlow />
               </AnimatedPage>
             }
           />
@@ -356,14 +402,23 @@ const AppRoutes = () => {
 function App() {
   const locale = detectLocale();
 
+  // reducedMotion="user": visitors who ask their device for reduced motion get no
+  // transform or layout animations from framer-motion.
+  // LazyMotion: the first-paint modules use the light `m` components; the animation
+  // features arrive in a separate chunk after the first render (nothing animates on
+  // first load anyway, see AnimatePresence initial={false}).
   return (
-    <Router basename={basenameFor(locale)}>
-      <LocaleHead />
-      <ScrollToTop />
-      <div className="App">
-        <AppRoutes />
-      </div>
-    </Router>
+    <LazyMotion features={loadMotionFeatures}>
+      <MotionConfig reducedMotion="user">
+        <Router basename={basenameFor(locale)}>
+          <LocaleHead />
+          <ScrollToTop />
+          <div className="App">
+            <AppRoutes />
+          </div>
+        </Router>
+      </MotionConfig>
+    </LazyMotion>
   );
 }
 

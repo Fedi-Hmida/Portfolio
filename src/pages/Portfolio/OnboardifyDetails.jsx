@@ -25,214 +25,219 @@ import {
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
-import ParticlesBackground from "../../components/ParticlesBackground";
 
-import onboardifyLogo from "../../assets/images/logo3.png";
+import onboardifyLogo from "../../assets/images/logo3.webp";
 import programVideo from "../../assets/videos/program.mp4";
 import projectVideo from "../../assets/videos/Projet.mp4";
 import quizVideo from "../../assets/videos/quiz.mp4";
 import reportVideo from "../../assets/videos/report.mp4";
 import resourceVideo from "../../assets/videos/ressource.mp4";
+import en from "../../content/onboardify/caseStudy.en";
+import fr from "../../content/onboardify/caseStudy.fr";
+import { pickContent } from "../../i18n/localeContent";
+
+// Long-form copy lives in src/content/onboardify/caseStudy.{en,fr}.js. The locale comes from the
+// URL and switching language reloads the page, so picking once at module level is safe.
+const c = pickContent({ en, fr });
 
 const metricCards = [
-  { label: "Platform", value: "Hybrid", detail: "JavaFX desktop + Symfony web" },
-  { label: "Domain", value: "HR Tech", detail: "Employee onboarding workflow" },
-  { label: "Duration", value: "4 months", detail: "Project timeline" },
-  { label: "Focus", value: "Gamified", detail: "Onboarding flow for engagement" },
+  { label: c.s001, value: c.s002, detail: c.s003 },
+  { label: c.s004, value: c.s005, detail: c.s006 },
+  { label: c.s007, value: c.s008, detail: c.s009 },
+  { label: c.s010, value: c.s011, detail: c.s012 },
 ];
 
 const roleCards = [
   {
-    title: "Hybrid Platform Contribution",
-    area: "JavaFX + Symfony",
-    text: "Contributed to the JavaFX and Symfony onboarding platform experience across desktop and web surfaces.",
+    title: c.s013,
+    area: c.s014,
+    text: c.s015,
   },
   {
-    title: "Onboarding Module Build",
-    area: "Resources + quizzes + projects",
-    text: "Implemented workflows for resources, project assignment, quizzes, reports, and well-being programs.",
+    title: c.s016,
+    area: c.s017,
+    text: c.s018,
   },
   {
-    title: "HR Visibility",
-    area: "Tracking + follow-up",
-    text: "Supported HR visibility through structured onboarding features that make activity easier to follow.",
+    title: c.s019,
+    area: c.s020,
+    text: c.s021,
   },
   {
-    title: "Demo Flow Preparation",
-    area: "Employee + HR interactions",
-    text: "Prepared demo flows showing key employee and HR interactions across the onboarding journey.",
+    title: c.s022,
+    area: c.s023,
+    text: c.s024,
   },
 ];
 
 const platformFlow = [
   {
-    title: "Desktop Experience",
-    label: "JavaFX",
-    text: "JavaFX supports secure internal onboarding workflows and employee-facing actions.",
+    title: c.s025,
+    label: c.s026,
+    text: c.s027,
   },
   {
-    title: "Web Platform",
-    label: "Symfony",
-    text: "Symfony, PHP, MySQL, HTML, CSS, and JavaScript support the web-side platform.",
+    title: c.s028,
+    label: c.s029,
+    text: c.s030,
   },
   {
-    title: "Training Flow",
-    label: "Resources + quizzes",
-    text: "Resources, quizzes, and assigned projects guide employees through onboarding.",
+    title: c.s031,
+    label: c.s032,
+    text: c.s033,
   },
   {
-    title: "Feedback Loop",
-    label: "Posts + reclamations",
-    text: "Posts, reclamations, and well-being programs support communication and follow-up.",
+    title: c.s034,
+    label: c.s035,
+    text: c.s036,
   },
 ];
 
 const featureGroups = [
   {
     icon: <FaLock />,
-    title: "Access & Security",
-    items: ["Robust login", "Sign-up system", "Data security for users"],
+    title: c.s037,
+    items: [c.s038, c.s039, c.s040],
   },
   {
     icon: <FaFileAlt />,
-    title: "Resource Hub",
-    items: ["Document management", "Centralized onboarding resources", "Employee access to materials"],
+    title: c.s041,
+    items: [c.s042, c.s043, c.s044],
   },
   {
     icon: <FaQuestionCircle />,
-    title: "Training & Validation",
-    items: ["Interactive quizzes", "Knowledge validation", "Training progress tracking"],
+    title: c.s045,
+    items: [c.s046, c.s047, c.s048],
   },
   {
     icon: <FaHeartbeat />,
-    title: "Employee Support",
-    items: ["Well-being programs", "Mental health support", "New-hire integration"],
+    title: c.s049,
+    items: [c.s050, c.s051, c.s052],
   },
   {
     icon: <FaTasks />,
-    title: "Project Tracking",
-    items: ["Project assignment", "Task tracking", "Onboarding progress visibility"],
+    title: c.s053,
+    items: [c.s054, c.s055, c.s056],
   },
   {
     icon: <FaBullhorn />,
-    title: "Communication",
-    items: ["Posts", "Reclamations", "Employee feedback follow-up"],
+    title: c.s057,
+    items: [c.s058, c.s059, c.s060],
   },
 ];
 
 const onboardingJourney = [
   {
-    title: "Account Access",
-    text: "Secure login and sign-up give users a controlled entry point into the onboarding platform.",
+    title: c.s061,
+    text: c.s062,
   },
   {
-    title: "Learn",
-    text: "Resources and quizzes structure training so new hires can access materials and validate knowledge.",
+    title: c.s063,
+    text: c.s064,
   },
   {
-    title: "Contribute",
-    text: "Project assignments and task tracking turn onboarding into an active employee workflow.",
+    title: c.s065,
+    text: c.s066,
   },
   {
-    title: "Communicate",
-    text: "Posts and reclamations keep employee feedback and HR follow-up visible.",
+    title: c.s067,
+    text: c.s068,
   },
   {
-    title: "Support",
-    text: "Well-being programs add a human layer for new-hire mental health and integration.",
+    title: c.s069,
+    text: c.s070,
   },
 ];
 
 const tradeoffCards = [
   {
-    title: "Hybrid Product Shape",
-    text: "Coordinating a hybrid desktop and web product experience.",
+    title: c.s071,
+    text: c.s072,
   },
   {
-    title: "Engagement Balance",
-    text: "Keeping onboarding structured while still making it engaging for new hires.",
+    title: c.s073,
+    text: c.s074,
   },
   {
-    title: "HR vs Employee Needs",
-    text: "Balancing HR visibility with employee-facing simplicity.",
+    title: c.s075,
+    text: c.s076,
   },
 ];
 
 const learningCards = [
   {
-    title: "Hybrid Application Thinking",
-    area: "JavaFX + Symfony",
-    text: "Onboardify strengthened how I think about coordinating desktop and web surfaces in one product.",
+    title: c.s077,
+    area: c.s014,
+    text: c.s078,
   },
   {
-    title: "HR Workflow Modeling",
-    area: "Onboarding operations",
-    text: "It helped me model onboarding around training, assignments, communication, and follow-up.",
+    title: c.s079,
+    area: c.s080,
+    text: c.s081,
   },
   {
-    title: "Engagement Features",
-    area: "Quizzes + well-being",
-    text: "The project showed how gamified and support-oriented modules can make onboarding less passive.",
+    title: c.s082,
+    area: c.s083,
+    text: c.s084,
   },
   {
-    title: "Demo-Ready Structure",
-    area: "Recruiter presentation",
-    text: "It improved how I turn several platform modules into a clear story that can be scanned quickly.",
+    title: c.s085,
+    area: c.s086,
+    text: c.s087,
   },
 ];
 
 const stack = [
-  "JavaFX",
-  "Symfony",
-  "PHP",
-  "MySQL",
-  "HTML",
-  "CSS",
-  "JavaScript",
+  c.s026,
+  c.s029,
+  c.s088,
+  c.s089,
+  c.s090,
+  c.s091,
+  c.s092,
 ];
 
 const projectInfo = [
-  ["My Role", "Full-stack contributor"],
-  ["Project Name", "Onboardify"],
-  ["Category", "JavaFX & Symfony - HR Tech"],
-  ["Main Focus", "Gamified onboarding flow"],
-  ["Duration", "4 Months"],
+  [c.s093, c.s094],
+  [c.s095, c.s096],
+  [c.s097, c.s098],
+  [c.s099, c.s100],
+  [c.s007, c.s101],
 ];
 
 const demoVideos = [
   {
     id: "resource",
-    title: "Resource Management",
-    desc: "See how employees can access and manage onboarding documents in one place.",
+    title: c.s102,
+    desc: c.s103,
     video: resourceVideo,
     icon: FaFileAlt,
   },
   {
     id: "project",
-    title: "Project Assignment & Tracking",
-    desc: "Explore how tasks are assigned and progress is tracked throughout the onboarding process.",
+    title: c.s104,
+    desc: c.s105,
     video: projectVideo,
     icon: FaTasks,
   },
   {
     id: "quiz",
-    title: "Interactive Training Quizzes",
-    desc: "Watch how interactive quizzes help validate training and boost engagement.",
+    title: c.s106,
+    desc: c.s107,
     video: quizVideo,
     icon: FaQuestionCircle,
   },
   {
     id: "report",
-    title: "Posts & Reclamation System",
-    desc: "See how the platform facilitates communication and handles employee feedback efficiently.",
+    title: c.s108,
+    desc: c.s109,
     video: reportVideo,
     icon: FaBullhorn,
   },
   {
     id: "program",
-    title: "Well-being Program Integration",
-    desc: "Discover how new hires can benefit from personalized well-being programs during onboarding.",
+    title: c.s110,
+    desc: c.s111,
     video: programVideo,
     icon: FaHeartbeat,
   },
@@ -265,11 +270,10 @@ const OnboardifyDetails = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#070640] text-white">
-      <ParticlesBackground />
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
+        
       </div>
 
       <main className="relative z-10">
@@ -281,32 +285,24 @@ const OnboardifyDetails = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-gray-300">
-                <Link to="/" className="transition hover:text-[#5B73D6]">Home</Link>
+                <Link to="/" className="transition hover:text-[#5B73D6]">{c.s112}</Link>
                 <span>/</span>
-                <Link to="/portfolio" className="transition hover:text-[#5B73D6]">Portfolio</Link>
+                <Link to="/portfolio" className="transition hover:text-[#5B73D6]">{c.s113}</Link>
                 <span>/</span>
-                <span className="text-[#5B73D6]">Onboardify</span>
+                <span className="text-[#5B73D6]">{c.s096}</span>
               </div>
 
               <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
                 <div>
                   <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#5B73D6]/30 bg-[#5B73D6]/10 px-4 py-2 text-sm font-semibold text-[#CDD6FF]">
-                    <FaUsers aria-hidden="true" />
-                    HR onboarding platform
-                  </div>
-                  <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">
-                    Onboardify
-                    <span className="block text-[#5B73D6]">Gamified Employee Onboarding</span>
+                    <FaUsers aria-hidden="true" />{c.s114}</div>
+                  <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">{c.s096}<span className="block text-[#5B73D6]">{c.s115}</span>
                   </h1>
-                  <p className="mb-7 max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">
-                    Hybrid JavaFX and Symfony HR platform for structured, engaging employee onboarding with resources, quizzes, reporting, and well-being support.
-                  </p>
-                  <p className="mb-8 max-w-3xl text-base leading-8 text-gray-300">
-                    Onboardify is a smart employee onboarding platform developed as part of an academic project. It combines a JavaFX desktop application and a Symfony-based web application to deliver a structured, engaging, and interactive onboarding experience with real-time visibility for HR and managers.
-                  </p>
+                  <p className="mb-7 max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">{c.s116}</p>
+                  <p className="mb-8 max-w-3xl text-base leading-8 text-gray-300">{c.s117}</p>
 
                   <div className="mb-8 flex flex-wrap gap-3">
-                    {["JavaFX", "Symfony", "PHP", "MySQL", "HR Tech", "4 Months"].map((item) => (
+                    {[c.s026, c.s029, c.s088, c.s089, c.s005, c.s101].map((item) => (
                       <span key={item} className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-gray-200">
                         {item}
                       </span>
@@ -315,13 +311,9 @@ const OnboardifyDetails = () => {
 
                   <div className="flex flex-wrap gap-4">
                     <a href="#onboardify-demo" className="inline-flex items-center gap-2 rounded-full bg-[#5B73D6] px-6 py-3 font-semibold text-white shadow-lg shadow-[#5B73D6]/25 transition hover:bg-[#7087E6]">
-                      <FaPlay aria-hidden="true" />
-                      Watch demos
-                    </a>
+                      <FaPlay aria-hidden="true" />{c.s118}</a>
                     <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 font-semibold text-white transition hover:border-[#5B73D6]/60 hover:bg-[#5B73D6]/10">
-                      <FaArrowLeft aria-hidden="true" />
-                      Back to Portfolio
-                    </Link>
+                      <FaArrowLeft aria-hidden="true" />{c.s119}</Link>
                   </div>
                 </div>
 
@@ -333,7 +325,7 @@ const OnboardifyDetails = () => {
                 >
                   <img
                     src={onboardifyLogo}
-                    alt="Onboardify Logo"
+                    alt={c.s120}
                     className="mx-auto w-full max-w-[360px] rounded-2xl object-contain drop-shadow-2xl"
                     loading="eager"
                     decoding="async"
@@ -368,36 +360,28 @@ const OnboardifyDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5B73D6]">
                     <FaUsers className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Project Summary</h2>
+                    <h2 className="text-2xl font-black">{c.s121}</h2>
                   </div>
-                  <p className="leading-relaxed text-gray-200">
-                    The platform aims to enhance new hire integration through resource management, interactive modules, employee well-being support, and workflows that keep onboarding activity visible for HR and managers.
-                  </p>
+                  <p className="leading-relaxed text-gray-200">{c.s122}</p>
                 </section>
 
                 <section className="grid gap-5 md:grid-cols-2">
                   <div className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl">
-                    <h2 className="mb-4 text-2xl font-black text-white">The Problem</h2>
-                    <p className="leading-relaxed text-gray-300">
-                      New employee onboarding can become scattered across documents, training, projects, feedback, and HR tracking.
-                    </p>
+                    <h2 className="mb-4 text-2xl font-black text-white">{c.s123}</h2>
+                    <p className="leading-relaxed text-gray-300">{c.s124}</p>
                   </div>
                   <div className="rounded-3xl border border-[#5B73D6]/30 bg-[#5B73D6]/10 p-7 backdrop-blur-xl">
-                    <h2 className="mb-4 text-2xl font-black text-white">The Solution</h2>
-                    <p className="leading-relaxed text-gray-100">
-                      Onboardify centralizes onboarding resources, quizzes, assignments, posts, reclamations, and well-being support.
-                    </p>
+                    <h2 className="mb-4 text-2xl font-black text-white">{c.s125}</h2>
+                    <p className="leading-relaxed text-gray-100">{c.s126}</p>
                   </div>
                 </section>
 
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5B73D6]">
                     <FaProjectDiagram className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">My Role</h2>
+                    <h2 className="text-2xl font-black">{c.s093}</h2>
                   </div>
-                  <p className="mb-5 leading-relaxed text-gray-200">
-                    As a full-stack contributor, I worked across the hybrid product experience and helped shape the onboarding modules into reviewable demo flows.
-                  </p>
+                  <p className="mb-5 leading-relaxed text-gray-200">{c.s127}</p>
                   <div className="grid gap-4 md:grid-cols-2">
                     {roleCards.map((role) => (
                       <div key={role.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5 transition-colors hover:border-[#5B73D6]/40">
@@ -412,7 +396,7 @@ const OnboardifyDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5B73D6]">
                     <FaTasks className="text-2xl" aria-hidden="true" />
-                  <h2 className="text-2xl font-black">Key Features</h2>
+                  <h2 className="text-2xl font-black">{c.s128}</h2>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     {featureGroups.map((feature) => (
@@ -435,7 +419,7 @@ const OnboardifyDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5B73D6]">
                     <FaJava className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Architecture / Technical Approach</h2>
+                    <h2 className="text-2xl font-black">{c.s129}</h2>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     {platformFlow.map((step, index) => (
@@ -453,19 +437,15 @@ const OnboardifyDetails = () => {
                       </div>
                     ))}
                   </div>
-                  <p className="mt-5 rounded-2xl border border-[#5B73D6]/25 bg-[#5B73D6]/10 p-4 font-mono text-sm text-[#CDD6FF]">
-                    Tech Stack: JavaFX - Symfony - PHP - MySQL - HTML/CSS - JavaScript
-                  </p>
+                  <p className="mt-5 rounded-2xl border border-[#5B73D6]/25 bg-[#5B73D6]/10 p-4 font-mono text-sm text-[#CDD6FF]">{c.s130}</p>
                 </section>
 
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5B73D6]">
                     <FaUsers className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Onboarding Journey</h2>
+                    <h2 className="text-2xl font-black">{c.s131}</h2>
                   </div>
-                  <p className="mb-5 leading-relaxed text-gray-200">
-                    The platform reads more clearly when the modules are shown as one onboarding path from access to support.
-                  </p>
+                  <p className="mb-5 leading-relaxed text-gray-200">{c.s132}</p>
                   <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
                     {onboardingJourney.map((step, index) => (
                       <div key={step.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5">
@@ -482,7 +462,7 @@ const OnboardifyDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5B73D6]">
                     <FaBullhorn className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Challenges and Tradeoffs</h2>
+                    <h2 className="text-2xl font-black">{c.s133}</h2>
                   </div>
                   <div className="grid gap-3 md:grid-cols-3">
                     {tradeoffCards.map((item) => (
@@ -497,7 +477,7 @@ const OnboardifyDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5B73D6]">
                     <FaHeartbeat className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">What I Learned</h2>
+                    <h2 className="text-2xl font-black">{c.s134}</h2>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     {learningCards.map((item) => (
@@ -513,7 +493,7 @@ const OnboardifyDetails = () => {
 
               <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-5 text-xl font-black">Project Details</h2>
+                  <h2 className="mb-5 text-xl font-black">{c.s135}</h2>
                   <div className="space-y-4 text-sm">
                     {projectInfo.map(([label, value]) => (
                       <div key={label}>
@@ -525,20 +505,20 @@ const OnboardifyDetails = () => {
                 </div>
 
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-4 text-xl font-black">Technologies</h2>
+                  <h2 className="mb-4 text-xl font-black">{c.s136}</h2>
                   <div className="space-y-3 text-sm">
-                    <p className="flex items-center gap-2 text-gray-200"><FaJava className="text-[#5B73D6]" /> JavaFX</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiSymfony className="text-[#5B73D6]" /> Symfony</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiPhp className="text-[#5B73D6]" /> PHP</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiMysql className="text-[#5B73D6]" /> MySQL</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiHtml5 className="text-[#5B73D6]" /> HTML</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiCss3 className="text-[#5B73D6]" /> CSS</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiJavascript className="text-[#5B73D6]" /> JavaScript</p>
+                    <p className="flex items-center gap-2 text-gray-200"><FaJava className="text-[#5B73D6]" />{" "}{c.s026}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiSymfony className="text-[#5B73D6]" />{" "}{c.s029}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiPhp className="text-[#5B73D6]" />{" "}{c.s088}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiMysql className="text-[#5B73D6]" />{" "}{c.s089}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiHtml5 className="text-[#5B73D6]" />{" "}{c.s090}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiCss3 className="text-[#5B73D6]" />{" "}{c.s091}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiJavascript className="text-[#5B73D6]" />{" "}{c.s092}</p>
                   </div>
                 </div>
 
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-4 text-xl font-black">Main Stack</h2>
+                  <h2 className="mb-4 text-xl font-black">{c.s137}</h2>
                   <div className="flex flex-wrap gap-2">
                     {stack.map((item) => (
                       <span key={item} className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-sm text-gray-200">
@@ -551,9 +531,7 @@ const OnboardifyDetails = () => {
                 <Link
                   to="/contact"
                   className="block rounded-2xl bg-[#5B73D6] px-5 py-4 text-center font-bold text-white shadow-lg shadow-[#5B73D6]/20 transition hover:-translate-y-1 hover:bg-[#7087E6]"
-                >
-                  Discuss this work
-                </Link>
+                >{c.s138}</Link>
               </aside>
             </div>
 
@@ -568,15 +546,9 @@ const OnboardifyDetails = () => {
             >
               <div className="mb-8">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#5B73D6]/30 bg-[#5B73D6]/10 px-4 py-2 text-sm font-semibold text-[#CDD6FF]">
-                  <FaPlay aria-hidden="true" />
-                  Feature demos
-                </div>
-                <h2 id="onboardify-demo-title" className="text-2xl font-black text-white md:text-3xl">
-                  Demo Videos
-                </h2>
-                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-300 md:text-base">
-                  Five walkthroughs showing resources, project tracking, quizzes, posts and reclamations, and well-being programs.
-                </p>
+                  <FaPlay aria-hidden="true" />{c.s139}</div>
+                <h2 id="onboardify-demo-title" className="text-2xl font-black text-white md:text-3xl">{c.s140}</h2>
+                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gray-300 md:text-base">{c.s141}</p>
               </div>
 
               <div className="grid gap-8 md:grid-cols-2">
@@ -629,20 +601,14 @@ const OnboardifyDetails = () => {
             <div className="mt-14 rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
               <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                 <div>
-                  <h2 className="mb-2 text-2xl font-black">Explore the project</h2>
-                  <p className="text-gray-300">Watch the demo flows, return to the project list, or start a conversation.</p>
+                  <h2 className="mb-2 text-2xl font-black">{c.s142}</h2>
+                  <p className="text-gray-300">{c.s143}</p>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <a href="#onboardify-demo" className="inline-flex items-center gap-2 rounded-full bg-[#5B73D6] px-5 py-3 font-semibold text-white transition hover:bg-[#7087E6]">
-                    <FaPlay aria-hidden="true" />
-                    Demos
-                  </a>
-                  <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#5B73D6]/60 hover:bg-[#5B73D6]/10">
-                    Portfolio
-                  </Link>
-                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#5B73D6]/60 hover:bg-[#5B73D6]/10">
-                    Contact Me
-                    <FaArrowRight aria-hidden="true" />
+                    <FaPlay aria-hidden="true" />{c.s144}</a>
+                  <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#5B73D6]/60 hover:bg-[#5B73D6]/10">{c.s113}</Link>
+                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#5B73D6]/60 hover:bg-[#5B73D6]/10">{c.s145}<FaArrowRight aria-hidden="true" />
                   </Link>
                 </div>
               </div>
@@ -660,15 +626,15 @@ const OnboardifyDetails = () => {
                   <FaArrowLeft />
                 </div>
                 <div>
-                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">Previous Project</span>
-                  <span className="text-lg font-semibold">SolarFlow</span>
+                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">{c.s146}</span>
+                  <span className="text-lg font-semibold">{c.s147}</span>
                 </div>
               </Link>
 
               <Link to="/portfolio" className="group flex items-center gap-3 text-right text-gray-400 transition-colors hover:text-white">
                 <div>
-                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">Next Project</span>
-                  <span className="text-lg font-semibold">Pro-Link</span>
+                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">{c.s148}</span>
+                  <span className="text-lg font-semibold">{c.s149}</span>
                 </div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-all group-hover:border-[#5B73D6] group-hover:bg-[#5B73D6]">
                   <FaArrowRight />

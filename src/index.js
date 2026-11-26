@@ -1,13 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./i18n";
 import "./assets/css/fonts.css";
 import "./index.css";
+import { mountApp } from "./mountApp";
 import reportWebVitals from "./web-vitals";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+mountApp(
+  document.getElementById("root"),
   <React.StrictMode>
     <App />
   </React.StrictMode>,

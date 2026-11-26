@@ -2,14 +2,12 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { FaBriefcase, FaDownload } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { ReactTyped } from "react-typed";
-import fediImg from "../assets/images/slider/Fedi_Hmida.png";
+import fediImg from "../assets/images/slider/Fedi_Hmida.webp";
 import AboutHero from "../components/About/AboutHero";
 import { rich } from "../i18n/rich";
 import ServicesSection from "../components/About/ServicesSection";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import ParticlesBackground from "../components/ParticlesBackground";
 
 // Paired by index with the `about.recognition` entries in the locale files.
 const RECOMMENDATION_FILES = [
@@ -22,7 +20,6 @@ const About = () => {
 
   return (
     <div className="relative min-h-screen bg-deep-indigo">
-      <ParticlesBackground />
       <Navbar />
 
       <AboutHero />
@@ -42,7 +39,9 @@ const About = () => {
                 <img
                   src={fediImg}
                   alt="Fedi Hmida"
-                  loading="lazy"
+                  width="500"
+                  height="500"
+                  loading="eager"
                   decoding="async"
                   className="w-full h-auto shadow-lg filter saturate-120 hover:saturate-100 transition-all duration-300"
                 />
@@ -56,14 +55,8 @@ const About = () => {
               viewport={{ once: true }}
               className="lg:col-span-6 text-white space-y-6"
             >
-              <h2 className="text-4xl font-bold mb-4">
-                <ReactTyped
-                  strings={t("about.typed", { returnObjects: true })}
-                  typeSpeed={80}
-                  backSpeed={50}
-                  loop
-                  className="text-white"
-                />
+              <h2 className="text-4xl font-bold mb-4 text-white">
+                {t("about.bioTitle")}
               </h2>
 
               <div className="space-y-4 text-gray-300 leading-relaxed text-lg text-justify">
@@ -137,7 +130,7 @@ const About = () => {
                           }}
                           className="text-xs text-primary-pink flex items-center gap-2 overflow-hidden"
                         >
-                          <FaDownload className="animate-bounce" aria-hidden="true" />{" "}
+                          <FaDownload aria-hidden="true" />{" "}
                           {t("about.downloadHint")}
                         </motion.div>
                       </div>

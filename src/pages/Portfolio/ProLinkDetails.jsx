@@ -21,166 +21,171 @@ import { SiDart, SiFirebase, SiFlutter } from "react-icons/si";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import EnglishOnlyNotice from "../../components/EnglishOnlyNotice";
-import ParticlesBackground from "../../components/ParticlesBackground";
 
-import proLinkLogo from "../../assets/images/FlutterFlow.png";
-import proLinkPreview from "../../assets/images/FlutterFlow2.png";
+import proLinkLogo from "../../assets/images/FlutterFlow.webp";
+import proLinkPreview from "../../assets/images/FlutterFlow2.webp";
+import en from "../../content/proLink/caseStudy.en";
+import fr from "../../content/proLink/caseStudy.fr";
+import { pickContent } from "../../i18n/localeContent";
+
+// Long-form copy lives in src/content/proLink/caseStudy.{en,fr}.js. The locale comes from the
+// URL and switching language reloads the page, so picking once at module level is safe.
+const c = pickContent({ en, fr });
 
 const metricCards = [
-  { label: "Platform", value: "Mobile", detail: "Flutter / FlutterFlow app" },
-  { label: "Backend", value: "Firebase", detail: "Realtime data handling" },
-  { label: "Duration", value: "6 weeks", detail: "Project timeline" },
-  { label: "Focus", value: "Networking", detail: "Freelancer and client workflow" },
+  { label: c.s001, value: c.s002, detail: c.s003 },
+  { label: c.s004, value: c.s005, detail: c.s006 },
+  { label: c.s007, value: c.s008, detail: c.s009 },
+  { label: c.s010, value: c.s011, detail: c.s012 },
 ];
 
 const featureGroups = [
   {
     id: "account",
-    title: "Profiles & Services",
-    items: ["Account creation", "Freelancer profiles", "Customized portfolios", "Service listings"],
+    title: c.s013,
+    items: [c.s014, c.s015, c.s016, c.s017],
     icon: <FaUserPlus />,
   },
   {
     id: "project",
-    title: "Project Opportunities",
-    items: ["Project posting", "Project requests", "Proposal management", "Detailed proposals and bids"],
+    title: c.s018,
+    items: [c.s019, c.s020, c.s021, c.s022],
     icon: <FaTasks />,
   },
   {
   id: "review",
-    title: "Trust Signals",
-    items: ["Review system", "Rating system", "Completed-work feedback", "Community standards"],
+    title: c.s023,
+    items: [c.s024, c.s025, c.s026, c.s027],
     icon: <FaStar />,
   },
   {
     id: "chat",
-    title: "Communication",
-    items: ["Built-in messaging", "Client-freelancer chat", "Clear communication", "Instant interaction"],
+    title: c.s028,
+    items: [c.s029, c.s030, c.s031, c.s032],
     icon: <FaComments />,
   },
 ];
 
 const roleCards = [
   {
-    title: "Marketplace Flow",
-    area: "Clients + freelancers",
-    text: "Built a mobile-first professional networking and freelance workflow.",
+    title: c.s033,
+    area: c.s034,
+    text: c.s035,
   },
   {
-    title: "Core Product Journeys",
-    area: "Profiles + proposals + chat",
-    text: "Designed flows for account creation, service listings, proposals, reviews, and chat.",
+    title: c.s036,
+    area: c.s037,
+    text: c.s038,
   },
   {
-    title: "Mobile App Build",
-    area: "FlutterFlow + Dart",
-    text: "Used Flutter / FlutterFlow with Dart and Firebase for the app experience.",
+    title: c.s039,
+    area: c.s040,
+    text: c.s041,
   },
   {
-    title: "Interaction Structure",
-    area: "Firebase workflows",
-    text: "Structured the interface around clients, freelancers, project requests, and communication.",
+    title: c.s042,
+    area: c.s043,
+    text: c.s044,
   },
 ];
 
 const marketplaceFlow = [
   {
-    title: "Present",
-    label: "Profiles",
-    text: "Account and profile flows allow freelancers and clients to present services and project needs.",
+    title: c.s045,
+    label: c.s046,
+    text: c.s047,
   },
   {
-    title: "Discover",
-    label: "Projects",
-    text: "Proposal management supports posting, browsing, and responding to collaboration opportunities.",
+    title: c.s048,
+    label: c.s049,
+    text: c.s050,
   },
   {
-    title: "Trust",
-    label: "Reviews",
-    text: "Reviews and ratings help users evaluate completed work and build credibility.",
+    title: c.s051,
+    label: c.s052,
+    text: c.s053,
   },
   {
-    title: "Communicate",
-    label: "Firebase",
-    text: "Firebase supports the data handling needed for mobile-first interaction and messaging.",
+    title: c.s054,
+    label: c.s005,
+    text: c.s055,
   },
 ];
 
 const workflowCards = [
   {
     icon: <FaUsers />,
-    title: "Two-sided Marketplace",
-    text: "The app supports both client and freelancer journeys without splitting the product into separate experiences.",
+    title: c.s056,
+    text: c.s057,
   },
   {
     icon: <FaBriefcase />,
-    title: "Service Discovery",
-    text: "Users can post or browse services and move from discovery into proposals and project requests.",
+    title: c.s058,
+    text: c.s059,
   },
   {
     icon: <FaHandshake />,
-    title: "Collaboration Flow",
-    text: "Profiles, proposals, chat, and reviews create a complete lightweight hiring workflow.",
+    title: c.s060,
+    text: c.s061,
   },
   {
     icon: <FaDatabase />,
-    title: "Firebase Data Layer",
-    text: "Firebase gives the mobile app a practical backend path for realtime data and interaction flows.",
+    title: c.s062,
+    text: c.s063,
   },
 ];
 
 const tradeoffCards = [
   {
-    title: "Mobile Simplicity",
-    text: "Keeping the marketplace flow simple enough for a mobile-first interface.",
+    title: c.s064,
+    text: c.s065,
   },
   {
-    title: "Two-Sided Needs",
-    text: "Balancing freelancer and client needs in the same product journey.",
+    title: c.s066,
+    text: c.s067,
   },
   {
-    title: "Trust Without Clutter",
-    text: "Designing trust signals without overcomplicating the first version.",
+    title: c.s068,
+    text: c.s069,
   },
 ];
 
 const learningCards = [
   {
-    title: "Role Separation",
-    area: "Marketplace UX",
-    text: "Marketplace products need clear role separation while still feeling like one coherent app.",
+    title: c.s070,
+    area: c.s071,
+    text: c.s072,
   },
   {
-    title: "Trust Features",
-    area: "Profiles + reviews",
-    text: "Trust features such as profiles, reviews, and ratings matter as much as the core posting flow.",
+    title: c.s073,
+    area: c.s074,
+    text: c.s075,
   },
   {
-    title: "Fast Mobile Prototyping",
-    area: "FlutterFlow",
-    text: "FlutterFlow can move a mobile concept quickly when the product flow is well structured.",
+    title: c.s076,
+    area: c.s077,
+    text: c.s078,
   },
   {
-    title: "Realtime App Workflows",
-    area: "Firebase",
-    text: "Firebase is useful for prototyping realtime mobile workflows without heavy backend overhead.",
+    title: c.s079,
+    area: c.s005,
+    text: c.s080,
   },
 ];
 
-const stack = ["Flutter", "FlutterFlow", "Dart", "Firebase"];
+const stack = [c.s081, c.s077, c.s082, c.s005];
 
 const projectInfo = [
-  ["My Role", "Mobile app builder"],
-  ["Project Name", "Pro-Link App"],
-  ["Category", "Mobile App Development"],
-  ["Main Focus", "Professional networking workflow"],
-  ["Duration", "6 Weeks"],
+  [c.s083, c.s084],
+  [c.s085, c.s086],
+  [c.s087, c.s088],
+  [c.s089, c.s090],
+  [c.s007, c.s091],
 ];
 
 const visuals = [
-  { title: "Pro-Link brand visual", image: proLinkLogo },
-  { title: "Pro-Link preview visual", image: proLinkPreview },
+  { title: c.s092, image: proLinkLogo },
+  { title: c.s093, image: proLinkPreview },
 ];
 
 const ProLinkDetails = () => {
@@ -188,11 +193,10 @@ const ProLinkDetails = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#070640] text-white">
-      <ParticlesBackground />
       <Navbar />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-28 md:px-12 lg:px-20">
-        <EnglishOnlyNotice />
+        
       </div>
 
       <main className="relative z-10">
@@ -204,32 +208,24 @@ const ProLinkDetails = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-gray-300">
-                <Link to="/" className="transition hover:text-[#5066AD]">Home</Link>
+                <Link to="/" className="transition hover:text-[#5066AD]">{c.s094}</Link>
                 <span>/</span>
-                <Link to="/portfolio" className="transition hover:text-[#5066AD]">Portfolio</Link>
+                <Link to="/portfolio" className="transition hover:text-[#5066AD]">{c.s095}</Link>
                 <span>/</span>
-                <span className="text-[#5066AD]">Pro-Link</span>
+                <span className="text-[#5066AD]">{c.s096}</span>
               </div>
 
               <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
                 <div>
                   <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#5066AD]/30 bg-[#5066AD]/10 px-4 py-2 text-sm font-semibold text-[#B8C5FF]">
-                    <FaHandshake aria-hidden="true" />
-                    Mobile professional networking app
-                  </div>
-                  <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">
-                    Pro-Link
-                    <span className="block text-[#5066AD]">Freelancer and Client Collaboration Platform</span>
+                    <FaHandshake aria-hidden="true" />{c.s097}</div>
+                  <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">{c.s096}<span className="block text-[#5066AD]">{c.s098}</span>
                   </h1>
-                  <p className="mb-7 max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">
-                    Mobile application designed to connect freelancers with clients through profiles, service listings, proposals, reviews, ratings, and communication.
-                  </p>
-                  <p className="mb-8 max-w-3xl text-base leading-8 text-gray-300">
-                    Pro-Link is inspired by platforms like Fiverr and focuses on streamlining the freelance hiring process inside a simple, mobile-first workflow built with Flutter / FlutterFlow, Dart, and Firebase.
-                  </p>
+                  <p className="mb-7 max-w-3xl text-lg leading-relaxed text-gray-200 md:text-xl">{c.s099}</p>
+                  <p className="mb-8 max-w-3xl text-base leading-8 text-gray-300">{c.s100}</p>
 
                   <div className="mb-8 flex flex-wrap gap-3">
-                    {["Flutter", "FlutterFlow", "Dart", "Firebase", "Freelance workflow", "6 Weeks"].map((item) => (
+                    {[c.s081, c.s077, c.s082, c.s005, c.s101, c.s091].map((item) => (
                       <span key={item} className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-gray-200">
                         {item}
                       </span>
@@ -238,13 +234,9 @@ const ProLinkDetails = () => {
 
                   <div className="flex flex-wrap gap-4">
                     <a href="#prolink-features" className="inline-flex items-center gap-2 rounded-full bg-[#5066AD] px-6 py-3 font-semibold text-white shadow-lg shadow-[#5066AD]/25 transition hover:bg-[#657BD0]">
-                      <FaTasks aria-hidden="true" />
-                      View features
-                    </a>
+                      <FaTasks aria-hidden="true" />{c.s102}</a>
                     <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 font-semibold text-white transition hover:border-[#5066AD]/60 hover:bg-[#5066AD]/10">
-                      <FaArrowLeft aria-hidden="true" />
-                      Back to Portfolio
-                    </Link>
+                      <FaArrowLeft aria-hidden="true" />{c.s103}</Link>
                   </div>
                 </div>
 
@@ -256,19 +248,18 @@ const ProLinkDetails = () => {
                 >
                   <button
                     type="button"
-                    onClick={() => setSelectedImage({ src: proLinkLogo, title: "Pro-Link brand visual" })}
+                    onClick={() => setSelectedImage({ src: proLinkLogo, title: c.s092 })}
                     className="group relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[#08073d]/70 p-8 focus:outline-none focus:ring-2 focus:ring-[#5066AD]/70"
                   >
                     <img
                       src={proLinkLogo}
-                      alt="Pro-Link logo"
+                      alt={c.s104}
                       className="mx-auto w-full max-w-[360px] rounded-2xl object-contain drop-shadow-2xl transition duration-300 group-hover:scale-[1.02]"
                       loading="eager"
                       decoding="async"
                     />
                     <span className="absolute right-5 top-5 inline-flex items-center gap-2 rounded-full bg-black/65 px-3 py-1 text-xs font-bold text-white opacity-0 transition group-hover:opacity-100">
-                      <FaExpand /> View larger
-                    </span>
+                      <FaExpand />{" "}{c.s105}</span>
                   </button>
                 </motion.div>
               </div>
@@ -300,36 +291,28 @@ const ProLinkDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5066AD]">
                     <FaMobileAlt className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Project Summary</h2>
+                    <h2 className="text-2xl font-black">{c.s106}</h2>
                   </div>
-                  <p className="leading-relaxed text-gray-200">
-                    Pro-Link is a mobile application designed to connect freelancers with clients. The app allows users to create profiles, post or browse services, manage project requests, submit proposals, communicate, and use review/rating features inside one mobile-first product.
-                  </p>
+                  <p className="leading-relaxed text-gray-200">{c.s107}</p>
                 </section>
 
                 <section className="grid gap-5 md:grid-cols-2">
                   <div className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl">
-                    <h2 className="mb-4 text-2xl font-black text-white">The Problem</h2>
-                    <p className="leading-relaxed text-gray-300">
-                      Freelancers and clients need a simple way to create profiles, manage opportunities, communicate, and build trust in one mobile workflow.
-                    </p>
+                    <h2 className="mb-4 text-2xl font-black text-white">{c.s108}</h2>
+                    <p className="leading-relaxed text-gray-300">{c.s109}</p>
                   </div>
                   <div className="rounded-3xl border border-[#5066AD]/30 bg-[#5066AD]/10 p-7 backdrop-blur-xl">
-                    <h2 className="mb-4 text-2xl font-black text-white">The Solution</h2>
-                    <p className="leading-relaxed text-gray-100">
-                      Pro-Link organizes profiles, service listings, project requests, proposals, ratings, reviews, and chat into a lightweight mobile collaboration platform.
-                    </p>
+                    <h2 className="mb-4 text-2xl font-black text-white">{c.s110}</h2>
+                    <p className="leading-relaxed text-gray-100">{c.s111}</p>
                   </div>
                 </section>
 
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5066AD]">
                     <FaProjectDiagram className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">My Role</h2>
+                    <h2 className="text-2xl font-black">{c.s083}</h2>
                   </div>
-                  <p className="mb-5 leading-relaxed text-gray-200">
-                    As mobile app builder, I focused on shaping the freelance marketplace flow, structuring the app around both clients and freelancers, and connecting the mobile experience with Firebase-backed interaction patterns.
-                  </p>
+                  <p className="mb-5 leading-relaxed text-gray-200">{c.s112}</p>
                   <div className="grid gap-4 md:grid-cols-2">
                     {roleCards.map((role) => (
                       <div key={role.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5 transition-colors hover:border-[#5066AD]/40">
@@ -344,7 +327,7 @@ const ProLinkDetails = () => {
                 <section id="prolink-features" className="scroll-mt-28 rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5066AD]">
                     <FaTasks className="text-2xl" aria-hidden="true" />
-                  <h2 className="text-2xl font-black">Key Features</h2>
+                  <h2 className="text-2xl font-black">{c.s113}</h2>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     {featureGroups.map((feature) => (
@@ -367,7 +350,7 @@ const ProLinkDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5066AD]">
                     <FaServer className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Architecture / Technical Approach</h2>
+                    <h2 className="text-2xl font-black">{c.s114}</h2>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     {marketplaceFlow.map((step, index) => (
@@ -385,19 +368,15 @@ const ProLinkDetails = () => {
                       </div>
                     ))}
                   </div>
-                  <p className="mt-5 rounded-2xl border border-[#5066AD]/25 bg-[#5066AD]/10 p-4 font-mono text-sm text-[#B8C5FF]">
-                    Tech Stack: Flutter - FlutterFlow - Dart - Firebase
-                  </p>
+                  <p className="mt-5 rounded-2xl border border-[#5066AD]/25 bg-[#5066AD]/10 p-4 font-mono text-sm text-[#B8C5FF]">{c.s115}</p>
                 </section>
 
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5066AD]">
                     <FaHandshake className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Marketplace Workflow</h2>
+                    <h2 className="text-2xl font-black">{c.s116}</h2>
                   </div>
-                  <p className="mb-5 leading-relaxed text-gray-200">
-                    The app is easier to scan as a two-sided workflow: users present themselves, discover opportunities, collaborate, and build trust.
-                  </p>
+                  <p className="mb-5 leading-relaxed text-gray-200">{c.s117}</p>
                   <div className="grid gap-4 md:grid-cols-2">
                     {workflowCards.map((item) => (
                       <div key={item.title} className="rounded-2xl border border-white/10 bg-[#08073d]/70 p-5 transition-colors hover:border-[#5066AD]/40">
@@ -412,7 +391,7 @@ const ProLinkDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5066AD]">
                     <FaDatabase className="text-2xl" aria-hidden="true" />
-                    <h2 className="text-2xl font-black">Challenges and Tradeoffs</h2>
+                    <h2 className="text-2xl font-black">{c.s118}</h2>
                   </div>
                   <div className="grid gap-3 md:grid-cols-3">
                     {tradeoffCards.map((item) => (
@@ -427,7 +406,7 @@ const ProLinkDetails = () => {
                 <section className="rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
                   <div className="mb-5 flex items-center gap-3 text-[#5066AD]">
                     <FaStar className="text-2xl" aria-hidden="true" />
-                  <h2 className="text-2xl font-black">What I Learned</h2>
+                  <h2 className="text-2xl font-black">{c.s119}</h2>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">
                     {learningCards.map((item) => (
@@ -443,7 +422,7 @@ const ProLinkDetails = () => {
 
               <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-5 text-xl font-black">Project Details</h2>
+                  <h2 className="mb-5 text-xl font-black">{c.s120}</h2>
                   <div className="space-y-4 text-sm">
                     {projectInfo.map(([label, value]) => (
                       <div key={label}>
@@ -455,17 +434,17 @@ const ProLinkDetails = () => {
                 </div>
 
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-4 text-xl font-black">Technologies</h2>
+                  <h2 className="mb-4 text-xl font-black">{c.s121}</h2>
                   <div className="space-y-3 text-sm">
-                    <p className="flex items-center gap-2 text-gray-200"><SiFlutter className="text-[#5066AD]" /> Flutter</p>
-                    <p className="flex items-center gap-2 text-gray-200"><FaMobileAlt className="text-[#5066AD]" /> FlutterFlow</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiDart className="text-[#5066AD]" /> Dart</p>
-                    <p className="flex items-center gap-2 text-gray-200"><SiFirebase className="text-[#5066AD]" /> Firebase</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiFlutter className="text-[#5066AD]" />{" "}{c.s081}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><FaMobileAlt className="text-[#5066AD]" />{" "}{c.s077}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiDart className="text-[#5066AD]" />{" "}{c.s082}</p>
+                    <p className="flex items-center gap-2 text-gray-200"><SiFirebase className="text-[#5066AD]" />{" "}{c.s005}</p>
                   </div>
                 </div>
 
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-4 text-xl font-black">Main Stack</h2>
+                  <h2 className="mb-4 text-xl font-black">{c.s122}</h2>
                   <div className="flex flex-wrap gap-2">
                     {stack.map((item) => (
                       <span key={item} className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-sm text-gray-200">
@@ -476,7 +455,7 @@ const ProLinkDetails = () => {
                 </div>
 
                 <div className="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-                  <h2 className="mb-4 text-xl font-black">Project Visuals</h2>
+                  <h2 className="mb-4 text-xl font-black">{c.s123}</h2>
                   <div className="grid gap-3">
                     {visuals.map((item) => (
                       <button
@@ -488,8 +467,7 @@ const ProLinkDetails = () => {
                         <div className="relative aspect-video bg-[#080744] p-4">
                           <img src={item.image} alt={item.title} className="h-full w-full object-contain transition duration-300 group-hover:scale-[1.02]" loading="lazy" decoding="async" />
                           <span className="absolute right-3 top-3 inline-flex items-center gap-2 rounded-full bg-black/65 px-3 py-1 text-xs font-bold text-white opacity-0 transition group-hover:opacity-100">
-                            <FaExpand /> View larger
-                          </span>
+                            <FaExpand />{" "}{c.s105}</span>
                         </div>
                         <p className="px-4 py-3 text-sm font-bold text-white">{item.title}</p>
                       </button>
@@ -500,29 +478,21 @@ const ProLinkDetails = () => {
                 <Link
                   to="/contact"
                   className="block rounded-2xl bg-[#5066AD] px-5 py-4 text-center font-bold text-white shadow-lg shadow-[#5066AD]/20 transition hover:-translate-y-1 hover:bg-[#657BD0]"
-                >
-                  Discuss this work
-                </Link>
+                >{c.s124}</Link>
               </aside>
             </div>
 
             <div className="mt-14 rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-xl md:p-9">
               <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                 <div>
-                  <h2 className="mb-2 text-2xl font-black">Explore the project</h2>
-                  <p className="text-gray-300">Review the features, return to the project list, or start a conversation.</p>
+                  <h2 className="mb-2 text-2xl font-black">{c.s125}</h2>
+                  <p className="text-gray-300">{c.s126}</p>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <a href="#prolink-features" className="inline-flex items-center gap-2 rounded-full bg-[#5066AD] px-5 py-3 font-semibold text-white transition hover:bg-[#657BD0]">
-                    <FaTasks aria-hidden="true" />
-                    Features
-                  </a>
-                  <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#5066AD]/60 hover:bg-[#5066AD]/10">
-                    Portfolio
-                  </Link>
-                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#5066AD]/60 hover:bg-[#5066AD]/10">
-                    Contact Me
-                    <FaArrowRight aria-hidden="true" />
+                    <FaTasks aria-hidden="true" />{c.s127}</a>
+                  <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#5066AD]/60 hover:bg-[#5066AD]/10">{c.s095}</Link>
+                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:border-[#5066AD]/60 hover:bg-[#5066AD]/10">{c.s128}<FaArrowRight aria-hidden="true" />
                   </Link>
                 </div>
               </div>
@@ -540,15 +510,15 @@ const ProLinkDetails = () => {
                   <FaArrowLeft />
                 </div>
                 <div>
-                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">Previous Project</span>
-                  <span className="text-lg font-semibold">Onboardify</span>
+                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">{c.s129}</span>
+                  <span className="text-lg font-semibold">{c.s130}</span>
                 </div>
               </Link>
 
               <Link to="/portfolio" className="group flex items-center gap-3 text-right text-gray-400 transition-colors hover:text-white">
                 <div>
-                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">Back to</span>
-                  <span className="text-lg font-semibold">Portfolio</span>
+                  <span className="block text-xs uppercase tracking-wider text-gray-500 group-hover:text-gray-300">{c.s131}</span>
+                  <span className="text-lg font-semibold">{c.s095}</span>
                 </div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-all group-hover:border-[#5066AD] group-hover:bg-[#5066AD]">
                   <FaArrowRight />
@@ -577,7 +547,7 @@ const ProLinkDetails = () => {
                 type="button"
                 onClick={() => setSelectedImage(null)}
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:border-[#DDE4FF]/70 hover:text-[#DDE4FF] focus:outline-none focus:ring-2 focus:ring-[#DDE4FF]/70"
-                aria-label="Close image preview"
+                aria-label={c.s132}
               >
                 <FaTimes />
               </button>

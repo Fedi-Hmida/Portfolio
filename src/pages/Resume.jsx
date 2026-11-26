@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { ReactTyped } from "react-typed";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import ParticlesBackground from "../components/ParticlesBackground";
 import EducationCard from "../components/Resume/EducationCard";
 import ExperienceCard from "../components/Resume/ExperienceCard";
 import RecommendationCard from "../components/Resume/RecommendationCard";
@@ -20,19 +18,13 @@ const Resume = () => {
 
   return (
     <div className="relative min-h-screen">
-      <ParticlesBackground />
       <Navbar />
 
       <main className="relative z-10 pt-32 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            <ReactTyped
-              strings={t("resume.typed", { returnObjects: true })}
-              typeSpeed={100}
-              backSpeed={50}
-              loop
-            />
+            {t("resume.title")}
           </h1>
 
           <motion.div
@@ -47,12 +39,7 @@ const Resume = () => {
               className="group relative px-8 py-4 bg-gradient-to-r from-primary-pink to-secondary-pink rounded-full text-white font-bold text-lg shadow-lg hover:shadow-primary-pink/50 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3 overflow-hidden"
             >
               <span className="relative z-10">{t("resume.downloadPdf")}</span>
-              <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-              >
-                <Download className="relative z-10" size={24} />
-              </motion.div>
+              <Download className="relative z-10" size={24} aria-hidden="true" />
             </a>
           </motion.div>
         </div>

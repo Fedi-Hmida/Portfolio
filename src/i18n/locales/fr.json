@@ -32,7 +32,19 @@
     "download": "Télécharger",
     "viewCaseStudy": "Voir l'étude de cas",
     "closePreview": "Fermer l'aperçu de l'image",
-    "close": "Fermer"
+    "close": "Fermer",
+    "logoAlt": "Fedi Hmida, retour à l'accueil",
+    "image": "Image",
+    "viewLarger": "Agrandir l'image : {{alt}}",
+    "previewOf": "Aperçu : {{alt}}"
+  },
+  "social": {
+    "email": "Écrire à Fedi Hmida",
+    "linkedin": "Ouvrir le profil LinkedIn de Fedi Hmida",
+    "github": "Ouvrir le profil GitHub de Fedi Hmida",
+    "phone": "Afficher le numéro de téléphone de Fedi Hmida",
+    "open": "Ouvrir {{name}}",
+    "copy": "Copier {{name}}"
   },
   "home": {
     "role": "Étudiant ingénieur en informatique",
@@ -41,13 +53,6 @@
     "viewProjects": "Voir les projets",
     "viewCv": "Voir le CV",
     "aboutMe": "À propos",
-    "aboutTitle": "À propos de moi",
-    "tabs": {
-      "soft skills": "Savoir-être",
-      "hard skills": "Compétences techniques",
-      "services": "Services",
-      "project methodologies": "Méthodologies"
-    },
     "myWork": "Mes réalisations",
     "viewAllProjects": "Voir tous les projets",
     "latestNews": "Dernières actualités",
@@ -55,14 +60,10 @@
   },
   "about": {
     "heroTitle": "À propos de moi",
-    "typed": [
-      "Qui suis-je ?",
-      "Mon parcours",
-      "À propos"
-    ],
+    "bioTitle": "Mon parcours",
     "bio1": "Je suis <b>étudiant ingénieur en informatique</b> dans un <b>Cycle Ingénieur en double diplôme</b> entre <b>3iL Ingénieurs</b> à Limoges et <b>ESPRIT</b> à Tunis, actuellement en deuxième année, spécialisé en <b>Data Science & Intelligence Artificielle</b>.",
-    "bio2": "Je conçois des <b>systèmes LLM multi-agents</b> avec <b>LangGraph</b>, <b>RAG</b> et <b>MCP</b>, ainsi que des <b>pipelines de vision par ordinateur</b> avec <b>YOLO</b> et <b>PyTorch</b>. Je développe aussi des systèmes destinés à la production : j'ai co-piloté le développement full-stack d'une <b>plateforme RH à 8 stagiaires</b> reposant sur <b>Spring Boot</b>, <b>OAuth2 / Keycloak</b> et <b>React / TypeScript</b>, couvrant <b>102 endpoints REST</b>.",
-    "bio3": "Mes projets vont d'une <b>plateforme agricole autonome multi-agents</b> et d'un <b>pipeline ML de diagnostic à 98,83 % de précision</b> jusqu'à l'<b>automatisation de déclarations de sinistres</b> - toujours avec la même exigence : des systèmes concrets qui allient IA appliquée et bases solides d'ingénierie.",
+    "bio2": "Je conçois des <b>systèmes LLM multi-agents</b> avec <b>LangGraph</b>, <b>RAG</b> et <b>MCP</b>, ainsi que des <b>pipelines de vision par ordinateur</b> avec <b>YOLO</b> et <b>PyTorch</b>. Je développe aussi des systèmes destinés à la production\u00a0: j'ai co-piloté le développement full-stack d'une <b>plateforme RH à 8 stagiaires</b> reposant sur <b>Spring Boot</b>, <b>OAuth2 / Keycloak</b> et <b>React / TypeScript</b>, couvrant <b>102 endpoints REST</b>.",
+    "bio3": "Mes projets vont d'une <b>plateforme agricole autonome multi-agents</b> et d'un <b>pipeline ML de diagnostic à 98,83\u00a0% de précision</b> jusqu'à l'<b>automatisation de déclarations de sinistres</b> - toujours avec la même exigence\u00a0: des systèmes concrets qui allient IA appliquée et bases solides d'ingénierie.",
     "coreCompetencies": "Compétences clés",
     "competenciesLeft": [
       "IA agentique & systèmes multi-agents (LangGraph, MCP)",
@@ -91,14 +92,14 @@
     ],
     "downloadHint": "Cliquez pour télécharger la recommandation",
     "careerFocusTitle": "Objectif professionnel",
-    "careerFocus": "Je recherche un <b>stage de 4 mois à partir d'avril 2027</b> ainsi qu'une <b>alternance en IA / génie logiciel à partir de septembre 2027</b>, en France. Je souhaite rejoindre une équipe qui construit des <b>systèmes d'IA agentique</b>, des <b>produits ML</b> ou des <b>plateformes back-end en production</b>, où je pourrai livrer des systèmes de bout en bout.",
+    "careerFocus": "Je recherche un <b>stage de 4 à 6 mois à partir d'avril 2027</b> ainsi qu'une <b>alternance en IA / génie logiciel à partir de septembre 2027</b>, en France. Je souhaite rejoindre une équipe qui construit des <b>systèmes d'IA agentique</b>, des <b>produits ML</b> ou des <b>plateformes back-end en production</b>, où je pourrai livrer des systèmes de bout en bout.",
     "downloadCv": "Télécharger le CV",
     "viewPortfolio": "Voir le portfolio",
     "whatIOffer": "Ce que je propose"
   },
   "portfolio": {
     "title": "Mes projets",
-    "intro": "Des études de cas pensées pour les recruteurs : mon rôle, l'approche technique et les résultats de chaque projet, des applications mobiles Flutter aux systèmes IA et full-stack.",
+    "intro": "Des études de cas pensées pour les recruteurs\u00a0: mon rôle, l'approche technique et les résultats de chaque projet, des applications mobiles Flutter aux systèmes IA et full-stack.",
     "empty": "Aucun projet dans cette catégorie.",
     "categories": {
       "all": "Tous les projets",
@@ -108,16 +109,13 @@
     }
   },
   "resume": {
-    "typed": [
-      "Parcours",
-      "Curriculum Vitae",
-      "Mon parcours"
-    ],
+    "title": "Parcours",
     "downloadPdf": "Télécharger le CV en PDF",
     "experienceTitle": "Expérience professionnelle",
     "skillsTitle": "Compétences techniques",
     "educationTitle": "Formation",
     "recommendationsTitle": "Lettres de recommandation",
+    "openLinkedin": "Ouvrir le profil LinkedIn de {{name}}",
     "experiences": [
       {
         "role": "Stagiaire ingénierie full-stack - Co-responsable",
@@ -125,9 +123,9 @@
         "duration": "Juillet - Août 2026",
         "bullets": [
           "Co-piloté les <b>pôles back-end et front-end</b> de <b>SMART HRM AI</b>, une plateforme RH interne développée par une <b>équipe de 8 stagiaires</b>, autour d'une API <b>Java 17 / Spring Boot</b> et d'un client <b>React 19 / TypeScript</b>.",
-          "Conçu le modèle de sécurité de la plateforme : <b>OAuth2 / OpenID Connect</b> délégué à <b>Keycloak</b>, un modèle RBAC à 4 rôles appliqué par <b>104 points de contrôle d'autorisation</b> et un chiffrement <b>AES-256-GCM</b> au repos pour les données salariales et bancaires.",
+          "Conçu le modèle de sécurité de la plateforme\u00a0: <b>OAuth2 / OpenID Connect</b> délégué à <b>Keycloak</b>, un modèle RBAC à 4 rôles appliqué par <b>104 points de contrôle d'autorisation</b> et un chiffrement <b>AES-256-GCM</b> au repos pour les données salariales et bancaires.",
           "Développé <b>102 endpoints REST</b> sur PostgreSQL avec <b>32 migrations Flyway</b> et un stockage objet MinIO, en appliquant la Clean Architecture sur <b>11 modules</b> et <b>2 072 tests automatisés</b> (JUnit, Vitest, Playwright).",
-          "Piloté trois chantiers IA : le contrat d'autorisation du service d'<b>extraction documentaire OCR</b>, un <b>assistant conversationnel RAG</b> et des modèles prédictifs d'absentéisme et de turnover."
+          "Piloté trois chantiers IA\u00a0: le contrat d'autorisation du service d'<b>extraction documentaire OCR</b>, un <b>assistant conversationnel RAG</b> et des modèles prédictifs d'absentéisme et de turnover."
         ]
       },
       {
@@ -136,7 +134,7 @@
         "duration": "Juillet - Septembre 2025",
         "bullets": [
           "Développé un pipeline de <b>détection et classification de dommages automobiles basé sur YOLO</b> (<b>PyTorch, OpenCV</b>), comparé aux approches de vision par ordinateur existantes.",
-          "Déployé le modèle sous forme de microservice REST <b>FastAPI</b> conteneurisé avec <b>Docker</b>, atteignant <b>92,9 % de précision</b> en détection temps réel.",
+          "Déployé le modèle sous forme de microservice REST <b>FastAPI</b> conteneurisé avec <b>Docker</b>, atteignant <b>92,9\u00a0% de précision</b> en détection temps réel.",
           "Développé <b>SmartClaim</b>, une application Flutter multiplateforme pour la déclaration de sinistres, l'envoi de justificatifs et le suivi en temps réel."
         ]
       },
@@ -181,20 +179,21 @@
   "contact": {
     "heroTitle": "Travaillons",
     "heroTitleAccent": "ensemble",
-    "heroIntro": "Basé à Limoges. Je recherche un stage de 4 mois à partir d'avril 2027 et une alternance en IA / génie logiciel à partir de septembre 2027, au sein d'équipes qui construisent des systèmes d'IA agentique, des produits ML ou des plateformes back-end en production.",
+    "heroIntro": "Basé à Limoges. Je recherche un stage de 4 à 6 mois à partir d'avril 2027 et une alternance en IA / génie logiciel à partir de septembre 2027, au sein d'équipes qui construisent des systèmes d'IA agentique, des produits ML ou des plateformes back-end en production.",
     "pills": [
       "Stage - avril 2027",
       "Alternance - septembre 2027",
       "IA / Génie logiciel",
       "Basé en France"
     ],
-    "connectTyped": [
-      "À l'écoute des recruteurs",
-      "Réponse rapide",
-      "Prochaine étape claire"
-    ],
+    "connectTitle": "Me joindre directement",
     "connectIntro": "Envoyez-moi une offre, un brief projet ou une idée de collaboration. Pour une lecture technique, commencez par SMART HRM AI et Firmaa, puis contactez-moi sur LinkedIn ou par e-mail.",
     "mapTitle": "Carte de Limoges, France",
+    "map": {
+      "show": "Afficher la carte",
+      "open": "Ouvrir dans Google Maps",
+      "note": "La carte est chargée depuis Google Maps."
+    },
     "locationLabel": "Localisation",
     "emailLabel": "E-mail",
     "phoneLabel": "Téléphone",
@@ -232,6 +231,26 @@
     "back": "Retour à l'accueil"
   },
   "projects": {
+    "9": {
+      "type": "Digital Twin multi-agents",
+      "status": "Projet double diplôme, 3iL × ESPRIT",
+      "role": "Responsable back-end & architecte IA",
+      "impact": "Quatre agents IA sur une plateforme Spring Boot validée par 610 tests\u00a0; dans le jumeau, la politique PPO fait passer le SLA de 0,31 à 0,43 en charge moyenne, au prix de davantage d'abandons (12,9\u00a0% → 18,9\u00a0%).",
+      "homeImpact": "Un centre de relation client bancaire où travaillent quatre agents IA - et où l'on teste les stratégies d'effectifs dans un jumeau.",
+      "description": "Jumeau numérique du centre de relation client d'une banque de détail, construit à cinq\u00a0: un conseiller LangGraph qui répond avec un RAG et des outils bancaires, un simulateur de clients, un gestionnaire d'effectifs par apprentissage par renforcement et un juge qualité LLM, sur un back-end Spring Boot en Clean Architecture dont j'avais la charge, avec une interface Next.js pour quatre rôles.",
+      "homeDescription": "Jumeau numérique multi-agents\u00a0: conseiller LangGraph avec RAG, politique d'effectifs PPO, juge qualité LLM, back-end Spring Boot et espaces Next.js en temps réel.",
+      "cta": "Voir l'étude de cas"
+    },
+    "8": {
+      "type": "Assistant IA multi-agents",
+      "status": "Projet de cours ESPRIT",
+      "role": "Responsable technique - architecture & intégration",
+      "impact": "Hit@5 de 1,00 sur 22 questions répondables avec un RAG découpé par article, un banc de test de bout en bout de 53 questions et 6/6 cas adverses, dont une injection de prompt cachée dans une photo.",
+      "homeImpact": "Assistant Telegram multi-agents\u00a0: réponses citées, recherches exactes, RAG mesuré.",
+      "description": "Assistant Telegram pour les étudiants d'ESPRIT, construit à trois\u00a0: un orchestrateur n8n confie chaque question aux agents vision, règlement (RAG), calendrier ou administration, le code vérifie chaque citation, date et e-mail, et un mode hybride Qwen3 local + Gemini Flash-Lite tient le budget de latence.",
+      "homeDescription": "Assistant Telegram multi-agents sous n8n\u00a0: RAG cité sur Qdrant, recherche exacte des dates et des contacts, lecture de photos, auto-correction.",
+      "cta": "Voir l'étude de cas"
+    },
     "7": {
       "type": "Plateforme RH d'entreprise",
       "status": "Stage BNS Engineering",
@@ -249,14 +268,14 @@
       "impact": "Agent d'irrigation autonome avec supervision 3D et validation humaine.",
       "homeImpact": "Agent d'irrigation autonome avec supervision 3D et validation humaine.",
       "description": "Plateforme d'agriculture intelligente pilotée par IA, réunissant un accès mobile Flutter, la supervision des zones, des recommandations d'irrigation autonomes, les données IoT et un tableau de bord jumeau numérique 3D.",
-      "homeDescription": "Plateforme agricole à IA agentique : accès mobile Flutter, workflow d'irrigation LangGraph, FastAPI, MongoDB, Next.js et supervision 3D.",
+      "homeDescription": "Plateforme agricole à IA agentique\u00a0: accès mobile Flutter, workflow d'irrigation LangGraph, FastAPI, MongoDB, Next.js et supervision 3D.",
       "cta": "Voir l'étude de cas"
     },
     "5": {
       "type": "Plateforme ML médicale",
       "status": "Projet académique en équipe",
       "role": "Ingénieur ML / Développeur full-stack IA",
-      "impact": "98,83 % de précision, 98,44 % de rappel sur les cas malins et 0,9975 de ROC-AUC.",
+      "impact": "98,83\u00a0% de précision, 98,44\u00a0% de rappel sur les cas malins et 0,9975 de ROC-AUC.",
       "homeImpact": "Prototype ML médical CRISP-DM avec FastAPI et Next.js.",
       "description": "Prototype d'aide à la décision médicale par machine learning sur le jeu de données WDBC, méthodologie CRISP-DM, priorisation des métriques cliniques, FastAPI, Next.js et explicabilité SHAP.",
       "homeDescription": "Étude de cas d'aide à la décision médicale par ML, avec CRISP-DM, données WDBC, FastAPI et Next.js.",
@@ -266,8 +285,8 @@
       "type": "Étude de cas phare",
       "status": "Projet de stage",
       "role": "Stagiaire développement data & mobile",
-      "impact": "92,9 % de précision en détection temps réel des dommages automobiles.",
-      "homeImpact": "92,9 % de précision en détection temps réel des dommages automobiles.",
+      "impact": "92,9\u00a0% de précision en détection temps réel des dommages automobiles.",
+      "homeImpact": "92,9\u00a0% de précision en détection temps réel des dommages automobiles.",
       "description": "Application Flutter multiplateforme de gestion intelligente des sinistres, avec détection des dommages automobiles par IA en temps réel.",
       "homeDescription": "Assistant de déclaration de sinistres par IA, combinant Flutter, vision par ordinateur et FastAPI.",
       "cta": "Voir SmartClaim"
@@ -304,76 +323,6 @@
     }
   },
   "skills": {
-    "soft": {
-      "communication": {
-        "title": "Communication",
-        "desc": "Communication orale et écrite efficace"
-      },
-      "project_management": {
-        "title": "Gestion de projet",
-        "desc": "Organisation et pilotage efficaces"
-      },
-      "team_collaboration": {
-        "title": "Travail en équipe",
-        "desc": "Esprit collaboratif et sens du collectif"
-      },
-      "analytical": {
-        "title": "Esprit d'analyse",
-        "desc": "Décisions fondées sur les données"
-      },
-      "organization": {
-        "title": "Organisation",
-        "desc": "Approche structurée et méthodique"
-      },
-      "creativity": {
-        "title": "Créativité",
-        "desc": "Idées et solutions innovantes"
-      }
-    },
-    "hard": {
-      "langgraph": "Workflows d'IA agentique",
-      "langchain": "Orchestration de LLM et de RAG",
-      "rag_chatbots": "Assistants a génération augmentée",
-      "chromadb": "Base vectorielle pour le RAG",
-      "llm_reasoning": "Décisions IA sensibles au contexte",
-      "tool_assisted_agents": "Appels d'outils et workflows d'agents",
-      "react": "Bibliothèque front-end pour l'UI",
-      "next_js": "Framework React pour la production",
-      "typescript": "Interfaces typées pour tableaux de bord",
-      "node_js": "Environnement d'exécution JavaScript",
-      "nestjs": "Framework Node.js performant",
-      "fastapi": "APIs REST pour l'inférence de modèles",
-      "java_17": "Développement back-end d'entreprise",
-      "spring_boot": "API REST et couche service",
-      "spring_security": "Autorisation et contrôle d'accès",
-      "keycloak": "Gestion des identités et des accès",
-      "oauth2_oidc": "Flux d'authentification délégués",
-      "postgresql": "Donnees relationnelles et migrations",
-      "minio_s3": "Stockage objet pour les documents",
-      "mlflow": "Suivi des expériences et des modèles",
-      "mcp": "Outillage Model Context Protocol",
-      "playwright": "Automatisation des tests de bout en bout",
-      "gitlab_ci_cd": "Pipelines et livraison automatisée",
-      "docker": "Déploiement conteneurisé",
-      "tailwind_css": "Mise en forme optimisée de l'UI",
-      "three_js": "Interfaces de jumeau numérique 3D",
-      "rest_apis": "Intégration de services et de modèles",
-      "mongodb": "Gestion de bases NoSQL",
-      "firebase": "Flux de données mobiles en temps réel",
-      "mysql": "Modélisation de données relationnelles",
-      "git": "Gestion de versions et collaboration",
-      "yolov8": "Détection d'objets et de dommages",
-      "opencv": "Prétraitement en vision par ordinateur",
-      "pytorch": "Entraînement et expérimentation de modèles",
-      "python": "Pipelines ML et evaluation",
-      "scikit_learn": "Modèles de machine learning",
-      "xgboost": "Gradient boosting",
-      "shap": "Modèles d'IA explicable",
-      "model_evaluation": "ROC-AUC, rappel, precision",
-      "tensorflow": "Développement de modèles deep learning",
-      "flutter": "Développement mobile multiplateforme",
-      "dart": "Développement d'applications Flutter"
-    },
     "services": {
       "ai_agents_agentic_ai": {
         "title": "Agents IA / IA agentique",
@@ -385,7 +334,7 @@
       },
       "ai_machine_learning": {
         "title": "IA / Machine Learning",
-        "desc": "Travaux ML en Python avec scikit-learn, XGBoost, SHAP : classification, evaluation de modèles, gestion du déséquilibre des classes et cadrage CRISP-DM."
+        "desc": "Travaux ML en Python avec scikit-learn, XGBoost, SHAP\u00a0: classification, evaluation de modèles, gestion du déséquilibre des classes et cadrage CRISP-DM."
       },
       "mobile_development": {
         "title": "Développement mobile",
@@ -410,10 +359,24 @@
     "selectNumber": "Sélectionner le numéro"
   },
   "news": {
+    "23": {
+      "title": "CallVerse - Quatre agents IA dans le centre de relation client d'une banque, testés dans un Digital Twin",
+      "date": "24 novembre 2026",
+      "description": "Pour notre projet double diplôme entre 3iL et ESPRIT, notre équipe de cinq a construit CallVerse\u00a0: une plateforme de relation client pour une banque de détail fictive, où travaillent quatre agents IA, et où une politique d'effectifs apprise par renforcement est mesurée dans un jumeau numérique avant de jamais toucher de vrais clients.",
+      "homeTitle": "CallVerse, Digital Twin multi-agents",
+      "homeDescription": "Un jumeau numérique multi-agents d'un centre de relation client bancaire\u00a0: conseiller LangGraph, politique d'effectifs PPO, juge qualité LLM et back-end Spring Boot."
+    },
+    "22": {
+      "title": "CampusFlow AI - Un assistant multi-agents qui cite ses sources",
+      "date": "19 novembre 2026",
+      "description": "Avec mon équipe, nous avons construit CampusFlow AI pour le cours d'Advanced Deep Learning à ESPRIT\u00a0: un assistant Telegram où un orchestrateur n8n confie chaque question à des agents spécialisés, chaque règle est citée avec son article, et les dates comme les contacts ne passent jamais par le LLM.",
+      "homeTitle": "CampusFlow AI, assistant multi-agents",
+      "homeDescription": "Un assistant Telegram multi-agents sous n8n\u00a0: réponses RAG citées, recherches exactes et évaluation mesurée."
+    },
     "21": {
       "title": "Deux mois d'été chez BNS Engineering - SMART HRM AI livré",
       "date": "Septembre 2026",
-      "description": "Mon stage d'été s'est achevé fin août, et avec lui SMART HRM AI - une plateforme RH de bout en bout : collaborateurs, congés, matériel, dossiers administratifs, tableau de bord. Pas une ligne sur un CV : une équipe, et un produit qui tourne.",
+      "description": "Mon stage d'été s'est achevé fin août, et avec lui SMART HRM AI - une plateforme RH de bout en bout\u00a0: collaborateurs, congés, matériel, dossiers administratifs, tableau de bord. Pas une ligne sur un CV\u00a0: une équipe, et un produit qui tourne.",
       "homeTitle": "Stage d'été chez BNS Engineering",
       "homeDescription": "Deux mois d'été chez BNS Engineering à livrer SMART HRM AI, une plateforme RH de bout en bout."
     },
@@ -427,14 +390,14 @@
     "19": {
       "title": "FIRMAA - Plateforme d'agriculture intelligente pilotée par l'IA",
       "date": "Mai 2026",
-      "description": "Présentation de FIRMAA, la plateforme d'agriculture intelligente que notre équipe de sept a construite pour le Projet Intégré ESPRIT : un agent d'irrigation LangGraph, des modèles de détection pour les cultures, le bétail et les insectes, une vue 3D de la ferme et l'intégration IoT sur une seule plateforme.",
+      "description": "Présentation de FIRMAA, la plateforme d'agriculture intelligente que notre équipe de sept a construite pour le Projet Intégré ESPRIT\u00a0: un agent d'irrigation LangGraph, des modèles de détection pour les cultures, le bétail et les insectes, une vue 3D de la ferme et l'intégration IoT sur une seule plateforme.",
       "homeTitle": "FIRMAA, agriculture intelligente",
       "homeDescription": "Plateforme d'agriculture intelligente pilotée par l'IA, construite par une équipe de sept pour le Projet Intégré ESPRIT."
     },
     "18": {
       "title": "Masterclass BIAT - InGenius Budget à ESPRIT",
       "date": "Avril 2026",
-      "description": "Participation à la Masterclass BIAT InGenius Budget organisée à ESPRIT le 21 avril 2026 : planification financière, épargne, et comment les banques peuvent accompagner les étudiants à chaque étape de leur parcours.",
+      "description": "Participation à la Masterclass BIAT InGenius Budget organisée à ESPRIT le 21 avril 2026\u00a0: planification financière, épargne, et comment les banques peuvent accompagner les étudiants à chaque étape de leur parcours.",
       "homeTitle": "Masterclass BIAT à ESPRIT",
       "homeDescription": "Masterclass BIAT InGenius Budget à ESPRIT, sur la planification financière et l'épargne étudiante."
     },
@@ -469,14 +432,14 @@
     "13": {
       "title": "Congrès IEEE IES SYP",
       "date": "10-01-2026",
-      "description": "Recevoir ce certificat ne se résume pas à une participation : c'est le rappel d'expériences marquantes..."
+      "description": "Recevoir ce certificat ne se résume pas à une participation\u00a0: c'est le rappel d'expériences marquantes..."
     },
     "12": {
       "title": "1re place au Energy Utopia Challenge",
       "date": "26-12-2025",
-      "description": "Vainqueur de la 1re place au Energy Utopia Challenge : l'IA pour un avenir plus intelligent et plus vert...",
+      "description": "Vainqueur de la 1re place au Energy Utopia Challenge\u00a0: l'IA pour un avenir plus intelligent et plus vert...",
       "homeTitle": "1re place au Energy Utopia Challenge",
-      "homeDescription": "1re place au Energy Utopia Challenge : l'IA pour un avenir plus intelligent et plus vert..."
+      "homeDescription": "1re place au Energy Utopia Challenge\u00a0: l'IA pour un avenir plus intelligent et plus vert..."
     },
     "11": {
       "title": "Certification Déploiement de modèles IA sur AWS",
@@ -537,11 +500,7 @@
     }
   },
   "newsList": {
-    "typed": [
-      "Dernières actualités",
-      "Mon blog",
-      "Mises à jour"
-    ],
+    "title": "Dernières actualités",
     "prevPage": "Page précédente",
     "nextPage": "Page suivante"
   }
