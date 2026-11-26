@@ -1,9 +1,9 @@
-// Prerender (head only): after `react-scripts build`, render every route (English and French)
-// with the real production bundle inside jsdom, check the rendered page, and save
-// <route>/index.html with that page's own <head>: html lang, title, description, hreflang
-// alternates and Open Graph tags, visible to search engines and link previews without
-// JavaScript. The body stays empty and React renders it on the client as before.
-// (A full-body version with hydration was measured and dropped: see commit history.)
+// Prerender: after `react-scripts build`, render every route (English and French) with the
+// real production bundle inside jsdom and save the finished HTML as <route>/index.html:
+// the page's content plus its own <head> (lang, title, description, hreflang, Open Graph).
+// Visitors see the page before JavaScript runs; React hydrates it (src/mountApp.js).
+// Interleaved A/B on mobile: LCP -0.4 to -0.7 s, every measured page under 2.5 s, TBT
+// unchanged, versus no prerender and versus a head-only prerender.
 //
 // Runs on Vercel's build machine (no browser needed). Fails the build if any page is
 // empty, has no <h1>, the wrong language, or no hreflang alternates.
@@ -14,6 +14,7 @@ const path = require("path");
 const { JSDOM, ResourceLoader, VirtualConsole } = require("jsdom");
 const { routesFromApp, pagesToRender } = require("./routes");
 const { checkRenderedHtml } = require("./validate");
+const { addHydrationMarkers } = require("./hydration");
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const BUILD = path.resolve(ROOT, process.env.BUILD_PATH || "build");
@@ -61,12 +62,6 @@ const waitFor = (predicate, ms) =>
     tick();
   });
 
-// Empties #root again so React renders the page on the client exactly as before.
-const serializeHeadOnly = (dom) => {
-  dom.window.document.getElementById("root").innerHTML = "";
-  return dom.serialize();
-};
-
 const renderPage = async (shell, page) => {
   const errors = [];
   const loader = new BuildLoader();
@@ -91,11 +86,10 @@ const renderPage = async (shell, page) => {
     await waitFor(() => document.documentElement.lang === page.locale && document.title, TIMEOUT_MS);
     await new Promise((r) => setTimeout(r, 100));
 
-    // The page is validated with its full content (see main), but only the <head> is kept:
-    // measured on mobile, shipping the body and hydrating it cost 600-900 ms of extra
-    // blocking time (Lighthouse score -15) for a small LCP gain. The head carries what
-    // matters to search engines and link previews: lang, title, description, hreflang, og.
-    return { full: dom.serialize(), headOnly: serializeHeadOnly(dom) };
+    // No preload hints for the page's lazy chunks: measured, they raised those chunks
+    // (including the deferred framer-motion features) above main.js and the CSS.
+    addHydrationMarkers(document);
+    return dom.serialize();
   } finally {
     dom.window.close();
   }
@@ -115,12 +109,12 @@ const main = async () => {
 
   for (const page of pages) {
     try {
-      const { full, headOnly } = await renderPage(shell, page);
-      const problems = checkRenderedHtml(full, page.locale);
+      const html = await renderPage(shell, page);
+      const problems = checkRenderedHtml(html, page.locale);
       if (problems.length) throw new Error(problems.join("; "));
       const out = path.join(BUILD, page.outFile);
       fs.mkdirSync(path.dirname(out), { recursive: true });
-      fs.writeFileSync(out, headOnly);
+      fs.writeFileSync(out, html);
     } catch (err) {
       failures.push(`${page.url}: ${err.message}`);
     }
