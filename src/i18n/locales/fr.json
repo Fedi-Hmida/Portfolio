@@ -35,8 +35,8 @@
     "close": "Fermer",
     "logoAlt": "Fedi Hmida, retour à l'accueil",
     "image": "Image",
-    "viewLarger": "Agrandir l'image : {{alt}}",
-    "previewOf": "Aperçu : {{alt}}"
+    "viewLarger": "Agrandir l'image\u00a0: {{alt}}",
+    "previewOf": "Aperçu\u00a0: {{alt}}"
   },
   "social": {
     "email": "Écrire à Fedi Hmida",
@@ -233,12 +233,12 @@
   "projects": {
     "9": {
       "type": "Digital Twin multi-agents",
-      "status": "Projet double diplôme, 3iL × ESPRIT",
-      "role": "Responsable back-end & architecte IA",
-      "impact": "Quatre agents IA sur une plateforme Spring Boot validée par 610 tests\u00a0; dans le jumeau, la politique PPO fait passer le SLA de 0,31 à 0,43 en charge moyenne, au prix de davantage d'abandons (12,9\u00a0% → 18,9\u00a0%).",
-      "homeImpact": "Un centre de relation client bancaire où travaillent quatre agents IA - et où l'on teste les stratégies d'effectifs dans un jumeau.",
-      "description": "Jumeau numérique du centre de relation client d'une banque de détail, construit à cinq\u00a0: un conseiller LangGraph qui répond avec un RAG et des outils bancaires, un simulateur de clients, un gestionnaire d'effectifs par apprentissage par renforcement et un juge qualité LLM, sur un back-end Spring Boot en Clean Architecture dont j'avais la charge, avec une interface Next.js pour quatre rôles.",
-      "homeDescription": "Jumeau numérique multi-agents\u00a0: conseiller LangGraph avec RAG, politique d'effectifs PPO, juge qualité LLM, back-end Spring Boot et espaces Next.js en temps réel.",
+      "status": "3iL × ESPRIT, puis ESPRIT 5DS9",
+      "role": "Responsable IA & back-end",
+      "impact": "J'ai construit le cœur IA\u00a0: la politique d'effectifs fait passer les abandons de 6,13\u00a0% à 1,18\u00a0% en charge moyenne (mêmes 10 journées jamais vues, p\u00a0=\u00a00,002), pour environ +1\u00a0276\u00a0€ par jour, et le conseiller trouve le bon article pour 96,7\u00a0% des questions de test.",
+      "homeImpact": "Quatre agents IA dans le centre de relation client d'une banque, testés dans un jumeau numérique - j'ai construit le cœur IA.",
+      "description": "Jumeau numérique du centre de relation client d'une banque, en deux phases. Phase 2 (ESPRIT, équipe de 3)\u00a0: j'ai construit le cœur IA - un conseiller RAG agentique avec 10 outils bancaires derrière une garde, une politique d'effectifs MaskablePPO entraînée de zéro, un juge qualité d'une autre famille de modèles et l'orchestration, avec 706 tests. Phase 1 (3iL × ESPRIT, équipe de 5)\u00a0: j'étais responsable du back-end Spring Boot et j'ai intégré les agents.",
+      "homeDescription": "Jumeau numérique multi-agents\u00a0: j'ai construit le cœur IA - un conseiller RAG agentique, une politique d'effectifs MaskablePPO entraînée de zéro et l'orchestration de quatre agents.",
       "cta": "Voir l'étude de cas"
     },
     "8": {
