@@ -2,12 +2,15 @@ import { motion } from "framer-motion";
 import {
   FaArrowLeft,
   FaArrowRight,
+  FaBrain,
+  FaChartLine,
   FaCheckCircle,
   FaCubes,
   FaExclamationTriangle,
   FaExternalLinkAlt,
   FaFlask,
   FaGithub,
+  FaHistory,
   FaLayerGroup,
   FaLightbulb,
   FaPenFancy,
@@ -236,6 +239,68 @@ const CallVerseDetails = () => {
             <Section id="context" icon={FaUniversity} title={c.context.title} intro={c.context.intro}>
               <p className="max-w-4xl text-base leading-relaxed text-gray-300">{c.context.body}</p>
             </Section>
+
+            {/* Phase 2: the AI core Fedi built. */}
+            <Section id="phase2" icon={FaBrain} title={c.phase2.title} intro={c.phase2.intro}>
+              <div className="grid gap-4 md:grid-cols-2">
+                {c.phase2.items.map((item) => (
+                  <div key={item.name} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <div className="mb-2 flex flex-wrap items-center gap-3">
+                      <p className="font-bold text-white">{item.name}</p>
+                      <span
+                        className="rounded-full border px-3 py-1 text-[11px] font-bold uppercase tracking-wide"
+                        style={tagStyle("ai")}
+                      >
+                        {item.tag}
+                      </span>
+                    </div>
+                    <p className="text-sm leading-relaxed text-gray-300">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-gray-400">{c.phase2.note}</p>
+            </Section>
+
+            <Section id="ppo" icon={FaChartLine} title={c.ppo.title} intro={c.ppo.intro}>
+              <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5">
+                <table className="w-full text-left text-xs sm:text-sm">
+                  <thead>
+                    <tr className="text-gray-400">
+                      <th scope="col" className="pb-2 pr-2 font-semibold sm:pr-3">{c.ppo.headers.strategy}</th>
+                      <th scope="col" className="pb-2 pr-2 font-semibold sm:pr-3">{c.ppo.headers.wait}</th>
+                      <th scope="col" className="pb-2 pr-2 font-semibold sm:pr-3">{c.ppo.headers.p95}</th>
+                      <th scope="col" className="pb-2 pr-2 font-semibold sm:pr-3">{c.ppo.headers.abandon}</th>
+                      <th scope="col" className="pb-2 font-semibold">{c.ppo.headers.sla}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {c.ppo.rows.map((row) => (
+                      <tr key={row.strategy} className="border-t border-white/10 text-gray-300">
+                        <th scope="row" className="py-2 pr-2 font-semibold text-white sm:pr-3">{row.strategy}</th>
+                        <td className="py-2 pr-2 sm:pr-3">{row.wait}</td>
+                        <td className="py-2 pr-2 sm:pr-3">{row.p95}</td>
+                        <td
+                          className={`py-2 pr-2 sm:pr-3 ${row.ppo ? "font-black" : ""}`}
+                          style={row.ppo ? { color: ACCENT } : undefined}
+                        >
+                          {row.abandon}
+                        </td>
+                        <td className="py-2">{row.sla}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-4 max-w-4xl text-base leading-relaxed text-gray-300">{c.ppo.note}</p>
+              <p className="mt-4 text-sm leading-relaxed text-gray-400">{c.ppo.official}</p>
+            </Section>
+
+            <Section id="evidence" icon={FaSearch} title={c.evidence.title}>
+              <Bullets items={c.evidence.items} />
+            </Section>
+
+            {/* Phase 1: the platform, condensed. */}
+            <Section id="phase1" icon={FaHistory} title={c.phase1.title} intro={c.phase1.intro} />
 
             <Section id="role" icon={FaPenFancy} title={c.role.title} intro={c.role.intro}>
               <Bullets items={c.role.items} />
