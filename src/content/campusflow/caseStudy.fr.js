@@ -33,10 +33,12 @@ const caseStudy = {
     title: "Mon rôle",
     intro: "J'avais la charge de l'architecture et de l'intégration - là où le travail de trois personnes devient un seul système.",
     items: [
-      "Conçu l'architecture orchestrateur-travailleurs et construit le workflow principal de l'assistant dans n8n\u00a0: routage, spécialistes, composition et boucle de vérification.",
+      "Conçu l'architecture orchestrateur-travailleurs et construit le workflow principal de l'assistant dans n8n (44 nœuds)\u00a0: routage, spécialistes, composition et boucle de vérification.",
       "Mis en place l'infrastructure Docker (n8n, Qdrant, Ollama, ngrok) avec des versions figées et un démarrage en une seule commande.",
-      "Déplacé la logique des workflows dans du JavaScript testé, puis généré les workflows n8n à partir de ce code\u00a0: le code déployé est le code testé.",
-      "Mené les mesures de latence à l'origine du choix hybride, et intégré le travail de l'équipe par des revues.",
+      "Construit la chaîne de données\u00a0: 13 PDF nettoyés pour le corpus, un calendrier d'examens de 1\u00a0560 lignes, un annuaire de 18 rôles et un catalogue de 24 démarches, gardés par un validateur passé à 254 contrôles.",
+      "Mené l'expérience de découpage (77 fenêtres fixes contre 168 articles) et les mesures de latence à l'origine du choix hybride\u00a0; fait passer le routeur de 47 à 52 intentions exactes sur 57 questions, avec un rappel hors périmètre de 0,75 à 1,00.",
+      "Déplacé la logique des workflows dans du JavaScript testé, puis généré les workflows n8n à partir de ce code\u00a0: le code déployé est le code testé. Corrigé la session d'examen devinée\u00a0: elle vient désormais seulement de ce que l'étudiant a écrit (calendrier 9/12 → 12/12).",
+      "Mené l'intégration\u00a0: revu les phases des deux coéquipières et corrigé 12 défauts de notation et 2 défauts fonctionnels du banc de test, chacun avec un test. 61 des 69 commits sont les miens.",
     ],
   },
   architecture: {
@@ -125,7 +127,7 @@ const caseStudy = {
   team: {
     title: "Équipe",
     members: [
-      { name: "Fedi Hmida", detail: "Architecture, workflow de l'assistant, infrastructure Docker, intégration et revues" },
+      { name: "Fedi Hmida", detail: "Architecture, workflow de l'assistant, infrastructure Docker, chaîne de données, intégration et revues" },
       { name: "Douaa Omrani", detail: "Stratégie RAG, banc d'essai de bout en bout, évaluation" },
       { name: "Ines Bendhifallah", detail: "Prompts Regulations et Vision, partie multimodale" },
     ],

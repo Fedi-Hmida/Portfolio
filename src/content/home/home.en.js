@@ -27,7 +27,7 @@ const home = {
     email: "Email me",
     ledgerTitle: "Measured",
     ledger: [
-      { value: "610", label: "backend tests, 0 failures", source: "CallVerse, mvn verify on PostgreSQL, 19 Oct 2026", projectId: 9 },
+      { value: "1.18%", label: "abandonment at medium load, down from 6.13%", source: "CallVerse, PPO vs fixed staffing, 10 unseen days", projectId: 9 },
       { value: "2,072", label: "automated tests across 11 modules", source: "SMART HRM AI, BNS Engineering internship", projectId: 7 },
       { value: "1.00", label: "Hit@5 on 22 answerable questions", source: "CampusFlow AI, article-level RAG", projectId: 8 },
       { value: "92.9%", label: "precision on real-time car damage detection", source: "SmartClaim, ADDINN internship", projectId: 1 },
@@ -47,12 +47,12 @@ const home = {
     items: [
       {
         id: 9,
-        role: "Backend owner & AI architect",
-        meta: "Team of 5, 3iL\u00a0×\u00a0ESPRIT double-degree project, Sept–Oct 2026",
-        what: "A bank contact centre where four AI agents work, and a digital twin that tests staffing strategies before real customers would see them.",
-        result: "SLA 0.31\u00a0→\u00a00.43 at medium load, FIFO vs PPO on the same simulated day.",
+        role: "AI lead & backend owner",
+        meta: "ESPRIT, team of 3, Oct–Nov 2026, after a 3iL\u00a0×\u00a0ESPRIT platform phase (team of 5)",
+        what: "A bank contact centre where four AI agents work together, tested in a digital twin. I built the AI core: the advisor, the staffing policy and the orchestration.",
+        result: "Abandonment 6.13%\u00a0→\u00a01.18% at medium load, PPO vs fixed staffing on the same 10 unseen days (p = 0.002).",
         tradeoffKind: "cost",
-        tradeoff: "Abandonment rises from 12.9% to 18.9%, so the policy stays advisory.",
+        tradeoff: "About +1,276 € per day of extra staffing cost at medium load.",
       },
       {
         id: 7,
@@ -80,7 +80,7 @@ const home = {
       {
         skill: "Agentic AI & RAG",
         proofs: [
-          { projectId: 9, evidence: "LangGraph advisor with RAG and six tools" },
+          { projectId: 9, evidence: "LangGraph advisor with 10 bank tools behind a guard" },
           { projectId: 8, evidence: "Hit@5 of 1.00, cited answers" },
           { projectId: 6, evidence: "irrigation agent with human approval" },
         ],
@@ -96,7 +96,7 @@ const home = {
         skill: "Machine learning & evaluation",
         proofs: [
           { projectId: 5, evidence: "98.44% malignant recall" },
-          { projectId: 9, evidence: "PPO in a custom Gymnasium environment" },
+          { projectId: 9, evidence: "MaskablePPO trained from scratch in a Gymnasium twin" },
         ],
       },
       {

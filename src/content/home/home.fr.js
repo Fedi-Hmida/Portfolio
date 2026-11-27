@@ -22,7 +22,7 @@ const home = {
     email: "M'écrire",
     ledgerTitle: "Mesuré",
     ledger: [
-      { value: "610", label: "tests back-end, 0 échec", source: "CallVerse, mvn verify sur PostgreSQL, 19 oct. 2026", projectId: 9 },
+      { value: "1,18\u00a0%", label: "d'abandons en charge moyenne, contre 6,13\u00a0%", source: "CallVerse, PPO contre effectifs fixes, 10 journées jamais vues", projectId: 9 },
       { value: "2\u00a0072", label: "tests automatisés sur 11 modules", source: "SMART HRM AI, stage BNS Engineering", projectId: 7 },
       { value: "1,00", label: "Hit@5 sur 22 questions répondables", source: "CampusFlow AI, RAG découpé par article", projectId: 8 },
       { value: "92,9\u00a0%", label: "de précision en détection temps réel des dommages automobiles", source: "SmartClaim, stage ADDINN", projectId: 1 },
@@ -42,12 +42,12 @@ const home = {
     items: [
       {
         id: 9,
-        role: "Responsable back-end & architecte IA",
-        meta: "Équipe de 5, projet double diplôme 3iL\u00a0×\u00a0ESPRIT, sept.–oct. 2026",
-        what: "Un centre de relation client bancaire où travaillent quatre agents IA, et un jumeau numérique qui teste les stratégies d'effectifs avant qu'elles n'atteignent de vrais clients.",
-        result: "SLA 0,31\u00a0→\u00a00,43 en charge moyenne, FIFO contre PPO sur la même journée simulée.",
+        role: "Responsable IA & back-end",
+        meta: "ESPRIT, équipe de 3, oct.–nov. 2026, après une phase plateforme 3iL\u00a0×\u00a0ESPRIT (équipe de 5)",
+        what: "Un centre de relation client bancaire où quatre agents IA travaillent ensemble, testé dans un jumeau numérique. J'ai construit le cœur IA\u00a0: le conseiller, la politique d'effectifs et l'orchestration.",
+        result: "Abandons 6,13\u00a0%\u00a0→\u00a01,18\u00a0% en charge moyenne, PPO contre effectifs fixes sur les 10 mêmes journées jamais vues (p\u00a0=\u00a00,002).",
         tradeoffKind: "cost",
-        tradeoff: "Les abandons passent de 12,9\u00a0% à 18,9\u00a0%\u00a0: la politique reste une recommandation.",
+        tradeoff: "Environ +1\u00a0276\u00a0€ par jour de coût d'effectifs en plus en charge moyenne.",
       },
       {
         id: 7,
@@ -75,7 +75,7 @@ const home = {
       {
         skill: "IA agentique & RAG",
         proofs: [
-          { projectId: 9, evidence: "conseiller LangGraph avec RAG et six outils" },
+          { projectId: 9, evidence: "conseiller LangGraph avec 10 outils bancaires derrière une garde" },
           { projectId: 8, evidence: "Hit@5 de 1,00, réponses citées" },
           { projectId: 6, evidence: "agent d'irrigation avec validation humaine" },
         ],
@@ -91,7 +91,7 @@ const home = {
         skill: "Machine learning & évaluation",
         proofs: [
           { projectId: 5, evidence: "98,44\u00a0% de rappel sur les cas malins" },
-          { projectId: 9, evidence: "PPO dans un environnement Gymnasium dédié" },
+          { projectId: 9, evidence: "MaskablePPO entraîné de zéro dans un jumeau Gymnasium" },
         ],
       },
       {
