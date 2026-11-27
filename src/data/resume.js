@@ -41,7 +41,7 @@ export const technicalSkills = [
       "MLFlow (Experiment tracking)",
       "CRISP-DM",
       "TDSP",
-      "Reinforcement Learning (PPO, Stable-Baselines3)",
+      "Reinforcement Learning (PPO, MaskablePPO, Stable-Baselines3)",
       "Gymnasium (custom environments)",
     ],
   },
