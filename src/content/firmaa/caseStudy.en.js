@@ -6,7 +6,7 @@ const content = {
   s003: "Integrated project at ESPRIT", // L36
   s004: "Role", // L37
   s005: "Project Lead", // L37
-  s006: "AI agent direction and platform coherence", // L37
+  s006: "AI agent, web dashboard and 3D twin", // L37
   s007: "Focus", // L38
   s008: "Irrigation Agent", // L38
   s009: "LangGraph workflow with human approval", // L38
@@ -36,26 +36,26 @@ const content = {
   s033: "Offline AI models available directly in the Flutter mobile app", // L84
   s034: "IoT & Real-Time Data", // L88
   s035: "IoT integration with sensors and real-time camera detection", // L91
-  s036: "Technical Vision", // L98
-  s037: "Coordinated the technical vision.", // L100
-  s038: "Helped unify Firmaa into one coherent smart agriculture platform.", // L101
-  s039: "Platform leadership", // L102
-  s040: "Agent Workflow Direction", // L105
-  s041: "Led the Autonomous Irrigation Agent direction.", // L107
-  s042: "Shaped the LangGraph decision workflow around farm context and approval.", // L108
-  s043: "LangGraph / agentic AI", // L109
-  s044: "Decision Logic", // L112
-  s045: "Designed the irrigation agent flow.", // L114
-  s046: "Connected soil moisture, weather forecasts, crop needs, sensor data, safety checks, and human approval logic.", // L115
-  s047: "Irrigation intelligence", // L116
-  s048: "Dashboard Experience", // L119
-  s049: "Contributed to the dashboard experience.", // L121
-  s050: "Improved zone management, AI command center, approvals flow, and farm visibility.", // L122
-  s051: "Next.js / 3D monitoring", // L123
-  s052: "Product Identity", // L126
-  s053: "Helped shape the product identity.", // L128
-  s054: "Made the platform feel cohesive across smart farming, mobile access, and AI recommendations.", // L129
-  s055: "Product thinking", // L130
+  s036: "Irrigation Agent", // L98
+  s037: "Built the autonomous irrigation agent end to end.", // L100
+  s038: "12 LangGraph nodes and 6 conditional routers, bounded retries, a MongoDB checkpointer, and a human-approval pause with interrupt() that resumes from the checkpoint.", // L101
+  s039: "LangGraph / FastAPI", // L102
+  s040: "Auditable Decisions", // L105
+  s041: "Made every LLM decision checkable.", // L107
+  s042: "A reasoning sub-graph (reason, up to 3 tool calls, self-reflect), then a validator that matches each claim to a real tool call: -15 confidence per warning, and 2 warnings downgrade the decision to monitoring.", // L108
+  s043: "Validation / safety", // L109
+  s044: "Explainability Assistant", // L112
+  s045: "Built a read-only assistant that explains the agent.", // L114
+  s046: "6 database tools, a tool loop of at most 5 steps, streamed answers and bounded session memory - it can explain a decision but cannot move an actuator.", // L115
+  s047: "LLM / SSE streaming", // L116
+  s048: "Dashboard", // L119
+  s049: "Wrote about 84% of the Next.js dashboard code.", // L121
+  s050: "17 routes, a typed React Query data layer, approvals, logs and analytics, in English, French and Arabic with a right-to-left layout.", // L122
+  s051: "Next.js 16 / React 19", // L123
+  s052: "3D Digital Twin", // L126
+  s053: "Sole author of the React Three Fiber twin.", // L128
+  s054: "3 performance tiers, animated overlays for the agent's state, timeline replay, zone comparison and screenshot export.", // L129
+  s055: "Three.js / R3F", // L130
   s056: "Inputs", // L136
   s057: "Soil moisture, weather forecasts, crop needs, and sensor data.", // L137
   s058: "LangGraph Agent", // L140
@@ -102,7 +102,7 @@ const content = {
   s099: "Mobile AI Modules", // L223
   s100: "Keeping autonomous irrigation useful while preserving farmer approval for sensitive actions.", // L227
   s101: "Unifying web, mobile, IoT, AI modules, and 3D monitoring into one coherent platform story.", // L228
-  s102: "Making recommendations explainable enough to support practical farm decisions.", // L229
+  s102: "Being honest about what is not measured yet: the latency and accuracy targets (under 5 s, at least 92%) have no benchmark, and the last load test failed (25 zones in 100.5 s against 5 s).", // L229
   s103: "Agent Workflow Design", // L234
   s104: "Agentic AI needs validation layers, fallback rules, and human approval before it feels responsible in real workflows.", // L235
   s105: "LangGraph / responsible AI", // L236
@@ -158,7 +158,7 @@ const content = {
   s155: "Farmers often make irrigation, crop disease, livestock health, and insect monitoring decisions manually. Limited real-time information makes farm operations harder to coordinate and can leave decisions dependent on fragmented signals.", // L475
   s156: "The Solution", // L480
   s157: "Firmaa brings smart farm operations into one platform: web monitoring, Flutter mobile access, AI recommendations, 3D farm visibility, mobile AI modules, and IoT-aware workflows designed around practical farm decisions.", // L481
-  s158: "I worked on the technical vision, agentic AI workflow, dashboard coherence, product identity, and the connection between AI recommendations and farmer approval.", // L494
+  s158: "I led the project and built its core: the LangGraph irrigation agent and its validator, the explainability assistant, most of the Next.js dashboard and the whole 3D twin, with 640 backend and 142 frontend test cases. The detection models were built by teammates.", // L494
   s159: "Unified Platform Scope", // L520
   s160: "Firmaa is easier to understand as a connected platform map: monitoring, decision support, detection modules, mobile/offline access, and IoT data all feed the same smart farming experience.", // L522
   s161: "Agentic AI Irrigation Workflow", // L550
