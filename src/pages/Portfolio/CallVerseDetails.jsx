@@ -268,7 +268,8 @@ const CallVerseDetails = () => {
                     <tr className="text-gray-400">
                       <th scope="col" className="pb-2 pr-2 font-semibold sm:pr-3">{c.ppo.headers.strategy}</th>
                       <th scope="col" className="pb-2 pr-2 font-semibold sm:pr-3">{c.ppo.headers.wait}</th>
-                      <th scope="col" className="pb-2 pr-2 font-semibold sm:pr-3">{c.ppo.headers.p95}</th>
+                      {/* P95 is hidden on phones so the four key columns fit at 360 px. */}
+                      <th scope="col" className="hidden pb-2 pr-2 font-semibold sm:table-cell sm:pr-3">{c.ppo.headers.p95}</th>
                       <th scope="col" className="pb-2 pr-2 font-semibold sm:pr-3">{c.ppo.headers.abandon}</th>
                       <th scope="col" className="pb-2 font-semibold">{c.ppo.headers.sla}</th>
                     </tr>
@@ -278,7 +279,7 @@ const CallVerseDetails = () => {
                       <tr key={row.strategy} className="border-t border-white/10 text-gray-300">
                         <th scope="row" className="py-2 pr-2 font-semibold text-white sm:pr-3">{row.strategy}</th>
                         <td className="py-2 pr-2 sm:pr-3">{row.wait}</td>
-                        <td className="py-2 pr-2 sm:pr-3">{row.p95}</td>
+                        <td className="hidden py-2 pr-2 sm:table-cell sm:pr-3">{row.p95}</td>
                         <td
                           className={`py-2 pr-2 sm:pr-3 ${row.ppo ? "font-black" : ""}`}
                           style={row.ppo ? { color: ACCENT } : undefined}
