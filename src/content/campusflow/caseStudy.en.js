@@ -36,10 +36,12 @@ const caseStudy = {
     title: "My Role",
     intro: "I owned the architecture and the integration - the part where three people's work becomes one system.",
     items: [
-      "Designed the orchestrator-worker architecture and built the main assistant workflow in n8n: routing, specialists, composition and the checking loop.",
+      "Designed the orchestrator-worker architecture and built the main assistant workflow in n8n (44 nodes): routing, specialists, composition and the checking loop.",
       "Set up the Docker infrastructure (n8n, Qdrant, Ollama, ngrok) with pinned versions and a one-command bootstrap.",
-      "Moved the workflow logic into tested JavaScript and generated the n8n workflows from it, so the deployed code is the tested code.",
-      "Ran the latency measurements behind the hybrid decision and integrated the team's work through reviews.",
+      "Built the data pipeline: 13 PDFs cleaned into the corpus, an exam calendar of 1,560 rows, a directory of 18 roles and a catalogue of 24 procedures, guarded by a validator that grew to 254 checks.",
+      "Ran the chunking experiment (77 fixed windows vs 168 article chunks) and the latency measurements behind the hybrid design; took the Router from 47 to 52 exact intents on 57 questions, with out-of-scope recall from 0.75 to 1.00.",
+      "Moved the workflow logic into tested JavaScript and generated the n8n workflows from it, so the deployed code is the tested code. Fixed the exam session being guessed: it now comes only from what the student wrote (calendar 9/12 → 12/12).",
+      "Led the integration: reviewed both teammates' phases and fixed 12 scoring and 2 functional defects in the test harness, each with a test. 61 of the 69 commits are mine.",
     ],
   },
   architecture: {
@@ -130,7 +132,7 @@ const caseStudy = {
   team: {
     title: "Team",
     members: [
-      { name: "Fedi Hmida", detail: "Architecture, assistant workflow, Docker infrastructure, integration and reviews" },
+      { name: "Fedi Hmida", detail: "Architecture, assistant workflow, Docker infrastructure, data pipeline, integration and reviews" },
       { name: "Douaa Omrani", detail: "RAG strategy, end-to-end test harness, evaluation" },
       { name: "Ines Bendhifallah", detail: "Regulations and Vision prompts, multimodal part" },
     ],
